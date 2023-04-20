@@ -2,7 +2,7 @@ import itertools
 from . import f2_algebra as f2
 from .graph import Graph
 import numpy as np
-from typing import List, Tuple, Optional
+from typing import List, Optional
 
 
 def generate_local_clifford_symplectic(c: List[np.ndarray] | List[List[int]]) -> List[np.ndarray]:

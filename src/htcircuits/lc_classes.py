@@ -28,7 +28,7 @@ class LCClassBase(metaclass=abc.ABCMeta):
             Description of the qubit grouping, ignored if first parameter is an int. 
         """
         cls = type(self)
-        if isinstance(type_or_id, cls.EntanglementStructure):
+        if isinstance(type_or_id, cls.EntanglementStructure): # type: ignore
             self.type = type_or_id
             if data is None:
                 data = linear_index.Repr()
@@ -48,16 +48,16 @@ class LCClassBase(metaclass=abc.ABCMeta):
             LC equivalence class id
         """
         cls = type(self)
-        com = cls.combinatorics[cls.combinatorics_map[self.type]]
-        return cls._start_indices[self.type] + com["from_lin_idx"](self.data)
+        com = cls.combinatorics[cls.combinatorics_map[self.type]] # type: ignore
+        return cls._start_indices[self.type] + com["to_lin_idx"](self.data) # type: ignore
 
-    def _from_id(self, id: int):
+    def _from_id(self, id: int): 
         """Assign this object to the LC equivalence class described by the given id"""
         cls = type(self)
         self.type = cls.get_entanglement_structure(id)
-        class_index = id - cls._start_indices[self.type]
-        com = cls.combinatorics[cls.combinatorics_map[self.type]]
-        self.data = com["to_lin_idx"](class_index)
+        class_index = id - cls._start_indices[self.type] # type: ignore
+        com = cls.combinatorics[cls.combinatorics_map[self.type]] # type: ignore
+        self.data = com["from_lin_idx1"](class_index)
 
     @abc.abstractmethod
     def num_qubits(self) -> int: pass
@@ -79,7 +79,7 @@ class LCClassBase(metaclass=abc.ABCMeta):
     @classmethod
     def LC_GI_size(cls, structure) -> int:
         """Get the number of LC classes in one LC+GI class (one entanglement structure type)"""
-        return cls._start_indices[structure+1] - cls._start_indices[structure]
+        return cls._start_indices[structure+1] - cls._start_indices[structure] # type: ignore
 
     @classmethod
     def get_LC_type(cls, id: int):
@@ -98,9 +98,9 @@ class LCClassBase(metaclass=abc.ABCMeta):
             LC+GI equivalence class (Type) corresponding to the given id
         """
         assert 0 <= id < cls.count(), "Invalid id for equivalence classes LC(2)"
-        for i, start_index in enumerate(cls._start_indices):
+        for i, start_index in enumerate(cls._start_indices): # type: ignore
             if start_index > id:
-                return cls.EntanglementStructure(i - 1)
+                return cls.EntanglementStructure(i - 1) # type: ignore
 
     @classmethod
     def get_entanglement_structure(cls, id: int):
@@ -110,7 +110,7 @@ class LCClassBase(metaclass=abc.ABCMeta):
     @classmethod
     def count(cls) -> int:
         """Get the total number of 4-qubit LC classes"""
-        return cls._start_indices[-1]
+        return cls._start_indices[-1] # type: ignore
 
 
 class LCClass2(LCClassBase):
@@ -124,7 +124,7 @@ class LCClass2(LCClassBase):
     _start_indices = [0, 1, 2]  # First index of each LC-GI-class / EntanglementStructure
 
     combinatorics = {
-        "C0":  {"count": 1, "to_lin_idx": linear_index.to_0, "from_lin_idx": linear_index.from_0},
+        "C0":  {"count": 1, "from_lin_idx1": linear_index.to_0, "to_lin_idx": linear_index.from_0},
     }
 
     combinatorics_map = {
@@ -153,8 +153,8 @@ class LCClass3(LCClassBase):
     _start_indices = [0, 1, 4, 5]  # First index of each LC-GI-class / EntanglementStructure
 
     combinatorics = {
-        "C3":  {"count": 1, "to_lin_idx": linear_index.to_0, "from_lin_idx": linear_index.from_0},
-        "C12": {"count": 3, "to_lin_idx": linear_index.to_12, "from_lin_idx": linear_index.from_12},
+        "C3":  {"count": 1, "from_lin_idx1": linear_index.to_0, "to_lin_idx": linear_index.from_0},
+        "C12": {"count": 3, "from_lin_idx1": linear_index.to_12, "to_lin_idx": linear_index.from_12},
     }
 
     combinatorics_map = {
@@ -189,10 +189,10 @@ class LCClass4(LCClassBase):
     _start_indices = [0, 1, 7, 11, 14, 15, 18]  # First index of each LC-GI-class / EntanglementStructure
 
     combinatorics = {
-        "C4":   {"count": 1, "to_lin_idx": linear_index.to_0, "from_lin_idx": linear_index.from_0},
-        "C112": {"count": 6, "to_lin_idx": linear_index.to_112, "from_lin_idx": linear_index.from_112},
-        "C13":  {"count": 4, "to_lin_idx": linear_index.to_13, "from_lin_idx": linear_index.from_13},
-        "C22":  {"count": 3, "to_lin_idx": linear_index.to_22, "from_lin_idx": linear_index.from_22},
+        "C4":   {"count": 1, "from_lin_idx1": linear_index.to_0, "to_lin_idx": linear_index.from_0},
+        "C112": {"count": 6, "from_lin_idx1": linear_index.to_112, "to_lin_idx": linear_index.from_112},
+        "C13":  {"count": 4, "from_lin_idx1": linear_index.to_13, "to_lin_idx": linear_index.from_13},
+        "C22":  {"count": 3, "from_lin_idx1": linear_index.to_22, "to_lin_idx": linear_index.from_22},
     }
 
     combinatorics_map = {
@@ -244,10 +244,10 @@ class LCClass5(LCClassBase):
     _start_indices = [0, 1, 11, 21, 36, 41, 56, 57, 67, 77, 92, 93]  # First index of each LC-GI-class / EntanglementStructure
 
     combinatorics = {
-        "C5":   {"count": 1, "to_lin_idx": linear_index.to_0, "from_lin_idx": linear_index.from_0},
-        "C14":  {"count": 5, "to_lin_idx": linear_index.to_14, "from_lin_idx": linear_index.from_14},
-        "C122": {"count": 15, "to_lin_idx": linear_index.to_122, "from_lin_idx": linear_index.from_122},
-        "C23":  {"count": 10, "to_lin_idx": linear_index.to_23, "from_lin_idx": linear_index.from_23},
+        "C5":   {"count": 1, "from_lin_idx1": linear_index.to_0, "to_lin_idx": linear_index.from_0},
+        "C14":  {"count": 5, "from_lin_idx1": linear_index.to_14, "to_lin_idx": linear_index.from_14},
+        "C122": {"count": 15, "from_lin_idx1": linear_index.to_122, "to_lin_idx": linear_index.from_122},
+        "C23":  {"count": 10, "from_lin_idx1": linear_index.to_23, "to_lin_idx": linear_index.from_23},
     }
 
     combinatorics_map = {

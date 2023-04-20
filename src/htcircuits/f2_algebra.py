@@ -1,4 +1,4 @@
-"""Linear algebra over the binary field GF2"""
+"""Some basic linear algebra over the binary field GF(2)"""
 
 import numpy as np
 import copy

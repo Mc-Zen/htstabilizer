@@ -156,6 +156,16 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class.id(), 28)
         self.assertEqual(lc_class, LCClass5(lc_class.id()))
 
+        g = Graph(5)
+        g.add_edge(1, 4)
+        g.add_edge(2, 3)
+        lc_class = determine_lc_class5(Stabilizer(g))
+        print("\n", Stabilizer(g).R, "\n\n", Stabilizer(g).S)
+        self.assertEqual(lc_class.type, LCClass5.EntanglementStructure.TwoPairs)
+        self.assertEqual(lc_class.data, linear_index.Repr([[1, 4], [2, 3], [0]]))
+        self.assertEqual(lc_class.id(), 23)
+        self.assertEqual(lc_class, LCClass5(lc_class.id()))
+
         g = Graph.star(5)
         lc_class = determine_lc_class5(Stabilizer(g))
         self.assertEqual(lc_class.type, LCClass5.EntanglementStructure.Star)

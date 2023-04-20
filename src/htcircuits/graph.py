@@ -8,11 +8,35 @@ class Graph:
 
     """
 
-    def __init__(self, num_vertices: int):
-        """Initialize a graph without edges with n vertices
+    def __init__(self, data: int | np.ndarray):
+        """Initialize a graph without edges with n vertices or with a 
+        symmetric adjacency matrix. The entries of the letter should 
+        consist of only 0 and 1 and the main diagonal should be all 0.  
+
+        Note that the adjacency is internally stored using the data type
+        np.int8, so to avoid a conversion you can pass in a numpy array
+        of that type. 
+
+
+        Parameters
+        ----------
+        data : int | np.ndarray
+            Number of vertices | adjacency matrix
         """
-        self.num_vertices = num_vertices
-        self.adjacency_matrix = np.zeros((num_vertices, num_vertices), dtype=np.int8)
+        if isinstance(data, int):
+            self.num_vertices = data
+            self.adjacency_matrix = np.zeros((self.num_vertices, self.num_vertices), dtype=np.int8)
+        elif isinstance(data, np.ndarray):
+            assert data.shape[0] == data.shape[1], "Input adjacency matrix is not square"
+            if data.dtype == np.int8:
+                self.adjacency_matrix = data
+            else:
+                self.adjacency_matrix = data.astype(np.int8)
+            self.adjacency_matrix &= 1
+            assert np.array_equal(self.adjacency_matrix.T, self.adjacency_matrix), "Input adjacency matrix is not symmetric"
+            self.num_vertices = self.adjacency_matrix.shape[0]
+        else:
+            assert False, "Unsupported input data format. Please provide either the number of vertices or a 2-dimensional symmetrical adjacency matrix"
 
     def copy(self):
         result = Graph(self.num_vertices)
@@ -176,4 +200,49 @@ class Graph:
     def __eq__(self, value) -> bool:
         return self.num_vertices == value.num_vertices and np.array_equal(self.adjacency_matrix, value.adjacency_matrix)
 
-        # Graph.star(5, 0)
+    def compress(self) -> int:
+        """Compress the graphs adjacency matrix into an integer where each
+        bit in the integer represents one edge of the graph. 
+
+        I.e. it contains the graph in compressed form as a bitstring integer
+        encoding one half of the adjacency matrix beginning with the least 
+        significant bit. For example take a 5×5 adjacency matrix, then the bit 
+        positions for each entry in the upper half are
+            - 0 1 2 3
+              - 4 5 6
+                - 7 8
+                  - 9
+                    -
+
+        This way a graph with the adjacency matrix
+           0 1 1 0 1
+           1 0 1 0 0
+           1 1 0 1 1  
+           0 0 1 0 0
+           1 0 1 0 0
+        becomes 0b0110011011
+        Returns
+        -------
+        int
+            graph id
+        """
+        n = self.num_vertices
+        code = 0
+        index = 0
+        for i in range(self.num_vertices - 1):
+            for j in range(i + 1, self.num_vertices):
+                if self.has_edge(i, j):
+                    code |= (1 << index)
+                index += 1
+        return code
+
+    @staticmethod
+    def decompress(num_vertices: int, id: int) -> "Graph":
+        graph = Graph(num_vertices)
+        index = 0
+        for i in range(num_vertices - 1):
+            for j in range(i + 1, num_vertices):
+                if id & (1 << index):
+                    graph.add_edge(i, j)
+                index += 1
+        return graph

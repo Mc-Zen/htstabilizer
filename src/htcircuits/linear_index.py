@@ -12,7 +12,9 @@ import numpy as np
 class NTuple:
     """Class for tuples of integer that are sorted upon creation"""
 
-    def __init__(self, data: List[int]):
+    def __init__(self, data: List[int] | int):
+        if isinstance(data, int):
+            data = [data]
         self.data = data
         self.data.sort()
 
@@ -58,6 +60,8 @@ class Repr:
     def __eq__(self, other) -> bool:
         return self.groups == other.groups
 
+    def __repr__(self) -> str:
+        return f"Repr{self.groups}"
 
 def linear_index_from_n_choose_2(n: int, i: int, j: int) -> int:
     """Get a unique linear index for pairs of values (i,j), i < j based on triangle numbers. 
@@ -157,7 +161,7 @@ def from_22(repr: Repr) -> int:
 def to_112(index: int) -> Repr:
     i, j = linear_index_to_n_choose2_to(4, index)
     rest = list(filter(lambda el: not el in [i, j], range(4)))
-    return Repr([NTuple([i, j]), NTuple(rest)])
+    return Repr([NTuple([i, j]), NTuple(rest[0]), NTuple(rest[1])])
 
 
 def from_112(repr: Repr) -> int:

@@ -1,6 +1,6 @@
-""" 
+"""
 Tools for determining equivalence classes under local complementation
-for stabilizer groups. 
+for stabilizer groups.
 """
 from enum import IntEnum, unique
 from typing import List
@@ -17,18 +17,18 @@ class LCClassBase(metaclass=abc.ABCMeta):
 
     def __init__(self, type_or_id, data: linear_index.Repr | None = None):
         """Create an LC class from either a class id or an entanglument structure type
-        together with further information on the exact LC class. 
+        together with further information on the exact LC class.
 
         Parameters
         ----------
         type_or_id : EntanglementStructure | int
-            Either an entanglement structure key that is appropriate for the 
-            type of this class or an LC class id in form of an integer. 
+            Either an entanglement structure key that is appropriate for the
+            type of this class or an LC class id in form of an integer.
         data : Repr, optional
-            Description of the qubit grouping, ignored if first parameter is an int. 
+            Description of the qubit grouping, ignored if first parameter is an int.
         """
         cls = type(self)
-        if isinstance(type_or_id, cls.EntanglementStructure): # type: ignore
+        if isinstance(type_or_id, cls.EntanglementStructure):  # type: ignore
             self.type = type_or_id
             if data is None:
                 data = linear_index.Repr()
@@ -40,7 +40,7 @@ class LCClassBase(metaclass=abc.ABCMeta):
         return self.type == other.type and self.data == other.data
 
     def id(self) -> int:
-        """Get a unique class id which is in the range [0, count()-1]. 
+        """Get a unique class id which is in the range [0, count()-1].
 
         Returns
         -------
@@ -48,15 +48,15 @@ class LCClassBase(metaclass=abc.ABCMeta):
             LC equivalence class id
         """
         cls = type(self)
-        com = cls.combinatorics[cls.combinatorics_map[self.type]] # type: ignore
-        return cls._start_indices[self.type] + com["to_lin_idx"](self.data) # type: ignore
+        com = cls.combinatorics[cls.combinatorics_map[self.type]]  # type: ignore
+        return cls._start_indices[self.type] + com["to_lin_idx"](self.data)  # type: ignore
 
-    def _from_id(self, id: int): 
+    def _from_id(self, id: int):
         """Assign this object to the LC equivalence class described by the given id"""
         cls = type(self)
         self.type = cls.get_entanglement_structure(id)
-        class_index = id - cls._start_indices[self.type] # type: ignore
-        com = cls.combinatorics[cls.combinatorics_map[self.type]] # type: ignore
+        class_index = id - cls._start_indices[self.type]  # type: ignore
+        com = cls.combinatorics[cls.combinatorics_map[self.type]]  # type: ignore
         self.data = com["from_lin_idx1"](class_index)
 
     @abc.abstractmethod
@@ -64,10 +64,10 @@ class LCClassBase(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def get_graph(self) -> Graph:
-        """Get one representative graph that is local-Clifford equivalent to 
-        this LC class and thus all stabilizers that belong to it. Note that 
+        """Get one representative graph that is local-Clifford equivalent to
+        this LC class and thus all stabilizers that belong to it. Note that
         there are many equivalent graphs, connected by local complementation
-        and the one returned here is sometimes somewhat arbitrary. 
+        and the one returned here is sometimes somewhat arbitrary.
 
         Returns
         -------
@@ -79,7 +79,7 @@ class LCClassBase(metaclass=abc.ABCMeta):
     @classmethod
     def LC_GI_size(cls, structure) -> int:
         """Get the number of LC classes in one LC+GI class (one entanglement structure type)"""
-        return cls._start_indices[structure+1] - cls._start_indices[structure] # type: ignore
+        return cls._start_indices[structure+1] - cls._start_indices[structure]  # type: ignore
 
     @classmethod
     def get_LC_type(cls, id: int):
@@ -98,9 +98,9 @@ class LCClassBase(metaclass=abc.ABCMeta):
             LC+GI equivalence class (Type) corresponding to the given id
         """
         assert 0 <= id < cls.count(), "Invalid id for equivalence classes LC(2)"
-        for i, start_index in enumerate(cls._start_indices): # type: ignore
+        for i, start_index in enumerate(cls._start_indices):  # type: ignore
             if start_index > id:
-                return cls.EntanglementStructure(i - 1) # type: ignore
+                return cls.EntanglementStructure(i - 1)  # type: ignore
 
     @classmethod
     def get_entanglement_structure(cls, id: int):
@@ -110,7 +110,10 @@ class LCClassBase(metaclass=abc.ABCMeta):
     @classmethod
     def count(cls) -> int:
         """Get the total number of 4-qubit LC classes"""
-        return cls._start_indices[-1] # type: ignore
+        return cls._start_indices[-1]  # type: ignore
+
+    def __repr__(self) -> str:
+        return f"Repr{self.id:self.data}"
 
 
 class LCClass2(LCClassBase):
@@ -211,7 +214,7 @@ class LCClass4(LCClassBase):
         if self.type == LCClass4.EntanglementStructure.Pair:
             graph.add_edge(*self.data.get(2, 0))
         elif self.type == LCClass4.EntanglementStructure.Triple:
-            graph.add_path(self.data.get(3, 0)[:3])
+            graph.add_path(self.data.get(3, 0))
         elif self.type == LCClass4.EntanglementStructure.TwoPairs:
             graph.add_edge(*self.data.get(2, 0))
             graph.add_edge(*self.data.get(2, 1))
@@ -220,7 +223,7 @@ class LCClass4(LCClassBase):
         elif self.type == LCClass4.EntanglementStructure.Line:
             graph.add_edge(*self.data.get(2, 0))
             graph.add_edge(*self.data.get(2, 1))
-            graph.add_edge(self.data.get(2, 0)[0], self.data.get(2, 1)[0])
+            graph.add_edge(self.data.get(2, 0)[0], self.data.get(2, 1)[1])
         return graph
 
 
@@ -271,13 +274,13 @@ class LCClass5(LCClassBase):
         if self.type == LCClass5.EntanglementStructure.Pair:
             graph.add_edge(*self.data.get(2, 0))
         elif self.type == LCClass5.EntanglementStructure.Triple:
-            graph.add_path(self.data.get(3, 0)[:3])
+            graph.add_path(self.data.get(3, 0))
         elif self.type == LCClass5.EntanglementStructure.TwoPairs:
             graph.add_edge(*self.data.get(2, 0))
             graph.add_edge(*self.data.get(2, 1))
         elif self.type == LCClass5.EntanglementStructure.Star4:
-            graph = Graph.star(self.num_qubits(), 0)
-            graph.remove_all_edges_to(self.data.get(1, 0))
+            graph = Graph.star(self.num_qubits(), self.data.get(4, 0)[0])
+            graph.remove_all_edges_to(self.data.get(1, 0)[0])
         elif self.type == LCClass5.EntanglementStructure.Line4:
             graph.add_edge(*self.data.get(2, 0))
             graph.add_edge(*self.data.get(2, 1))
@@ -286,7 +289,7 @@ class LCClass5(LCClassBase):
             graph = Graph.star(self.num_qubits(), 0)
         elif self.type == LCClass5.EntanglementStructure.PairAndTriple:
             graph.add_path(self.data.get(2, 0))
-            graph.add_path(self.data.get(3, 0)[:3])
+            graph.add_path(self.data.get(3, 0))
         elif self.type == LCClass5.EntanglementStructure.T:
             center = self.data.get(3, 0)[0]
             graph = Graph.star(self.num_qubits(), center)
@@ -301,10 +304,10 @@ class LCClass5(LCClassBase):
 
 
 def determine_lc_class(stabilizer: Stabilizer) -> LCClass2 | LCClass3 | LCClass4 | LCClass5:
-    """Determine the graph equivalence class under local complementation (LC class), 
+    """Determine the graph equivalence class under local complementation (LC class),
     that the stabilizer uniquely corresponds to. Every stabilizer state is local-Clifford
-    equivalent to one or more graph states which are all in the same orbit under local 
-    complementation. 
+    equivalent to one or more graph states which are all in the same orbit under local
+    complementation.
 
     Parameters
     ----------
@@ -314,7 +317,7 @@ def determine_lc_class(stabilizer: Stabilizer) -> LCClass2 | LCClass3 | LCClass4
     Returns
     -------
     LCClass2 | LCClass3 | LCClass4 | LCClass5
-        LC class description together with type and vertex data. 
+        LC class description together with type and vertex data.
     """
     num_qubits = stabilizer.num_qubits
     assert 2 <= num_qubits <= 5, "LC class determination is only supported for up to 5 qubits"
@@ -363,7 +366,7 @@ def determine_lc_class4(stabilizer: Stabilizer):
     if num_entangled_qubits == 0:
         return LCClass4(LCClass4.EntanglementStructure.Separable)
     elif num_entangled_qubits == 2:
-        return LCClass4(LCClass4.EntanglementStructure.Pair, linear_index.Repr([entangled_qubits, unentangled_qubits]))
+        return LCClass4(LCClass4.EntanglementStructure.Pair, linear_index.Repr([entangled_qubits, [unentangled_qubits[0]], [unentangled_qubits[1]]]))
     elif num_entangled_qubits == 3:
         return LCClass4(LCClass4.EntanglementStructure.Triple, linear_index.to_13(unentangled_qubits[0]))
     elif num_entangled_qubits == 4:

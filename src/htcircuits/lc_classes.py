@@ -173,7 +173,7 @@ class LCClass3(LCClassBase):
         if self.type == LCClass3.EntanglementStructure.Pair:
             graph.add_edge(*self.data.get(2, 0))
         elif self.type == LCClass3.EntanglementStructure.Triple:
-            graph = Graph.fully_connected(self.num_qubits())
+            graph.add_path([0, 1, 2])
         return graph
 
 

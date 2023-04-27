@@ -104,8 +104,11 @@ class Graph:
         return edges
 
     def draw(self, filename=None, show=False, size=100, point_size=10):
-        """Draw a graph using matplotlib. If filename is provided, the result graphic is stored
-        at the path given by the filename. 
+        """Draw a graph using matplotlib. If filename is provided, the result
+        graphic is storedat the path given by the filename. 
+
+        When drawn, the zeroth vertex vertex is drawn at the topmost position
+        and from there the order is clockwise. 
 
         Parameters
         ----------

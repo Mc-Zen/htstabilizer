@@ -70,6 +70,10 @@ class TestLinearIndex(unittest.TestCase):
         for i in range(15):
             self.assertEqual(from_122(to_122(i)), i)
 
+        # special cases where the input order is different
+        self.assertEqual(from_122(Repr([[1], [0, 4], [2, 3]])), 3)
+        self.assertEqual(from_122(Repr([[1], [0, 4], [2, 3]])), 3)
+
     def test_linear_index_from_n_choose_2(self):
         for n in range(6):
             for i in range(n*(n-1) // 2):

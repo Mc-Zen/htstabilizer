@@ -63,6 +63,7 @@ class Repr:
     def __repr__(self) -> str:
         return f"Repr{self.groups}"
 
+
 def linear_index_from_n_choose_2(n: int, i: int, j: int) -> int:
     """Get a unique linear index for pairs of values (i,j), i < j based on triangle numbers. 
 
@@ -199,8 +200,8 @@ def from_122(repr: Repr) -> int:
         b, c = pair1[0], pair1[1]
     elif pair1[1] == ap1:
         b, c = pair1[1], pair1[0]
-    elif pair2[1] == ap1:
-        b, c = pair2[1], pair2[0]
+    elif pair2[0] == ap1:
+        b, c = pair2[0], pair2[1]
     elif pair2[1] == ap1:
         b, c = pair2[1], pair2[0]
     return 3 * single + (5 + c - b) % 5 - 1

@@ -1,3 +1,4 @@
+from qiskit import QuantumCircuit
 from src.htcircuits.stabilizer import Stabilizer
 from src.htcircuits.graph import Graph
 
@@ -52,6 +53,17 @@ class TestStabilizer(unittest.TestCase):
                       [0, 0, 0, 1]])
         self.assertTrue(np.array_equal(s.S, S))
 
+    def test_quantum_circuit_constructor(self):
+        qc = QuantumCircuit(3)
+        qc.h(0)
+        s = Stabilizer(qc)
+        self.assertEqual(s, Stabilizer(["XII", "IZI", "IIZ"]))
+        qc = QuantumCircuit(3)
+        qc.cx(1, 2)
+        qc.h(0)
+        s = Stabilizer(qc)
+        self.assertEqual(s, Stabilizer(["XII", "IZI", "IZZ"]))
+
     def test_equality(self):
 
         s1 = Stabilizer(["ZXX", "XZI", "XIZ"])
@@ -72,21 +84,28 @@ class TestStabilizer(unittest.TestCase):
 
     def test_expand(self):
         R = np.array([[1, 0, 0],
-                       [0, 1, 1],
-                       [0, 1, 1]])
+                      [0, 1, 1],
+                      [0, 1, 1]])
         s = Stabilizer((R, np.eye(3)))
         X, Z = s.expand()
         self.assertTrue(np.array_equal(X, np.array([[0, 1, 0, 1, 0, 1, 0, 1],
                                                     [0, 0, 1, 1, 1, 1, 0, 0],
                                                     [0, 0, 1, 1, 1, 1, 0, 0]])))
-        
+
         self.assertTrue(np.array_equal(Z, np.array([[0, 1, 0, 1, 0, 1, 0, 1],
                                                     [0, 0, 1, 1, 0, 0, 1, 1],
                                                     [0, 0, 0, 0, 1, 1, 1, 1]])))
-
 
     def test_is_qubit_entangled(self):
         s = Stabilizer(["XYI", "ZXX", "YZI"], validate=True)
         self.assertEqual(s.is_qubit_entangled(0), True)
         self.assertEqual(s.is_qubit_entangled(1), True)
         self.assertEqual(s.is_qubit_entangled(2), False)
+
+    def test_is_equivalent(self):
+        s = Stabilizer(["XYI", "ZXX", "YZI"], validate=True)
+        self.assertTrue(s.is_equivalent(Stabilizer(["YZI", "ZXX", "XYI"])))
+        self.assertTrue(s.is_equivalent(Stabilizer(["ZXX", "YZI", "XYI"])))
+        self.assertTrue(s.is_equivalent(Stabilizer(["XYX", "YZI", "XYI"])))
+        self.assertTrue(s.is_equivalent(Stabilizer(["XYX", "YZI", "ZXI"])))
+        self.assertFalse(s.is_equivalent(Stabilizer(["YZI", "ZXX", "XXI"])))

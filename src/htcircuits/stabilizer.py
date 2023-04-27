@@ -1,5 +1,7 @@
 import numpy as np
 from typing import List, Tuple
+
+from qiskit import QuantumCircuit
 from .graph import Graph
 from . import f2_algebra as f2
 
@@ -7,9 +9,10 @@ from . import f2_algebra as f2
 class Stabilizer:
     """Description of a stabilizer group for qubit systems."""
 
-    def __init__(self, data: List[str] | Graph | Tuple[np.ndarray, np.ndarray], validate: bool = False):
+    def __init__(self, data: List[str] | Graph | Tuple[np.ndarray, np.ndarray] | QuantumCircuit, validate: bool = False):
         """Create an n-qubit stabilizer table from either
           - a list of n Pauli strings (need to commute and be independant) making up the generator
+            e.g. ["XY", "YZ", "ZX"]. The first character corresponds to the first qubit. 
           - a graph representing a graph state
           - or a pair of n×n matrices encoding the X and Z components of the generator, in the following way:
             Given a set of Paulis {P_1,...,P_n}, then the X and Z matrices are given by
@@ -24,7 +27,7 @@ class Stabilizer:
         --------
 
         Below some examples that result in the exact same stabilizer. 
-
+        ```
         s1 = Stabilizer(["ZXX", "XZI", "XIZ"])
 
         s2 = Stabilizer(Graph.star(3))
@@ -36,6 +39,7 @@ class Stabilizer:
                       [0, 1, 0],
                       [0, 0, 1]])
         s3 = Stabilizer((R, S))
+        ```
 
 
         Parameters
@@ -76,6 +80,12 @@ class Stabilizer:
                 self.R = self.R.astype(np.int8)
             if self.S.dtype != np.int8:
                 self.S = self.S.astype(np.int8)
+        elif isinstance(data, QuantumCircuit):
+            from qiskit.quantum_info import StabilizerState
+            stabilizer_state = StabilizerState(data)
+            self.num_qubits = stabilizer_state.num_qubits
+            self.R = stabilizer_state.clifford.tableau[self.num_qubits: 2 * self.num_qubits, :self.num_qubits].astype(np.int8).T
+            self.S = stabilizer_state.clifford.tableau[self.num_qubits: 2 * self.num_qubits, self.num_qubits:-1].astype(np.int8).T
         else:
             assert False, "Unsupported input data"
 
@@ -113,8 +123,8 @@ class Stabilizer:
         for i in range(1 << n):
             for j in range(n):
                 if i & (1 << j):
-                    X[:,i] ^= self.R[:,j]
-                    Z[:,i] ^= self.S[:,j]
+                    X[:, i] ^= self.R[:, j]
+                    Z[:, i] ^= self.S[:, j]
         return X, Z
 
     def is_qubit_entangled(self, qubit: int) -> bool:
@@ -135,3 +145,37 @@ class Stabilizer:
 
     def __eq__(self, other) -> bool:
         return self.num_qubits == other.num_qubits and np.array_equal(self.R, other.R) and np.array_equal(self.S, other.S)
+
+    def is_equivalent(self, other) -> bool:
+        """Check whether both stabilizers span the same stabilizer group. 
+        Note, that this is different to `__eq__(self, other)` because the
+        latter only checks if the generator is exactly the same one. Two
+        different generators (in the simplest case just reordered ones)
+        can still span the same stabilizer group. 
+
+        Parameters
+        ----------
+        other : Stabilizer
+            Stabilizer to compare with
+
+        Returns
+        -------
+        bool
+            True, if the same group is spanned by both stabilizers
+        """
+        if self.num_qubits != other.num_qubits:
+            return False
+        n = self.num_qubits
+        RS = np.concatenate([self.R, self.S])
+        RS_other = np.concatenate([other.R, other.S])
+        zero = np.zeros((n, n), dtype=np.int8)
+        I = np.eye(n, dtype=np.int8)
+        symp = np.block([[zero, I],
+                         [I,    zero]])
+        return not np.any(f2.mat_mul(f2.mat_mul(RS.T, symp), RS_other))
+
+    def __repr__(self) -> str:
+        chs = ["I", "X", "Z", "Y"]
+        pauli_strings = ["\"" + "".join(chs[2*self.S[i][j] + self.R[i][j]] for i in range(self.num_qubits)) + "\"" for j in range(self.num_qubits)]
+        content = ",".join(pauli_strings)
+        return f"Stabilizer([{content}])"

@@ -1,4 +1,6 @@
 import itertools
+
+from qiskit import QuantumCircuit
 from . import f2_algebra as f2
 from .graph import Graph
 import numpy as np
@@ -222,18 +224,62 @@ def find_local_clifford_layer(R: np.ndarray, S: np.ndarray, graph: Graph) -> Opt
     cc = f2.mat_mul(combinations, np.array(kernel))
 
     for row in cc:
+        valid = True
         for i in range(n):
             c1 = row[i*4+0] | row[i*4+1]
             c2 = row[i*4+2] | row[i*4+3]
-            if c1 ^ c2 == 1:
-                # print(row)
-                Us = [np.zeros(4, dtype=np.int8) for j in range(n)]
-                for j in range(n):
-                    for k in range(4):
-                        if row[j*4+k]:
-                            Us[j] = f2.add(Us[j], np.array(cs[k]))
-                As = generate_local_clifford_symplectic(Us)
-                # print(Us, *As, sep="\n")
+            if c1 ^ c2 == 0:
+                valid = False
+                break
 
-                return As
+        if valid:
+            Us = [np.zeros(4, dtype=np.int8) for j in range(n)]
+            for j in range(n):
+                for k in range(4):
+                    if row[j*4+k]:
+                        Us[j] = f2.add(Us[j], np.array(cs[k]))
+            As = generate_local_clifford_symplectic(Us)
+            # print(Us, *As, sep="\n")
+
+            return As
     return None
+
+
+def local_clifford_layer_to_circuit(A: List[np.ndarray]) -> QuantumCircuit:
+    """Generate a qiskit circuit from a local clifford layer as returned by 
+    `find_local_clifford_layer()`. 
+
+    Parameters
+    ----------
+    A : List[np.ndarray]
+        Local Clifford in symplectic form given as block matrices [Axx, Axz, Azx, Azz],
+        see `find_local_clifford_layer()`. 
+
+    Returns
+    -------
+    QuantumCircuit
+        qiskit circuit that implements the given local clifford
+    """
+    n = A[0].shape[0]
+    qc = QuantumCircuit(n)
+    for i in range(n):
+        c = [A[j][i][i] for j in range(4)]
+        if c == [1, 0, 0, 1]:  # I
+            pass
+        elif c == [0, 1, 1, 0]:  # H
+            qc.h(i)
+        elif c == [1, 0, 1, 1]:  # S
+            qc.s(i)
+        elif c == [1, 1, 1, 0]:  # HS
+            qc.s(i)
+            qc.h(i)
+        elif c == [0, 1, 1, 1]:  # SH
+            qc.h(i)
+            qc.s(i)
+        elif c == [1, 1, 0, 1]:  # HSH
+            qc.h(i)
+            qc.s(i)
+            qc.h(i)
+        else:
+            assert False, "This is not a local Clifford"
+    return qc

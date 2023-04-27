@@ -5,7 +5,7 @@ from src.htcircuits.lc_classes import *
 from src.htcircuits.graph import Graph
 from qiskit import transpile
 from qiskit.circuit.library import GraphState
-from qiskit.quantum_info import Statevector
+from qiskit.quantum_info import Statevector, StabilizerState
 from numpy.testing import assert_almost_equal
 
 class TestCircuitLookup(unittest.TestCase):

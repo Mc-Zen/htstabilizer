@@ -32,10 +32,6 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class, LCClass2(lc_class.id()))
 
     def test_determine_lc_class3(self):
-        for i in range(LCClass4.count()):
-            LCClass4(i).get_graph().draw(show=True)
-            print( LCClass4(i).get_graph().compress())
-        return
         lc_class = determine_lc_class3(Stabilizer(["XYI", "XIZ", "IYZ"]))
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Separable)
         self.assertEqual(lc_class.id(), 0)

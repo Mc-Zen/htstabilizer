@@ -8,6 +8,7 @@ from qiskit.circuit.library import GraphState
 from qiskit.quantum_info import Statevector, StabilizerState
 from numpy.testing import assert_almost_equal
 
+
 class TestCircuitLookup(unittest.TestCase):
 
     def are_circuits_equivalent(self, c1, c2):
@@ -50,11 +51,21 @@ class TestCircuitLookup(unittest.TestCase):
     def verify_state_for_all(self, num_qubits, connectivity):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
-        for i in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, i)
+        for id in range(cls.count()):
+            info = circuit_lookup(num_qubits, connectivity, id)
+            self.verify_state(info)
+
+    def verify_lc_class_for_all(self, num_qubits, connectivity):
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        cls = LCClasses[num_qubits - 2]
+        for id in range(cls.count()):
+            info = circuit_lookup(num_qubits, connectivity, id)
+            lc_class = determine_lc_class(Stabilizer(Graph.decompress(num_qubits, info.graph_id)))
+            self.assertEqual(id, lc_class.id())
             self.verify_state(info)
 
     def test_verify_cost_and_depth(self):
+        self.verify_cost_and_depth_for_all(2, "all")
         self.verify_cost_and_depth_for_all(3, "all")
         self.verify_cost_and_depth_for_all(3, "linear")
         self.verify_cost_and_depth_for_all(4, "all")
@@ -62,11 +73,20 @@ class TestCircuitLookup(unittest.TestCase):
         self.verify_cost_and_depth_for_all(5, "linear")
 
     def test_verify_state(self):
+        self.verify_state_for_all(2, "all")
         self.verify_state_for_all(3, "all")
         self.verify_state_for_all(3, "linear")
         self.verify_state_for_all(4, "all")
         self.verify_state_for_all(5, "all")
         self.verify_state_for_all(5, "linear")
+
+    def test_verify_lc_class(self):
+        self.verify_lc_class_for_all(2, "all")
+        self.verify_lc_class_for_all(3, "all")
+        self.verify_lc_class_for_all(3, "linear")
+        self.verify_lc_class_for_all(4, "all")
+        self.verify_lc_class_for_all(5, "all")
+        self.verify_lc_class_for_all(5, "linear")
 
     def test_circuit_info(self):
         info = CircuitInfo(4, "23:4:3:cx0,1 cx2,3 cx3,2 cx2,1 h0")

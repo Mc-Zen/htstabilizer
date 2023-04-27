@@ -93,7 +93,7 @@ class Graph:
         """
         return self.adjacency_matrix.sum() // 2
 
-    def get_edges(self) -> List[Tuple[int]]:
+    def get_edges(self) -> List[Tuple[int, int]]:
         """Get a list of tuples containing the vertices for each edge in the graph
         """
         edges = []

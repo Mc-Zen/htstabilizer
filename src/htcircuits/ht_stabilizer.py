@@ -13,6 +13,8 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     a given stabilizer state on a certain hardware connectivity. 
 
     Supported hardware connectivities:
+    2 Qubits
+        "all": Both qubits are connected
     3 Qubits
         "all": all-to-all connectivitiy
         "linear": Linear chain 0--1--2
@@ -31,7 +33,7 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     Parameters
     ----------
     stabilizer : Stabilizer
-        _description_
+        Stabilizer state
     connectivity : Literal["all", "linear", "T", "star"]
         Connectivity type
 
@@ -39,18 +41,23 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     -------
     QuantumCircuit
         Preparation circuit for input stabilizer
-
-    Raises
-    ------
-    ValueError
-        _description_
     """
+    n = stabilizer.num_qubits
+    if n < 2 or n > 5:
+        raise ValueError(f"The given stabilizer has {n} qubits which is not supported.")
+
+    valid_connectivity = (n == 2 and connectivity == "all") or \
+                         (n == 3 and connectivity in ["all", "linear"]) or \
+                         (n == 4 and connectivity in ["all", "linear"]) or \
+                         (n == 5 and connectivity in ["all", "linear", "T", "star"])
+    if not valid_connectivity:
+        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {n} qubits.")
 
     lc_class_id = lc_classes.determine_lc_class(stabilizer).id()
     circuit_info = circuit_lookup.circuit_lookup(stabilizer.num_qubits, connectivity, lc_class_id)
     layer = find_local_clifford_layer(stabilizer.R, stabilizer.S, Graph.decompress(stabilizer.num_qubits, circuit_info.graph_id))
-    if layer == None:
-        raise ValueError()
+    if layer is None:
+        raise RuntimeError("No circuit could be found. Please validate the input stabilizer.")
     layer_circuit = local_clifford_layer_to_circuit(layer).inverse()
     return circuit_info.parse_circuit().compose(layer_circuit)  # type: ignore
 

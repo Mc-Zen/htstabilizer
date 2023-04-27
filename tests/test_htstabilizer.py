@@ -20,8 +20,11 @@ class TestHTStabilizer(unittest.TestCase):
         get_connectivity_graph(5, "T")
         get_connectivity_graph(5, "star")
 
-        get_connectivity_graph(5, "T").draw(show=True)
+        # get_connectivity_graph(5, "T").draw(show=True)
 
+    def test_special_cases(self):
+        stabilizer = Stabilizer(["ZIIIX", "IZIII", "IIXXI", "IIZYI", "YIIIY"])
+        qc = get_preparation_circuit(stabilizer, "all")
 
     def verify_random_stabilizers(self, num_qubits, connectivity, num):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
@@ -38,6 +41,9 @@ class TestHTStabilizer(unittest.TestCase):
         qc = get_preparation_circuit(stabilizer, "all")
         self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
 
+    def test_random_stabilizers_2_all(self):
+        self.verify_random_stabilizers(2, "all", num=500)
+
     def test_random_stabilizers_3_all(self):
         self.verify_random_stabilizers(3, "all", num=500)
 
@@ -45,10 +51,10 @@ class TestHTStabilizer(unittest.TestCase):
         self.verify_random_stabilizers(3, "linear", num=500)
 
     def test_random_stabilizers_4_all(self):
-        self.verify_random_stabilizers(4, "all", num=200)
+        self.verify_random_stabilizers(4, "all", num=500)
 
     def test_random_stabilizers_5_all(self):
-        self.verify_random_stabilizers(5, "all", num=200)
+        self.verify_random_stabilizers(5, "all", num=500)
 
     def test_random_stabilizers_5_linear(self):
-        self.verify_random_stabilizers(5, "linaer", num=200)
+        self.verify_random_stabilizers(5, "linear", num=500)

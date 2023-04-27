@@ -239,8 +239,6 @@ def find_local_clifford_layer(R: np.ndarray, S: np.ndarray, graph: Graph) -> Opt
                     if row[j*4+k]:
                         Us[j] = f2.add(Us[j], np.array(cs[k]))
             As = generate_local_clifford_symplectic(Us)
-            # print(Us, *As, sep="\n")
-
             return As
     return None
 

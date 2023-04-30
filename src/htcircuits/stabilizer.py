@@ -28,16 +28,16 @@ class Stabilizer:
 
         Below some examples that result in the exact same stabilizer. 
         ```
-        s1 = Stabilizer(["ZXX", "XZI", "XIZ"])
+        s1 = Stabilizer(["XZZ", "ZXI", "ZIX"])
 
         s2 = Stabilizer(Graph.star(3))
 
-        R = np.array([[0, 1, 1],
-                      [1, 0, 0],
-                      [1, 0, 0]])
-        S = np.array([[1, 0, 0],
+        R = np.array([[1, 0, 0],
                       [0, 1, 0],
                       [0, 0, 1]])
+        S = np.array([[0, 1, 1],
+                      [1, 0, 0],
+                      [1, 0, 0]])
         s3 = Stabilizer((R, S))
         ```
 
@@ -73,8 +73,8 @@ class Stabilizer:
                     self.S[col, row] = int(character in "ZY")
         elif isinstance(data, Graph):
             self.num_qubits = data.num_vertices
-            self.R = data.adjacency_matrix
-            self.S = np.eye(self.num_qubits, dtype=np.int8)
+            self.R = np.eye(self.num_qubits, dtype=np.int8)
+            self.S = data.adjacency_matrix
 
             if self.R.dtype != np.int8:
                 self.R = self.R.astype(np.int8)

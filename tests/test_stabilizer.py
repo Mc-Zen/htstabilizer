@@ -42,15 +42,15 @@ class TestStabilizer(unittest.TestCase):
 
     def test_graph_state_constructor(self):
         s = Stabilizer(Graph.star(4))
-        R = np.array([[0, 1, 1, 1],
-                      [1, 0, 0, 0],
-                      [1, 0, 0, 0],
-                      [1, 0, 0, 0]])
-        self.assertTrue(np.array_equal(s.R, R))
-        S = np.array([[1, 0, 0, 0],
+        R = np.array([[1, 0, 0, 0],
                       [0, 1, 0, 0],
                       [0, 0, 1, 0],
                       [0, 0, 0, 1]])
+        self.assertTrue(np.array_equal(s.R, R))
+        S = np.array([[0, 1, 1, 1],
+                      [1, 0, 0, 0],
+                      [1, 0, 0, 0],
+                      [1, 0, 0, 0]])
         self.assertTrue(np.array_equal(s.S, S))
 
     def test_quantum_circuit_constructor(self):
@@ -66,16 +66,16 @@ class TestStabilizer(unittest.TestCase):
 
     def test_equality(self):
 
-        s1 = Stabilizer(["ZXX", "XZI", "XIZ"])
+        s1 = Stabilizer(["XZZ", "ZXI", "ZIX"])
 
         s2 = Stabilizer(Graph.star(3))
 
-        R = np.array([[0, 1, 1],
-                      [1, 0, 0],
-                      [1, 0, 0]])
-        S = np.array([[1, 0, 0],
+        R = np.array([[1, 0, 0],
                       [0, 1, 0],
                       [0, 0, 1]])
+        S = np.array([[0, 1, 1],
+                      [1, 0, 0],
+                      [1, 0, 0]])
         s3 = Stabilizer((R, S))
 
         self.assertEqual(s1, s2)

@@ -31,7 +31,7 @@ class NTuple:
         return str(self.data)
 
     def __repr__(self) -> str:
-        return f"NTuple{self.data}"
+        return f"NTuple({self.data})"
 
 
 class Repr:
@@ -61,7 +61,8 @@ class Repr:
         return self.groups == other.groups
 
     def __repr__(self) -> str:
-        return f"Repr{self.groups}"
+        items = [item for sublist in self.groups.values() for item in sublist]
+        return f"Repr({items})"
 
 
 def linear_index_from_n_choose_2(n: int, i: int, j: int) -> int:
@@ -146,6 +147,14 @@ def from_14(repr: Repr) -> int:
     return from_1n(5, repr)
 
 
+def to_15(index: int) -> Repr:
+    return to_1n(6, index)
+
+
+def from_15(repr: Repr) -> int:
+    return from_1n(6, repr)
+
+
 def to_22(index: int) -> Repr:
     rest = list(filter(lambda el: el != index + 1, range(1, 4)))
     return Repr([NTuple([0, index+1]), NTuple(rest)])
@@ -205,3 +214,86 @@ def from_122(repr: Repr) -> int:
     elif pair2[1] == ap1:
         b, c = pair2[1], pair2[0]
     return 3 * single + (5 + c - b) % 5 - 1
+
+
+def to_123(index: int) -> Repr:
+    a = index // 10
+    b, c = linear_index_to_n_choose2_to(5, index % 10)
+    b = (b+a+1) % 6
+    c = (c+a+1) % 6
+    rest = list(filter(lambda el: not el in [a, b, c], range(6)))
+    return Repr([NTuple([a]), NTuple([b, c]), NTuple(rest)])
+
+
+def from_123(repr: Repr) -> int:
+    a = repr.get(1, 0)[0]
+    pair = repr.get(2, 0)
+    b, c = (pair[0]-a+5) % 6, (pair[1]-a+5) % 6
+    b, c = min([b, c]), max([b, c])
+    index = linear_index_from_n_choose_2(5, b, c)
+    return 10 * a + index
+
+
+def to_33(index: int) -> Repr:
+    a = 0
+    b, c = linear_index_to_n_choose2_to(5, index)
+    b = (b+1) % 6
+    c = (c+1) % 6
+    rest = list(filter(lambda el: not el in [a, b, c], range(6)))
+    return Repr([NTuple([a, b, c]), NTuple(rest)])
+
+
+def from_33(repr: Repr) -> int:
+    # find the tuple that has the 0
+
+    triple1, triple2 = repr.get(3, 0), repr.get(3, 1)
+    if 0 in triple2:
+        triple1 = triple2
+    rest = list(filter(lambda el: el != 0, triple1))
+    assert len(rest) == 2
+    b, c = (rest[0]+5) % 6, (rest[1]+5) % 6
+    if b > c:
+        b, c = c, b
+    return linear_index_from_n_choose_2(5, b, c)
+
+
+def to_24(index: int) -> Repr:
+    i, j = linear_index_to_n_choose2_to(6, index)
+    rest = list(filter(lambda el: not el in [i, j], range(6)))
+    return Repr([NTuple([i, j]), NTuple(rest)])
+
+
+def from_24(repr: Repr) -> int:
+    pair = repr.get(2, 0)
+    return linear_index_from_n_choose_2(6, *pair)
+
+# 4 Qubits:
+#   Config  |  Size
+# ----------|-------
+#   1111=4  |   1
+#   13      |   4
+#   112     |   6
+#   22      |   3
+
+# 5 Qubits:
+#   Config  |  Size
+# ----------|-------
+#   11111=5 |   1
+#   14      |   5
+#   122     |  15
+#   23      |  10
+
+# 6 Qubits:
+#   Config  |  Size
+# ----------|-------
+#  111111=6 |*   1
+#  15       |*   6  = (6 choose 1)
+#  33       |*  10  = (6 choose 3) / 2
+#  222      |   15  = (6 choose 2) * (4 choose 2) / 6
+#  11112=24 |*  15  = (6 choose 2)
+#  1113     |   20  = (6 choose 3)
+#  1122     |   45  = (6 choose 2) * (4 choose 2) / 2
+#  123      |*  60  = (6 choose 2) * (4 choose 1) = (6 choose 1) * (5 choose 2)
+
+
+#

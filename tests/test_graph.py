@@ -53,7 +53,7 @@ class TestGraph(unittest.TestCase):
         # g.add_path([0,1,2,3])
         g.add_path([0, 1, 2, 4])
         g = Graph.star(5, 1)
-        # g.draw(show=True)
+        g.draw(show=True)
 
     def test_star(self):
         self.assertTrue(np.array_equal(Graph.star(3, 1).adjacency_matrix, np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]], dtype=np.int8)))

@@ -103,7 +103,7 @@ class Graph:
                     edges.append((i, j))
         return edges
 
-    def draw(self, filename=None, show=False, size=100, point_size=10):
+    def draw(self, filename=None, show=False, size=100, point_size=10, show_vertex_labels: bool = True, first_vertex_label: int = 1):
         """Draw a graph using matplotlib. If filename is provided, the result
         graphic is storedat the path given by the filename. 
 
@@ -113,13 +113,17 @@ class Graph:
         Parameters
         ----------
         filename : str, optional
-            If given, the graphic is stored here, by default None
+            If specified, the resulting graphics is saved as an image to this location, by default None
         show : bool, optional
-            Whether to show the graph in a separate wi, by default False
+            If set to true, plt.show() is called, usually showing the graphic in a new window, by default False
         size : int, optional
             Graphic size in px , by default 100
         point_size : int, optional
             Vertex size in px, by default 10
+        show_vertex_labels : bool, optional
+            If true, vertex index labels are shown, by default True
+        first_vertex_label : int, optional
+            The vertex index to start with, e.g. 0 or 1, by default 1
 
         Returns
         -------
@@ -127,7 +131,7 @@ class Graph:
             A matplotlib figure
         """
         from .graph_draw import draw_graph
-        return draw_graph(self, filename=filename, show=show, size=size, point_size=point_size)
+        return draw_graph(self, filename=filename, show=show, size=size, point_size=point_size, show_vertex_labels=show_vertex_labels, first_vertex_label=first_vertex_label)
 
     @staticmethod
     def fully_connected(num_vertices: int):

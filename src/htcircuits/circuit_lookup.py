@@ -113,10 +113,8 @@ class CircuitInfo:
                     qc.swap(qubits[0], qubits[1])
                 else:
                     qc.s(int(instruction[1:]))
-                pass
             else:
                 assert False, "Invalid instruction name"
-        qc.depth()
         return qc
 
 

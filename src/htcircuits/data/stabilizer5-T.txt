@@ -1,0 +1,93 @@
+0:0:0:h4 h3 h2 h1 h0 
+1:1:1:h4 h3 h2 h1 h0 cz0,1 
+2:1:1:h4 h3 h2 h1 h0 cz0,2 
+4:1:1:h4 h3 h2 h1 h0 cz0,3 
+8:3:3:h3 cx3,0 cx3,4 h1 h2 h3 h4 cz0,3 
+16:3:3:h0 cx0,1 cx0,2 h0 h2 h3 h4 cz0,1 
+32:3:3:h0 cx0,1 cx0,3 h0 h2 h3 h4 cz0,1 
+64:7:7:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,1 
+128:3:3:h0 cx0,2 cx0,3 h0 h1 h3 h4 cz0,2 
+256:7:7:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,2 
+512:1:1:h4 h3 h2 h1 h0 cz3,4 
+640:4:3:h0 cx0,2 cx0,3 h0 h1 h3 h4 cz0,2 cz3,4 
+544:4:3:h0 cx0,1 cx0,3 h0 h2 h3 h4 cz0,1 cz3,4 
+272:8:8:h4 h3 h2 h1 h0 cz3,4 swap3,0 cz0,1 swap2,0 
+144:4:4:h0 cx0,1 cx0,2 cx0,3 h0 h1 h3 h4 cz0,2 
+516:2:2:h4 h3 h2 h1 h0 cz3,4 cz0,3 
+264:4:3:h3 cx3,0 cx0,2 cx3,4 h0 h1 h2 h3 cz3,4 
+130:2:2:h0 cx0,2 cx0,3 h0 h1 h3 h4 
+72:4:3:h3 cx3,0 cx0,1 cx3,4 h0 h1 h2 h3 cz3,4 
+33:2:2:h0 cx0,1 cx0,3 h0 h2 h3 h4 
+17:2:2:h0 cx0,1 cx0,2 h0 h2 h3 h4 
+528:4:3:h0 cx0,1 cx0,2 h0 h2 h3 h4 cz0,1 cz3,4 
+288:8:7:h4 h3 h2 h1 h0 cz3,4 cz0,1 swap3,0 swap2,0 
+192:8:7:h4 h3 h2 h1 h0 cz3,4 cz0,2 swap3,0 swap1,0 
+136:5:4:h4 h3 h2 h1 h0 cz3,4 cz0,2 swap3,0 
+260:8:8:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,2 cz0,3 
+514:2:1:h4 h3 h2 h1 h0 cz3,4 cz0,2 
+513:2:1:h4 h3 h2 h1 h0 cz3,4 cz0,1 
+68:8:8:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,1 cz0,3 
+40:5:4:h4 h3 h2 h1 h0 cz3,4 cz0,1 swap3,0 
+24:8:7:h4 h3 h2 h1 h0 cz0,2 swap1,0 cz3,4 swap3,0 
+66:8:8:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,1 cz0,2 
+257:8:8:h4 h3 h2 h1 h0 cz3,4 swap3,0 swap0,2 cz0,1 
+129:4:4:h0 cx0,2 cx0,3 h0 h1 h3 h4 cz0,1 cz0,2 
+34:4:4:h0 cx0,1 cx0,3 h0 h2 h3 h4 cz0,1 cz0,2 
+20:4:4:h0 cx0,1 cx0,2 h0 h2 h3 h4 cz0,1 cz0,3 
+112:5:4:h0 cx0,1 cx0,2 cx0,3 cx3,4 h0 h2 h3 h4 cz0,1 
+14:3:2:h3 cx3,0 cx0,2 cx3,4 h1 h2 h3 h4 
+13:3:2:h3 cx3,0 cx0,1 cx3,4 h1 h2 h3 h4 
+11:5:4:h3 cx3,0 cx0,1 cx0,2 cx3,4 h1 h2 h3 h4 cz0,3 
+7:3:3:h4 h3 h2 h1 h0 cz0,3 cz0,2 cz0,1 
+560:5:4:h0 cx0,1 cx0,2 cx0,3 h0 h2 h3 h4 cz0,1 cz3,4 
+800:8:6:h3 cx3,0 cx0,2 cx3,4 h0 h1 h2 h3 cz0,1 cz3,4 swap3,0 
+704:8:6:h3 cx3,0 cx0,1 cx3,4 h0 h1 h2 h3 cz0,2 cz3,4 swap3,0 
+902:5:4:h3 cx3,0 cx0,2 cx3,4 h0 h1 h3 h4 cz0,3 cz3,4 
+390:4:3:h3 cx3,0 cx0,2 cx3,4 h0 h1 h3 h4 cz0,3 
+642:3:2:h3 cx3,0 cx0,2 h0 h1 h3 h4 cz3,4 
+521:3:2:h0 cx0,3 cx3,4 h0 h1 h2 h3 cz0,1 
+588:4:3:h3 cx3,0 cx0,1 cx3,4 h0 h1 h2 h3 cz0,3 
+613:5:4:h3 cx3,0 cx0,1 cx3,4 h0 h2 h3 h4 cz0,3 cz3,4 
+331:7:5:h3 cx3,0 cx0,1 cx0,2 cx3,4 h0 h1 h2 h3 cz0,1 cz0,2 cz3,4 
+74:5:3:h3 cx3,0 cx0,1 cx3,4 h0 h1 h2 h3 cz0,2 cz3,4 
+265:5:3:h3 cx3,0 cx0,2 cx3,4 h0 h1 h2 h3 cz0,1 cz3,4 
+133:3:3:h0 cx0,2 cx0,3 h0 h1 h2 h4 cz0,1 
+38:3:3:h0 cx0,1 cx0,3 h0 h1 h2 h4 cz0,2 
+22:3:3:h0 cx0,1 cx0,2 h0 h1 h3 h4 cz0,3 
+15:4:3:h3 cx3,0 cx0,1 cx0,2 cx3,4 h1 h2 h3 h4 
+641:5:4:h0 cx0,2 cx0,3 h0 h1 h3 h4 cz0,1 cz0,2 cz3,4 
+546:5:4:h0 cx0,1 cx0,3 h0 h2 h3 h4 cz0,1 cz0,2 cz3,4 
+276:9:9:h4 h3 h2 h1 h0 cz3,4 swap3,0 cz0,1 swap2,0 cz0,3 
+168:6:5:h4 h3 h2 h1 h0 cz3,4 cz0,2 cz0,1 swap3,0 
+532:5:5:h0 cx0,1 cx0,2 h0 h2 h3 h4 cz0,1 cz0,3 cz3,4 
+42:6:5:h4 h3 h2 h1 h0 cz3,4 cz0,1 swap3,0 cz0,2 
+194:9:8:h4 h3 h2 h1 h0 cz3,4 cz0,2 swap3,0 swap1,0 cz0,2 
+137:6:5:h4 h3 h2 h1 h0 cz3,4 cz0,2 swap3,0 cz0,1 
+289:9:8:h4 h3 h2 h1 h0 cz3,4 cz0,1 swap3,0 swap2,0 cz0,1 
+529:3:2:h0 cx0,1 cx0,2 h0 h2 h3 h4 cz3,4 
+645:4:3:h0 cx0,2 cx0,3 cx3,4 h0 h1 h2 h4 cz0,1 
+586:4:3:h0 cx0,1 cx0,3 cx3,4 h0 h1 h2 h3 cz0,2 
+117:5:4:h3 cx3,0 cx0,1 cx0,2 cx3,4 h0 h2 h3 h4 cz0,3 
+680:7:6:h4 h3 h2 h1 h0 cz3,4 cz0,2 cz0,1 swap3,0 cz3,4 
+564:6:6:h0 cx0,1 cx0,2 cx0,3 h0 h2 h3 h4 cz0,1 cz0,3 cz3,4 
+46:7:6:h4 h3 h2 h1 h0 cz3,4 cz0,1 swap3,0 cz0,3 cz0,2 
+78:6:5:h3 cx3,0 cx0,1 cx3,4 h0 h1 h2 h3 cz0,2 cz0,3 cz3,4 
+141:7:6:h4 h3 h2 h1 h0 cz3,4 cz0,2 swap3,0 cz0,3 cz0,1 
+269:6:5:h3 cx3,0 cx0,2 cx3,4 h0 h1 h2 h3 cz0,1 cz0,3 cz3,4 
+523:4:3:h0 cx0,3 cx3,4 h0 h1 h2 h3 cz0,1 cz0,2 
+534:4:4:h0 cx0,1 cx0,2 h0 h1 h3 h4 cz0,3 cz3,4 
+845:6:5:h0 cx0,1 cx0,2 cx0,3 cx3,4 h0 h1 h2 h3 cz0,1 cz0,3 
+846:6:5:h0 cx0,1 cx0,2 cx0,3 cx3,4 h0 h1 h2 h3 cz0,2 cz0,3 
+169:7:6:h4 h3 h2 h1 h0 cz3,4 cz0,2 cz0,1 swap3,0 cz0,1 
+333:7:6:h3 cx3,0 cx0,1 cx0,2 cx3,4 h0 h1 h2 h3 cz0,1 cz0,3 cz3,4 
+547:4:3:h0 cx0,1 cx0,3 h0 h2 h3 h4 cz0,2 cz3,4 
+643:4:3:h0 cx0,2 cx0,3 h0 h1 h3 h4 cz0,1 cz3,4 
+334:7:6:h3 cx3,0 cx0,1 cx0,2 cx3,4 h0 h1 h2 h3 cz0,2 cz0,3 cz3,4 
+170:7:6:h4 h3 h2 h1 h0 cz3,4 cz0,2 cz0,1 swap3,0 cz0,2 
+918:6:5:h3 cx3,0 cx0,1 cx0,2 cx3,4 h0 h1 h3 h4 cz0,3 cz3,4 
+590:5:4:h0 cx0,1 cx0,3 cx3,4 h0 h1 h2 h3 cz0,2 cz0,3 
+781:5:4:h0 cx0,2 cx0,3 cx3,4 h0 h1 h2 h3 cz0,1 cz0,3 
+903:6:5:h0 cx0,2 cx0,3 cx3,4 h0 h1 h3 h4 cz0,1 cz0,3 cz3,4 
+615:6:5:h0 cx0,1 cx0,3 cx3,4 h0 h2 h3 h4 cz0,2 cz0,3 cz3,4 
+628:7:6:h0 cx0,1 cx0,2 cx0,3 cx3,4 h0 h2 h3 h4 cz0,1 cz0,3 cz3,4 
+919:7:6:h0 cx0,1 cx0,2 cx0,3 cx3,4 h0 h1 h3 h4 cz0,1 cz0,3 cz3,4 

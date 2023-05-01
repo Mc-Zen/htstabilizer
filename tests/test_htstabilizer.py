@@ -5,8 +5,6 @@ from tests.random_stabilizer import random_stabilizer
 
 import unittest
 
-from qiskit.quantum_info import StabilizerState
-
 
 class TestHTStabilizer(unittest.TestCase):
 

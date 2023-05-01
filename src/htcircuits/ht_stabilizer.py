@@ -7,7 +7,7 @@ from typing import Literal
 
 
 def get_preparation_circuit(stabilizer: Stabilizer,
-                            connectivity: Literal["all", "linear", "T", "star"]) \
+                            connectivity: Literal["all", "linear", "T", "star", "cycle", "Q"]) \
         -> QuantumCircuit:
     """Get an optimal, hardware-tailored preparation circuit to prepare
     a given stabilizer state on a certain hardware connectivity. 
@@ -21,11 +21,22 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     4 Qubits
         "all": all-to-all connectivitiy
         "linear": Linear chain 0--1--2--3
+        "star": star-shaped connectivity, all connected to qubit 0, 0--{1,2,3}
+        "cycle": cycle connectivity 0--1--2--3--0
     5 Qubits
         "all": all-to-all connectivitiy
         "linear": Linear chain 0--1--2--3--4
         "T": T-shaped connectivity 4--3--0--{1,2]}
         "star": star-shaped connectivity, all connected to qubit 0, 0--{1,2,3,4}
+        "cycle": cycle connectivity 0--1--2--3--4--0
+        "q": q-shaped connectivity, 0--1--2--3--4--1
+
+
+  #  o---o
+  #  |   |
+  #  |   |
+  #  o---o----o
+
 
     Hint: use get_connectivity_graph(num_qubits, connectivity) to 
     get a graph instance that can be visualized. 
@@ -34,7 +45,7 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     ----------
     stabilizer : Stabilizer
         Stabilizer state
-    connectivity : Literal["all", "linear", "T", "star"]
+    connectivity : Literal["all", "linear", "T", "star", "cycle", "Q"]
         Connectivity type
 
     Returns
@@ -48,8 +59,8 @@ def get_preparation_circuit(stabilizer: Stabilizer,
 
     valid_connectivity = (n == 2 and connectivity == "all") or \
                          (n == 3 and connectivity in ["all", "linear"]) or \
-                         (n == 4 and connectivity in ["all", "linear"]) or \
-                         (n == 5 and connectivity in ["all", "linear", "T", "star"])
+                         (n == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
+                         (n == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"])
     if not valid_connectivity:
         raise ValueError(f"The connectivity {connectivity} is not valid/supported for {n} qubits.")
 
@@ -89,6 +100,14 @@ def get_connectivity_graph(num_qubits: int, connectivity: Literal["all", "linear
     if connectivity == "T":
         assert num_qubits == 5, "T connectivity is only possible for 5 qubits"
         return Graph.pusteblume(num_qubits)
+    if connectivity == "Q":
+        assert num_qubits == 5, "Q connectivity is only possible for 5 qubits"
+        graph = Graph(5)
+        graph.add_path([0, 1, 2, 3, 4, 1])
+        return graph
     if connectivity == "star":
         return Graph.star(num_qubits)
+    if connectivity == "cycle":
+        assert num_qubits in [4, 5], "Cycle connectivity is available for 4 and 5 qubits"
+        return Graph.cycle(num_qubits)
     assert False, f"Unsupported connnectivity: {connectivity}"

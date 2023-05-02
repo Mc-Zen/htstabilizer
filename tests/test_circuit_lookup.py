@@ -1,6 +1,7 @@
 import unittest
 
 from src.htcircuits.circuit_lookup import *
+from src.htcircuits.ht_stabilizer import get_connectivity_graph
 from src.htcircuits.lc_classes import *
 from src.htcircuits.graph import Graph
 from qiskit import transpile
@@ -139,13 +140,70 @@ class TestCircuitLookup(unittest.TestCase):
     def test_verify_lc_class_5_cycle(self):
         self.verify_lc_class_for_all(5, "cycle")
 
-    def test_verify_lc_class_5_Q(self):
-        self.verify_lc_class_for_all(5, "Q")
-
     def test_verify_lc_class_5_T(self):
         self.verify_lc_class_for_all(5, "T")
 
+    def test_verify_lc_class_5_Q(self):
+        self.verify_lc_class_for_all(5, "Q")
+
+    ##
+
+    def test_verify_connectivity_2_all(self):
+        self.verify_connectivity_for_all(2, "all")
+
+    def test_verify_connectivity_3_all(self):
+        self.verify_connectivity_for_all(3, "all")
+
+    def test_verify_connectivity_3_linear(self):
+        self.verify_connectivity_for_all(3, "linear")
+
+    def test_verify_connectivity_4_all(self):
+        self.verify_connectivity_for_all(4, "all")
+
+    def test_verify_connectivity_4_linear(self):
+        self.verify_connectivity_for_all(4, "linear")
+
+    def test_verify_connectivity_4_star(self):
+        self.verify_connectivity_for_all(4, "star")
+
+    def test_verify_connectivity_4_cycle(self):
+        self.verify_connectivity_for_all(4, "cycle")
+
+    def test_verify_connectivity_5_all(self):
+        self.verify_connectivity_for_all(5, "all")
+
+    def test_verify_connectivity_5_linear(self):
+        self.verify_connectivity_for_all(5, "linear")
+
+    def test_verify_connectivity_5_star(self):
+        self.verify_connectivity_for_all(5, "star")
+
+    def test_verify_connectivity_5_cycle(self):
+        self.verify_connectivity_for_all(5, "cycle")
+
+    def test_verify_connectivity_5_T(self):
+        self.verify_connectivity_for_all(5, "T")
+
+    def test_verify_connectivity_5_Q(self):
+        self.verify_connectivity_for_all(5, "Q")
+
+    def verify_connectivity_for_all(self, num_qubits, connectivity):
+        """Check that all lookup circuits indeed respect the connectivity constraints that they promise"""
+        con = get_connectivity_graph(num_qubits, connectivity)
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        cls = LCClasses[num_qubits - 2]
+        for i in range(cls.count()):
+            info = circuit_lookup(num_qubits, connectivity, i)
+            circuit = info.parse_circuit()
+            two_qubit_gates = circuit.get_instructions("cx") + circuit.get_instructions("cz") + circuit.get_instructions("swap")
+            for gate in two_qubit_gates:
+                qubit1 = gate.qubits[0].index
+                qubit2 = gate.qubits[1].index
+                assert type(qubit1) is int and type(qubit2) is int
+                self.assertTrue(con.has_edge(qubit1, qubit2))
+
     def verify_cost_and_depth(self, info: CircuitInfo):
+        """Verify that the lookup circuits cost and depth information is correct (compared with the given circuit)"""
         circuit = info.parse_circuit()
         transpiled_circuit: QuantumCircuit = transpile(circuit, basis_gates=["cx", "h", "s"])
         self.assertEqual(transpiled_circuit.count_ops().get("cx", 0), info.cost)
@@ -182,6 +240,7 @@ class TestCircuitLookup(unittest.TestCase):
             self.verify_state(info)
 
     def verify_stabilizer_for_all(self, num_qubits, connectivity):
+        """Check that the circuits have indeed the same stabilizers as the graphs states that they promise to generate"""
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
@@ -192,6 +251,7 @@ class TestCircuitLookup(unittest.TestCase):
             self.assertTrue(graph_state_stabilizer.is_equivalent(circuit_stabilizer))
 
     def verify_lc_class_for_all(self, num_qubits, connectivity):
+        """Check that the graph info for each lookup entry coincides with the lc class it should have"""
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):

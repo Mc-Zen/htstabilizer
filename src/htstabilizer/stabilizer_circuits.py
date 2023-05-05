@@ -7,45 +7,44 @@ from typing import Literal
 
 
 def get_preparation_circuit(stabilizer: Stabilizer,
-                            connectivity: Literal["all", "linear", "T", "star", "cycle", "Q"]) \
+                            connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]) \
         -> QuantumCircuit:
     """Get an optimal, hardware-tailored preparation circuit to prepare
     a given stabilizer state on a certain hardware connectivity. 
 
     Supported hardware connectivities:
-    2 Qubits
-        "all": Both qubits are connected
-    3 Qubits
-        "all": all-to-all connectivitiy
-        "linear": Linear chain 0--1--2
-    4 Qubits
-        "all": all-to-all connectivitiy
-        "linear": Linear chain 0--1--2--3
-        "star": star-shaped connectivity, all connected to qubit 0, 0--{1,2,3}
-        "cycle": cycle connectivity 0--1--2--3--0
-    5 Qubits
-        "all": all-to-all connectivitiy
-        "linear": Linear chain 0--1--2--3--4
-        "T": T-shaped connectivity 4--3--0--{1,2]}
-        "star": star-shaped connectivity, all connected to qubit 0, 0--{1,2,3,4}
-        "cycle": cycle connectivity 0--1--2--3--4--0
-        "q": q-shaped connectivity, 0--1--2--3--4--1
+    - 2 Qubits
+        - `"all"`: Both qubits are connected
+    - 3 Qubits
+        - `"all"`: all-to-all connectivitiy
+        - `"linear"`: Linear chain 0--1--2
+    - 4 Qubits
+        - `"all"`: all-to-all connectivitiy
+        - `"linear"`: Linear chain 0--1--2--3
+        - `"star"`: star-shaped connectivity, all connected to qubit 0, 0--{1,2,3}
+        - `"cycle"`: cycle connectivity 0--1--2--3--0
+    - 5 Qubits
+        - `"all"`: all-to-all connectivitiy
+        - `"linear"`: Linear chain 0--1--2--3--4
+        - `"star"`: star-shaped connectivity, all connected to qubit 0, 0--{1,2,3,4}
+        - `"cycle"`: cycle connectivity 0--1--2--3--4--0
+        - `"T"`: T-shaped connectivity 4--3--0--{1,2]}
+        - `"Q"`: q-shaped connectivity, 0--1--2--3--4--1
+
+    Example
+    -------
+
+    >>> qc = get_preparation_circuit(Stabilizer(["XZZ", "ZXI", "ZIX"]), "linear")
 
 
-  #  o---o
-  #  |   |
-  #  |   |
-  #  o---o----o
-
-
-    Hint: use get_connectivity_graph(num_qubits, connectivity) to 
+    Hint: use `get_connectivity_graph(num_qubits, connectivity)` to 
     get a graph instance that can be visualized. 
 
     Parameters
     ----------
     stabilizer : Stabilizer
         Stabilizer state
-    connectivity : Literal["all", "linear", "T", "star", "cycle", "Q"]
+    connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         Connectivity type
 
     Returns
@@ -73,11 +72,27 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     return circuit_info.parse_circuit().compose(layer_circuit)  # type: ignore
 
 
-def get_readout_circuit(stabilizer: Stabilizer, connectivity: Literal["all", "linear", "T", "star"]):
+def get_readout_circuit(stabilizer: Stabilizer, connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]) -> QuantumCircuit:
+    """Get an optimal, hardware-tailored readout (diagonalization) circuit
+    for given stabilizer state on a certain hardware connectivity. Look at 
+    the documentation of `get_preparation_circuit()` for more information. 
+
+    Parameters
+    ----------
+    stabilizer : Stabilizer
+        Stabilizer state
+    connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
+        Connectivity type
+
+    Returns
+    -------
+    QuantumCircuit
+        Preparation circuit for input stabilizer
+    """
     return get_preparation_circuit(stabilizer, connectivity).inverse()
 
 
-def get_connectivity_graph(num_qubits: int, connectivity: Literal["all", "linear", "T", "star"]) -> Graph:
+def get_connectivity_graph(num_qubits: int, connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]) -> Graph:
     """Get a graph object for a given connectivity type. When drawn, the zeroth
     qubit is drawn at the topmost position and from there the order is clockwise. 
 
@@ -85,7 +100,7 @@ def get_connectivity_graph(num_qubits: int, connectivity: Literal["all", "linear
     ----------
     num_qubits : 
         Number of qubits
-    connectivity : Literal["all", "linear", "T", "star"]
+    connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         Connectivity type
 
     Returns

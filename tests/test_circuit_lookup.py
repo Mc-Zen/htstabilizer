@@ -1,7 +1,7 @@
 import unittest
 
 from src.htstabilizer.circuit_lookup import *
-from src.htstabilizer.ht_stabilizer import get_connectivity_graph
+from src.htstabilizer.stabilizer_circuits import get_connectivity_graph
 from src.htstabilizer.lc_classes import *
 from src.htstabilizer.graph import Graph
 from qiskit import transpile

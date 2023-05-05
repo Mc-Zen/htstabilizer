@@ -1,5 +1,5 @@
 import numpy as np
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 
 class Graph:
@@ -8,7 +8,7 @@ class Graph:
 
     """
 
-    def __init__(self, data: int | np.ndarray):
+    def __init__(self, data: Union[int, np.ndarray]):
         """Initialize a graph without edges with n vertices or with a 
         symmetric adjacency matrix. The entries of the letter should 
         consist of only 0 and 1 and the main diagonal should be all 0.  

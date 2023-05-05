@@ -11,7 +11,7 @@ Hereby, two-qubit gate count is minimized. All delivered circuits are designed t
 
 The library can be easily installed from [PyPi][pypi-page]:
 ```
-pip install shortcircuits
+pip install htstabilizer
 ```
 
 ## Tailored to your hardware connectivity
@@ -20,17 +20,14 @@ A total of 13 connectivities are currently supported, ranging from 2 to 5 qubits
 
 The following graphics show all available connectivities. 
 
-### 2 Qubits
-
+### 2 qubits
 ![][2-qubit-con]
 
-
-### 3 Qubits
+### 3 qubits
 ![][3-qubit-con]
 
 ### 4 qubits
 ![][4-qubit-con]
-
 
 ### 5 qubits
 ![][5-qubit-con]
@@ -38,8 +35,12 @@ The following graphics show all available connectivities.
 ## Usage
 
 ```
-from htstabilizer import stabilizer
-...
+from htstabilizer.stabilizer_circuits import *
+
+pqc = get_preparation_circuit(Stabilizer(["XZZ", "ZXI", "ZIX"]), "linear")
+
+rqc = get_readout_circuit(Stabilizer(["XZZ", "ZXI", "ZIX"]), "linear")
+
 ```
 
 

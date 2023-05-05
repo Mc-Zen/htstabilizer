@@ -3,7 +3,7 @@ Tools for determining equivalence classes under local complementation
 for stabilizer groups.
 """
 from enum import IntEnum, unique
-from typing import List
+from typing import List, Union
 from .stabilizer import Stabilizer
 import numpy as np
 import itertools
@@ -15,7 +15,7 @@ import abc
 class LCClassBase(metaclass=abc.ABCMeta):
     """Base class for LCClass specializations for specific qubit numbers."""
 
-    def __init__(self, type_or_id, data: linear_index.Repr | None = None):
+    def __init__(self, type_or_id, data: Union[linear_index.Repr, None] = None):
         """Create an LC class from either a class id or an entanglument structure type
         together with further information on the exact LC class.
 
@@ -303,7 +303,7 @@ class LCClass5(LCClassBase):
         return graph
 
 
-def determine_lc_class(stabilizer: Stabilizer) -> LCClass2 | LCClass3 | LCClass4 | LCClass5:
+def determine_lc_class(stabilizer: Stabilizer) -> Union[LCClass2, LCClass3, LCClass4, LCClass5]:
     """Determine the graph equivalence class under local complementation (LC class),
     that the stabilizer uniquely corresponds to. Every stabilizer state is local-Clifford
     equivalent to one or more graph states which are all in the same orbit under local

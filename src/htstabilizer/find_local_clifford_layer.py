@@ -4,10 +4,10 @@ from qiskit import QuantumCircuit
 from . import f2_algebra as f2
 from .graph import Graph
 import numpy as np
-from typing import List, Optional
+from typing import List, Optional, Union
 
 
-def generate_local_clifford_symplectic(c: List[np.ndarray] | List[List[int]]) -> List[np.ndarray]:
+def generate_local_clifford_symplectic(c: Union[List[np.ndarray], List[List[int]]]) -> List[np.ndarray]:
     """Generate a Clifford A in symplectic form from a list of
     symplectic single-qubit Clifford matrices. A tuple of block 
     matrices Axx, Axz, Azx, Azz is returned, so that
@@ -75,7 +75,7 @@ def generate_local_clifford_symplectic_from_id(clifford_ids: List[int]) -> List[
     return As
 
 
-def generate_single_qubit_symplectic(c: np.ndarray | list, n: int, i: int):
+def generate_single_qubit_symplectic(c: Union[np.ndarray, list], n: int, i: int):
     """
     Create a 2n×2n symplectic matrix in the form of 4 blocks
 

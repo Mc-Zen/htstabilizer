@@ -1,5 +1,5 @@
 import numpy as np
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 from qiskit import QuantumCircuit
 from .graph import Graph
@@ -9,7 +9,7 @@ from . import f2_algebra as f2
 class Stabilizer:
     """Description of a stabilizer group for qubit systems."""
 
-    def __init__(self, data: List[str] | Graph | Tuple[np.ndarray, np.ndarray] | QuantumCircuit, validate: bool = False):
+    def __init__(self, data: Union[List[str], Graph, Tuple[np.ndarray, np.ndarray], QuantumCircuit], validate: bool = False):
         """Create an n-qubit stabilizer table from either
           - a list of n Pauli strings (need to commute and be independant) making up the generator
             e.g. ["XY", "YZ", "ZX"]. The first character corresponds to the first qubit. 

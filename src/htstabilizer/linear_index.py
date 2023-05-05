@@ -4,7 +4,7 @@ and also inversely create these groupings from the linear index.
 """
 
 from collections import defaultdict
-from typing import List
+from typing import List, Union
 from typing import Tuple
 import numpy as np
 
@@ -12,7 +12,7 @@ import numpy as np
 class NTuple:
     """Class for tuples of integer that are sorted upon creation"""
 
-    def __init__(self, data: List[int] | int):
+    def __init__(self, data: Union[List[int], int]):
         if isinstance(data, int):
             data = [data]
         self.data = data
@@ -35,7 +35,7 @@ class NTuple:
 
 
 class Repr:
-    def __init__(self, data: NTuple | List[NTuple] | List[List[int]] | List[int] | None = None):
+    def __init__(self, data: Union[NTuple, List[NTuple], List[List[int]], List[int], None] = None):
         self.groups = defaultdict(list)
         if data is None:
             return

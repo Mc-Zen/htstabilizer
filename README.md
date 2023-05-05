@@ -2,7 +2,7 @@
 
 This library provides 
 - *hardware-tailored* quantum Clifford circuits for **stabilizer state preparation** or **measurement** as well as 
-- mutually unbiased bases in order to perform efficient **full-state tomography** on small qubit systems. 
+- mutually unbiased bases in order to perform more efficient **full-state tomography** on small qubit systems. 
 
 Hereby, two-qubit gate count is minimized. All delivered circuits are designed to fully comply to a desired hardware connectivity, **avoiding additional swap operations altogether**. 
 

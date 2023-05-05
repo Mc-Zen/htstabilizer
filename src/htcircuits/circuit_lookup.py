@@ -118,7 +118,7 @@ class CircuitInfo:
         return qc
 
 
-def circuit_lookup(num_qubits: int, connectivity: str, id):
+def circuit_lookup(num_qubits: int, connectivity: str, id: int):
     filename = f"stabilizer{num_qubits}-{connectivity}.txt"
 
     try:

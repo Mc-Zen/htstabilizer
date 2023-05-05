@@ -1,4 +1,4 @@
-from src.htcircuits.binary import Binary
+from src.htstabilizer.binary import Binary
 
 
 import unittest

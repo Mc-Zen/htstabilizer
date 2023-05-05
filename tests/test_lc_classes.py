@@ -1,5 +1,5 @@
-from src.htcircuits.lc_classes import *
-from src.htcircuits.graph import Graph
+from src.htstabilizer.lc_classes import *
+from src.htstabilizer.graph import Graph
 
 import unittest
 import numpy as np
@@ -36,7 +36,7 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Separable)
         self.assertEqual(lc_class.id(), 0)
         self.assertEqual(lc_class, LCClass3(lc_class.id()))
-        lc_class.get_graph().draw(show=True)
+        lc_class.get_graph().draw()
 
         lc_class = determine_lc_class3(Stabilizer(["YII", "IYX", "IXY"]))
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Pair)
@@ -48,7 +48,7 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Triple)
         self.assertEqual(lc_class.id(), 4)
         self.assertEqual(lc_class, LCClass3(lc_class.id()))
-        lc_class.get_graph().draw(show=True)
+        lc_class.get_graph().draw()
 
     def test_determine_lc_class4(self):
         lc_class = determine_lc_class4(Stabilizer(["XYIY", "XIZY", "IYZI", "IYII"]))
@@ -58,7 +58,7 @@ class TestLCClasses(unittest.TestCase):
 
         lc_class = determine_lc_class4(Stabilizer(["YIIY", "IYXY", "IXYI", "YXYI"]))
         self.assertEqual(lc_class.type, LCClass4.EntanglementStructure.Pair)
-        self.assertEqual(lc_class.data, linear_index.Repr([[0],[3], [1,2]]))
+        self.assertEqual(lc_class.data, linear_index.Repr([[0], [3], [1, 2]]))
         self.assertEqual(lc_class.id(), 4)
         self.assertEqual(lc_class.data, LCClass4(lc_class.id()).data)
 

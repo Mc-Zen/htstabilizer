@@ -1,7 +1,7 @@
 from collections import defaultdict
-from src.htcircuits import ht_stabilizer
-from src.htcircuits.lc_classes import *
-from src.htcircuits.circuit_lookup import circuit_lookup
+from src.htstabilizer import stabilizer_circuits
+from src.htstabilizer.lc_classes import *
+from src.htstabilizer.circuit_lookup import circuit_lookup
 import matplotlib.pyplot as plt
 
 

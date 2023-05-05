@@ -1,6 +1,6 @@
 from qiskit import QuantumCircuit
-from src.htcircuits.stabilizer import Stabilizer
-from src.htcircuits.graph import Graph
+from src.htstabilizer.stabilizer import Stabilizer
+from src.htstabilizer.graph import Graph
 
 import unittest
 import numpy as np

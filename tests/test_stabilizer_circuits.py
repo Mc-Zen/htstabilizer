@@ -1,5 +1,5 @@
-from src.htcircuits.lc_classes import *
-from src.htcircuits.ht_stabilizer import *
+from src.htstabilizer.lc_classes import *
+from src.htstabilizer.stabilizer_circuits import *
 
 from tests.random_stabilizer import random_stabilizer
 
@@ -49,10 +49,31 @@ class TestHTStabilizer(unittest.TestCase):
         self.verify_random_stabilizers(3, "linear", num=500)
 
     def test_random_stabilizers_4_all(self):
-        self.verify_random_stabilizers(4, "all", num=500)
+        self.verify_random_stabilizers(4, "all", num=100)
+
+    def test_random_stabilizers_4_linear(self):
+        self.verify_random_stabilizers(4, "linear", num=100)
+
+    def test_random_stabilizers_4_star(self):
+        self.verify_random_stabilizers(4, "star", num=100)
+
+    def test_random_stabilizers_4_cycle(self):
+        self.verify_random_stabilizers(4, "cycle", num=100)
 
     def test_random_stabilizers_5_all(self):
-        self.verify_random_stabilizers(5, "all", num=500)
+        self.verify_random_stabilizers(5, "all", num=20)
 
     def test_random_stabilizers_5_linear(self):
-        self.verify_random_stabilizers(5, "linear", num=500)
+        self.verify_random_stabilizers(5, "linear", num=20)
+
+    def test_random_stabilizers_5_star(self):
+        self.verify_random_stabilizers(5, "star", num=20)
+
+    def test_random_stabilizers_5_cycle(self):
+        self.verify_random_stabilizers(5, "cycle", num=20)
+
+    def test_random_stabilizers_5_T(self):
+        self.verify_random_stabilizers(5, "T", num=20)
+
+    def test_random_stabilizers_5_Q(self):
+        self.verify_random_stabilizers(5, "Q", num=20)

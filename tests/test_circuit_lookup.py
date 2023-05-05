@@ -1,9 +1,9 @@
 import unittest
 
-from src.htcircuits.circuit_lookup import *
-from src.htcircuits.ht_stabilizer import get_connectivity_graph
-from src.htcircuits.lc_classes import *
-from src.htcircuits.graph import Graph
+from src.htstabilizer.circuit_lookup import *
+from src.htstabilizer.ht_stabilizer import get_connectivity_graph
+from src.htstabilizer.lc_classes import *
+from src.htstabilizer.graph import Graph
 from qiskit import transpile
 from qiskit.circuit.library import GraphState
 from qiskit.quantum_info import Statevector, StabilizerState

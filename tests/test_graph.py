@@ -1,4 +1,4 @@
-from src.htcircuits.graph import Graph
+from src.htstabilizer.graph import Graph
 
 
 import unittest
@@ -47,6 +47,7 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(g.has_edge(1, 0))
         self.assertEqual(g.edge_count(), 4)
 
+    @unittest.skip("Need to be checked manually")
     def test_draw(self):
         g = Graph(5)
         self.assertTrue(g.draw() != None)

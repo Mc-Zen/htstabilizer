@@ -1,8 +1,8 @@
 import numpy as np
-from src.htcircuits import f2_algebra as f2
-from src.htcircuits.find_local_clifford_layer import generate_local_clifford_symplectic_from_id
-from src.htcircuits.graph import Graph
-from src.htcircuits.stabilizer import Stabilizer
+from src.htstabilizer import f2_algebra as f2
+from src.htstabilizer.find_local_clifford_layer import generate_local_clifford_symplectic_from_id
+from src.htstabilizer.graph import Graph
+from src.htstabilizer.stabilizer import Stabilizer
 
 
 def random_stabilizer(graph: Graph):

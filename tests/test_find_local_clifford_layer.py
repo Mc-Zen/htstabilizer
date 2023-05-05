@@ -1,5 +1,5 @@
-from src.htcircuits.find_local_clifford_layer import *
-from src.htcircuits.stabilizer import Stabilizer
+from src.htstabilizer.find_local_clifford_layer import *
+from src.htstabilizer.stabilizer import Stabilizer
 
 from tests.random_stabilizer import random_stabilizer
 

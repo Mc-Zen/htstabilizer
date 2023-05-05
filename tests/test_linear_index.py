@@ -1,4 +1,4 @@
-from src.htcircuits.linear_index import *
+from src.htstabilizer.linear_index import *
 import unittest
 
 

@@ -52,7 +52,7 @@ def rref(A: np.ndarray) -> Tuple[np.ndarray, List[int]]:
                 A[i, :] = (A[i, :] + A[i, k]*A[h, :]) % 2
             h += 1
             k += 1
-    return [A, pivot_cols]
+    return (A, pivot_cols)
 
 
 def trf_swap_rows(i: int, j: int, m: int, dtype=np.int8) -> np.ndarray:

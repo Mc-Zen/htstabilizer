@@ -1,2 +1,2 @@
 # MANIFEST.in
-include src/htcircuits/data/*.txt
+include src/htstabilizer/data/*.txt

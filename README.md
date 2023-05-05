@@ -1,4 +1,4 @@
-# Short Quantum Circuits Python library
+# Hardware-Tailored Stabilizer Circuits Python library
 
 This library provides 
 - *hardware-tailored* quantum Clifford circuits for **stabilizer state preparation** or **measurement** as well as 
@@ -38,7 +38,7 @@ The following graphics show all available connectivities.
 ## Usage
 
 ```
-from shortcircuits import stabilizer
+from htstabilizer import stabilizer
 ...
 ```
 

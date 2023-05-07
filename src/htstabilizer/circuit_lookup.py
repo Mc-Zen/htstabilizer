@@ -59,9 +59,10 @@ one class.
             where valid gate identifiers are 
                 "h":    Hadamard gate
                 "s":    Phase gate
-                "hs":   Phase gate followed by a Hadamard gate (inverse order because mathematical operator evaluation is from right to left)
-                "sh":   Hadamard gate followed by an sh gate
-                "hsh":  Consecutive execution of Hadamard, Phase and again Hadamard gate
+                "sdg":  Inverse phase gate
+                # "hs":   Phase gate followed by a Hadamard gate (inverse order because mathematical operator evaluation is from right to left)
+                # "sh":   Hadamard gate followed by an sh gate
+                # "hsh":  Consecutive execution of Hadamard, Phase and again Hadamard gate
                 "cx":   Controlled X gate
                 "cz":   Controlled Z gate
                 "swap": Swap gate
@@ -128,6 +129,8 @@ def parse_circuit(num_qubits: int, circuit_string: str) -> QuantumCircuit:
             if instruction[1] == 'w':
                 qubits = [int(qubit) for qubit in instruction[4:].split(",")]
                 qc.swap(qubits[0], qubits[1])
+            elif instruction[1] == 'd':
+                qc.sdg(int(instruction[3:]))
             else:
                 qc.s(int(instruction[1:]))
         else:
@@ -144,6 +147,7 @@ class MUBInfo:
         self.total_cost = int(info[0])
         self.max_cost = int(info[1])
         self.max_depth = int(info[2])
+        self.num_qubits = num_qubits
 
         self.circuits: List[QuantumCircuit] = []
         self.mubs: List[List[str]] = []

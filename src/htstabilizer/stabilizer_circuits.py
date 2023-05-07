@@ -1,8 +1,11 @@
-from qiskit import QuantumCircuit
+
+from .connectivity_support import is_connectivity_supported
 from .stabilizer import Stabilizer
 from . import circuit_lookup, lc_classes, find_local_clifford_layer
 from .graph import Graph
 from .find_local_clifford_layer import find_local_clifford_layer, local_clifford_layer_to_circuit
+
+from qiskit import QuantumCircuit
 from typing import Literal
 
 
@@ -62,7 +65,7 @@ def get_preparation_circuit(
                          (n == 3 and connectivity in ["all", "linear"]) or \
                          (n == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
                          (n == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"])
-    if not valid_connectivity:
+    if not is_connectivity_supported(n, connectivity):
         raise ValueError(f"The connectivity {connectivity} is not valid/supported for {n} qubits.")
 
     lc_class_id = lc_classes.determine_lc_class(stabilizer).id()
@@ -118,6 +121,9 @@ def get_connectivity_graph(
     Graph
         Graph instance
     """
+    if not is_connectivity_supported(num_qubits, connectivity):
+        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
+
     if connectivity == "all":
         return Graph.fully_connected(num_qubits)
     if connectivity == "linear":

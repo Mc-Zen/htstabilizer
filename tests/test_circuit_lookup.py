@@ -11,7 +11,6 @@ from numpy.testing import assert_almost_equal
 
 def respects_connectivity(circuit: QuantumCircuit, connectivity_graph) -> bool:
     """Check that all lookup circuits indeed respect the connectivity constraints that they promise"""
-    num_qubits = circuit.num_qubits
     two_qubit_gates = circuit.get_instructions("cx") + circuit.get_instructions("cz") + circuit.get_instructions("swap")
     for gate in two_qubit_gates:
         qubit1 = gate.qubits[0].index
@@ -325,9 +324,26 @@ class TestMubLookupBase(unittest.TestCase):
             self.assertTrue(Stabilizer(mub).is_equivalent(Stabilizer(circuit.inverse())))
 
 
-class TestMub_2_all(TestMubLookupBase):
+class TestAllMubs(TestMubLookupBase):
 
     def test_connectivity(self):
-        self.verify_connectivity(5, "star")
-        self.verify_pauli_group_completeness(mub_circuit_lookup(5, "star"))
-        self.verify_circuit_correctness(mub_circuit_lookup(5, "star"))
+        connectivities = [
+            (2, "all"),
+            (3, "all"),
+            (3, "linear"),
+            (4, "all"),
+            (4, "linear"),
+            (4, "star"),
+            (4, "cycle"),
+            (5, "all"),
+            (5, "linear"),
+            (5, "star"),
+            (5, "cycle"),
+            (5, "T"),
+            (5, "Q"),
+        ]
+
+        for num_qubits, connectivity in connectivities:
+            self.verify_connectivity(num_qubits, connectivity)
+            self.verify_pauli_group_completeness(mub_circuit_lookup(num_qubits, connectivity))
+            self.verify_circuit_correctness(mub_circuit_lookup(num_qubits, connectivity))

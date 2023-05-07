@@ -8,7 +8,7 @@ optimized stabilizer circuits.
 from collections import defaultdict
 from src.htstabilizer import stabilizer_circuits
 from src.htstabilizer.lc_classes import *
-from src.htstabilizer.circuit_lookup import circuit_lookup
+from src.htstabilizer.circuit_lookup import stabilizer_circuit_lookup
 import matplotlib.pyplot as plt
 
 
@@ -21,7 +21,7 @@ def stabilizer_circuit_statistics(num_qubits, connectivity):
     cls = LCClasses[num_qubits - 2]
 
     for id in range(cls.count()):
-        circuit_info = circuit_lookup(num_qubits, connectivity, id)
+        circuit_info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
         cost[circuit_info.cost] += 1
         depth[circuit_info.depth] += 1
 

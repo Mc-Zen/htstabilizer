@@ -1,0 +1,10 @@
+12:2:2
+ZZI,IIZ,IZI:
+XII,XYI,IIX:h0 s0 s1 h1 h2 s2 
+YZI,XYZ,IZX:h0 s0 h2 s2 h2 cz1,2 cz0,1 h0 h1 h2 
+XIZ,XXI,ZZY:h1 s1 h2 cz1,2 cz0,1 h0 h1 h2 
+XZI,YXZ,IZY:h0 s0 h0 s2 cz1,2 cz0,1 h0 h1 h2 
+YZZ,XXZ,ZIY:s0 h0 s1 h1 s2 cz1,2 cz0,1 h0 h1 h2 
+XZZ,YYZ,ZIX:h0 h1 s1 h2 s2 h2 cz1,2 cz0,1 h0 h1 h2 
+YIZ,YYI,ZZX:s0 s1 h1 h2 cz1,2 cz0,1 h0 h1 h2 
+YII,YXI,IIY:s0 h0 h1 s1 s2 h2 

@@ -1,0 +1,34 @@
+135:5:3
+YXYZZ,IIIIZ,YYYXI,XYYZZ,XXXZI:h0 s1 sdg1 cz0,1 h0 h1 s2 s3 sdg3 cz2,3 cz1,2 h1 h2 sdg2 h2 sdg3 h3 
+XZIXZ,IZXII,ZYZXZ,XXYYZ,ZZIXY:h0 s0 h0 s1 h2 s2 h2 sdg2 h2 cz1,2 h1 sdg1 h1 sdg2 h2 s3 h3 h4 s4 cz3,4 h3 sdg3 h4 cz1,4 sdg1 h1 cz0,1 h0 h1 sdg1 h4 sdg4 
+ZYYYI,IZXIZ,XIXIZ,IZIXI,YYXYY:h0 s0 h0 s1 cz0,1 h0 sdg0 h1 h2 s2 sdg2 cz2,3 h2 sdg2 h2 h3 sdg3 cz1,4 h1 sdg1 cz1,2 h1 sdg1 h1 sdg2 h2 h4 cz3,4 h3 sdg3 h3 h4 sdg4 
+XZIXI,YXZXI,YIXYI,IIZXZ,ZIIZX:s0 sdg0 h0 h1 s1 h1 s2 sdg3 h3 cz2,3 sdg2 sdg3 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 
+ZXYIZ,XXZZZ,YZYYZ,XYYII,YXYYY:h0 s0 h0 s1 h1 s2 h2 h3 s3 cz1,4 h1 cz1,2 h1 sdg1 h1 cz0,1 h0 sdg0 h0 h1 sdg1 h1 cz2,3 h2 h3 h4 sdg4 
+IXYYI,XYIZI,ZXZZI,IZIXZ,IIZZY:s0 h0 sdg0 h0 s2 s3 h3 sdg3 h3 cz2,3 sdg2 sdg3 h4 s4 h4 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 
+IYXYZ,IIXYZ,YIXYZ,YYXIZ,YYYIY:s0 h0 s1 h2 s2 sdg2 cz1,2 h1 h2 cz1,2 sdg1 h2 s3 h3 s4 h4 cz1,4 h1 sdg1 h4 
+XIIZI,XXZZI,IXIZZ,IIIZZ,ZIZXY:h0 s0 h0 h1 s1 h1 cz0,1 h0 h1 cz1,4 cz0,1 h0 sdg0 h1 sdg4 h4 cz3,4 sdg3 h3 h4 sdg4 
+IXYYZ,ZIYYI,YZXIZ,XYXYZ,IZZXX:h0 h1 s2 sdg2 cz1,2 h1 sdg1 sdg2 h2 h3 s3 cz3,4 h3 sdg3 sdg4 h4 cz1,4 h1 cz0,1 h0 sdg0 h1 sdg1 sdg4 h4 
+YIZZZ,XYZXI,ZXIXZ,YXXYI,ZIIZY:h0 sdg0 h1 s2 h2 s3 h3 cz2,3 sdg2 h4 s4 h4 sdg4 cz1,4 h1 sdg1 cz0,1 sdg0 h0 h1 cz1,2 h1 h2 cz3,4 h3 sdg3 h4 sdg4 h4 
+IYYIZ,IIYII,IYIXI,XYYIZ,IZIZY:h0 s0 s1 s2 h2 h3 s3 h3 cz3,4 cz1,4 h1 h3 sdg3 h4 
+XIZXZ,ZZYIZ,ZXZZZ,YXYIZ,XYXIX:s1 h1 cz0,1 h0 h2 s2 s3 h3 sdg3 h3 cz3,4 h3 cz2,3 h2 h3 sdg3 h4 cz1,4 h1 sdg1 h1 sdg4 h4 cz3,4 sdg3 h3 h4 
+YZZXI,IIXYI,IYZZZ,ZIZZI,ZZZZY:h2 s2 h3 s3 h4 s4 cz1,4 h1 cz1,2 h1 sdg1 h1 cz0,1 h0 sdg0 h0 h1 sdg1 h1 cz2,3 h2 h3 h4 sdg4 
+XIIZZ,ZZXYI,XZYII,XXXIZ,ZZZZX:h0 s0 sdg0 h0 h2 s2 h2 sdg3 h3 cz2,3 sdg2 sdg3 h4 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 
+YZIZZ,YYIXZ,ZYIZZ,XXXII,XXXYX:h0 s0 h0 sdg0 h1 cz0,1 h0 sdg0 h0 h2 s2 h3 s3 h4 s4 cz3,4 h3 sdg4 h4 cz1,4 sdg1 h1 h4 
+ZYXII,IZYYI,ZYIZI,ZZZXI,IZZXY:h1 s1 h2 s2 cz1,2 h1 sdg1 h3 cz2,3 h2 h3 s4 h4 
+XZZZZ,IZYYZ,XIYYI,YXXYZ,XYYYY:h0 s0 h1 s1 h1 s2 s3 h3 h4 s4 cz1,4 h1 cz1,2 h1 sdg1 h1 cz0,1 h0 sdg0 h0 h1 sdg1 h1 cz2,3 h2 h3 h4 sdg4 
+XZZZI,YXIZZ,IYIXZ,ZIIXZ,XXYIX:s0 h0 s1 h1 cz0,1 h0 h3 s3 h3 sdg3 h3 s4 h4 cz3,4 h3 cz2,3 h2 h3 sdg3 h4 cz1,4 h1 sdg1 h1 sdg4 h4 cz3,4 sdg3 h3 h4 
+ZXXYI,ZZYII,XZXYZ,ZZIZI,IZIZX:s0 sdg0 s1 h1 sdg1 s2 h2 cz1,2 sdg1 h1 sdg2 s3 h3 cz2,3 h2 sdg2 h2 h3 cz1,4 h1 sdg1 h1 cz0,1 h0 h1 sdg1 h1 h4 
+YZZXZ,YYZZI,XIXII,YXYII,ZIZXX:h1 sdg2 h2 s3 sdg3 s4 h4 cz1,4 h1 cz1,2 cz0,1 h0 sdg1 h1 h2 sdg2 h2 h4 cz3,4 h3 sdg3 h3 h4 
+ZYYYZ,YXZXZ,IYZZI,XYXYI,YXXIX:h0 sdg0 h0 sdg1 s2 h2 cz1,2 sdg1 h1 cz0,1 h0 sdg0 h1 sdg1 sdg2 h3 s3 h3 sdg3 h4 s4 h4 cz3,4 sdg3 cz2,3 h2 sdg2 h2 h3 sdg3 h4 sdg4 cz1,4 h1 h4 sdg4 
+ZXYII,ZZXYZ,ZXIXI,IZZZI,YYYIX:s0 sdg0 sdg1 s2 h2 cz1,2 sdg1 h1 sdg2 cz2,3 h2 sdg2 h2 h3 s4 h4 cz1,4 h1 sdg1 h1 cz0,1 h0 h1 sdg1 h1 h4 
+YZIZI,IIYIZ,YIYII,IIIZI,XYXIY:s0 s1 h2 s2 cz1,2 cz0,1 h0 h1 h2 cz1,4 h1 sdg1 h4 sdg4 
+XIZXI,XXIXZ,YZXII,ZIZZZ,XXXYY:h0 s0 h0 sdg0 h0 s1 h2 s2 s3 h3 sdg3 h3 cz2,3 sdg2 sdg3 h4 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 
+IXXII,XYZXZ,XZYIZ,ZZZXZ,YXXIY:s0 h1 cz1,2 cz0,1 h0 h1 h2 h3 s3 s4 h4 cz1,4 h1 sdg1 h4 sdg4 
+IYYII,YYIXI,XIYYZ,IZZZZ,IIIXX:s0 s1 h1 s2 sdg2 cz1,2 h1 sdg1 sdg2 h2 h3 s3 h3 h4 s4 cz3,4 h3 sdg3 sdg4 h4 cz1,4 h1 cz0,1 h0 sdg0 h1 sdg1 sdg4 h4 
+ZYXIZ,YXIZI,YIYIZ,YYYYI,IIZZX:h0 sdg0 h0 s1 h1 s2 h3 sdg3 h3 cz2,3 sdg2 sdg3 h4 s4 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 
+ZXXYZ,XXIXI,IXZXI,YYXII,IIIXY:h1 s1 h1 s2 h2 sdg2 h2 h3 sdg3 s4 h4 cz1,4 h1 cz1,2 cz0,1 h0 sdg1 h1 h2 sdg2 h2 h4 cz3,4 h3 sdg3 h3 h4 
+IXXIZ,ZIXIZ,IXIZI,YYYYZ,YYXYX:s0 h0 h1 cz0,1 h0 sdg0 h1 s2 h2 sdg2 s3 h3 cz2,3 h2 sdg2 h2 h3 sdg3 h4 s4 cz1,4 h1 sdg1 cz1,2 h1 sdg1 h1 sdg2 h2 h4 cz3,4 h3 sdg3 h3 h4 sdg4 
+YIIXI,ZIYYZ,IXZXZ,IIZXI,XYYYX:h0 s0 h0 h1 s1 s2 sdg2 sdg3 cz2,3 sdg2 h2 sdg3 h3 s4 h4 cz1,4 h1 cz1,2 h1 cz0,1 h0 sdg0 h1 h2 sdg2 h4 sdg4 
+YIZZI,ZIXII,YZYYI,ZIIXI,ZZIXX:s0 h0 sdg0 h1 cz0,1 h0 sdg0 h0 h1 cz0,1 h0 sdg0 h0 h2 s2 sdg2 h3 s3 h3 cz2,3 sdg2 cz1,2 h1 sdg1 h2 sdg2 h3 h4 s4 
+YIIXZ,XYIZZ,XZXYI,XXYYI,XXYIY:s0 h0 h1 s1 h1 h2 sdg2 cz1,2 h1 sdg1 sdg2 h2 h3 s3 s4 h4 cz3,4 h3 sdg3 sdg4 h4 cz1,4 h1 cz0,1 h0 sdg0 h1 sdg1 sdg4 h4 
+IYXYI,YYZZZ,ZYZXI,ZZIZZ,YXYYX:h0 sdg0 h0 h1 s1 h3 s3 h3 sdg3 h3 cz2,3 sdg2 sdg3 h4 cz1,4 h1 sdg1 cz1,2 cz0,1 h0 sdg0 h0 h1 h2 sdg4 cz3,4 h3 h4 sdg4 

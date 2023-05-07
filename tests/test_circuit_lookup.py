@@ -18,7 +18,7 @@ class TestCircuitLookupBase(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for i in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, i)
+            info = stabilizer_circuit_lookup(num_qubits, connectivity, i)
             circuit = info.parse_circuit()
             two_qubit_gates = circuit.get_instructions("cx") + circuit.get_instructions("cz") + circuit.get_instructions("swap")
             for gate in two_qubit_gates:
@@ -27,7 +27,7 @@ class TestCircuitLookupBase(unittest.TestCase):
                 assert type(qubit1) is int and type(qubit2) is int
                 self.assertTrue(con.has_edge(qubit1, qubit2))
 
-    def verify_cost_and_depth(self, info: CircuitInfo):
+    def verify_cost_and_depth(self, info: StabilizerCircuitInfo):
         """Verify that the lookup circuits cost and depth information is correct (compared with the given circuit)"""
         circuit = info.parse_circuit()
         transpiled_circuit: QuantumCircuit = transpile(circuit, basis_gates=["cx", "h", "s"])
@@ -38,10 +38,10 @@ class TestCircuitLookupBase(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for i in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, i)
+            info = stabilizer_circuit_lookup(num_qubits, connectivity, i)
             self.verify_cost_and_depth(info)
 
-    def verify_state(self, info: CircuitInfo):
+    def verify_state(self, info: StabilizerCircuitInfo):
         circuit = info.parse_circuit()
         # graph_state_circuit = GraphState(Graph.decompress(info.num_qubits, info.graph_id).adjacency_matrix)
         graph_state_circuit = QuantumCircuit(info.num_qubits)
@@ -61,7 +61,7 @@ class TestCircuitLookupBase(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, id)
+            info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
             self.verify_state(info)
 
     def verify_stabilizer_for_all(self, num_qubits, connectivity):
@@ -69,7 +69,7 @@ class TestCircuitLookupBase(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, id)
+            info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
             circuit_stabilizer = Stabilizer(info.parse_circuit())
             graph_state_stabilizer = Stabilizer(Graph.decompress(num_qubits, info.graph_id))
             # print(circuit_stabilizer, graph_state_stabilizer)
@@ -80,7 +80,7 @@ class TestCircuitLookupBase(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
-            info = circuit_lookup(num_qubits, connectivity, id)
+            info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
             lc_class = determine_lc_class(Stabilizer(Graph.decompress(num_qubits, info.graph_id)))
             self.assertEqual(id, lc_class.id())
 
@@ -281,7 +281,7 @@ class TestVerifyCostAndDepthInfo(TestCircuitLookupBase):
 class TestCircuitInfo(unittest.TestCase):
 
     def test_circuit_info(self):
-        info = CircuitInfo(4, "23:4:3:cx0,1 cx2,3 cx3,2 cx2,1 h0")
+        info = StabilizerCircuitInfo(4, "23:4:3:cx0,1 cx2,3 cx3,2 cx2,1 h0")
         self.assertEqual(info.num_qubits, 4)
         self.assertEqual(info.graph_id, 23)
         self.assertEqual(info.cost, 4)

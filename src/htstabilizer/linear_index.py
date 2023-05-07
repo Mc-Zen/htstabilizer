@@ -11,6 +11,7 @@ import numpy as np
 
 class NTuple:
     """Class for tuples of integer that are sorted upon creation"""
+    __slots__ = ("data")
 
     def __init__(self, data: Union[List[int], int]):
         if isinstance(data, int):
@@ -35,6 +36,8 @@ class NTuple:
 
 
 class Repr:
+    __slots__ = ("groups")
+    
     def __init__(self, data: Union[NTuple, List[NTuple], List[List[int]], List[int], None] = None):
         self.groups = defaultdict(list)
         if data is None:

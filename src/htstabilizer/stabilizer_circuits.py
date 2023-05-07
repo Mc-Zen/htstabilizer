@@ -6,10 +6,12 @@ from .find_local_clifford_layer import find_local_clifford_layer, local_clifford
 from typing import Literal
 
 
-def get_preparation_circuit(stabilizer: Stabilizer,
-                            connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]) \
-        -> QuantumCircuit:
-    """Get an optimal, hardware-tailored preparation circuit to prepare
+def get_preparation_circuit(
+        stabilizer: Stabilizer,
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]
+) -> QuantumCircuit:
+    """
+    Get an optimal, hardware-tailored preparation circuit to prepare
     a given stabilizer state on a certain hardware connectivity. 
 
     Supported hardware connectivities:
@@ -64,7 +66,7 @@ def get_preparation_circuit(stabilizer: Stabilizer,
         raise ValueError(f"The connectivity {connectivity} is not valid/supported for {n} qubits.")
 
     lc_class_id = lc_classes.determine_lc_class(stabilizer).id()
-    circuit_info = circuit_lookup.circuit_lookup(stabilizer.num_qubits, connectivity, lc_class_id)
+    circuit_info = circuit_lookup.stabilizer_circuit_lookup(stabilizer.num_qubits, connectivity, lc_class_id)
     layer = find_local_clifford_layer(stabilizer.R, stabilizer.S, Graph.decompress(stabilizer.num_qubits, circuit_info.graph_id))
     if layer is None:
         raise RuntimeError("No circuit could be found. Please validate the input stabilizer.")
@@ -72,8 +74,12 @@ def get_preparation_circuit(stabilizer: Stabilizer,
     return circuit_info.parse_circuit().compose(layer_circuit)  # type: ignore
 
 
-def get_readout_circuit(stabilizer: Stabilizer, connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]) -> QuantumCircuit:
-    """Get an optimal, hardware-tailored readout (diagonalization) circuit
+def get_readout_circuit(
+        stabilizer: Stabilizer,
+        connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]
+) -> QuantumCircuit:
+    """
+    Get an optimal, hardware-tailored readout (diagonalization) circuit
     for given stabilizer state on a certain hardware connectivity. Look at 
     the documentation of `get_preparation_circuit()` for more information. 
 
@@ -92,8 +98,12 @@ def get_readout_circuit(stabilizer: Stabilizer, connectivity: Literal["all", "li
     return get_preparation_circuit(stabilizer, connectivity).inverse()
 
 
-def get_connectivity_graph(num_qubits: int, connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]) -> Graph:
-    """Get a graph object for a given connectivity type. When drawn, the zeroth
+def get_connectivity_graph(
+        num_qubits: int,
+        connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]
+) -> Graph:
+    """
+    Get a graph object for a given connectivity type. When drawn, the zeroth
     qubit is drawn at the topmost position and from there the order is clockwise. 
 
     Parameters

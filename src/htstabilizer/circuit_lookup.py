@@ -4,6 +4,7 @@ except ImportError:
     # Try backported to PY<37 `importlib_resources`.
     import importlib_resources as pkg_resources
 
+from typing import List
 from . import data  # relative-import the *package* containing the templates
 from qiskit import QuantumCircuit
 
@@ -19,10 +20,11 @@ Filename:
     [circuit collection type][qubit number]-[connectivity].txt
 
 where [circuit collection type] takes the values "stabilizer" or "mub"
-and connectivity may be for example be "linear", "star", "T", "cycle" ...
+and [connectivity] may be for example be "linear", "star", "T", "cycle" ...
     
-Example: stabilizer3-linear.txt
-Each line contains a circuit
+Examples: 
+   - stabilizer3-linear.txt
+   - mub4-star.txt
 
 
 Stabilizer circuit files
@@ -71,12 +73,23 @@ one class.
 
                 h1 s3 cx0,2 swap1,2 h3 h0
 
+
+
+MUB circuit files
+-----------------
+A MUB circuit file for n qubits contains a header info line and (2n+1) 
+lines each containing a mub and a diagonalization circuit for that MUB.
+
+Header line
+[total-cost]:[max-cost]:[max-depth]
+
+Mub lines
+[mub]:[circuit-specification]
+
 """
 
-file_cache = {}
 
-
-class CircuitInfo:
+class StabilizerCircuitInfo:
     def __init__(self, num_qubits: int, line: str):
         components = line.split(":")
         assert len(components) == 4
@@ -87,45 +100,98 @@ class CircuitInfo:
         self.circuit_string = components[3]
 
     def parse_circuit(self) -> QuantumCircuit:
-        qc = QuantumCircuit(self.num_qubits)
-        instructions = self.circuit_string.split(" ")
-        for instruction in instructions:
-            if len(instruction) == 0:
-                continue
-            if instruction[0] == 'c':
-                qubits = [int(qubit) for qubit in instruction[2:].split(",")]
-                assert len(qubits) == 2, "Invalid 2-Qubit instruction specifcation"
-                if instruction[1] == 'x':
-                    qc.cx(qubits[0], qubits[1])
-                elif instruction[1] == 'z':
-                    qc.cz(qubits[0], qubits[1])
-                else:
-                    assert False, "Invalid instruction name"
-            elif instruction[0] == 'h':
-                if instruction[1] == 's':
-                    pass
-                else:
-                    qc.h(int(instruction[1:]))
-                pass
-            elif instruction[0] == 's':
-                if instruction[1] == 'w':
-                    qubits = [int(qubit) for qubit in instruction[4:].split(",")]
-                    qc.swap(qubits[0], qubits[1])
-                else:
-                    qc.s(int(instruction[1:]))
+        return parse_circuit(self.num_qubits, self.circuit_string)
+
+
+def parse_circuit(num_qubits: int, circuit_string: str) -> QuantumCircuit:
+    qc = QuantumCircuit(num_qubits)
+    instructions = circuit_string.split(" ")
+    for instruction in instructions:
+        if len(instruction) == 0:
+            continue
+        if instruction[0] == 'c':
+            qubits = [int(qubit) for qubit in instruction[2:].split(",")]
+            assert len(qubits) == 2, "Invalid 2-Qubit instruction specifcation"
+            if instruction[1] == 'x':
+                qc.cx(qubits[0], qubits[1])
+            elif instruction[1] == 'z':
+                qc.cz(qubits[0], qubits[1])
             else:
                 assert False, "Invalid instruction name"
-        return qc
+        elif instruction[0] == 'h':
+            if instruction[1] == 's':
+                pass
+            else:
+                qc.h(int(instruction[1:]))
+            pass
+        elif instruction[0] == 's':
+            if instruction[1] == 'w':
+                qubits = [int(qubit) for qubit in instruction[4:].split(",")]
+                qc.swap(qubits[0], qubits[1])
+            else:
+                qc.s(int(instruction[1:]))
+        else:
+            assert False, "Invalid instruction name"
+    return qc
 
 
-def circuit_lookup(num_qubits: int, connectivity: str, id: int):
+class MUBInfo:
+    def __init__(self, num_qubits: int, lines: List[str]):
+        # parse header
+        header = lines[0]
+        info = header.split(":")
+        assert len(info) == 3, "Invalid MUB file"
+        self.total_cost = int(info[0])
+        self.max_cost = int(info[1])
+        self.max_depth = int(info[2])
+
+        self.circuits: List[QuantumCircuit] = []
+        self.mubs: List[List[str]] = []
+
+        # parse mub
+        for line in lines[1:]:
+            if len(line) == 0:
+                continue
+            mub, circuit_string = line.split(":")
+            self.circuits.append(parse_circuit(num_qubits, circuit_string))
+            self.mubs.append(mub.split(","))
+
+
+stabilizer_file_cache = {}
+
+
+def stabilizer_circuit_lookup(num_qubits: int, connectivity: str, lc_class_id: int) -> StabilizerCircuitInfo:
+    """
+    Obtain stabilizer circuit info for given number of qubits, 
+    connectivity and LC class id. 
+    """
     filename = f"stabilizer{num_qubits}-{connectivity}.txt"
 
     try:
-        circuitInfos = file_cache[filename]
+        circuitInfos = stabilizer_file_cache[filename]
     except KeyError:
         lines = pkg_resources.read_text(data, filename).split("\n")
-        circuitInfos = [CircuitInfo(num_qubits, line) for line in filter(lambda x: len(x) != 0, lines)]
-        file_cache[filename] = circuitInfos
+        circuitInfos = [StabilizerCircuitInfo(num_qubits, line) for line in filter(lambda x: len(x) != 0, lines)]
+        stabilizer_file_cache[filename] = circuitInfos
 
-    return circuitInfos[id]
+    return circuitInfos[lc_class_id]
+
+
+mub_file_cache = {}
+
+
+def mub_circuit_lookup(num_qubits: int, connectivity: str) -> MUBInfo:
+    """
+    Obtain MUB circuit info for given number of qubits
+    and connectivity.
+    """
+    filename = f"mub{num_qubits}-{connectivity}.txt"
+
+    try:
+        mubInfo = mub_file_cache[filename]
+    except KeyError:
+        lines = pkg_resources.read_text(data, filename).split("\n")
+        mubInfo = MUBInfo(num_qubits, lines)
+        mub_file_cache[filename] = mubInfo
+
+    return mubInfo

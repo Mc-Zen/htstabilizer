@@ -1,0 +1,18 @@
+37:3:2
+XZYY,YZYX,ZZXI,IZII:s0 h0 s3 cz3,0 h0 cz2,3 h2 h3 
+ZIIY,ZYYI,ZZZI,YZYZ:h1 cz0,1 cz1,2 h1 h2 s3 cz0,3 h0 h3 
+YZYI,XXIX,IIYI,YIYZ:s0 h0 s1 h1 s2 h2 h3 cz0,3 cz0,1 h0 h1 h3 
+XZYZ,IXZI,ZIZI,XZYI:h0 h1 s1 h2 cz1,2 cz0,1 h0 h1 h2 
+IZXY,ZXYI,IZZZ,ZZXY:h1 s1 h1 s2 h2 h3 s3 h3 cz2,3 cz1,2 h1 h2 h3 
+ZZIY,IYYZ,YZIX,XZZZ:h0 s0 s1 cz0,1 s2 h2 cz1,2 h1 h2 h3 cz0,3 h0 h3 
+IIIX,YYXX,IZYI,XIYI:h0 s0 h0 s2 cz1,2 cz0,1 h0 h1 h2 h3 s3 
+YIZZ,IYZI,IIZZ,IZXX:s0 h0 s1 h3 cz2,3 cz1,2 h1 h2 h3 
+IIXY,IXYZ,XZIY,IZIY:h0 s0 h1 h2 s2 s3 cz2,3 cz1,2 h1 h2 h3 
+IZIX,XYXY,XZXX,YIZI:s0 h1 s1 h1 s2 cz0,2 h0 h2 s3 cz1,3 h1 h3 
+XIZI,XYIX,ZIYZ,ZIXY:s1 h1 s2 h2 h3 cz3,0 h0 cz2,3 h2 h3 
+XIYZ,ZXZZ,YIIX,YZZI:s0 h0 h1 s1 h1 cz0,1 h2 s2 cz1,2 h1 h2 h3 s3 h3 cz0,3 h0 h3 
+ZZXX,YXXX,ZZYZ,IIXX:h0 s1 cz0,1 h0 h1 s2 s3 cz2,3 h2 h3 
+YZZZ,ZYZZ,XIIY,ZZIX:h0 s0 s3 cz0,3 cz0,1 h0 h1 h3 
+ZIXX,XXXY,YZXY,ZIIX:h1 s1 h2 s2 h3 s3 h3 cz0,3 cz0,1 h0 h1 h3 
+XZZI,YYIY,YIXY,IIIY:s0 s1 h1 h2 s2 h2 cz1,2 cz0,1 h0 h1 h2 s3 h3 
+YIYI,YXIY,XIXX,XIZZ:h0 s0 h1 s1 h2 s2 h3 s3 h3 cz3,0 h0 cz2,3 h2 h3 

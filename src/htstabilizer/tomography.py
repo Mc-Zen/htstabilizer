@@ -1,4 +1,4 @@
-from typing import Dict, List, Literal, Optional, Union
+from typing import Dict, List, Literal, Optional, Sequence, Tuple, Union
 import numpy as np
 from qiskit import QuantumCircuit, QuantumRegister
 
@@ -14,7 +14,7 @@ class ReadoutInfo:
     def __init__(self,
                  readout_circuit: QuantumCircuit,
                  total_num_qubits: int,
-                 measured_qubits: Optional[List[Qubit]] = None
+                 measured_qubits: Optional[Tuple[int]] = None
                  ):
         """Create a readout info object storing the readout circuit, 
         measured qubits etc. 
@@ -26,7 +26,7 @@ class ReadoutInfo:
         total_num_qubits : int
             Number of qubits for the system (may be larger than 
             `readout_circuit.num_qubits` if only some qubits are measured)
-        measured_qubits : Optional[List[Qubit]], optional
+        measured_qubits : Optional[Tuple[int]], optional
             The qubits that are measured or None if all are measured, 
             by default None
         """
@@ -39,7 +39,7 @@ def stabilizer_measurement_circuit(
         preparation_circuit: QuantumCircuit,
         stabilizer: Stabilizer,
         connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"] = "all",
-        measured_qubits: Optional[Union[QuantumRegister, List[Qubit], List[int]]] = None,
+        measured_qubits: Optional[Sequence[int]] = None,
 ) -> QuantumCircuit:
     """
     Return a circuit to measure a stabilizer of the quantum state prepared by given 
@@ -54,7 +54,7 @@ def stabilizer_measurement_circuit(
     connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         The hardware-connectivity to use in order to get an optimal readout circuit 
         (use `"all"` if hardware-connectivity does not matter)
-    measured_qubits : Optional[QuantumRegister | List[Qubit]], optional
+    measured_qubits : Optional[Sequence[int]], optional
         The qubits to be measured, omit this to measure all qubits, by default None
 
 
@@ -69,7 +69,8 @@ def stabilizer_measurement_circuit(
     >>> bell = QuantumCircuit(qr)
     >>> bell.h(qr[3])
     >>> bell.cx(qr[3], qr[5])
-    >>> smc = stabilizer_measurement_circuit(bell, Stabilizer(["XI", "IZ"]), "all", [qr[3], qr[5]]) 
+    >>> smc = stabilizer_measurement_circuit(bell, Stabilizer(["XI", "IZ"]), "all", [qr[3], qr[5]]) # or
+    >>> smc = stabilizer_measurement_circuit(bell, Stabilizer(["XI", "IZ"]), "all", [3, 5]) 
 
 
     Returns
@@ -82,15 +83,13 @@ def stabilizer_measurement_circuit(
         raise ValueError("The number of qubits does not match for preparation circuit and stabilizer")
     elif measured_qubits is not None and stabilizer.num_qubits != len(measured_qubits):
         raise ValueError("The number of qubits to be measured does not match the number of qubits of the stabilizer given")
-    # assert preparation_circuit.num_qubits == stabilizer.num_qubits, "The number of qubits does not match for preparation circuit and stabilizer"
+
     readout_circuit = get_readout_circuit(stabilizer, connectivity)
     circuit: QuantumCircuit = preparation_circuit.compose(readout_circuit, qubits=measured_qubits)  # type: ignore
     circuit.measure_all()
-    if isinstance(measured_qubits, list):
-        if isinstance(measured_qubits[0], int):
-            measured_qubits = [circuit.qubits[i] for i in measured_qubits]
-    if isinstance(measured_qubits, QuantumRegister):
-        measured_qubits = [qubit for qubit in measured_qubits]
+
+    if measured_qubits is not None:
+        measured_qubits = tuple(measured_qubits)
     if circuit.metadata is None:
         circuit.metadata = {}
     circuit.metadata["readout info"] = ReadoutInfo(readout_circuit, preparation_circuit.num_qubits, measured_qubits)
@@ -100,7 +99,7 @@ def stabilizer_measurement_circuit(
 def full_state_tomography_circuits(
         preparation_circuit: QuantumCircuit,
         connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"] = "all",
-        measured_qubits: Optional[Union[QuantumRegister, List[Qubit], List[int]]] = None,
+        measured_qubits: Optional[Sequence[int]] = None,
 ) -> List[QuantumCircuit]:
     """
     Return a list of collection to perform optimal full state tomography
@@ -113,7 +112,7 @@ def full_state_tomography_circuits(
     connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         The hardware-connectivity to use in order to get an optimal readout circuit 
         (use `"all"` if hardware-connectivity does not matter)
-    measured_qubits : Optional[QuantumRegister | List[Qubit]], optional
+    measured_qubits : Optional[Sequence[int]], optional
         The qubits to be measured, omit this to measure all qubits, by default None
 
 
@@ -128,21 +127,19 @@ def full_state_tomography_circuits(
     >>> bell = QuantumCircuit(qr)
     >>> bell.h(qr[3])
     >>> bell.cx(qr[3], qr[5])
-    >>> fst = full_state_tomography_circuits(bell, "all", [qr[3], qr[5]]) 
+    >>> fst = full_state_tomography_circuits(bell, "all", [qr[3], qe[5]]) # or 
+    >>> fst = full_state_tomography_circuits(bell, "all", [3, 5]) 
 
 
     Returns
     -------
-    QuantumCircuit
-        A quantum circuit that prepares the state and measures it. 
+    List[QuantumCircuit]
+        A list of quantum circuit that prepare the state and measure it. 
     """
     num_qubits = preparation_circuit.num_qubits if measured_qubits is None else len(measured_qubits)
 
-    if isinstance(measured_qubits, list):
-        if isinstance(measured_qubits[0], int):
-            measured_qubits = [preparation_circuit.qubits[i] for i in measured_qubits]
-    if isinstance(measured_qubits, QuantumRegister):
-        measured_qubits = [qubit for qubit in measured_qubits]
+    if measured_qubits is not None:
+        measured_qubits = tuple(measured_qubits)
 
     readout_circuits = get_mub_circuits(num_qubits, connectivity)
     circuits = []
@@ -198,7 +195,7 @@ class CircuitResult:
 
     __slots__ = ("results", "num_qubits")
 
-    def __init__(self, counts: Dict[str, int], qubits: Optional[List[Union[Qubit, int]]] = None):
+    def __init__(self, counts: Dict[str, int], qubits: Optional[Sequence[int]] = None):
         """Create a CircuitResult from a dictionary as returned by `qiskit.result.get_counts()`.
         The keys are little-endian bitstrings, i.e. the zeroth register is at the rightmost 
         position in the string.
@@ -217,7 +214,7 @@ class CircuitResult:
         ----------
         counts : Dict[str, int]
             Outcome/count dictionary
-        qubits : Optional[List[Qubit | int]], optional
+        qubits : Optional[Sequence[int]], optional
             If specified, only the given qubits are extracted. 
         """
         self.results: List[BinaryResult] = []
@@ -229,15 +226,10 @@ class CircuitResult:
                 self.results.append(BinaryResult(Bitstring(int(key.replace(" ", ""), 2)), value))
 
         else:
-            if isinstance(qubits[0], Qubit):
-                qubit_list: List[int] = [qubit.index for qubit in qubits]  # type: ignore
-            else:
-                qubit_list = qubits  # type: ignore
-            self.num_qubits = len(qubit_list)
+            self.num_qubits = len(qubits)
             for key, value in counts.items():
                 key = key.replace(" ", "")  # might contain spaces to separate registers
-                if qubits is not None:
-                    key = "".join(key[index] for index in qubit_list)
+                key = "".join(key[index] for index in qubits)
                 self.results.append(BinaryResult(Bitstring(int(key, 2)), value))
 
     def __str__(self) -> str:
@@ -247,7 +239,24 @@ class CircuitResult:
 class StabilizerMeasurementFitter:
 
     def __init__(self, result: Result, circuit: QuantumCircuit, result_index=0):
+        """Create measurement fitter for a stabilizer measurement. 
 
+        Parameters
+        ----------
+        result : Result
+            A qiskit Result that has been returned from executing or simulating
+            the measurement circuit
+        circuit : QuantumCircuit
+            The measurement circuit used obtained by calling :func:`stabilizer_measurement_circuit()`. 
+        result_index : int, optional
+            In case `result` contains the results of multiple circuits, this can be used
+            to provide an index into the list, by default 0
+
+        Raises
+        ------
+        ValueError
+            Raised if `circuit` was not created using :func:`stabilizer_measurement_circuit()`
+        """
         self.result = result
         self.result_index = result_index
         try:
@@ -294,7 +303,7 @@ class StabilizerMeasurementFitter:
             pauli.phase = 0
             pauli_z = pauli.evolve(inverse_circuit)
             assert pauli_z.phase == 2 or pauli_z.phase == 0
-            expectation_value = _compute_expectation_value(circuit_result, i)
+            expectation_value = _compute_expectation_value(circuit_result, Bitstring(i))
 
             if pauli_z.phase == 2:
                 expectation_value *= -1
@@ -302,7 +311,7 @@ class StabilizerMeasurementFitter:
 
         expectation_values[identity] = 1
 
-        if qubits is None:
+        if qubits is None or not full_hilbert_space:
             return expectation_values
 
         # Only a subset of qubits were measured, we want to insert the missing
@@ -310,9 +319,8 @@ class StabilizerMeasurementFitter:
         full_expectation_values = {}
         full_identity = Pauli("I" * self.readout_info.total_num_qubits)
         for key, value in expectation_values.items():
-            qubit_list: List[int] = [qubit.index for qubit in qubits]
             new_key: Pauli = full_identity.copy()
-            for index, qubit in enumerate(qubit_list):
+            for index, qubit in enumerate(qubits):
                 new_key[qubit] = key[index]
             full_expectation_values[new_key] = value
 
@@ -334,14 +342,29 @@ class StabilizerMeasurementFitter:
         np.ndarray
             Computed density matrix
         """
-        return _compute_density_matrix_from_pauli_expectation_values(self.readout_info.total_num_qubits,
-                                                                     self.expectation_values())
+        expectation_values = self.expectation_values(full_hilbert_space=full_hilbert_space)
+        return _compute_density_matrix_from_pauli_expectation_values(expectation_values)
 
 
 class FullStateTomographyFitter:
 
     def __init__(self, result: Result, circuits: List[QuantumCircuit]):
+        """Create state tomography fitter
 
+        Parameters
+        ----------
+        result : Result
+            A qiskit Result that has been returned from executing or simulating
+            the measurement circuits. 
+        circuits : List[QuantumCircuit]
+            The measurement circuits used obtained by calling :func:`full_state_tomography_circuits()`. 
+
+
+        Raises
+        ------
+        ValueError
+            Raised if `circuit` was not created using :func:`full_state_tomography_circuits()`
+        """
         self.result = result
         self.circuits = circuits
         try:
@@ -389,8 +412,8 @@ class FullStateTomographyFitter:
         np.ndarray
             Computed density matrix
         """
-        return _compute_density_matrix_from_pauli_expectation_values(self.readout_infos[0].total_num_qubits,
-                                                                     self.expectation_values())
+        expectation_values = self.expectation_values(full_hilbert_space=full_hilbert_space)
+        return _compute_density_matrix_from_pauli_expectation_values(expectation_values)
 
 
 def _compute_expectation_value(circuit_result: CircuitResult, s: Bitstring):
@@ -405,7 +428,7 @@ def _compute_expectation_value(circuit_result: CircuitResult, s: Bitstring):
     return expectation_value / total_count
 
 
-def _compute_density_matrix_from_pauli_expectation_values(num_qubits: int, expectation_values: Dict[Pauli, float]) -> np.ndarray:
+def _compute_density_matrix_from_pauli_expectation_values(expectation_values: Dict[Pauli, float]) -> np.ndarray:
     """Given a dictionary of expectation values, reconstruct the density matrix
     through linear combination
 
@@ -421,10 +444,10 @@ def _compute_density_matrix_from_pauli_expectation_values(num_qubits: int, expec
     np.ndarray
         Density matrix
     """
+    assert len(expectation_values) != 0
+    num_qubits = len(next(iter(expectation_values)))
     density_matrix = np.zeros(shape=[2**num_qubits, 2**num_qubits], dtype=np.complex128)
     for pauli, expectation_value in expectation_values.items():
         density_matrix += pauli.to_matrix() * expectation_value
-        if np.abs(expectation_value) > .1:
-            print(pauli.to_matrix())
     density_matrix *= (1. / 2**num_qubits)
     return density_matrix

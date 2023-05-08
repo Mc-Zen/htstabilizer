@@ -1,9 +1,6 @@
 
 from .connectivity_support import is_connectivity_supported
-from .stabilizer import Stabilizer
-from . import circuit_lookup, lc_classes, find_local_clifford_layer
-from .graph import Graph
-from .find_local_clifford_layer import find_local_clifford_layer, local_clifford_layer_to_circuit
+from . import circuit_lookup
 
 from qiskit import QuantumCircuit
 from typing import List, Literal
@@ -43,7 +40,7 @@ def get_mub_circuits(
 
     Parameters
     ----------
-    num_qubits : 
+    num_qubits : int
         Number of qubits
     connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         Connectivity type
@@ -79,7 +76,7 @@ def get_mubs(
 
     Parameters
     ----------
-    num_qubits : 
+    num_qubits : int
         Number of qubits
     connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
         Connectivity type
@@ -99,3 +96,46 @@ def get_mubs(
         raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
 
     return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity).mubs
+
+
+def get_mub_info(
+        num_qubits: int,
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]
+) -> dict:
+    """Get info about a set of MUB circuits (e.g. for comparing different connectivities 
+    and choosing the best among a possible selection). This function returns a dictionary 
+    containing values for the following keys:
+        - `"num circuits"`:            number of MUB circuits (2^n+1)
+        - `"max two-qubit count"`:     the maximum number of native two-qubit gates (cx or cz, swap=3cx) 
+                                       one of the circuits has.
+        - `"max two-qubit depth"`:     the maximum depth of native two-qubit gates one of the circuits has.
+        - `"average two-qubit gates"`: the average number of native two-qubit gates across all circuits
+
+    Parameters
+    ----------
+    num_qubits : int
+        Number of qubits
+    connectivity : Literal["all", "linear", "star", "cycle", "T", "Q"]
+        Connectivity type
+
+    Returns
+    -------
+    dict
+        A dictonary containing info about the MUB
+
+    Raises
+    ------
+    ValueError
+        Raised if the connectivity is not supported
+    """
+
+    if not is_connectivity_supported(num_qubits, connectivity):
+        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
+
+    mub_info = circuit_lookup.mub_circuit_lookup(num_qubits, connectivity)
+    info = {}
+    info["num circuits"] = mub_info.num_qubits**2 + 1
+    info["max two-qubit count"] = mub_info.max_cost
+    info["max two-qubit depth"] = mub_info.max_depth
+    info["average two-qubit gates"] = mub_info.total_cost / info["num circuits"]
+    return info

@@ -45,7 +45,7 @@ rqc = get_readout_circuit(Stabilizer(["XZZ", "ZXI", "ZIX"]), "linear")
 
 
 [pypi-page]: https://pypi.org/project/htstabilizer/
-[2-qubit-con]: docs/images/2-qubit%20connectivities.png
-[3-qubit-con]: docs/images/3-qubit%20connectivities.png
-[4-qubit-con]: docs/images/4-qubit%20connectivities.png
-[5-qubit-con]: docs/images/5-qubit%20connectivities.png
+[2-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/2-qubit%20connectivities.png
+[3-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/3-qubit%20connectivities.png
+[4-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/4-qubit%20connectivities.png
+[5-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/5-qubit%20connectivities.png

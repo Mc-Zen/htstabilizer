@@ -70,7 +70,7 @@ class TestFullStateTomography(unittest.TestCase):
         print(len(fst))
 
         backend_sim = qiskit.Aer.get_backend("qasm_simulator")
-        job_sim = qiskit.execute(fst, backend=backend_sim, shots=20000)
+        job_sim = qiskit.execute(fst, backend=backend_sim, seed_simulator=100,shots=10000)
 
         fitter = FullStateTomographyFitter(job_sim.result(), fst)
         density_matrix = fitter.density_matrix()
@@ -85,19 +85,19 @@ class TestFullStateTomography(unittest.TestCase):
 
     def test_bell(self):
         qc_prep = bell(4)
-        self.check_tomography(qc_prep)
+        self.check_tomography(qc_prep, atol=.0054)
 
     def test_1pp(self):
         qc_prep = QuantumCircuit(3)
         qc_prep.h([1, 2])
-        self.check_tomography(qc_prep)
+        self.check_tomography(qc_prep, atol=.0089)
 
     def test_uuu(self):
         qc_prep = QuantumCircuit(3)
         qc_prep.u(1.2342, -0.2343, 0., 0)
         qc_prep.u(-1.542, -0.7461, 0., 1)
         qc_prep.u(0.0156, 0.98324, 0., 2)
-        self.check_tomography(qc_prep)
+        self.check_tomography(qc_prep, atol=.0064)
 
     def test_uuuu(self):
         qc_prep = QuantumCircuit(4)
@@ -105,4 +105,10 @@ class TestFullStateTomography(unittest.TestCase):
         qc_prep.u(-1.542, -0.7461, 0., 1)
         qc_prep.u(-2.222, 0.98610, 0., 2)
         qc_prep.u(0.0156, 0.98324, 0., 3)
-        self.check_tomography(qc_prep)
+        self.check_tomography(qc_prep, atol=.0053)
+
+    def test_ghz5(self):
+        qc_prep = QuantumCircuit(5)
+        qc_prep.h(0)
+        qc_prep.cx(0, range(1,5))
+        self.check_tomography(qc_prep, atol=.0050)

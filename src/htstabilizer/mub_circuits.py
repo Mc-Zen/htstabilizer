@@ -37,7 +37,7 @@ def get_mub_circuits(
         - `"Q"`: q-shaped connectivity, 0--1--2--3--4--1
 
 
-    Hint: use `get_connectivity_graph(num_qubits, connectivity)` to 
+    Hint: use :func:`connectivity_support.get_connectivity_graph(num_qubits, connectivity)` to 
     get a graph instance that can be visualized. 
 
 

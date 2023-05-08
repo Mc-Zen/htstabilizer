@@ -1,5 +1,6 @@
 from src.htstabilizer.lc_classes import *
 from src.htstabilizer.stabilizer_circuits import *
+from src.htstabilizer.connectivity_support import *
 
 from tests.random_stabilizer import random_stabilizer
 

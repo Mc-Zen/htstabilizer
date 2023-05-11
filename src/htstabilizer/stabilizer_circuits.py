@@ -1,9 +1,10 @@
 
-from .connectivity_support import is_connectivity_supported
+from .connectivity_support import assert_connectivity_is_supported
 from .stabilizer import Stabilizer
 from . import circuit_lookup, lc_classes, find_local_clifford_layer
 from .graph import Graph
 from .find_local_clifford_layer import find_local_clifford_layer, local_clifford_layer_to_circuit
+from .rotate_stabilizer_into_state import rotate_stabilizer_into_state
 
 from qiskit import QuantumCircuit
 from typing import Literal
@@ -11,11 +12,15 @@ from typing import Literal
 
 def get_preparation_circuit(
         stabilizer: Stabilizer,
-        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"] = "all"
 ) -> QuantumCircuit:
     """
-    Get an optimal, hardware-tailored preparation circuit to prepare
-    a given stabilizer state on a certain hardware connectivity. 
+    Get an optimal, hardware-tailored preparation circuit to prepare a stabilizer
+    state with given stabilizer group on a certain hardware connectivity. 
+
+    Note: Phases of the Paulis in the stabilizer group are not taken into account. 
+    You can use ``compress_preparation_circuit()`` to get an optimal preparation
+    circuit for a specific stabilizer state from a clifford circuit. 
 
     Supported hardware connectivities:
     - 2 Qubits
@@ -57,16 +62,8 @@ def get_preparation_circuit(
     QuantumCircuit
         Preparation circuit for input stabilizer
     """
-    n = stabilizer.num_qubits
-    if n < 2 or n > 5:
-        raise ValueError(f"The given stabilizer has {n} qubits which is not supported.")
 
-    valid_connectivity = (n == 2 and connectivity == "all") or \
-                         (n == 3 and connectivity in ["all", "linear"]) or \
-                         (n == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
-                         (n == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"])
-    if not is_connectivity_supported(n, connectivity):
-        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {n} qubits.")
+    assert_connectivity_is_supported(stabilizer.num_qubits, connectivity)
 
     lc_class_id = lc_classes.determine_lc_class(stabilizer).id()
     circuit_info = circuit_lookup.stabilizer_circuit_lookup(stabilizer.num_qubits, connectivity, lc_class_id)
@@ -98,5 +95,36 @@ def get_readout_circuit(
     QuantumCircuit
         Preparation circuit for input stabilizer
     """
+
+    assert_connectivity_is_supported(stabilizer.num_qubits, connectivity)
     return get_preparation_circuit(stabilizer, connectivity).inverse()
 
+
+def compress_preparation_circuit(
+        circuit: QuantumCircuit,
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"] = "all"
+) -> QuantumCircuit:
+    """
+    Optimize a Clifford preparation circuit, i.e., a circuit that is placed at the
+    beginning of a computation - starting with the all-zero state. The circuit can 
+    only contain I, X, Y, Z, H, S, SDG, CX, CZ and SWAP gates. 
+    
+    Look at the documentation of `get_preparation_circuit()` for more information. 
+
+    Parameters
+    ----------
+    circuit : QuantumCircuit
+        Clifford preparation circuit
+    connectivity : Literal["all", "linear", "star", "cycle", "T",  "Q"]
+        Connectivity type
+
+
+    Returns
+    -------
+    QuantumCircuit
+        Optimized circuit
+    """
+
+    assert_connectivity_is_supported(circuit.num_qubits, connectivity)
+    optimized_circuit = get_preparation_circuit(Stabilizer(circuit), connectivity)
+    return rotate_stabilizer_into_state(optimized_circuit, circuit, inplace=True)

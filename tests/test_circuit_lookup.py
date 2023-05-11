@@ -179,6 +179,8 @@ class TestStabilizerCircuitLookup_4_star(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_4_cycle(TestStabilizerCircuitLookupBase):
+    def test_verify_state_4_cycle(self):
+        self.verify_state_for_all(4, "cycle")
 
     def test_verify_stabilizer_4_cycle(self):
         self.verify_stabilizer_for_all(4, "cycle")

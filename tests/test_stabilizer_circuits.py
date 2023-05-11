@@ -1,23 +1,21 @@
-from src.htstabilizer.lc_classes import *
 from src.htstabilizer.stabilizer_circuits import *
+from src.htstabilizer.lc_classes import *
 from src.htstabilizer.connectivity_support import *
+from src.htstabilizer.rotate_stabilizer_into_state import assert_same_state
 
 from tests.random_stabilizer import random_stabilizer
 
 import unittest
 
+from qiskit.quantum_info import random_clifford
+
 
 class TestHTStabilizer(unittest.TestCase):
 
     def test_get_connectivity_graph(self):
-        get_connectivity_graph(3, "all")
-        get_connectivity_graph(3, "linear")
-        get_connectivity_graph(4, "all")
-        get_connectivity_graph(4, "linear")
-        get_connectivity_graph(5, "all")
-        get_connectivity_graph(5, "linear")
-        get_connectivity_graph(5, "T")
-        get_connectivity_graph(5, "star")
+        for num_qubits, connectivity in get_available_connectivities():
+            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
+                get_connectivity_graph(num_qubits, connectivity)  # type: ignore
 
         # get_connectivity_graph(5, "T").draw(show=True)
 
@@ -78,3 +76,16 @@ class TestHTStabilizer(unittest.TestCase):
 
     def test_random_stabilizers_5_Q(self):
         self.verify_random_stabilizers(5, "Q", num=20)
+
+
+class TestCliffordOptimization(unittest.TestCase):
+
+    def test_random_clifford_optimization(self):
+        for num_qubits, connectivity in get_available_connectivities():
+            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
+                for i in range(100):
+                    cliff = random_clifford(num_qubits)
+                    qc = cliff.to_circuit()
+                    assert qc is not None
+                    qc2 = compress_preparation_circuit(qc, connectivity)  # type: ignore
+                    assert_same_state(qc, qc2)

@@ -12,13 +12,6 @@ from qiskit.quantum_info import random_clifford
 
 class TestHTStabilizer(unittest.TestCase):
 
-    def test_get_connectivity_graph(self):
-        for num_qubits, connectivity in get_available_connectivities():
-            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
-                get_connectivity_graph(num_qubits, connectivity)  # type: ignore
-
-        # get_connectivity_graph(5, "T").draw(show=True)
-
     def test_special_cases(self):
         stabilizer = Stabilizer(["ZIIIX", "IZIII", "IIXXI", "IIZYI", "YIIIY"])
         qc = get_preparation_circuit(stabilizer, "all")

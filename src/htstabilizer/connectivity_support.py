@@ -30,19 +30,26 @@ def get_available_connectivities() -> List[Tuple[int, str]]:
 
 
 def is_connectivity_supported(num_qubits: int, connectivity: SupportedConnectivity):
-    if num_qubits < 2 or num_qubits > 5:
+    try:
+        assert_connectivity_is_supported(num_qubits, connectivity)
+        return True
+    except AssertionError:
         return False
-        raise ValueError(f"The given stabilizer has {num_qubits} qubits which is not supported.")
-
-    return (num_qubits == 2 and connectivity == "all") or \
-        (num_qubits == 3 and connectivity in ["all", "linear"]) or \
-        (num_qubits == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
-        (num_qubits == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"])
 
 
 def assert_connectivity_is_supported(num_qubits: int, connectivity: SupportedConnectivity):
-    if not is_connectivity_supported(num_qubits, connectivity):
-        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
+    if num_qubits < 2 or num_qubits > 5:
+        raise AssertionError(f"The given stabilizer has {num_qubits} qubits which is not supported.")
+
+    if num_qubits == 2 and connectivity != "all":
+        raise AssertionError(f"The connectivity '{connectivity}' is not supported for 2 qubits, did you mean 'all'?")
+
+    is_supported = (num_qubits == 2 and connectivity == "all") or \
+        (num_qubits == 3 and connectivity in ["all", "linear"]) or \
+        (num_qubits == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
+        (num_qubits == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"])
+    if not is_supported:
+        raise AssertionError(f"The connectivity '{connectivity}' is not supported for {num_qubits} qubits.")
 
 
 def get_connectivity_graph(

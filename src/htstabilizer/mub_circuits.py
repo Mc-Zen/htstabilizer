@@ -1,5 +1,5 @@
 
-from .connectivity_support import is_connectivity_supported
+from .connectivity_support import assert_connectivity_is_supported, is_connectivity_supported
 from . import circuit_lookup
 
 from qiskit import QuantumCircuit
@@ -55,9 +55,8 @@ def get_mub_circuits(
     ValueError
         Raised if the connectivity is not supported
     """
-    if not is_connectivity_supported(num_qubits, connectivity):
-        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
 
+    assert_connectivity_is_supported(num_qubits, connectivity)
     return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity).circuits
 
 
@@ -92,9 +91,7 @@ def get_mubs(
         Raised if the connectivity is not supported
     """
 
-    if not is_connectivity_supported(num_qubits, connectivity):
-        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
-
+    assert_connectivity_is_supported(num_qubits, connectivity)
     return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity).mubs
 
 
@@ -129,8 +126,7 @@ def get_mub_info(
         Raised if the connectivity is not supported
     """
 
-    if not is_connectivity_supported(num_qubits, connectivity):
-        raise ValueError(f"The connectivity {connectivity} is not valid/supported for {num_qubits} qubits.")
+    assert_connectivity_is_supported(num_qubits, connectivity)
 
     mub_info = circuit_lookup.mub_circuit_lookup(num_qubits, connectivity)
     info = {}

@@ -50,7 +50,7 @@ compressed_qc = compress_preparation_circuit(qc, "T")
 
 ## Examples
 
-View the examples for exploring the functionality:
+View examples for exploring the functionality:
 
 - [Compressing Clifford preparation circuits][example-compress]
 - [Generating readout circuits][example-readout]

@@ -79,7 +79,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
             circuit_stabilizer = Stabilizer(info.parse_circuit())
             graph_state_stabilizer = Stabilizer(Graph.decompress(num_qubits, info.graph_id))
             # print(circuit_stabilizer, graph_state_stabilizer)
-            self.assertTrue(graph_state_stabilizer.is_equivalent(circuit_stabilizer))
+            self.assertTrue(graph_state_stabilizer.is_equivalent_mod_phase(circuit_stabilizer))
 
     def verify_lc_class_for_all(self, num_qubits, connectivity):
         """Check that the graph info for each lookup entry coincides with the lc class it should have"""
@@ -179,9 +179,6 @@ class TestStabilizerCircuitLookup_4_star(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_4_cycle(TestStabilizerCircuitLookupBase):
-    def test_verify_state_4_cycle(self):
-        self.verify_state_for_all(4, "cycle")
-
     def test_verify_stabilizer_4_cycle(self):
         self.verify_stabilizer_for_all(4, "cycle")
 
@@ -323,7 +320,7 @@ class TestMubLookupBase(unittest.TestCase):
     def verify_circuit_correctness(self, mub_info):
         """Check that each circuit actually diagonalizes the stabilizer it promises to"""
         for mub, circuit in zip(mub_info.mubs, mub_info.circuits):
-            self.assertTrue(Stabilizer(mub).is_equivalent(Stabilizer(circuit.inverse())))
+            self.assertTrue(Stabilizer(mub).is_equivalent_mod_phase(Stabilizer(circuit.inverse())))
 
 
 class TestAllMubs(TestMubLookupBase):

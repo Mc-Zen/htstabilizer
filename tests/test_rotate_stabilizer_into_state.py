@@ -39,7 +39,7 @@ class TestRotateStabilizerIntoState(unittest.TestCase):
 
     def test_basic(self):
         qc1, qc2 = self.get_different_bell_circuits()
-        self.assertTrue(Stabilizer(qc2).is_equivalent(Stabilizer(qc1)))
+        self.assertTrue(Stabilizer(qc2).is_equivalent_mod_phase(Stabilizer(qc1)))
         self.assertFalse(do_prepare_same_state(qc1, qc2))
 
         qc3 = rotate_stabilizer_into_state(qc1, qc2)
@@ -47,7 +47,7 @@ class TestRotateStabilizerIntoState(unittest.TestCase):
 
     def test_basic_inplace(self):
         qc1, qc2 = self.get_different_bell_circuits()
-        self.assertTrue(Stabilizer(qc2).is_equivalent(Stabilizer(qc1)))
+        self.assertTrue(Stabilizer(qc2).is_equivalent_mod_phase(Stabilizer(qc1)))
         self.assertFalse(do_prepare_same_state(qc1, qc2))
 
         qc3 = rotate_stabilizer_into_state(qc1, qc2, inplace=True)

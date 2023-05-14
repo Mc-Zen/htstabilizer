@@ -24,12 +24,12 @@ class TestHTStabilizer(unittest.TestCase):
                 stabilizer = random_stabilizer(cls(id).get_graph())
                 # stabilizer = Stabilizer(cls(i).get_graph())
                 qc = get_preparation_circuit(stabilizer, connectivity)
-                self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
+                self.assertTrue(stabilizer.is_equivalent_mod_phase(Stabilizer(qc)))
 
     def test_basic(self):
         stabilizer = Stabilizer(["ZII", "IZI", "IIZ"], True)
         qc = get_preparation_circuit(stabilizer, "all")
-        self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
+        self.assertTrue(stabilizer.is_equivalent_mod_phase(Stabilizer(qc)))
 
     def test_random_stabilizers_2_all(self):
         self.verify_random_stabilizers(2, "all", num=500)

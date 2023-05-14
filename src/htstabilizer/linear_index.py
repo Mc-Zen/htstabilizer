@@ -37,7 +37,7 @@ class NTuple:
 
 class Repr:
     __slots__ = ("groups")
-    
+
     def __init__(self, data: Union[NTuple, List[NTuple], List[List[int]], List[int], None] = None):
         self.groups = defaultdict(list)
         if data is None:
@@ -59,6 +59,13 @@ class Repr:
 
     def add(self, tuple: NTuple):
         self.groups[len(tuple)].append(tuple)
+
+    def flatten(self) -> List[int]:
+        result = []
+        for groups in self.groups.values():
+            for group in groups:
+                result += group
+        return result
 
     def __eq__(self, other) -> bool:
         return self.groups == other.groups
@@ -270,6 +277,57 @@ def from_24(repr: Repr) -> int:
     pair = repr.get(2, 0)
     return linear_index_from_n_choose_2(6, *pair)
 
+
+def to_222(index: int) -> Repr:
+    a = 0
+    b = 1 + index // 3
+    c, d = 1, 1 + index % 3
+    c, d = linear_index_to_n_choose2_to(4, index % 3)
+    # c = 2 if b == 1 else 1
+    c = 1
+    d = c + 1 + index % 3
+    if d >= b:
+        d += 1
+
+    if c >= b:
+        c += 1
+    rest = list(filter(lambda el: not el in (a, b, c, d), range(6)))
+    return Repr([NTuple([a, b]), NTuple([c, d]), NTuple(rest)])
+
+
+def from_222(repr: Repr) -> int:
+    pairs = [repr.get(2, 0).data, repr.get(2, 1).data, repr.get(2, 2).data]
+    pairs.sort(key=lambda x: x[0])
+    assert pairs[0][0] == 0
+    b = pairs[0][1]
+    for pair in pairs[1:]:
+        if pair[0] > b:
+            pair[0] -= 1
+        if pair[1] > b:
+            pair[1] -= 1
+    return 3*(b - 1) + pairs[1][1] - pairs[1][0] - 1
+
+
+def to_1122(index: int) -> Repr:
+    a, b = linear_index_to_n_choose2_to(6, index // 3)
+    rest = list(filter(lambda el: not el in (a, b), range(6)))
+    c, d = rest[0], rest[1 + index % 3]
+    restrest = list(filter(lambda x: not x in (c, d), rest))
+    return Repr([NTuple(a), NTuple(b), NTuple([c, d]), NTuple(restrest)])
+
+
+def from_1122(repr: Repr) -> int:
+    ab = [repr.get(1, 0)[0], repr.get(1, 1)[0]]
+    ab.sort()
+    i = linear_index_from_n_choose_2(6, *ab)
+
+    pairs = [repr.get(2, 0).data, repr.get(2, 1).data]
+    pairs.sort(key=lambda x: x[0])
+    rest = list(filter(lambda el: not el in ab, range(6)))
+    c = rest.index(pairs[0][0])
+    d = rest.index(pairs[0][1])
+    return 3*i + d - c - 1
+
 # 4 Qubits:
 #   Config  |  Size
 # ----------|-------
@@ -292,11 +350,12 @@ def from_24(repr: Repr) -> int:
 #  111111=6 |*   1
 #  15       |*   6  = (6 choose 1)
 #  33       |*  10  = (6 choose 3) / 2
-#  222      |   15  = (6 choose 2) * (4 choose 2) / 6
+#  222      |*  15  = (6 choose 2) * (4 choose 2) / 6
 #  11112=24 |*  15  = (6 choose 2)
 #  1113     |   20  = (6 choose 3)
-#  1122     |   45  = (6 choose 2) * (4 choose 2) / 2
+#  1122     |*  45  = (6 choose 2) * (4 choose 2) / 2
 #  123      |*  60  = (6 choose 2) * (4 choose 1) = (6 choose 1) * (5 choose 2)
+#  1122#    |   90  = (6 choose 2) * (4 choose 2)
 
 
 #

@@ -3,8 +3,8 @@ from htstabilizer.stabilizer_circuits import *
 from qiskit.quantum_info import random_clifford
 
 """
-You can compress a Clifford circuit by replacing it with a
-hardware-tailored optimized circuit. 
+You can compress a Clifford circuit that prepares a given stabilizer state
+by replacing it with an optimized hardware-tailored circuit that prepares the same stabilizer state. 
 
 The resulting circuit will only contain two-qubit gates between 
 connected qubits (with respect to the given connectivity), so no 

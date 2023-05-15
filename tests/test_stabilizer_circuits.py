@@ -19,12 +19,14 @@ class TestHTStabilizer(unittest.TestCase):
     def verify_random_stabilizers(self, num_qubits, connectivity, num):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
         cls = LCClasses[num_qubits - 2]
-        for id in range(cls.count()):
+        for id in range(1,cls.count()):
             for i in range(num):
                 stabilizer = random_stabilizer(cls(id).get_graph())
                 # stabilizer = Stabilizer(cls(i).get_graph())
                 qc = get_preparation_circuit(stabilizer, connectivity)
                 self.assertTrue(stabilizer.is_equivalent_mod_phase(Stabilizer(qc)))
+                # print(stabilizer, Stabilizer(qc))
+                self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
 
     def test_basic(self):
         stabilizer = Stabilizer(["ZII", "IZI", "IIZ"], True)

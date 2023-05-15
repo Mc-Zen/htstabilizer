@@ -160,7 +160,6 @@ class TestLCClasses(unittest.TestCase):
         g.add_edge(1, 4)
         g.add_edge(2, 3)
         lc_class = determine_lc_class5(Stabilizer(g))
-        print("\n", Stabilizer(g).R, "\n\n", Stabilizer(g).S)
         self.assertEqual(lc_class.type, LCClass5.EntanglementStructure.TwoPairs)
         self.assertEqual(lc_class.data, linear_index.Repr([[1, 4], [2, 3], [0]]))
         self.assertEqual(lc_class.id(), 23)

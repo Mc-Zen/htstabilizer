@@ -224,6 +224,8 @@ def find_local_clifford_layer(R: np.ndarray, S: np.ndarray, graph: Graph) -> Opt
     cc = f2.mat_mul(combinations, np.array(kernel))
 
     for row in cc:
+        sum = np.sum(row)
+        if sum < n or sum > 2*n: continue
         valid = True
         for i in range(n):
             c1 = row[i*4+0] | row[i*4+1]

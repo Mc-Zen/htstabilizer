@@ -9,6 +9,7 @@ def mat_mul(m1: np.ndarray, m2: np.ndarray) -> np.ndarray:
     """Multiply matrices m1 and m2 under modulo 2 arithmetic. """
     return (m1 @ m2) & 1
 
+
 def add(m1: np.ndarray, m2: np.ndarray) -> np.ndarray:
     """Add matrices m1 and m2 under modulo 2 arithmetic. """
     return m1 ^ m2
@@ -53,6 +54,56 @@ def rref(A: np.ndarray) -> Tuple[np.ndarray, List[int]]:
             h += 1
             k += 1
     return (A, pivot_cols)
+
+
+def rref_and_basis_change(A: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Get the row-reduced echelon form of A (see ``rref(A)``) along with the
+    basis change matrix M, so that 
+    M*A = rref(A)
+
+    Parameters
+    ----------
+    A : np.ndarray
+        Input matrix, should only contain elements 0 or 1 as integers. 
+
+    Returns
+    -------
+    Tuple[np.ndarray, np.ndarray]
+        RREF of input matrix A, basis change matrix M, and its inverse M_inv
+    """
+    m, n = A.shape  # m: rows, n: cols
+    if A.dtype != np.int8:
+        result = (A % 2).astype(np.int8)
+    else:
+        result = A.copy()
+    M = np.identity(m, np.int8)
+    M_inv = np.identity(m, np.int8)
+    pivot_cols = []
+    h = 0
+    k = 0
+    while h < m and k < n:
+        found = False
+        i = h
+        while not found and i < m:
+            if result[i, k] == 1:
+                found = True
+                break
+            i += 1
+        if not found:
+            k += 1
+        else:
+            pivot_cols.append(k)
+            result[[h, i]] = result[[i, h]]  # swap rows h and i
+            M = mat_mul(trf_swap_rows(h, i, m), M)
+            M_inv = mat_mul(M_inv, trf_swap_rows(h, i, m))
+            for i in list(range(h)) + list(range(h+1, m)):
+                if result[i, k]:
+                    M = mat_mul(trf_add_row(h, i, m), M)
+                    M_inv = mat_mul(M_inv, trf_add_row(h, i, m))
+                    result[i, :] = result[i, :] ^ result[h, :]
+            h += 1
+            k += 1
+    return (result, M, M_inv)
 
 
 def trf_swap_rows(i: int, j: int, m: int, dtype=np.int8) -> np.ndarray:

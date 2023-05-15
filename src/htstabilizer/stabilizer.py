@@ -229,8 +229,13 @@ class Stabilizer:
                       [other.R.T, other.S.T, other.phases.reshape((n, 1))]])
         return f2.rank(m) == n
 
-    def __repr__(self) -> str:
+    def to_list(self) -> List[str]:
+        """Get a list of Pauli strings, e.g. ["+XY", "-ZZ"]
+        """
         chs = ["I", "X", "Z", "Y"]
-        pauli_strings = ["\"" + "".join(chs[2*self.S[i][j] + self.R[i][j]] for i in range(self.num_qubits)) + "\"" for j in range(self.num_qubits)]
-        content = ",".join(pauli_strings)
-        return f"Stabilizer([{content}])"
+        phs = ["+", "-"]
+        return [phs[self.phases[j]] + "".join(chs[2*self.S[i][j] + self.R[i][j]] for i in range(self.num_qubits)) for j in range(self.num_qubits)]
+
+    def __repr__(self) -> str:
+        content = "','".join(self.to_list())
+        return f"Stabilizer(['{content}'])"

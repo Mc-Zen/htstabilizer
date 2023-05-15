@@ -187,9 +187,6 @@ class TestLinearIndex(unittest.TestCase):
         self.assertEqual(from_24(Repr([NTuple([5, 0]), NTuple([1, 2, 3, 4])])), 4)
 
     def test_to_from_222(self):
-        print()
-        for i in range(15):
-            print(to_222(i))
         self.assertEqual(to_222(0), Repr([NTuple([0, 1]), NTuple([2, 3]), NTuple([4, 5])]))
         self.assertEqual(to_222(1), Repr([NTuple([0, 1]), NTuple([2, 4]), NTuple([3, 5])]))
         self.assertEqual(to_222(2), Repr([NTuple([0, 1]), NTuple([2, 5]), NTuple([3, 4])]))
@@ -214,10 +211,8 @@ class TestLinearIndex(unittest.TestCase):
         self.assertEqual(from_222(Repr([NTuple([5, 4]), NTuple([1, 0]), NTuple([2, 3])])), 0)
 
     def test_to_from_1122(self):
-        print()
         for i in range(45):
             self.assertEqual(sorted(to_1122(i).flatten()), list(range(6)))
-            print(to_1122(i))
 
         self.assertEqual(to_1122(0), Repr([NTuple([0]), NTuple([1]), NTuple([2, 3]), NTuple([4, 5])]))
         self.assertEqual(to_1122(1), Repr([NTuple([0]), NTuple([1]), NTuple([2, 4]), NTuple([3, 5])]))

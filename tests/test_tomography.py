@@ -112,3 +112,9 @@ class TestFullStateTomography(unittest.TestCase):
         qc_prep.h(0)
         qc_prep.cx(0, range(1,5))
         self.check_tomography(qc_prep, atol=.0050)
+
+    def test_pauli_from_bitstring(self):
+        self.assertEqual(z_pauli_from_bitstring(1, 0b0), Pauli("I"))
+        self.assertEqual(z_pauli_from_bitstring(3, 0b000), Pauli("III"))
+        self.assertEqual(z_pauli_from_bitstring(3, 0b011), Pauli("IZZ"))
+        self.assertEqual(z_pauli_from_bitstring(4, 0b1011), Pauli("ZIZZ"))

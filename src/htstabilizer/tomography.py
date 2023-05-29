@@ -236,6 +236,18 @@ class CircuitResult:
         return "CircuitResult(" + ", ".join(result.__str__(self.num_qubits) for result in self.results) + ")"
 
 
+def z_pauli_from_bitstring(num_qubits: int, bitstring: int) -> Pauli:
+    """
+    Create an n-qubit Pauli string with Z where `bitstring` is 1 and I
+    where `bitstring` is 0. The bitstring should be little-endian, i.e.,
+    the least-significant bit represents the zeroth qubit. 
+    """
+    l = list(f'{bitstring:0>{num_qubits}b}')
+    l.reverse()
+    z = np.array([bool(int(x)) for x in l])
+    return Pauli((np.array([bool(int(x)) for x in l]), np.zeros(num_qubits, dtype=bool)))
+
+
 class StabilizerMeasurementFitter:
 
     def __init__(self, result: Result, circuit: QuantumCircuit, result_index=0):
@@ -282,9 +294,9 @@ class StabilizerMeasurementFitter:
             Dictionary of measured Paulis and their expectation values. 
         """
         expectation_values: Dict[Pauli, float] = {}
-        readoud_circuit = self.readout_info.circuit
-        inverse_circuit = readoud_circuit.inverse()
-        num_qubits = readoud_circuit.num_qubits
+        readout_circuit = self.readout_info.circuit
+        inverse_circuit = readout_circuit.inverse()
+        num_qubits = readout_circuit.num_qubits
 
         qubits = self.readout_info.qubits
         counts = self.result.get_counts()
@@ -292,24 +304,18 @@ class StabilizerMeasurementFitter:
             counts = counts[self.result_index]
         circuit_result = CircuitResult(counts, qubits)  # type: ignore
 
-        identity = Pauli("I" * num_qubits)
-        for i in range(1, 2**num_qubits):
-            z_pauli = identity.copy()
-            for j in range(num_qubits):
-                if i & (1 << j):
-                    z_pauli[j] = 'Z'
-
-            pauli = z_pauli.evolve(readoud_circuit)
+        for i in range(1, 2**num_qubits): # Generate all Paulis in the computational basis
+            z_pauli = z_pauli_from_bitstring(num_qubits, i)
+            pauli = z_pauli.evolve(inverse_circuit, frame="s") # evolve backwards through circuit
             pauli.phase = 0
-            pauli_z = pauli.evolve(inverse_circuit)
-            assert pauli_z.phase == 2 or pauli_z.phase == 0
+
+            z_pauli = pauli.evolve(readout_circuit, frame="s") # evolve back to get sign
+            assert z_pauli.phase == 2 or z_pauli.phase == 0
+
             expectation_value = _compute_expectation_value(circuit_result, Bitstring(i))
+            expectation_values[pauli] = expectation_value * (1 if z_pauli.phase == 0 else -1)
 
-            if pauli_z.phase == 2:
-                expectation_value *= -1
-            expectation_values[pauli] = expectation_value
-
-        expectation_values[identity] = 1
+        expectation_values[Pauli("I" * num_qubits)] = 1
 
         if qubits is None or not full_hilbert_space:
             return expectation_values
@@ -417,6 +423,25 @@ class FullStateTomographyFitter:
 
 
 def _compute_expectation_value(circuit_result: CircuitResult, s: Bitstring):
+    """
+    Compute the expectation value from circuit results for an observable
+    that has the outcome signature of given bitstring, i.e., the desired
+    oberservable is transformed into a Z-only Pauli string by the readout 
+    diagonalization circuit that has "Z" where the bitstring is 1 and "I"
+    everywhere else. 
+
+    Parameters
+    ----------
+    circuit_result : CircuitResult
+        Results for one circuit
+    s : Bitstring
+        Little-endian Bitstring representing the outcome t
+
+    Returns
+    -------
+    float
+        Expectation value
+    """
     expectation_value: int = 0
     total_count: int = 0
     for result in circuit_result.results:

@@ -100,7 +100,7 @@ def compress_preparation_circuit(
 
     Look at the documentation of `get_preparation_circuit()` for more information. 
 
-
+    Note: The resulting circuit might produce a state with a different global phase. 
 
     Parameters
     ----------
@@ -119,6 +119,12 @@ def compress_preparation_circuit(
     optimized_circuit = _get_preparation_circuit_modulo_phase(Stabilizer(circuit), connectivity)
     return rotate_stabilizer_into_state(optimized_circuit, circuit, inplace=True)
 
+from qiskit.transpiler import PassManager
+from qiskit.transpiler.passes import InverseCancellation
+from qiskit.circuit.library import HGate
+
+
+single_qubit_gate_canceller = PassManager([InverseCancellation([HGate()])])
 
 def _get_preparation_circuit_modulo_phase(
         stabilizer: Stabilizer,
@@ -133,4 +139,5 @@ def _get_preparation_circuit_modulo_phase(
     if layer is None:
         raise RuntimeError("No circuit could be found. Please validate the input stabilizer.")
     layer_circuit = local_clifford_layer_to_circuit(layer).inverse()
-    return circuit_info.parse_circuit().compose(layer_circuit)  # type: ignore
+    circuit = circuit_info.parse_circuit().compose(layer_circuit)  # type: ignore
+    return single_qubit_gate_canceller.run(circuit) # type: ignore

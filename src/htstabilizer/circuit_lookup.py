@@ -5,7 +5,7 @@ except ImportError:
     import importlib_resources as pkg_resources
 
 from typing import List
-from . import data  # relative-import the *package* containing the templates
+from . import data  # import the package containing the circuits
 from qiskit import QuantumCircuit
 
 """Read quantum circuits from lookup files

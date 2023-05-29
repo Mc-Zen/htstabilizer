@@ -50,7 +50,7 @@ class Stabilizer:
         Parameters
         ----------
         data : List[str] | Graph | Tuple[np.ndarray, np.ndarray] | Tuple[np.ndarray, np.ndarray, np.ndarray] | QuantumCircuit
-            Input data in form 
+            Input data in form of one of the versions specified above. 
         validate : bool, optional
             Whether to validate the stabilizer, i.e. check that all Paulis commute and 
             that the generator is linear independant, by default False

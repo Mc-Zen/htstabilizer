@@ -3,9 +3,9 @@ from typing import List, Tuple, Union
 
 
 class Graph:
-    """A basic class for representing undirected, simple (no double edges, no edge from a vertex to itself) 
+    """
+    A basic class for representing undirected, simple (no double edges, no edge from a vertex to itself) 
     graphs through an adjacency matrix. 
-
     """
 
     def __init__(self, data: Union[int, np.ndarray]):
@@ -44,13 +44,12 @@ class Graph:
         return result
 
     def has_edge(self, vertex1: int, vertex2: int) -> bool:
-        """Returns true if the graph has an edge between the given vertices. 
-        """
+        """Returns true if the graph has an edge between the given vertices. """
         return self.adjacency_matrix[vertex1, vertex2] == 1
 
     def add_edge(self, vertex1: int, vertex2: int):
-        """Add an edge between the given vertices
-        """
+        """Add an edge between the given vertices. """
+        # assert 0<vertex1<self.num_vertices, f"Graph.add_edge"
         if vertex1 == vertex2:
             return
         self.adjacency_matrix[vertex1, vertex2] = 1
@@ -72,30 +71,25 @@ class Graph:
             previous_vertex = vertex
 
     def remove_edge(self, vertex1: int, vertex2: int):
-        """Remove edge between vertex1 and vertex2
-        """
+        """Remove edge between vertex1 and vertex2. """
         self.adjacency_matrix[vertex1, vertex2] = 0
         self.adjacency_matrix[vertex2, vertex1] = 0
 
     def remove_all_edges_to(self, vertex):
-        """Remove all edges where give vertex is one end of the edge
-        """
+        """Remove all edges where give vertex is one end of the edge. """
         for i in range(self.num_vertices):
             self.remove_edge(i, vertex)
 
     def clear(self):
-        """Remove all edges from the graph
-        """
+        """Remove all edges from the graph. """
         self.adjacency_matrix.fill(0)
 
     def edge_count(self) -> int:
-        """Count the number of edges in the graph
-        """
+        """Count the number of edges in the graph. """
         return self.adjacency_matrix.sum() // 2
 
     def get_edges(self) -> List[Tuple[int, int]]:
-        """Get a list of tuples containing the vertices for each edge in the graph
-        """
+        """Get a list of tuples containing the vertices for each edge in the graph. """
         edges = []
         for i in range(self.num_vertices-1):
             for j in range(i+1, self.num_vertices):
@@ -104,7 +98,8 @@ class Graph:
         return edges
 
     def draw(self, filename=None, show=False, size=100, point_size=10, show_vertex_labels: bool = True, first_vertex_label: int = 1):
-        """Draw a graph using matplotlib. If filename is provided, the result
+        """
+        Draw a graph using matplotlib. If filename is provided, the result
         graphic is storedat the path given by the filename. 
 
         When drawn, the zeroth vertex vertex is drawn at the topmost position
@@ -135,8 +130,7 @@ class Graph:
 
     @staticmethod
     def fully_connected(num_vertices: int):
-        """Create a fully connected graph with n vertices.
-        """
+        """Create a fully connected graph with n vertices. """
         graph = Graph(num_vertices)
         graph.adjacency_matrix.fill(1)
         for i in range(num_vertices):
@@ -145,8 +139,7 @@ class Graph:
 
     @staticmethod
     def star(num_vertices: int, center: int = 0):
-        """Create a star graph with n vertices and center being the star center vertex.
-        """
+        """Create a star graph with n vertices and center being the star center vertex. """
         graph = Graph(num_vertices)
         graph.adjacency_matrix[center, :] ^= 1
         graph.adjacency_matrix[:, center] ^= 1
@@ -154,8 +147,7 @@ class Graph:
 
     @staticmethod
     def linear(num_vertices: int):
-        """Create a linear graph (connected path graph) from vertex 0 to (n-1).
-        """
+        """Create a linear graph (connected path graph) from vertex 0 to (n-1). """
         graph = Graph(num_vertices)
         for i in range(num_vertices - 1):
             graph.add_edge(i, i+1)
@@ -163,16 +155,14 @@ class Graph:
 
     @staticmethod
     def cycle(num_vertices: int):
-        """Create a cycle graph (connected path graph) from vertex 0 to (n-1) and back to 0.
-        """
+        """Create a cycle graph (connected path graph) from vertex 0 to (n-1) and back to 0. """
         graph = Graph.linear(num_vertices)
         graph.add_edge(0, num_vertices - 1)
         return graph
 
     @staticmethod
     def pusteblume(num_vertices: int):
-        """Create a Pusteblume graph star from (n-2) vertices and the remaining 2 vertices both connected to one vertex from the star subgraph. 
-        """
+        """Create a Pusteblume graph star from (n-2) vertices and the remaining 2 vertices both connected to one vertex from the star subgraph.  """
         assert num_vertices >= 5, "The pusteblume graph is only possible for at least 5 vertices"
         graph = Graph(num_vertices)
         for i in range(1, 4):
@@ -182,7 +172,8 @@ class Graph:
         return graph
 
     def local_complementation(self, vertex: int):
-        """Apply a local complementation inplace at given vertex. A local complementation
+        """
+        Apply a local complementation inplace at given vertex. A local complementation
         takes the neighborhood N(i) of a vertex i and replaces the subgraph which is given by the 
         edges between vertices in N(i) by its graph complement. 
         """
@@ -192,15 +183,13 @@ class Graph:
             self.adjacency_matrix[i, i] = 0
 
     def local_complemented(self, vertex: int):
-        """Return a new graph which results from performing local complementation at given vertex
-        """
+        """Return a new graph which results from performing local complementation at given vertex. """
         result = self.copy()
         result.local_complementation(vertex)
         return result
 
     def swap(self, vertex1: int, vertex2: int):
-        """Swap two vertices in the graph (transform edges according to the new vertex positions).
-        """
+        """Swap two vertices in the graph (transform edges according to the new vertex positions). """
         self.adjacency_matrix[[vertex1, vertex2]] = self.adjacency_matrix[[vertex2, vertex1]]
         self.adjacency_matrix[:, [vertex1, vertex2]] = self.adjacency_matrix[:, [vertex2, vertex1]]
 
@@ -208,7 +197,8 @@ class Graph:
         return self.num_vertices == value.num_vertices and np.array_equal(self.adjacency_matrix, value.adjacency_matrix)
 
     def compress(self) -> int:
-        """Compress the graphs adjacency matrix into an integer where each
+        """
+        Compress the graphs adjacency matrix into an integer where each
         bit in the integer represents one edge of the graph. 
 
         I.e. it contains the graph in compressed form as a bitstring integer

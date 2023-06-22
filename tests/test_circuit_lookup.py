@@ -26,7 +26,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
     def verify_connectivity_for_all(self, num_qubits, connectivity):
         """Check that all lookup circuits indeed respect the connectivity constraints that they promise"""
         con = get_connectivity_graph(num_qubits, connectivity)
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for i in range(cls.count()):
             info = stabilizer_circuit_lookup(num_qubits, connectivity, i)
@@ -41,7 +41,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
         self.assertEqual(transpiled_circuit.depth(lambda instr: instr.operation.name == "cx"), info.depth)
 
     def verify_cost_and_depth_for_all(self, num_qubits, connectivity):
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for i in range(cls.count()):
             info = stabilizer_circuit_lookup(num_qubits, connectivity, i)
@@ -64,7 +64,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
         # self.assertEqual(Statevector(circuit), Statevector(graph_state_circuit))
 
     def verify_state_for_all(self, num_qubits, connectivity):
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
             info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
@@ -72,7 +72,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
 
     def verify_stabilizer_for_all(self, num_qubits, connectivity):
         """Check that the circuits have indeed the same stabilizers as the graphs states that they promise to generate"""
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
             info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
@@ -83,7 +83,7 @@ class TestStabilizerCircuitLookupBase(unittest.TestCase):
 
     def verify_lc_class_for_all(self, num_qubits, connectivity):
         """Check that the graph info for each lookup entry coincides with the lc class it should have"""
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for id in range(cls.count()):
             info = stabilizer_circuit_lookup(num_qubits, connectivity, id)
@@ -261,6 +261,16 @@ class TestStabilizerCircuitLookup_5_Q(TestStabilizerCircuitLookupBase):
     def test_verify_connectivity_5_Q(self):
         self.verify_connectivity_for_all(5, "Q")
 
+class TestStabilizerCircuitLookup_6_all(TestStabilizerCircuitLookupBase):
+    def test_verify_stabilizer_6_all(self):
+        self.verify_stabilizer_for_all(6, "all")
+
+    def test_verify_lc_class_6_all(self):
+        self.verify_lc_class_for_all(6, "all")
+
+    def test_verify_connectivity_6_all(self):
+        self.verify_connectivity_for_all(6, "all")
+
 
 class TestVerifyCostAndDepthInfo(TestStabilizerCircuitLookupBase):
 
@@ -281,6 +291,8 @@ class TestVerifyCostAndDepthInfo(TestStabilizerCircuitLookupBase):
         self.verify_cost_and_depth_for_all(5, "T")
         self.verify_cost_and_depth_for_all(5, "star")
         self.verify_cost_and_depth_for_all(5, "cycle")
+
+        self.verify_cost_and_depth_for_all(6, "all")
 
 
 class TestStabilizerCircuitInfo(unittest.TestCase):
@@ -319,8 +331,12 @@ class TestMubLookupBase(unittest.TestCase):
 
     def verify_circuit_correctness(self, mub_info):
         """Check that each circuit actually diagonalizes the stabilizer it promises to"""
+        i = 0
         for mub, circuit in zip(mub_info.mubs, mub_info.circuits):
+            if(not Stabilizer(mub).is_equivalent_mod_phase(Stabilizer(circuit.inverse()))):
+                print(Stabilizer(mub), Stabilizer(circuit.inverse()), i)
             self.assertTrue(Stabilizer(mub).is_equivalent_mod_phase(Stabilizer(circuit.inverse())))
+            i+=1
 
 
 class TestAllMubs(TestMubLookupBase):
@@ -340,6 +356,7 @@ class TestAllMubs(TestMubLookupBase):
             (5, "cycle"),
             (5, "T"),
             (5, "Q"),
+            (6, "all"),
         ]
 
         for num_qubits, connectivity in connectivities:

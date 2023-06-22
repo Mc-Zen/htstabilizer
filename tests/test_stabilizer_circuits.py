@@ -17,9 +17,9 @@ class TestHTStabilizer(unittest.TestCase):
         qc = get_preparation_circuit(stabilizer, "all")
 
     def verify_random_stabilizers(self, num_qubits, connectivity, num):
-        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5]
+        LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
-        for id in range(1,cls.count()):
+        for id in range(1, cls.count()):
             for i in range(num):
                 stabilizer = random_stabilizer(cls(id).get_graph())
                 # stabilizer = Stabilizer(cls(i).get_graph())
@@ -71,6 +71,9 @@ class TestHTStabilizer(unittest.TestCase):
 
     def test_random_stabilizers_5_Q(self):
         self.verify_random_stabilizers(5, "Q", num=20)
+
+    # def test_random_stabilizers_6_all(self):
+    #     self.verify_random_stabilizers(6, "all", num=20)
 
 
 class TestCliffordOptimization(unittest.TestCase):

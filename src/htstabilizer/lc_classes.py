@@ -303,6 +303,88 @@ class LCClass5(LCClassBase):
         return graph
 
 
+class LCClass6(LCClassBase):
+
+    @unique
+    class EntanglementStructure(IntEnum):
+        """5-Qubit LC+GI classes (entanglement structures)"""
+        Separable = 0      # Separable graph
+        Pair = 1           # One pair of connected vertices, the other vertices are isolated
+        TwoPairs = 2       # Two pairs of connected vertices with no edges between them, the remaining vertex is isolated
+        ThreePairs = 3     # Three pairs of connected vertices with no edges between them
+        Triple = 4         # One triple of connected vertices, the other vertices are isolated
+        PairAndTriple = 5  # One pair and one triple of connected vertices with no edges between them
+        TwoTriples = 6     # Two triples
+        Line4 = 7          # A path graph of 4 vertices
+        Line4AndPair = 8   #
+        Star4 = 9          # A star of 4 vertices
+        Star4AndPair = 10  # A star of 4 vertices
+        Line5 = 11         # A path graph of 5 vertices
+        Cycle5 = 12        # A cycle graph of 5 vertices
+        T = 13             # A star of four vertices and a fifth vertex is connected to one of the former
+        Star5 = 14         # A star of 5 vertices
+        Cycle6 = 15        # A cycle graph of 6 vertices
+        Line6 = 16         # A path graph of 6 vertices
+        T6 = 17            # Like T and another vertex attached to the tail
+        Cross = 18         # A cross-shaped graph like this: +−
+        Star6 = 19         # A stargraph of 6 vertices
+        H = 20             # A H-shaped graph
+        E = 21             # An E-shaped graph
+        EBar = 22          # An E-shaped graph with a vertical bar
+        Box5 = 23          # A 5-cycle with a sixth vertex attached to it
+        Box4 = 24          # A 4-cycle with two vertices attached at opposite ends
+        AME = 25           # The 6-qubit AME state
+
+    _start_indices = [0, 1, 16, 61, 76, 96, 156, 166, 211, 256, 271, 286, 376, 382, 442, 448, 463, 553, 613,
+                      628, 629, 639, 684, 699, 744, 759, 760]  # First index of each LC-GI-class / EntanglementStructure
+
+    combinatorics = {
+        "C6":     {"count":  1, "from_lin_idx1": linear_index.to_0, "to_lin_idx": linear_index.from_0},
+        "C15":    {"count":  6, "from_lin_idx1": linear_index.to_15, "to_lin_idx": linear_index.from_15},
+        "C33":    {"count": 10, "from_lin_idx1": linear_index.to_33, "to_lin_idx": linear_index.from_33},
+        "C222":   {"count": 15, "from_lin_idx1": linear_index.to_222, "to_lin_idx": linear_index.from_222},
+        "C24":    {"count": 15, "from_lin_idx1": linear_index.to_24, "to_lin_idx": linear_index.from_24},
+        "C1113":  {"count": 20, "from_lin_idx1": linear_index.to_1113, "to_lin_idx": linear_index.from_1113},
+        "C1122":  {"count": 45, "from_lin_idx1": linear_index.to_1122, "to_lin_idx": linear_index.from_1122},
+        "C123":   {"count": 60, "from_lin_idx1": linear_index.to_123, "to_lin_idx": linear_index.from_123},
+        "C1122s": {"count": 90, "from_lin_idx1": linear_index.to_1122s, "to_lin_idx": linear_index.from_1122s},
+    }
+
+    combinatorics_map = {
+        EntanglementStructure.Separable:     "C6",
+        EntanglementStructure.Pair:          "C24",
+        EntanglementStructure.TwoPairs:      "C1122",
+        EntanglementStructure.ThreePairs:    "C222",
+        EntanglementStructure.Triple:        "C1113",
+        EntanglementStructure.PairAndTriple: "C123",
+        EntanglementStructure.TwoTriples:    "C33",
+        EntanglementStructure.Line4:         "C1122",
+        EntanglementStructure.Line4AndPair:  "C1122",
+        EntanglementStructure.Star4:         "C24",
+        EntanglementStructure.Star4AndPair:  "C24",
+        EntanglementStructure.Line5:         "C1122s",
+        EntanglementStructure.Cycle5:        "C15",
+        EntanglementStructure.T:             "C123",
+        EntanglementStructure.Star5:         "C15",
+        EntanglementStructure.Cycle6:        "C222",
+        EntanglementStructure.Line6:         "C1122s",
+        EntanglementStructure.T6:            "C123",
+        EntanglementStructure.Cross:         "C24",
+        EntanglementStructure.Star6:         "C6",
+        EntanglementStructure.H:             "C33",
+        EntanglementStructure.E:             "C1122",
+        EntanglementStructure.EBar:          "C222",
+        EntanglementStructure.Box5:          "C1122",
+        EntanglementStructure.Box4:          "C222",
+        EntanglementStructure.AME:           "C6",
+    }
+
+    def num_qubits(self) -> int: return 5
+
+    def get_graph(self) -> Graph:
+        raise NotImplementedError
+
+
 def determine_lc_class(stabilizer: Stabilizer) -> Union[LCClass2, LCClass3, LCClass4, LCClass5]:
     """Determine the graph equivalence class under local complementation (LC class),
     that the stabilizer uniquely corresponds to. Every stabilizer state is local-Clifford

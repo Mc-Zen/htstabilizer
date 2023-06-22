@@ -281,7 +281,7 @@ def from_24(repr: Repr) -> int:
 def to_222(index: int) -> Repr:
     a = 0
     b = 1 + index // 3
-    c, d = 1, 1 + index % 3
+    # c, d = 1, 1 + index % 3
     c, d = linear_index_to_n_choose2_to(4, index % 3)
     # c = 2 if b == 1 else 1
     c = 1
@@ -328,6 +328,43 @@ def from_1122(repr: Repr) -> int:
     d = rest.index(pairs[0][1])
     return 3*i + d - c - 1
 
+
+def to_1113(index: int) -> Repr:
+    l3 = to_33(index // 2)
+    triple1, triple2 = l3.get(3, 0), l3.get(3, 1)
+    if index % 2 == 0:
+        triple1, triple2 = triple2, triple1
+
+    return Repr([triple1, *[NTuple(x) for x in triple2]])
+
+
+def from_1113(repr: Repr) -> int:
+    index = from_33(Repr([repr.get(3, 0), NTuple([repr.get(1, 0)[0], repr.get(1, 1)[0], repr.get(1, 2)[0]])]))
+    # the zero is in the triple for odd numbers
+
+    return 2*index + int(0 in repr.get(3, 0))
+
+# Note: exceptionally, for this case the order of the NTuples matters!
+# The first 1-Tuple (single) is different to the second one and they are
+# not interchangeable. 
+def to_1122s(index: int) -> Repr:
+    # the way this works is by using the 1122 combinatorics and
+    # breaking the symmetry between the two 1-Tuples. to_1122()
+    # always returns tuples arranged so that the first 1-Tuple is
+    # the smaller one. Here we define the 
+    l1122 = to_1122(index // 2)
+    pair1, pair2 = l1122.get(2, 0), l1122.get(2,1)
+    single1, single2 = l1122.get(1, 0), l1122.get(1,1)
+
+    if index % 2 == 1:
+        single1, single2 = single2, single1
+    return Repr([pair1, pair2, single1, single2])
+
+
+def from_1122s(repr: Repr) -> int:
+    index = from_1122(repr)
+    return 2*index + int(repr.get(1,0)[0] > repr.get(1,1)[0])
+
 # 4 Qubits:
 #   Config  |  Size
 # ----------|-------
@@ -352,10 +389,9 @@ def from_1122(repr: Repr) -> int:
 #  33       |*  10  = (6 choose 3) / 2
 #  222      |*  15  = (6 choose 2) * (4 choose 2) / 6
 #  11112=24 |*  15  = (6 choose 2)
-#  1113     |   20  = (6 choose 3)
+#  1113     |*  20  = (6 choose 3)
 #  1122     |*  45  = (6 choose 2) * (4 choose 2) / 2
 #  123      |*  60  = (6 choose 2) * (4 choose 1) = (6 choose 1) * (5 choose 2)
-#  1122#    |   90  = (6 choose 2) * (4 choose 2)
+#  1122s    |*  90  = (6 choose 2) * (4 choose 2)
 
 
-#

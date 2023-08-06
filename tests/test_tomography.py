@@ -39,9 +39,9 @@ class TestStabilizerMeasurementCircuit(unittest.TestCase):
 
         ref = QuantumCircuit(4)
         ref.compose(qc_prep, inplace=True)
-        ref.h(range(4))
-        ref.h(range(4))
         ref.measure_all()
+        print(qc)
+        print(ref)
         self.assertEqual(qc, ref)
 
     def test_measure_some_qubits(self):
@@ -50,8 +50,6 @@ class TestStabilizerMeasurementCircuit(unittest.TestCase):
 
         ref = QuantumCircuit(4)
         ref.compose(qc_prep, inplace=True)
-        ref.h(range(2, 4))
-        ref.h(range(2, 4))
         ref.measure_all()
         self.assertEqual(qc, ref)
 

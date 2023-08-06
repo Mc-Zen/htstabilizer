@@ -17,8 +17,8 @@ classifiers = [
 ]
 keywords = ["quantum circuits", "clifford", "hardware-tailored", "full-state tomography", "stabilizer", "quantum state preparation", "quantum readout circuits", "mutually unbiased bases", "short circuits", "full state tomography", "circuit optimization"]
 dependencies = [
-    "qiskit",
-    "numpy"
+    "qiskit >= 0.39",
+    "numpy >= 1.22"
 ]
 
 [project.urls]

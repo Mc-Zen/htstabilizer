@@ -27,6 +27,8 @@ def get_available_connectivities() -> List[Tuple[int, str]]:
         (5, "T"),
         (5, "Q"),
         (6, "all"),
+        (6, "star"),
+        (6, "ladder"),
     ]
 
 
@@ -49,7 +51,7 @@ def assert_connectivity_is_supported(num_qubits: int, connectivity: SupportedCon
         (num_qubits == 3 and connectivity in ["all", "linear"]) or \
         (num_qubits == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
         (num_qubits == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"]) or \
-        (num_qubits == 6 and connectivity in ["all"])
+        (num_qubits == 6 and connectivity in ["all", "star", "allx", "ladder"])
     if not is_supported:
         raise AssertionError(f"The connectivity '{connectivity}' is not supported for {num_qubits} qubits.")
 
@@ -93,4 +95,10 @@ def get_connectivity_graph(
     if connectivity == "cycle":
         assert num_qubits in [4, 5], "Cycle connectivity is available for 4 and 5 qubits"
         return Graph.cycle(num_qubits)
+    if connectivity == "ladder":
+        assert num_qubits in [6], "Ladder connectivity is available for 6 qubits"
+        graph = Graph.cycle(num_qubits)
+        graph.add_edge(1, 4)
+        return graph
+    
     assert False, f"Unsupported connnectivity: {connectivity}"

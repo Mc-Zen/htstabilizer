@@ -35,7 +35,7 @@ def rotate_stabilizer_into_state(
 
     if isinstance(target, QuantumCircuit):
         return _rotate_stabilizer_into_state_circuit(circuit, target, inplace=inplace)
-    
+
     if isinstance(target, Stabilizer):
         return _rotate_stabilizer_into_state_stabilizer(circuit, target, inplace=inplace)
 
@@ -94,6 +94,17 @@ def _rotate_stabilizer_into_state_circuit(
     result = circuit.compose(pauli_layer, front=True, inplace=inplace)
     return circuit if result is None else result  # if inplace is False, compose() returns None
 
+    """
+    XX,YY
+    1111
+    0011
+
+    -XX,ZZ   => mit Circuit
+    1100
+    0011
+
+
+    """
 
 def _rotate_stabilizer_into_state_stabilizer(
         circuit: QuantumCircuit,
@@ -125,8 +136,8 @@ def _rotate_stabilizer_into_state_stabilizer(
     #
     # Let G=[R S], G'=[R' S'] and q,q' phase vectors
     # Let M, M' ∈ GL_n(F2) basis change matrices so that
-    #     M[R, q] = [Grref, qr]
-    #     M'[R', q'] = [Grref', qr']
+    #     M[G, q] = [Grref, qr]
+    #     M'[G', q'] = [Grref', qr']
     #
     # Then Grref=Grref' and qr=qr' iff γ=γ', γ=<(-1)^qi i^(sum_j r_ij s_ij) X^ri Z^si | i=1,...,n>
     #

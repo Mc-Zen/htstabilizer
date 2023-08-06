@@ -106,7 +106,7 @@ def get_mub_info(
         - `"max two-qubit count"`:     the maximum number of native two-qubit gates (cx or cz, swap=3cx) 
                                        one of the circuits has.
         - `"max two-qubit depth"`:     the maximum depth of native two-qubit gates one of the circuits has.
-        - `"average two-qubit gates"`: the average number of native two-qubit gates across all circuits
+        - `"average two-qubit count"`: the average number of native two-qubit gates across all circuits
 
     Parameters
     ----------
@@ -130,8 +130,8 @@ def get_mub_info(
 
     mub_info = circuit_lookup.mub_circuit_lookup(num_qubits, connectivity)
     info = {}
-    info["num circuits"] = mub_info.num_qubits**2 + 1
+    info["num circuits"] = 2**mub_info.num_qubits + 1
     info["max two-qubit count"] = mub_info.max_cost
     info["max two-qubit depth"] = mub_info.max_depth
-    info["average two-qubit gates"] = mub_info.total_cost / info["num circuits"]
+    info["average two-qubit count"] = mub_info.total_cost / info["num circuits"]
     return info

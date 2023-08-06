@@ -315,7 +315,7 @@ class StabilizerMeasurementFitter:
             expectation_value = _compute_expectation_value(circuit_result, Bitstring(i))
             expectation_values[pauli] = expectation_value * (1 if z_pauli.phase == 0 else -1)
 
-        expectation_values[Pauli("I" * num_qubits)] = 1
+        expectation_values[Pauli("I" * num_qubits)] = 1.0
 
         if qubits is None or not full_hilbert_space:
             return expectation_values

@@ -70,6 +70,20 @@ class Graph:
             self.add_edge(previous_vertex, vertex)
             previous_vertex = vertex
 
+    def add_star(self, vertices: List[int]):
+        """Add a series of edges to the graph connecting each of the given vertices
+        to the first one in the list. 
+
+        Parameters
+        ----------
+        vertices : List[int]
+            Vertex list describing the star
+        """
+        if len(vertices) < 2:
+            return
+        for vertex in vertices[1:]:
+            self.add_edge(vertices[0], vertex)
+
     def remove_edge(self, vertex1: int, vertex2: int):
         """Remove edge between vertex1 and vertex2. """
         self.adjacency_matrix[vertex1, vertex2] = 0

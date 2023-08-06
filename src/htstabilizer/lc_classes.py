@@ -2,8 +2,9 @@
 Tools for determining equivalence classes under local complementation
 for stabilizer groups.
 """
+from collections import defaultdict
 from enum import IntEnum, unique
-from typing import List, Union
+from typing import Dict, List, Union
 from .stabilizer import Stabilizer
 import numpy as np
 import itertools
@@ -114,6 +115,9 @@ class LCClassBase(metaclass=abc.ABCMeta):
 
     def __repr__(self) -> str:
         return f"Repr{self.id:self.data}"
+
+    def __str__(self) -> str:
+        return f"LCClass{self.num_qubits()}({self.data})"
 
 
 class LCClass2(LCClassBase):
@@ -379,10 +383,97 @@ class LCClass6(LCClassBase):
         EntanglementStructure.AME:           "C6",
     }
 
-    def num_qubits(self) -> int: return 5
+    def num_qubits(self) -> int: return 6
 
     def get_graph(self) -> Graph:
-        raise NotImplementedError
+        graph = Graph(self.num_qubits())
+        if self.type == LCClass6.EntanglementStructure.Pair:
+            graph.add_edge(*self.data.get(2, 0))
+        elif self.type == LCClass6.EntanglementStructure.Triple:
+            graph.add_path(self.data.get(3, 0))
+        elif self.type == LCClass6.EntanglementStructure.TwoTriples:
+            graph.add_path(self.data.get(3, 0))
+            graph.add_path(self.data.get(3, 1))
+        elif self.type == LCClass6.EntanglementStructure.TwoPairs:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+        elif self.type == LCClass6.EntanglementStructure.ThreePairs:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+            graph.add_edge(*self.data.get(2, 2))
+        elif self.type == LCClass6.EntanglementStructure.Star4:
+            graph.add_star(self.data.get(4, 0))
+        elif self.type == LCClass6.EntanglementStructure.Star4AndPair:
+            graph.add_star(self.data.get(4, 0))
+            graph.add_edge(*self.data.get(2, 0))
+        elif self.type == LCClass6.EntanglementStructure.Line4:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+            graph.add_edge(self.data.get(2, 0)[0], self.data.get(2, 1)[0])
+        elif self.type == LCClass6.EntanglementStructure.Line4AndPair:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+            graph.add_edge(self.data.get(2, 0)[0], self.data.get(2, 1)[0])
+            graph.add_edge(self.data.get(1, 0)[0], self.data.get(1, 1)[0])
+        elif self.type == LCClass6.EntanglementStructure.Star5:
+            graph.add_star(self.data.get(5, 0))
+        elif self.type == LCClass6.EntanglementStructure.PairAndTriple:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_path(self.data.get(3, 0))
+        elif self.type == LCClass6.EntanglementStructure.T:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_star(self.data.get(3, 0))
+            graph.add_edge(self.data.get(3, 0)[0], self.data.get(2, 0)[1])
+        elif self.type == LCClass6.EntanglementStructure.Line5:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+            graph.add_path([self.data.get(2, 0)[1], self.data.get(1, 1)[0], self.data.get(2, 1)[0]])
+        elif self.type == LCClass6.EntanglementStructure.Cycle5:
+            graph.add_path(self.data.get(5, 0))
+            graph.add_edge(self.data.get(5, 0)[0], self.data.get(5, 0)[4])
+        elif self.type == LCClass6.EntanglementStructure.Cycle6:
+            graph.add_path([self.data.get(2, 0)[0], self.data.get(2, 1)[0], self.data.get(2, 2)[0], self.data.get(2, 0)[1], self.data.get(2, 1)[1], self.data.get(2, 2)[1], self.data.get(2, 0)[0]])
+        elif self.type == LCClass6.EntanglementStructure.Line6:
+            graph.add_edge(*self.data.get(2, 0))
+            graph.add_edge(*self.data.get(2, 1))
+            graph.add_path([self.data.get(2, 0)[0], self.data.get(1, 0)[0], self.data.get(1, 1)[0], self.data.get(2, 1)[1]])
+        elif self.type == LCClass6.EntanglementStructure.T6:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_star(self.data.get(3, 0))
+            graph.add_path([self.data.get(3, 0)[0], self.data.get(1, 0)[0], self.data.get(2, 0)[1]])
+        elif self.type == LCClass6.EntanglementStructure.Cross:
+            graph.add_star(self.data.get(4, 0))
+            graph.add_path([self.data.get(2, 0)[0], self.data.get(2, 0)[1], self.data.get(4, 0)[0]])
+        elif self.type == LCClass6.EntanglementStructure.Star6:
+            return Graph.star(6)
+        elif self.type == LCClass6.EntanglementStructure.H:
+            graph.add_path(self.data.get(3, 0))
+            graph.add_path(self.data.get(3, 1))
+            graph.add_edge(self.data.get(3, 0)[1], self.data.get(3, 1)[1])
+        elif self.type == LCClass6.EntanglementStructure.E:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_path(self.data.get(2, 1))
+            graph.add_star([self.data.get(1, 0)[0], self.data.get(1, 1)[0], self.data.get(2, 0)[0], self.data.get(2, 1)[0]])
+        elif self.type == LCClass6.EntanglementStructure.EBar:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_path(self.data.get(2, 1))
+            graph.add_path(self.data.get(2, 2))
+            graph.add_path([self.data.get(2, 0)[0], self.data.get(2, 1)[0], self.data.get(2, 2)[0], self.data.get(2, 0)[0]])
+        elif self.type == LCClass6.EntanglementStructure.Box5:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_path(self.data.get(2, 1))
+            graph.add_star([self.data.get(1, 0)[0], self.data.get(1, 1)[0], self.data.get(2, 0)[0], self.data.get(2, 1)[0]])
+            graph.add_edge(self.data.get(2, 0)[1], self.data.get(2, 1)[1])
+        elif self.type == LCClass6.EntanglementStructure.Box4:
+            graph.add_path(self.data.get(2, 0))
+            graph.add_path(self.data.get(2, 1))
+            graph.add_path([self.data.get(2, 0)[0], self.data.get(2, 2)[0], self.data.get(2, 1)[0], self.data.get(2, 2)[1], self.data.get(2, 0)[0]])
+        elif self.type == LCClass6.EntanglementStructure.AME:
+            graph.add_path([0, 1, 2, 3, 4, 5, 0, 4, 5, 2, 1, 3])
+        return graph
+
+    def __repr__(self) -> str:
+        return f"LCClass{self.num_qubits()}({self.data})"
 
 
 def determine_lc_class(stabilizer: Stabilizer) -> Union[LCClass2, LCClass3, LCClass4, LCClass5]:
@@ -402,7 +493,7 @@ def determine_lc_class(stabilizer: Stabilizer) -> Union[LCClass2, LCClass3, LCCl
         LC class description together with type and vertex data.
     """
     num_qubits = stabilizer.num_qubits
-    assert 2 <= num_qubits <= 5, "LC class determination is only supported for up to 5 qubits"
+    assert 2 <= num_qubits <= 6, "LC class determination is only supported for up to 6 qubits"
     if num_qubits == 2:
         return determine_lc_class2(stabilizer)
     elif num_qubits == 3:
@@ -411,6 +502,8 @@ def determine_lc_class(stabilizer: Stabilizer) -> Union[LCClass2, LCClass3, LCCl
         return determine_lc_class4(stabilizer)
     elif num_qubits == 5:
         return determine_lc_class5(stabilizer)
+    elif num_qubits == 6:
+        return determine_lc_class6(stabilizer)
     assert False
 
 
@@ -595,3 +688,265 @@ def determine_lc_class5(stabilizer: Stabilizer):
         elif A_n == 6:
             return LCClass5(LCClass5.EntanglementStructure.Cycle)
     assert False, "Invalid stabilizer"
+
+
+def count_identity_structures(identity_signature) -> Dict[int, int]:
+    counts = defaultdict(int)
+    for identity_string in identity_signature:
+        bitstring = int("".join(map(lambda x: str(1-x), reversed(identity_string))), 2)
+        counts[bitstring] += 1
+    return dict(sorted(counts.items(), key=lambda item: item[0]))
+
+
+def bits(bitstring, n):
+    set_bits = []
+    for i in range(n):
+        if bitstring & (1 << i):
+            set_bits.append(i)
+    return set_bits
+
+
+def index_of_first_set_bit(bitstring: int):
+    s = bin(bitstring)
+    return len(s) - len(s.rstrip("0"))
+
+
+def all_but(n, indices):
+    return list(filter(lambda el: not el in indices, range(n)))
+
+
+def determine_lc_class6(stabilizer: Stabilizer):
+    num_qubits = stabilizer.num_qubits
+    n = num_qubits
+    is_qubit_entangled = [stabilizer.is_qubit_entangled(i) for i in range(stabilizer.num_qubits)]
+    entangled_qubits = [i for i, value in enumerate(is_qubit_entangled) if value]
+    unentangled_qubits = [i for i, value in enumerate(is_qubit_entangled) if not value]
+
+    num_entangled_qubits = is_qubit_entangled.count(True)
+    if num_entangled_qubits == 0:
+        return LCClass6(LCClass6.EntanglementStructure.Separable)
+    elif num_entangled_qubits == 2:
+        return LCClass6(LCClass6.EntanglementStructure.Pair, linear_index.Repr([entangled_qubits, unentangled_qubits]))
+    elif num_entangled_qubits == 3:
+        return LCClass6(LCClass6.EntanglementStructure.Triple, linear_index.Repr([entangled_qubits, [unentangled_qubits[0]], [unentangled_qubits[1]], [unentangled_qubits[2]]]))
+
+    X, Z = stabilizer.expand()
+    identity_signature = (X.T | Z.T)
+    structure = count_identity_structures(identity_signature)
+    A_n = structure[0]
+
+    def get_bitstrings_impl(func, max=10000000000):
+        result = []
+        for identity_string, count in structure.items():
+            if func(identity_string, count):
+                result.append(identity_string)
+            if len(result) >= max:
+                break
+        return result
+
+    def get_weight_k_bitstrings(k, max=10000000000):
+        return get_bitstrings_impl(lambda bs, count: bs.bit_count() == k, max=max)
+
+    def get_count_m_bitstrings(m, max=10000000000):
+        return get_bitstrings_impl(lambda bs, count: count == m, max=max)
+
+    def get_weight_k_count_m_bitstrings(k, m, max=10000000000):
+        return get_bitstrings_impl(lambda bs, count: bs.bit_count() == k and count == m, max=max)
+
+    if A_n == 5:
+        count2weight1Bitstrings = get_weight_k_count_m_bitstrings(2, 1)
+        return LCClass6(LCClass6.EntanglementStructure.Line4, linear_index.Repr([[unentangled_qubits[0]], [unentangled_qubits[1]], bits(count2weight1Bitstrings[0], n), bits(count2weight1Bitstrings[1], n)]))
+    if A_n == 6:
+        return LCClass6(LCClass6.EntanglementStructure.Cycle5, linear_index.Repr([unentangled_qubits, entangled_qubits]))
+    if A_n == 8:
+        pairs = []
+        middle_qubit = 0
+
+        for identity_string, count in structure.items():
+            if identity_string & (1 << unentangled_qubits[0]):
+                continue
+            if count == 2 and identity_string.bit_count() == 2:
+                pairs.append(identity_string)
+            if count == 5:
+                middle_qubit = identity_string
+        assert len(pairs) == 2
+        return LCClass6(LCClass6.EntanglementStructure.Line5, linear_index.Repr([unentangled_qubits, [index_of_first_set_bit(middle_qubit)], bits(pairs[0], n), bits(pairs[1], n)]))
+    if A_n == 9:
+        count3weight2Bitstrings = get_weight_k_count_m_bitstrings(2, 3)
+        if len(count3weight2Bitstrings) == 0:
+            return LCClass6(LCClass6.EntanglementStructure.Star4, linear_index.Repr([entangled_qubits, unentangled_qubits]))
+        if len(count3weight2Bitstrings) == 2:
+            return LCClass6(LCClass6.EntanglementStructure.TwoPairs, linear_index.Repr([[unentangled_qubits[0]], [unentangled_qubits[1]], bits(count3weight2Bitstrings[0], n), bits(count3weight2Bitstrings[1], n)]))
+        assert False
+    if A_n == 27:
+        count9Bitstrings = get_count_m_bitstrings(9)
+        if len(count9Bitstrings) == 3:
+            return LCClass6(LCClass6.EntanglementStructure.ThreePairs, linear_index.Repr([bits(count9Bitstrings[0], n), bits(count9Bitstrings[1], n), bits(count9Bitstrings[2], n)]))
+        if len(count9Bitstrings) == 1:
+            thebits = bits(count9Bitstrings[0], n)
+            return LCClass6(LCClass6.EntanglementStructure.Star4AndPair, linear_index.Repr([thebits, all_but(n, thebits)]))
+        assert False
+    if A_n == 16:
+        if num_entangled_qubits == 6:
+            triples = get_weight_k_count_m_bitstrings(3, 4, max=2)
+            assert len(triples) == 2
+            return LCClass6(LCClass6.EntanglementStructure.TwoTriples, linear_index.Repr([bits(triples[0], n), bits(triples[1], n)]))
+        if num_entangled_qubits == 5:
+            return LCClass6(LCClass6.EntanglementStructure.Star5, linear_index.Repr([unentangled_qubits, entangled_qubits]))
+        assert False
+    if A_n == 15:
+        count5Bitstring = 0
+        count3Bitstrings = []
+        for identity_string, count in structure.items():
+            if count == 5:
+                count5Bitstring = identity_string
+            if count == 3 and identity_string.bit_count() == 2:
+                count3Bitstrings.append(identity_string)
+        assert len(count3Bitstrings) == 2
+        pair = bits(count5Bitstring, 6)
+        assert len(pair) == 2
+
+        return LCClass6(LCClass6.EntanglementStructure.Line4AndPair, linear_index.Repr([[pair[0]], [pair[1]], bits(count3Bitstrings[0], n), bits(count3Bitstrings[1], n)]))
+    if A_n == 10:
+        if num_entangled_qubits == 6:
+            count3Bitstrings = get_count_m_bitstrings(3)
+            assert len(count3Bitstrings) == 3
+            return LCClass6(LCClass6.EntanglementStructure.Cycle6, linear_index.Repr([bits(count3Bitstrings[0], n), bits(count3Bitstrings[1], n),  bits(count3Bitstrings[2], n)]))
+        if num_entangled_qubits == 5:
+            count4Weight1Bitstrings = get_weight_k_count_m_bitstrings(1, 4)
+            assert len(count4Weight1Bitstrings) == 2
+            tailqubit1 = index_of_first_set_bit(count4Weight1Bitstrings[0])
+            tailqubit2 = index_of_first_set_bit(count4Weight1Bitstrings[1])
+            return LCClass6(LCClass6.EntanglementStructure.T, linear_index.Repr([unentangled_qubits, [tailqubit1, tailqubit2], all_but(6, [tailqubit1, tailqubit2, unentangled_qubits[0]])]))
+
+    if A_n == 12:
+        if num_entangled_qubits == 6:
+            middle_qubits = []
+            weight4Bitstrings = []
+            for identity_string, count in structure.items():
+                if identity_string.bit_count() == 4:
+                    weight4Bitstrings.append(identity_string)
+                if count == 6 and identity_string.bit_count() == 1:
+                    middle_qubits.append(index_of_first_set_bit(identity_string))
+            assert len(middle_qubits) == 2
+            assert len(weight4Bitstrings) == 2
+            middle_qubit_bitstring = (1 << middle_qubits[0]) | (1 << middle_qubits[1])
+            weight4Bitstrings[0] ^= middle_qubit_bitstring
+            weight4Bitstrings[1] ^= middle_qubit_bitstring
+            for identity_string, count in structure.items():
+                if count == 2 and identity_string.bit_count() == 3:
+                    if (identity_string & weight4Bitstrings[0]) == weight4Bitstrings[0] and identity_string & (1 << middle_qubits[1]) != 0:
+                        middle_qubits.reverse()
+            pair1 = bits(weight4Bitstrings[0], 6)
+            pair2 = bits(weight4Bitstrings[1], 6)
+
+            # we need to provide sort of a canonical ordering exceptionally here.
+            # On line-6 the pairs may be exchanged if the middle qubits are exchanged.
+            # linear_index.from_1122 however sorts both the singles and the pairs by (first) value
+            # while linear_index.from1122 discerns the ordering of the two singles. In order not to disturb
+            # this, we sort the pairs by their first value (and keep the symmetry by swapping the singles if
+            # needed).
+            if pair1[0] > pair2[0]:
+                pair1, pair2 = pair2, pair1
+                middle_qubits.reverse()
+            return LCClass6(LCClass6.EntanglementStructure.Line6, linear_index.Repr([[middle_qubits[0]], [middle_qubits[1]], pair1, pair2]))
+        if num_entangled_qubits == 5:
+            pair = 0
+            for identity_string, count in structure.items():
+                if count == 4 and identity_string.bit_count() == 2:
+                    pair = identity_string
+                    break
+            assert pair != 0
+            pair_qubits = bits(pair, 6)
+            return LCClass6(LCClass6.EntanglementStructure.PairAndTriple, linear_index.Repr([unentangled_qubits, pair_qubits, all_but(6, unentangled_qubits + pair_qubits)]))
+
+    if A_n == 14:
+        count4Bitstring = 0
+        count8Bitstring = 0
+        for identity_string, count in structure.items():
+            if count == 4:
+                count4Bitstring = identity_string
+            if count == 8:
+                count8Bitstring = identity_string
+        tail_qubits = bits(count4Bitstring, 6)
+        tailqubit2 = index_of_first_set_bit(count8Bitstring)
+        return LCClass6(LCClass6.EntanglementStructure.T6, linear_index.Repr([tail_qubits, [tailqubit2], all_but(6, tail_qubits + [tailqubit2])]))
+
+    if A_n == 17:
+        count8Bitstrings = get_count_m_bitstrings(8, max=2)
+        assert len(count8Bitstrings) == 2
+        thebits = bits(count8Bitstrings[0] | count8Bitstrings[1], 6)
+        return LCClass6(LCClass6.EntanglementStructure.Cross, linear_index.Repr([thebits, all_but(6, thebits)]))
+
+    if A_n == 33:
+        return LCClass6(LCClass6.EntanglementStructure.Star6)
+
+    if A_n == 24:
+        count4Bitstrings = get_count_m_bitstrings(4, max=6)
+        assert len(count4Bitstrings) == 6
+        triple1 = count4Bitstrings[0]
+        triple2 = 0
+        for bitstring in count4Bitstrings:
+            if (bitstring & triple1) != 0:
+                triple1 |= bitstring
+            else:
+                triple2 |= bitstring
+
+        return LCClass6(LCClass6.EntanglementStructure.H, linear_index.Repr([bits(triple1, 6), bits(triple2, 6)]))
+
+    if A_n == 13:
+        count5Bitstrings = get_count_m_bitstrings(5)
+        if len(count5Bitstrings) == 1:
+            first_middle_bit = index_of_first_set_bit(count5Bitstrings[0])
+            weight3Bitstrings = get_weight_k_bitstrings(3, max=4)
+            assert len(weight3Bitstrings) == 4
+            wing_pairs = []
+            for weight3_bitstring in weight3Bitstrings:
+                if weight3_bitstring & (1 << first_middle_bit):
+                    wing_pairs.append(weight3_bitstring ^ (1 << first_middle_bit))
+
+            return LCClass6(LCClass6.EntanglementStructure.E, linear_index.Repr([
+                [first_middle_bit],
+                [index_of_first_set_bit(count5Bitstrings[0] ^ (1 << first_middle_bit))],
+                bits(wing_pairs[0], n),
+                bits(wing_pairs[1], n),
+            ]))
+        if len(count5Bitstrings) == 3:
+            return LCClass6(LCClass6.EntanglementStructure.Box4, linear_index.Repr([
+                bits(count5Bitstrings[0], n),
+                bits(count5Bitstrings[1], n),
+                bits(count5Bitstrings[2], n),
+            ]))
+        assert False
+
+    if A_n == 21:
+        count5Bitstrings = get_count_m_bitstrings(5, max=3)
+        assert len(count5Bitstrings) == 3
+        return LCClass6(LCClass6.EntanglementStructure.EBar, linear_index.Repr([
+            bits(count5Bitstrings[0], n),
+            bits(count5Bitstrings[1], n),
+            bits(count5Bitstrings[2], n),
+        ]))
+
+    if A_n == 11:
+        count2_weight1_bitstrings = get_weight_k_count_m_bitstrings(1, 2, max=2)
+        assert len(count2_weight1_bitstrings) == 2
+
+        rest_pairs = []
+        for identity_string, count in structure.items():
+            if identity_string.bit_count() == 3 and (identity_string & count2_weight1_bitstrings[0]) and (identity_string & count2_weight1_bitstrings[1]) == 0:
+                rest_pairs.append(identity_string ^ count2_weight1_bitstrings[0])
+                if len(rest_pairs) == 2:
+                    break
+
+        return LCClass6(LCClass6.EntanglementStructure.Box5, linear_index.Repr([
+            bits(rest_pairs[0], n),
+            bits(rest_pairs[1], n),
+            [index_of_first_set_bit(count2_weight1_bitstrings[0])],
+            [index_of_first_set_bit(count2_weight1_bitstrings[1])]
+        ]))
+
+    if A_n == 18:
+        return LCClass6(LCClass6.EntanglementStructure.AME)
+
+    assert False

@@ -3,7 +3,6 @@ Utilities to get a linear index for small groupings under certain symmetries
 and also inversely create these groupings from the linear index. 
 """
 
-from collections import defaultdict
 from typing import List, Union
 from typing import Tuple
 import numpy as np
@@ -39,7 +38,7 @@ class Repr:
     __slots__ = ("groups")
 
     def __init__(self, data: Union[NTuple, List[NTuple], List[List[int]], List[int], None] = None):
-        self.groups = defaultdict(list)
+        self.groups = []
         if data is None:
             return
         if isinstance(data, NTuple):
@@ -55,10 +54,13 @@ class Repr:
             self.add(entry)
 
     def get(self, size, index):
-        return self.groups[size][index]
+        return self.groups[size - 1][index]
 
     def add(self, tuple: NTuple):
-        self.groups[len(tuple)].append(tuple)
+        if len(self.groups) < len(tuple):
+            for i in range(len(tuple) - len(self.groups)):
+                self.groups.append([])
+        self.groups[len(tuple) - 1].append(tuple)
 
     def flatten(self) -> List[int]:
         result = []
@@ -71,7 +73,7 @@ class Repr:
         return self.groups == other.groups
 
     def __repr__(self) -> str:
-        items = [item for sublist in self.groups.values() for item in sublist]
+        items = [item for sublist in self.groups for item in sublist]
         return f"Repr({items})"
 
 
@@ -281,9 +283,7 @@ def from_24(repr: Repr) -> int:
 def to_222(index: int) -> Repr:
     a = 0
     b = 1 + index // 3
-    # c, d = 1, 1 + index % 3
     c, d = linear_index_to_n_choose2_to(4, index % 3)
-    # c = 2 if b == 1 else 1
     c = 1
     d = c + 1 + index % 3
     if d >= b:
@@ -296,7 +296,7 @@ def to_222(index: int) -> Repr:
 
 
 def from_222(repr: Repr) -> int:
-    pairs = [repr.get(2, 0).data, repr.get(2, 1).data, repr.get(2, 2).data]
+    pairs = [repr.get(2, 0).data.copy(), repr.get(2, 1).data.copy(), repr.get(2, 2).data.copy()]
     pairs.sort(key=lambda x: x[0])
     assert pairs[0][0] == 0
     b = pairs[0][1]
@@ -346,15 +346,17 @@ def from_1113(repr: Repr) -> int:
 
 # Note: exceptionally, for this case the order of the NTuples matters!
 # The first 1-Tuple (single) is different to the second one and they are
-# not interchangeable. 
+# not interchangeable.
+
+
 def to_1122s(index: int) -> Repr:
     # the way this works is by using the 1122 combinatorics and
     # breaking the symmetry between the two 1-Tuples. to_1122()
     # always returns tuples arranged so that the first 1-Tuple is
-    # the smaller one. Here we define the 
+    # the smaller one. Here we define the
     l1122 = to_1122(index // 2)
-    pair1, pair2 = l1122.get(2, 0), l1122.get(2,1)
-    single1, single2 = l1122.get(1, 0), l1122.get(1,1)
+    pair1, pair2 = l1122.get(2, 0), l1122.get(2, 1)
+    single1, single2 = l1122.get(1, 0), l1122.get(1, 1)
 
     if index % 2 == 1:
         single1, single2 = single2, single1
@@ -363,7 +365,7 @@ def to_1122s(index: int) -> Repr:
 
 def from_1122s(repr: Repr) -> int:
     index = from_1122(repr)
-    return 2*index + int(repr.get(1,0)[0] > repr.get(1,1)[0])
+    return 2*index + int(repr.get(1, 0)[0] > repr.get(1, 1)[0])
 
 # 4 Qubits:
 #   Config  |  Size
@@ -393,5 +395,3 @@ def from_1122s(repr: Repr) -> int:
 #  1122     |*  45  = (6 choose 2) * (4 choose 2) / 2
 #  123      |*  60  = (6 choose 2) * (4 choose 1) = (6 choose 1) * (5 choose 2)
 #  1122s    |*  90  = (6 choose 2) * (4 choose 2)
-
-

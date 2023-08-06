@@ -5,6 +5,7 @@ except ImportError:
     import importlib_resources as pkg_resources
 
 from typing import List
+import copy
 from . import data  # import the package containing the circuits
 from qiskit import QuantumCircuit
 
@@ -160,6 +161,10 @@ class MUBInfo:
             self.circuits.append(parse_circuit(num_qubits, circuit_string))
             self.mubs.append(mub.split(","))
 
+    def copy(self):
+        result = copy.copy(self)
+        result.circuits = [circuit.copy() for circuit in self.circuits]
+        return result
 
 stabilizer_file_cache = {}
 
@@ -198,4 +203,4 @@ def mub_circuit_lookup(num_qubits: int, connectivity: str) -> MUBInfo:
         mubInfo = MUBInfo(num_qubits, lines)
         mub_file_cache[filename] = mubInfo
 
-    return mubInfo
+    return mubInfo.copy()

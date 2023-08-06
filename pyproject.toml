@@ -22,5 +22,5 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Mc-Zen/shortcircuits"
-"Bug Tracker" = "https://github.com/Mc-Zen/shortcircuits/issues"
+"Homepage" = "https://github.com/Mc-Zen/htstabilizer"
+"Bug Tracker" = "https://github.com/Mc-Zen/htstabilizer/issues"

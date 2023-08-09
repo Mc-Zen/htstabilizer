@@ -145,3 +145,7 @@ class TestStabilizer(unittest.TestCase):
         self.assertFalse(s.is_equivalent(Stabilizer(["-XYI", "-ZXX", "YZI"])))
         self.assertFalse(s.is_equivalent(Stabilizer(["-XYI", "-ZXX", "-YZI"])))
         self.assertFalse(s.is_equivalent(Stabilizer(["ZXX", "-YZI", "XYI"])))
+
+    def test_invalid_pauli(self):
+        self.assertRaises(ValueError, Stabilizer, ["IXI", "AXX", "IYX"])
+        self.assertRaises(ValueError, Stabilizer, ["IXI", "\"IXX", "IYX"])

@@ -1,0 +1,760 @@
+0:0:0:h5 h4 h3 h2 h1 h0 
+1:1:1:h5 h4 h3 h2 h1 h0 cz0,1 
+2:3:3:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 
+4:5:5:h3 s3 h4 cz3,4 s1 h1 h4 cz1,4 h0 s0 h1 s1 cz0,1 h1 s4 cz1,4 h4 cz3,4 h0 s0 h2 h5 
+8:3:3:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 
+16:5:4:h0 h1 s1 h1 cz0,1 s1 h4 s4 h4 cz1,4 h5 cz4,5 h0 h1 cz0,1 h4 h5 s5 cz4,5 h2 h3 
+32:1:1:h5 h4 h3 h2 h1 h0 cz1,2 
+64:3:3:h4 cx4,1 cx4,3 h0 h2 h3 h4 h5 cz1,4 
+128:1:1:h5 h4 h3 h2 h1 h0 cz1,4 
+256:3:3:h4 cx4,1 cx4,5 h0 h2 h3 h4 h5 cz1,4 
+512:5:3:h1 s4 h4 cz1,4 s2 h2 cz1,2 h3 s3 s4 cz3,4 s3 h3 s4 h4 cz3,4 h1 h2 cz1,2 h0 h5 
+1024:3:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 
+2048:5:3:s1 h1 h4 cz1,4 s1 s2 h2 cz1,2 s1 h1 h2 cz1,2 h5 cz4,5 h4 h5 cz4,5 h0 h3 
+4096:1:1:h5 h4 h3 h2 h1 h0 cz3,4 
+8192:3:3:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz3,4 
+16384:1:1:h5 h4 h3 h2 h1 h0 cz4,5 
+16896:6:5:h3 s3 h4 s4 cz3,4 h1 cz1,4 h1 h4 cz1,4 s2 h2 cz1,2 h1 s1 h2 cz1,2 s4 h4 h5 s5 cz4,5 h0 s1 h2 s2 h4 s4 
+9216:6:5:h3 s3 h4 cz3,4 h1 h2 s2 h2 cz1,2 h4 s5 h5 cz4,5 s3 h4 s4 cz3,4 h4 cz1,4 s1 h1 s2 h2 cz1,2 h0 h2 s2 h3 h5 
+6144:6:4:h4 s5 h5 cz4,5 s1 h1 s2 h2 cz1,2 h4 s4 cz1,4 h4 s5 cz4,5 s1 h1 h2 s2 cz1,2 h3 cz3,4 h0 h3 h4 
+16448:4:4:h4 cx4,1 cx4,3 h0 h2 h3 h4 h5 cz1,4 cz4,5 
+8320:4:4:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz1,4 cz3,4 
+4352:4:4:h4 cx4,1 cx4,5 h0 h2 h3 h4 h5 cz1,4 cz3,4 
+16416:2:1:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 
+2176:5:5:h4 s4 h5 cz4,5 s1 h1 cz1,4 h1 s2 h2 cz1,2 h1 s1 h4 s4 cz1,4 h1 s1 h2 cz1,2 h0 h2 h3 h5 
+1280:5:4:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 
+8224:4:3:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz1,2 cz3,4 
+2112:7:6:h3 s3 h3 h4 cz3,4 s1 h1 s2 h2 cz1,2 s1 cz1,4 h1 s1 h4 cz1,4 s1 h1 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h4 s4 h5 cz4,5 h0 s1 h2 h3 s4 
+768:8:7:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 swap4,3 
+4128:2:1:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 
+1088:5:4:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 swap4,1 
+640:5:4:h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 h1 s1 h1 h2 cz1,2 h1 h4 s4 h4 cz1,4 s1 h1 h2 cz1,2 h0 s1 h2 h3 h5 
+16388:6:4:s0 h0 s1 h1 cz0,1 h3 s4 h4 cz3,4 h4 cz1,4 h0 h1 cz0,1 h4 s4 h4 s5 h5 cz4,5 s4 cz3,4 h0 s0 h2 h3 
+8200:6:5:h0 s0 h1 cz0,1 h4 h5 cz4,5 h3 h4 s4 cz3,4 s4 h4 cz4,5 h1 cz1,4 s0 h1 s1 cz0,1 h0 s1 h2 h4 
+4112:6:4:h4 s4 h4 h5 s5 h5 cz4,5 h1 h4 cz1,4 h0 s1 h1 cz0,1 h0 s1 h1 cz0,1 h4 h5 cz4,5 h3 s4 cz3,4 h2 h3 s3 h4 
+16386:4:3:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz4,5 
+2056:7:6:s1 h1 h2 s2 h2 cz1,2 h1 s1 h4 s4 h4 cz1,4 h0 s0 h0 h1 s1 h1 cz0,1 s4 h4 h5 s5 cz4,5 h1 s1 h1 h4 cz1,4 s1 h1 s2 cz1,2 cz0,1 s0 h2 s2 h3 h5 
+1040:7:6:h1 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 h0 s0 s1 cz0,1 s1 h1 h4 s4 h4 cz1,4 s1 h1 h2 s2 h2 cz1,2 s0 h0 cz0,1 h1 s1 h1 h4 cz1,4 h0 s0 h0 s1 s2 h2 h3 h4 
+8194:6:3:h1 h2 s2 h2 cz1,2 h3 s3 s4 h4 cz3,4 h0 cz0,1 s4 s5 h5 cz4,5 h3 s3 h3 h4 cz3,4 h0 s0 h1 cz0,1 h0 s0 
+2052:10:7:s3 h3 s4 cz3,4 h4 s4 cz3,4 h1 s1 h2 s2 cz1,2 s1 h1 s4 cz1,4 h1 s1 h1 h4 s4 cz1,4 h0 h1 cz0,1 s3 h4 s4 h4 cz3,4 h0 s0 h1 cz0,1 s4 h4 s5 h5 cz4,5 s4 h4 h5 cz4,5 s2 h5 
+528:10:8:h3 s4 h4 cz3,4 h4 s4 h5 cz4,5 h1 h4 cz1,4 s1 h1 h2 cz1,2 s1 h1 s4 h4 cz1,4 s0 h0 h1 cz0,1 h3 s3 h3 cz3,4 s1 h4 s4 cz1,4 h3 s3 h3 cz3,4 h0 s0 h1 s1 cz0,1 h0 s1 h2 s2 h3 s4 h5 
+4098:4:3:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz3,4 
+1028:7:6:h3 s3 s4 h4 cz3,4 s1 h1 h2 s2 h2 cz1,2 h4 s4 cz1,4 h1 s1 h1 h4 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 h0 cz0,1 h0 s0 s1 h1 cz0,1 h0 s0 h2 s2 h5 
+520:8:7:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 swap2,1 
+16385:2:1:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 
+264:5:4:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 
+144:5:5:h0 s1 h1 cz0,1 h1 h4 s4 cz1,4 s4 h4 s5 h5 cz4,5 h1 h4 s4 cz1,4 h4 s4 h5 s5 cz4,5 h0 s1 h1 h2 h3 h4 
+8193:4:3:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz3,4 
+260:7:6:h3 h4 s4 cz3,4 s1 h1 h4 s4 h4 cz1,4 s0 h0 h1 s1 cz0,1 h1 s1 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 h0 s0 h1 cz0,1 h4 cz1,4 s0 s1 h1 h2 h3 h5 
+80:7:6:h0 h1 s1 cz0,1 h3 s3 h4 cz3,4 h1 h4 s4 h4 cz1,4 h1 s1 h1 h4 s4 h4 cz1,4 h4 s4 h4 h5 cz4,5 h1 s1 h1 cz1,4 h4 h5 cz4,5 h0 h1 s1 h2 h3 
+4097:2:1:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 
+132:5:5:h3 s3 h4 cz3,4 h1 s1 s4 cz1,4 h0 s1 h1 cz0,1 h1 h4 s4 cz1,4 s3 h3 h4 s4 cz3,4 h0 s1 h2 h3 h5 
+72:5:4:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 
+2049:6:4:s1 h1 h4 cz1,4 s1 s2 h2 cz1,2 s1 h1 h2 cz1,2 h5 cz4,5 h4 h5 cz4,5 s0 h0 h1 s1 h1 cz0,1 h0 h1 h3 
+258:6:4:s1 h1 h2 cz1,2 h0 s0 s1 cz0,1 h4 s4 h4 s5 h5 cz4,5 s1 h1 cz1,4 h4 h5 cz4,5 h2 cz1,2 s0 h1 s1 h3 h5 
+48:6:4:s4 h4 h5 s5 cz4,5 h0 s0 h1 cz0,1 h1 h4 cz1,4 s4 h4 s5 cz4,5 h1 s1 h2 cz1,2 s1 cz0,1 h0 s0 h1 h2 h3 
+1025:4:4:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 cz1,2 
+130:4:4:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz1,4 
+40:4:4:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 cz1,2 
+513:6:5:s3 h3 s4 h4 cz3,4 h1 h4 cz1,4 h2 cz1,2 h0 s0 h0 h1 s1 cz0,1 s3 s4 h4 cz3,4 s1 h2 cz1,2 s0 h0 h1 h5 
+66:6:5:h0 s0 h1 cz0,1 h1 h2 s2 cz1,2 h3 s3 h4 cz3,4 s0 h1 s1 cz0,1 h4 cz1,4 s1 h1 s4 h4 cz1,4 h0 s0 h0 h3 h5 
+36:6:4:h1 s4 h4 cz1,4 s0 h0 s1 h1 cz0,1 h3 s4 cz3,4 h3 s3 s4 h4 cz3,4 h0 h1 s1 cz0,1 h1 h2 s2 cz1,2 s0 h1 s1 h5 
+16897:7:6:h1 h2 cz1,2 h1 s1 h4 cz1,4 h1 s1 h4 cz1,4 s0 h0 s1 cz0,1 s3 h3 h4 cz3,4 h4 h5 s5 h5 cz4,5 h3 s3 cz3,4 h0 h1 h2 s2 h2 h3 h4 s4 h5 
+9217:7:5:h1 s1 h1 h2 cz1,2 s3 h3 h4 cz3,4 s5 h5 cz4,5 s1 h1 h4 cz1,4 h0 s1 h1 cz0,1 h5 s5 cz4,5 h4 s4 cz1,4 h0 h1 h2 h3 s3 h5 
+6145:7:6:h1 s1 h1 s4 h4 cz1,4 h2 cz1,2 h1 s1 h4 s4 cz1,4 h4 s4 s5 h5 cz4,5 h4 s4 h5 s5 cz4,5 h3 s3 cz3,4 h0 s1 cz0,1 h0 h1 h2 h3 s3 
+16450:7:6:s1 h1 h2 s2 cz1,2 s0 h0 s1 cz0,1 h1 s1 h1 h4 cz1,4 h3 h4 s4 h4 cz3,4 s2 h2 cz1,2 h1 h4 cz1,4 s4 h5 s5 cz4,5 h0 h2 h4 s4 
+8322:7:5:h1 h2 cz1,2 s0 h0 cz0,1 h4 s4 h5 cz4,5 h1 s1 h1 h2 s2 cz1,2 h3 s3 h4 s4 cz3,4 h1 h4 s4 h4 cz1,4 s4 s5 h5 cz4,5 h0 s1 h2 h3 s3 
+4354:7:6:h0 h1 cz0,1 h1 s1 h2 s2 h2 cz1,2 h1 s1 s4 h4 cz1,4 s0 cz0,1 h4 s5 h5 cz4,5 h4 s4 cz1,4 h3 s3 s4 cz3,4 h0 s0 h0 s1 s3 h3 h4 
+16420:7:4:h1 s1 h4 s4 cz1,4 s0 h0 s1 cz0,1 s3 h3 h4 s4 cz3,4 h1 s2 h2 cz1,2 s4 h4 h5 s5 h5 cz4,5 h3 s3 s4 cz3,4 h0 cz0,1 s0 h4 s4 
+2180:11:10:h1 s2 h2 cz1,2 s3 h3 s4 h4 cz3,4 h1 s4 cz1,4 h1 s1 h1 s4 h4 cz1,4 s1 h1 h4 s4 cz1,4 s0 h0 cz0,1 h0 s0 h1 s1 h1 cz0,1 h1 s1 h1 s4 cz1,4 h5 cz4,5 h1 s1 h1 h4 s4 cz1,4 s4 h5 s5 cz4,5 s1 h2 s2 h3 
+1284:11:9:h1 h4 cz1,4 h0 s0 h1 cz0,1 s0 h0 h1 cz0,1 s3 h3 cz3,4 h3 h4 s4 h4 cz3,4 s1 h1 h4 cz1,4 s4 h4 h5 s5 h5 cz4,5 cz1,4 h1 s1 h2 cz1,2 s1 h1 s4 h4 cz1,4 h4 s5 cz4,5 s0 h1 h2 h3 h5 
+8232:7:6:h4 s4 h5 cz4,5 h0 h1 cz0,1 h3 h4 cz3,4 h4 s4 h4 s5 h5 cz4,5 cz1,4 s1 h1 s4 h4 cz1,4 h2 cz1,2 h0 s0 h3 h4 h5 
+2120:10:7:h1 s1 s4 h4 cz1,4 h4 s4 s5 h5 cz4,5 h2 s2 h2 cz1,2 h0 h1 cz0,1 h3 s3 s4 h4 cz3,4 s1 h1 h4 s4 h4 cz1,4 s4 h5 cz4,5 h1 h4 cz1,4 h3 s3 h3 h4 cz3,4 s1 h1 s2 h2 cz1,2 h0 s0 h0 h1 s1 h2 
+776:11:9:h1 s1 h1 h4 s4 h4 cz1,4 h1 s1 h1 h2 s2 h2 cz1,2 h4 cz4,5 s3 h3 h4 cz3,4 h1 s1 s4 h4 cz1,4 h0 s1 h1 cz0,1 s4 h4 h5 cz4,5 h3 s3 h4 s4 h4 cz3,4 h4 s4 cz3,4 h1 cz1,4 s0 h0 h1 cz0,1 s0 s2 h2 h3 h5 
+4144:7:4:h4 s4 h4 h5 cz4,5 h0 s0 h0 h1 s1 h1 cz0,1 s1 h1 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 s0 cz0,1 s4 h4 s5 cz4,5 h3 s3 h3 h4 s4 h4 cz3,4 s0 s3 h3 h4 
+1104:11:8:h0 s1 h1 cz0,1 s4 h4 h5 cz4,5 h1 s1 h1 s4 cz1,4 s4 h4 cz3,4 h1 s1 h1 s2 h2 cz1,2 h3 s3 h3 cz3,4 s0 h0 s1 cz0,1 s4 h5 cz4,5 cz1,4 h1 h4 cz1,4 h3 h4 s4 cz3,4 s0 h1 s1 h1 s2 h4 
+656:11:9:h1 s1 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 s4 h4 h5 s5 cz4,5 h1 s4 h4 cz1,4 h4 s4 cz4,5 h0 s0 h0 h1 s1 cz0,1 h3 s3 h4 cz3,4 s0 h0 h1 s1 cz0,1 h3 h4 s4 h4 cz3,4 h3 s3 s4 cz3,4 h1 cz1,4 h1 s1 s2 h3 h5 
+20480:2:2:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 
+33:2:2:h5 h4 h3 h2 h1 h0 cz1,2 cz0,1 
+17408:4:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 cz4,5 
+65:4:3:h4 cx4,1 cx1,0 cx4,3 h0 h2 h3 h4 h5 cz1,4 
+8704:6:4:h1 h4 cz1,4 h3 s3 s4 cz3,4 s1 s2 h2 cz1,2 s5 h5 cz4,5 s3 h3 h4 cz3,4 h1 h2 cz1,2 h0 s2 s3 
+129:2:2:h5 h4 h3 h2 h1 h0 cz1,4 cz0,1 
+5120:4:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 cz3,4 
+257:4:3:h4 cx4,1 cx1,0 cx4,5 h0 h2 h3 h4 h5 cz1,4 
+16512:2:2:h5 h4 h3 h2 h1 h0 cz4,5 cz1,4 
+514:6:4:s0 h0 h1 cz0,1 h2 cz1,2 s3 h3 h4 cz3,4 cz1,4 h1 s1 h2 cz1,2 h3 h4 s4 cz3,4 s1 s4 h5 
+8256:4:4:h4 cx4,1 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz3,4 
+1026:4:4:h1 cx1,0 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 
+4160:2:2:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 
+2050:6:4:h1 h4 cz1,4 h4 s4 h4 h5 cz4,5 s2 h2 cz1,2 h4 h5 cz4,5 s0 h0 s1 cz0,1 h1 s1 h2 cz1,2 s1 h3 
+2304:4:3:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz4,5 
+4104:4:3:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 cz3,4 
+1056:2:2:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 
+8196:6:4:s1 h1 h4 cz1,4 h0 cz0,1 s4 h4 h5 cz4,5 h0 s1 h1 cz0,1 h3 s4 cz3,4 h3 h4 s4 cz3,4 h2 s4 
+576:4:3:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz3,4 
+16392:4:3:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 cz4,5 
+20512:3:2:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 
+17472:6:5:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 swap4,1 cz4,5 
+8832:6:5:h1 s1 h4 s4 h4 cz1,4 h3 h4 s4 h4 cz3,4 s5 h5 cz4,5 h2 cz1,2 h1 s1 h1 h4 s4 h4 cz1,4 h3 h4 s4 cz3,4 h0 h5 s5 h5 
+5376:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 cz3,4 
+17024:6:4:s1 h1 h4 s4 cz1,4 h3 s3 s4 h4 cz3,4 s1 h2 s2 h2 cz1,2 h1 s1 h1 s4 h4 cz1,4 h4 s4 h5 s5 cz4,5 h1 h2 s2 h2 cz1,2 h0 h2 s2 s5 
+1344:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 swap4,1 
+6208:6:6:h1 s1 h2 cz1,2 s1 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 h1 s1 h4 s4 cz1,4 h3 s3 h4 cz3,4 s4 s5 h5 cz4,5 h0 s3 h3 h4 
+6400:5:4:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz3,4 cz4,5 
+8352:5:4:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz1,2 cz1,4 cz3,4 
+16960:5:4:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz3,4 cz4,5 
+16904:9:7:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 swap2,1 cz4,5 
+1044:9:8:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 swap4,1 swap1,0 
+6152:9:7:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 swap2,1 cz3,4 
+20482:5:3:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz3,4 cz4,5 
+6146:7:5:h0 s0 h1 s1 h1 cz0,1 h1 h4 s4 cz1,4 s1 h2 s2 cz1,2 h4 h5 cz4,5 h4 h5 cz4,5 s3 h3 h4 s4 h4 cz3,4 h1 s2 h2 cz1,2 h5 s5 
+9218:7:5:s1 h1 s2 h2 cz1,2 h4 h5 cz4,5 h0 s1 cz0,1 s3 h3 s4 h4 cz3,4 h4 cz1,4 s5 h5 cz4,5 h1 s1 h4 s4 cz1,4 s1 h2 h3 s3 h4 h5 
+17412:9:7:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 swap4,1 swap1,0 cz4,5 
+16898:7:5:h3 s4 h4 cz3,4 h0 s0 h0 h1 s1 cz0,1 s1 h1 s2 h2 cz1,2 s1 h4 cz1,4 s4 h4 cz3,4 h1 h2 s2 cz1,2 s5 h5 cz4,5 h0 h3 s3 
+2568:8:6:h1 s4 h4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h1 s1 h1 h2 s2 h2 cz1,2 h3 s4 cz3,4 h0 s0 h0 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h1 s1 s4 h4 cz1,4 h1 s1 s2 h2 cz1,2 h0 s0 h3 s3 h3 h4 s5 
+5136:8:7:h1 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 h0 s0 s1 cz0,1 s1 h1 h4 s4 h4 cz1,4 s1 h1 h2 s2 h2 cz1,2 s0 h0 cz0,1 h1 s1 h1 h4 cz1,4 h3 s3 h3 h4 cz3,4 h0 s0 s1 h2 s3 s4 h5 
+4353:5:4:h4 cx4,1 cx1,0 cx4,5 h0 h2 h3 h4 h5 cz1,4 cz3,4 
+8321:5:4:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz1,4 cz3,4 
+16516:6:5:h3 h4 s4 cz3,4 s1 h1 h4 s4 h4 cz1,4 s0 h0 h1 s1 cz0,1 h1 s1 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 h0 s0 h1 cz0,1 s0 h1 h2 h3 s4 
+16456:6:5:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 cz4,5 
+16449:5:4:h4 cx4,1 cx1,0 cx4,3 h0 h2 h3 h4 h5 cz1,4 cz4,5 
+328:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz0,1 swap4,1 
+8324:6:6:s0 h0 h1 s1 cz0,1 h1 s1 h1 h4 cz1,4 h3 h4 s4 cz3,4 s4 s5 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 h1 s1 cz0,1 h0 h2 h3 h5 s5 h5 
+4176:6:5:s1 h1 h4 cz1,4 h0 cz0,1 h4 h5 cz4,5 h1 s1 s4 h4 cz1,4 h3 s4 h4 cz3,4 s4 h5 s5 cz4,5 h0 s0 h2 h3 h4 h5 
+4360:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 cz3,4 
+20481:3:2:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz0,1 
+16417:3:2:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 cz0,1 
+296:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 cz1,2 
+2178:6:5:s0 h0 h1 s1 h1 cz0,1 s1 h1 s4 h4 cz1,4 h2 cz1,2 h4 h5 s5 h5 cz4,5 s1 h1 s4 h4 cz1,4 s1 h1 h2 s2 cz1,2 h0 h1 s1 h3 s5 
+1281:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 cz0,1 
+1072:6:5:s1 h1 h4 cz1,4 h5 cz4,5 s0 h0 h1 cz0,1 s1 h1 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h0 s0 h1 cz0,1 s0 s2 h2 h3 h4 s4 
+1288:6:5:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 cz0,1 swap4,1 
+2177:6:5:h1 s1 h1 s4 h4 cz1,4 s2 h2 cz1,2 h4 s5 h5 cz4,5 h1 h4 cz1,4 h1 s1 h1 h2 cz1,2 h0 h1 s1 cz0,1 h3 h4 
+17409:5:4:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz4,5 
+16514:5:5:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz1,4 cz4,5 
+16424:5:4:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz4,5 
+112:8:6:h1 h4 s4 cz1,4 h4 s4 h4 h5 s5 cz4,5 h0 s0 h0 s1 cz0,1 h3 s3 h3 h4 cz3,4 s1 h1 h4 cz1,4 h1 h2 cz1,2 h4 s4 s5 h5 cz4,5 s1 h4 s4 cz1,4 h0 s0 h2 s2 h2 h3 
+772:9:8:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 cz0,1 swap4,1 swap4,3 
+2113:8:6:h3 s3 h3 h4 cz3,4 s1 h1 s2 h2 cz1,2 s1 cz1,4 h1 s1 h4 cz1,4 s1 h1 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h4 s4 h5 cz4,5 h0 s0 cz0,1 s0 s3 h3 s4 h5 
+8225:5:3:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz1,2 cz3,4 
+8705:7:5:h1 h2 s2 cz1,2 h1 s1 s4 h4 cz1,4 h1 s1 h1 s2 cz1,2 h4 s4 h5 cz4,5 h3 s3 s4 cz3,4 s3 h3 h4 cz3,4 h0 s0 h0 cz0,1 h0 s0 h2 
+8258:7:5:h4 s4 h5 cz4,5 h3 cz3,4 h0 h1 cz0,1 h1 h2 s2 h2 cz1,2 s1 h1 s2 h2 cz1,2 s1 h1 h4 cz1,4 s1 h1 s4 h4 cz1,4 s0 h1 s1 h2 h3 
+292:9:7:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 swap4,3 cz1,2 
+8228:7:4:h0 s0 h1 s1 cz0,1 s3 h3 h4 s4 h4 cz3,4 s1 cz1,4 h5 s5 h5 cz4,5 h1 h2 cz1,2 s0 h0 cz0,1 h3 h4 s4 h4 cz3,4 s4 s5 
+2128:9:8:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 cz0,1 swap4,1 swap5,4 
+769:9:7:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 swap4,3 cz0,1 
+5121:5:4:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz3,4 
+4226:5:5:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz1,4 cz3,4 
+1060:6:5:s1 h1 h4 s4 h4 cz1,4 h3 s3 h4 s4 cz3,4 h0 s1 h1 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 h0 h1 cz0,1 h1 s1 h2 cz1,2 h0 s0 h1 h2 s4 h5 
+104:6:5:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 cz1,2 
+4136:5:4:h1 cx1,0 cx1,4 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz3,4 
+1096:6:5:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 cz0,1 swap4,1 
+642:6:5:h1 s1 h4 s4 cz1,4 s2 h2 cz1,2 h0 s0 s1 cz0,1 s3 h3 s4 h4 cz3,4 h1 s1 h1 h4 s4 h4 cz1,4 h3 h4 cz3,4 s0 h1 s1 h2 s3 h3 h4 h5 
+641:6:5:h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 h1 s1 h1 h2 cz1,2 h1 h4 s4 h4 cz1,4 s1 h1 h2 cz1,2 s0 h0 h1 cz0,1 h4 s4 h5 
+1089:6:5:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 swap4,1 cz0,1 
+4129:3:2:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 cz0,1 
+20513:4:2:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 cz0,1 
+17473:7:5:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 swap4,1 cz4,5 cz0,1 
+8833:8:6:h1 h2 cz1,2 h1 h4 s4 h4 cz1,4 h3 cz3,4 h0 s0 h0 h1 cz0,1 h4 s4 h5 s5 h5 cz4,5 h4 s5 h5 cz4,5 s1 s2 cz1,2 h1 s1 h4 s4 h4 cz1,4 s2 h3 h5 s5 
+5377:7:5:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 swap4,1 cz3,4 cz0,1 
+17026:8:5:h1 s1 h4 cz1,4 h2 cz1,2 h3 h4 s4 cz3,4 h0 s0 h1 cz0,1 h0 s0 h0 h1 cz0,1 h3 s4 h4 cz3,4 h4 s4 h4 h5 cz4,5 h1 s1 h1 cz1,4 h0 s0 h2 h3 
+1352:7:5:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 cz0,1 swap4,1 
+6274:8:6:h1 s1 h2 s2 cz1,2 h4 cz1,4 s5 h5 cz4,5 h0 s0 h0 h1 s1 cz0,1 h1 s1 h4 cz1,4 s0 h0 h1 s1 cz0,1 h1 s1 h2 cz1,2 h3 cz3,4 h1 s2 h2 h5 
+4392:7:5:h5 h4 h3 h2 h1 h0 cz4,5 cz0,1 swap4,1 cz3,4 cz1,2 
+1172:7:7:s4 h4 h5 s5 h5 cz4,5 s3 h3 h4 s4 h4 cz3,4 h1 s1 s4 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 s1 h1 h2 s2 cz1,2 h1 s1 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h0 s0 h0 s1 h2 h3 s3 h3 h4 s4 h5 s5 h5 
+16488:7:5:h5 h4 h3 h2 h1 h0 cz3,4 cz0,1 swap4,1 cz4,5 cz1,2 
+17920:5:3:h4 cx4,1 cx1,2 cx4,3 h0 h1 h3 h4 h5 cz1,2 cz4,5 
+24064:5:4:h4 s4 s5 h5 cz4,5 s1 h1 h2 s2 cz1,2 s3 h3 cz3,4 h1 h4 s4 cz1,4 h1 cz1,2 h0 h2 h4 s4 
+7168:5:3:h4 cx4,1 cx1,2 cx4,5 h0 h1 h3 h4 h5 cz1,2 cz3,4 
+20544:3:3:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz4,5 
+12416:3:3:h3 cx3,4 cx4,5 h0 h1 h2 h4 h5 cz1,4 
+20736:3:3:h1 cx1,4 cx4,5 h0 h1 h2 h3 h4 cz3,4 
+17440:3:2:h4 cx4,1 cx1,2 h0 h1 h3 h4 h5 cz4,5 
+3232:4:3:h4 cx4,1 cx1,2 cx4,5 h0 h1 h3 h4 h5 cz1,4 
+19616:4:3:h1 s2 h2 cz1,2 h4 s4 h5 cz4,5 h1 cz1,4 h1 h4 cz1,4 h0 s2 h3 s4 s5 
+8480:5:4:h4 cx4,1 cx4,3 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz4,5 
+2144:6:5:h1 h2 s2 cz1,2 h3 s3 h4 cz3,4 h1 s1 h4 s4 cz1,4 h1 h4 cz1,4 h4 s4 h5 s5 cz4,5 h4 s5 h5 cz4,5 h0 h1 h2 s5 h5 
+800:6:5:h4 s4 h5 s5 h5 cz4,5 h1 h4 s4 h4 cz1,4 h3 h4 s4 h4 cz3,4 s1 h1 s2 h2 cz1,2 h1 cz1,4 h3 s3 h4 cz3,4 h0 h1 s2 h2 h3 s3 h3 
+5152:3:2:h4 cx4,1 cx1,2 h0 h1 h3 h4 h5 cz3,4 
+5792:4:3:h3 h4 cz3,4 s1 h1 h2 cz1,2 cz1,4 s1 h1 h4 s4 h4 cz1,4 h0 s3 h4 h5 
+1696:4:3:h4 cx4,1 cx1,2 cx4,3 h0 h1 h3 h4 h5 cz1,4 
+16396:5:3:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz0,1 cz4,5 
+20508:5:5:h3 s3 h4 s4 h4 cz3,4 s5 h5 cz4,5 s1 h1 h4 cz1,4 h0 cz0,1 h0 s0 s1 h1 cz0,1 s0 h2 s3 h4 s4 
+4120:5:3:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz0,1 cz3,4 
+17410:5:4:h1 cx1,0 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 cz4,5 
+18440:6:5:h0 s0 h1 cz0,1 h4 s4 h5 cz4,5 h1 s1 cz1,4 h1 s1 h4 cz1,4 s1 h2 cz1,2 s1 h1 h2 cz1,2 s2 h3 h4 h5 s5 h5 
+17424:6:6:h1 h2 cz1,2 s1 h4 s4 cz1,4 h4 h5 cz4,5 h1 s4 h4 cz1,4 h0 s0 h0 cz0,1 s0 h0 h1 cz0,1 h2 h3 h4 
+8706:7:4:s1 h1 s4 h4 cz1,4 h4 h5 cz4,5 h0 h1 cz0,1 h3 s3 h4 s4 cz3,4 h2 s2 cz1,2 h1 s2 h2 cz1,2 h3 s3 h3 h4 cz3,4 h3 
+2564:9:6:h1 s4 h4 cz1,4 s4 s5 h5 cz4,5 h0 s0 h0 s1 cz0,1 h1 s1 h1 h4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h3 h4 cz3,4 h1 s1 h1 s2 cz1,2 s1 h2 s2 cz1,2 h3 s4 h4 cz3,4 h0 s1 h2 s2 h5 s5 
+2576:8:6:h0 s1 h1 cz0,1 h1 h4 cz1,4 h4 h5 cz4,5 h3 h4 s4 h4 cz3,4 s1 h1 h2 cz1,2 s4 cz1,4 s1 h1 h2 cz1,2 h3 s3 h4 s4 h4 cz3,4 s0 h0 h2 h3 s3 s4 h5 
+5122:5:4:h1 cx1,0 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz1,2 cz3,4 
+5124:6:5:h1 s2 h2 cz1,2 h3 s4 h4 cz3,4 h1 s1 h4 s4 h4 cz1,4 h1 s1 h1 s4 h4 cz1,4 h0 cz0,1 h0 s0 h1 cz0,1 h0 s0 h0 h3 h4 h5 
+4616:6:6:h0 s0 h1 cz0,1 h4 s4 cz1,4 s3 h3 cz3,4 h1 s1 s4 h4 cz1,4 s1 h1 h2 s2 cz1,2 h1 s1 s2 h2 cz1,2 h0 s1 h2 h4 s4 h5 
+16513:3:3:h5 h4 h3 h2 h1 h0 cz4,5 cz1,4 cz0,1 
+16785:4:3:h4 h5 cz4,5 h0 s0 h1 cz0,1 cz1,4 s1 h1 h4 cz1,4 s1 h2 h3 h5 s5 
+153:4:3:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz1,4 
+8257:5:4:h4 cx4,1 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz3,4 
+261:6:5:h4 s4 h4 s5 h5 cz4,5 h1 s1 h4 cz1,4 h0 h1 cz0,1 s3 h3 h4 cz3,4 s1 h1 cz1,4 h3 h4 s4 cz3,4 h1 s1 h2 s4 h5 
+81:6:5:h1 s1 h1 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 s3 h3 h4 s4 cz3,4 h4 s5 h5 cz4,5 h1 s4 cz1,4 s4 h4 h5 cz4,5 h0 h1 h2 h3 s3 h5 s5 h5 
+4161:3:2:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz0,1 
+141:4:3:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz1,4 
+4293:4:4:h3 h4 cz3,4 h1 s4 cz1,4 h0 s0 s1 cz0,1 h1 h4 cz1,4 s1 h2 h3 h5 
+2305:5:3:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz4,5 
+2353:5:5:h1 h2 s2 cz1,2 s0 h0 s1 cz0,1 h1 h4 s4 h4 cz1,4 s5 h5 cz4,5 h4 h5 cz4,5 h1 s1 s2 h3 
+304:5:3:h4 cx4,1 cx1,0 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz4,5 
+1057:3:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 
+162:3:3:h0 cx0,1 cx1,2 h0 h1 h3 h4 h5 cz1,4 
+168:3:3:h0 cx0,1 cx1,4 h0 h1 h2 h3 h5 cz1,2 
+577:5:3:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz3,4 
+613:5:4:s1 h1 h2 s2 cz1,2 h3 s4 h4 cz3,4 h0 s0 cz0,1 h1 h4 s4 cz1,4 s3 h4 cz3,4 s0 h1 s1 h2 s2 s3 h5 
+100:5:3:h4 cx4,1 cx1,0 cx4,3 h0 h1 h2 h4 h5 cz1,2 cz3,4 
+17921:6:4:h1 cx1,2 cx1,4 cx4,3 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz4,5 
+24065:6:6:h3 h4 cz3,4 s4 h4 s5 h5 cz4,5 s1 h1 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 h1 s1 h2 s2 cz1,2 s0 h0 h1 cz0,1 h0 s0 h1 h3 s3 h4 s4 h4 
+7169:6:4:h1 cx1,2 cx1,4 cx4,5 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz3,4 
+20546:6:5:h0 s1 h1 cz0,1 h2 cz1,2 h1 s4 h4 cz1,4 h0 s0 cz0,1 s3 h3 s4 cz3,4 h4 h5 cz4,5 s0 h0 h1 s1 h1 h2 h3 
+12418:6:4:h3 s3 h4 cz3,4 s0 h0 h1 s1 cz0,1 h4 s5 h5 cz4,5 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 s2 h2 cz1,2 
+12546:6:5:h1 h2 cz1,2 s0 h0 s1 cz0,1 h1 h4 s4 cz1,4 h5 cz4,5 h0 cz0,1 h3 s4 h4 cz3,4 s0 h0 h2 h3 h4 h5 
+17444:8:7:s0 h0 h1 s1 h1 cz0,1 s1 s4 h4 cz1,4 s3 h3 h4 cz3,4 h1 s1 cz1,4 h3 s3 s4 h4 cz3,4 h4 s4 h4 cz1,4 s1 h2 s2 h2 cz1,2 h4 s4 h4 h5 cz4,5 h1 h2 s2 h2 
+3204:10:8:h4 s4 h4 cz4,5 s1 h1 cz1,4 h0 s1 cz0,1 h3 s4 h4 cz3,4 h1 s1 h4 cz1,4 h3 s4 h4 cz3,4 h1 s2 h2 cz1,2 s5 cz4,5 s4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 h2 h4 s4 h4 
+17668:10:8:s1 cz1,2 h3 h4 cz3,4 h1 s1 h1 s4 cz1,4 h0 s0 s1 cz0,1 s1 h1 cz0,1 h1 h4 s4 h4 cz1,4 s4 h4 h5 cz4,5 h0 s0 h1 cz0,1 h1 s1 h1 h2 cz1,2 h1 s1 h4 cz1,4 h1 s1 h2 h4 s5 
+8488:7:6:s1 h1 s4 h4 cz1,4 s3 h3 h4 s4 cz3,4 s4 h5 s5 h5 cz4,5 h0 s0 h1 s1 cz0,1 h1 s4 h4 cz1,4 h0 h1 cz0,1 h2 cz1,2 s0 h0 h4 h5 s5 h5 
+2152:9:7:h4 cx4,1 cx1,2 cx4,5 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz3,4 swap4,1 
+808:9:7:h4 cx4,1 cx1,2 cx4,3 h0 h1 h3 h4 h5 cz0,1 cz1,2 cz4,5 swap4,1 
+5168:7:6:h0 h1 s1 h1 cz0,1 h1 h4 s4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 s1 h1 h4 s4 cz1,4 h4 h5 s5 h5 cz4,5 h3 s3 h3 h4 s4 h4 cz3,4 h1 h2 cz1,2 h0 s0 h1 h2 s3 
+5200:10:7:h1 s1 h4 cz1,4 h4 s5 h5 cz4,5 h0 s0 cz0,1 h3 s3 h4 s4 h4 cz3,4 s1 cz1,2 h1 s4 cz1,4 s0 h0 cz0,1 s4 h5 s5 cz4,5 s1 h1 h2 cz1,2 s1 h1 h4 cz1,4 h1 s1 h1 h2 h4 h5 
+1680:9:8:h0 h1 s1 h1 cz0,1 s1 h1 s4 h4 cz1,4 s3 h3 cz3,4 h1 s1 h4 s4 cz1,4 h4 s4 h4 h5 cz4,5 s1 h2 cz1,2 h1 s1 s2 h2 cz1,2 h1 s1 h1 h4 s4 cz1,4 h0 s0 h1 s1 cz0,1 h1 s1 h2 h3 h4 s4 h4 
+16428:6:4:h1 cx1,0 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz4,5 
+20540:6:5:s0 h0 h1 s1 h1 cz0,1 h3 s4 h4 cz3,4 h5 cz4,5 h1 h4 s4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h0 s0 h0 s1 cz0,1 h0 h4 s4 h5 s5 h5 
+4152:6:4:h1 cx1,0 cx1,4 cx4,5 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz3,4 
+17474:8:6:h1 s4 h4 cz1,4 s3 h3 h4 cz3,4 h0 s0 h0 cz0,1 h4 h5 s5 cz4,5 h1 h2 s2 cz1,2 h1 s1 s4 cz1,4 s1 cz0,1 h1 s2 cz1,2 h0 s0 s2 h3 h5 s5 
+18504:9:7:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz3,4 cz4,5 swap4,1 
+17488:9:7:h4 cx4,1 cx1,0 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz3,4 cz4,5 swap4,1 
+8834:8:5:h1 s1 h1 h4 cz1,4 h3 cz3,4 h0 cz0,1 s2 h2 cz1,2 s4 h4 s5 h5 cz4,5 h4 s4 h5 s5 cz4,5 h1 s1 h2 s2 cz1,2 s1 h4 cz1,4 h1 s1 h3 h4 h5 s5 
+2692:10:8:s1 h1 s4 h4 cz1,4 s3 h3 s4 cz3,4 h4 s4 h4 h5 s5 cz4,5 h2 cz1,2 h1 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h0 cz0,1 s1 cz1,4 h0 h1 cz0,1 s1 h1 s4 cz1,4 h1 s1 s2 h5 s5 
+2704:10:8:h3 s3 h4 s4 cz3,4 h1 s1 h1 h4 s4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s0 h0 cz0,1 s1 h1 s4 cz1,4 s1 h2 cz1,2 s4 h4 h5 s5 h5 cz4,5 s1 h1 s2 h2 cz1,2 h1 cz1,4 s1 h2 s2 cz1,2 h0 s2 h3 h5 
+5378:7:6:h4 s4 h5 s5 cz4,5 h0 s1 h1 cz0,1 s2 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h1 h4 s4 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h3 s4 h4 cz3,4 h0 s0 h0 h2 
+5380:9:7:h3 cx3,4 cx4,1 cx1,0 h0 h1 h2 h4 h5 cz1,2 cz3,4 cz4,5 swap4,1 
+4872:9:7:h3 cx3,4 cx4,1 cx1,2 h0 h1 h2 h4 h5 cz0,1 cz3,4 cz4,5 swap4,1 
+17025:7:5:h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 h1 s1 h1 h2 cz1,2 h1 h4 s4 h4 cz1,4 s1 h1 h2 cz1,2 s0 h0 h1 cz0,1 h4 s4 h5 cz4,5 
+904:10:8:s1 h1 h4 cz1,4 h1 h2 cz1,2 h3 s4 h4 cz3,4 h1 s1 s4 h4 cz1,4 s1 h2 s2 cz1,2 h0 h1 cz0,1 h0 cz0,1 h4 h5 s5 cz4,5 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 h0 s0 h1 s1 h4 s4 
+912:10:8:h4 h5 cz4,5 h1 h2 cz1,2 s4 h4 cz1,4 h1 s1 h4 s4 cz1,4 s4 h4 h5 s5 cz4,5 h0 s1 h1 cz0,1 s4 h4 cz3,4 s3 h3 h4 cz3,4 h3 h4 s4 h4 cz3,4 h1 cz1,4 h3 s4 
+9281:7:7:h4 h5 s5 cz4,5 h3 s3 h3 cz3,4 s1 h1 s4 h4 cz1,4 h1 s1 h1 h2 s2 cz1,2 h1 s4 h4 cz1,4 h1 cz1,2 h0 s1 h1 cz0,1 s2 h2 h3 s3 h3 h4 h5 s5 
+1285:9:7:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz4,5 swap4,1 
+1105:9:7:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz3,4 swap4,1 
+6209:7:6:h4 s4 h5 s5 cz4,5 h1 s1 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 s0 h0 h1 s1 cz0,1 h1 s1 h4 s4 cz1,4 s1 h1 h2 s2 cz1,2 h3 s4 cz3,4 s0 h1 s1 s2 h3 h4 h5 
+2244:10:7:h1 s4 h4 cz1,4 s5 h5 cz4,5 s0 h0 cz0,1 h1 h2 s2 cz1,2 s4 h4 cz1,4 s3 h3 h4 s4 cz3,4 s1 s2 h2 cz1,2 s1 h1 cz1,2 s5 h5 cz4,5 h4 s4 h4 cz1,4 h0 h1 s1 h2 s2 h3 h4 h5 
+2248:8:6:h1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s1 h2 s2 h2 cz1,2 h0 h1 s1 h1 cz0,1 h3 s3 h3 s4 h4 cz3,4 h1 s1 h1 cz1,4 h1 s1 h1 h4 cz1,4 s1 h2 s2 h2 cz1,2 h1 s1 h2 s2 h3 h4 h5 
+6401:6:4:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz3,4 cz4,5 
+6449:6:5:h1 s1 h1 s2 h2 cz1,2 h4 h5 cz4,5 h0 h1 cz0,1 h1 s4 cz1,4 h4 s4 h4 h5 cz4,5 h3 h4 s4 cz3,4 h1 s1 s2 h3 h4 s5 
+4400:6:4:h4 cx4,1 cx1,0 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz3,4 cz4,5 
+9249:6:4:h1 s1 h1 h2 cz1,2 s3 h3 h4 cz3,4 s5 h5 cz4,5 s1 h1 h4 cz1,4 h0 s1 h1 cz0,1 h5 s5 cz4,5 s2 h3 s3 h5 
+8354:6:4:h4 s4 h5 s5 cz4,5 s3 h3 h4 cz3,4 h4 h5 s5 cz4,5 s0 h0 h1 cz0,1 h2 s2 h2 cz1,2 h1 cz1,4 h0 s0 h0 h2 s2 h2 
+8360:6:4:h0 s1 h1 cz0,1 h3 s3 h3 h4 cz3,4 h4 s4 s5 h5 cz4,5 h4 cz1,4 cz3,4 h1 h2 s2 cz1,2 s2 h4 
+16961:6:4:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz3,4 cz4,5 
+16997:6:6:h1 s1 h1 h2 cz1,2 h0 s0 h0 h1 cz0,1 h1 h4 cz1,4 h3 cz3,4 h3 s3 h4 s4 h4 cz3,4 s4 s5 h5 cz4,5 s0 h1 s1 s2 s3 h4 h5 
+16484:6:4:h4 cx4,1 cx1,0 cx4,3 h0 h1 h2 h4 h5 cz1,2 cz3,4 cz4,5 
+3584:5:3:h4 cx4,1 cx1,2 cx4,3 cx4,5 h0 h1 h3 h4 h5 cz1,2 
+448:3:3:h1 cx1,4 cx4,3 cx4,5 h0 h2 h3 h4 h5 
+416:3:2:h4 cx4,1 cx1,2 cx4,5 h0 h2 h3 h4 h5 
+352:5:4:h4 cx4,1 cx1,2 cx4,3 cx4,5 h0 h2 h3 h4 h5 cz1,4 
+224:3:2:h4 cx4,1 cx1,2 cx4,3 h0 h2 h3 h4 h5 
+28:5:3:h4 cx4,1 cx1,0 cx4,3 cx4,5 h1 h2 h3 h4 h5 cz0,1 
+26:5:4:h1 cx1,0 cx1,2 cx1,4 cx4,5 h1 h2 h3 h4 h5 cz0,1 
+22:7:5:h1 h2 cz1,2 s4 h4 cz1,4 h4 h5 cz4,5 h3 s3 h4 s4 cz3,4 h0 s1 cz0,1 h0 s0 h1 s1 cz0,1 h3 s3 h3 s4 h4 cz3,4 s1 s3 
+14:5:4:h1 cx1,0 cx1,2 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz0,1 
+25:3:2:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 
+8464:5:4:h4 cx4,1 cx1,0 cx4,3 cx4,5 h0 h1 h2 h3 h4 cz4,5 
+13:3:2:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 
+2320:5:3:h4 cx4,1 cx1,0 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz4,5 
+11:3:3:h0 cx0,1 cx1,2 cx1,4 h1 h2 h3 h4 h5 
+580:5:3:h4 cx4,1 cx1,0 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz3,4 
+3585:6:4:h1 cx1,2 cx1,4 cx4,3 cx4,5 h0 h1 h3 h4 h5 cz0,1 cz1,2 
+20610:6:6:h1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz1,4 cz3,4 cz4,5 
+420:8:6:h3 s3 h3 h4 cz3,4 h0 h1 s1 cz0,1 h4 s4 cz1,4 h3 s3 h3 h4 s4 cz3,4 s1 h1 s4 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 s1 h1 h2 cz1,2 s4 h4 h5 cz4,5 s4 h4 
+360:7:6:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz0,1 swap4,1 cz1,2 
+240:7:5:h1 h4 s4 cz1,4 h4 s4 h4 h5 s5 cz4,5 h0 s0 h0 s1 cz0,1 h3 s3 h3 h4 cz3,4 s1 h1 h4 cz1,4 h1 h2 cz1,2 h4 s4 s5 h5 cz4,5 h0 s0 s3 h3 s4 
+60:6:4:h1 cx1,0 cx1,4 cx4,3 cx4,5 h1 h2 h3 h4 h5 cz0,1 cz1,2 
+17480:7:6:h5 h4 h3 h2 h1 h0 cz3,4 cz1,2 cz0,1 swap4,1 cz4,5 
+150:7:6:h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 h2 cz1,2 h4 s4 s5 h5 cz4,5 s3 h3 cz3,4 s1 h1 h4 s4 cz1,4 s1 h1 h2 cz1,2 h0 s0 h0 s1 h1 s2 h2 h4 
+5384:7:6:h5 h4 h3 h2 h1 h0 cz4,5 cz1,2 cz0,1 swap4,1 cz3,4 
+17032:8:6:h1 s1 h4 cz1,4 s1 s2 h2 cz1,2 s3 h3 cz3,4 h1 s2 h2 cz1,2 h4 s4 h5 cz4,5 cz1,4 h1 s1 h2 cz1,2 h0 h1 s1 cz0,1 h1 h5 s5 h5 
+1345:7:6:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,2 swap4,1 cz0,1 
+6280:8:5:h1 s1 h4 s4 cz1,4 h1 h2 cz1,2 s4 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 h0 h1 cz0,1 cz1,2 h3 s3 s4 h4 cz3,4 h1 h2 s2 s3 s4 
+6416:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz3,4 cz4,5 
+8353:6:4:h4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz1,2 cz1,4 cz3,4 
+16964:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz3,4 cz4,5 
+18080:5:4:h4 cx4,1 cx1,2 cx4,3 h0 h1 h3 h4 h5 cz1,4 cz4,5 
+16906:7:5:s3 h3 h4 s4 h4 cz3,4 h0 s0 h0 h1 cz0,1 s1 h4 s4 h4 cz1,4 h1 h4 s4 cz1,4 s1 h1 h2 cz1,2 h1 h2 s2 cz1,2 h4 s4 h5 s5 cz4,5 h0 h2 s2 s3 s5 
+27040:5:4:h1 s1 h4 cz1,4 h2 cz1,2 h3 cz3,4 s4 h5 cz4,5 h1 s1 h4 s4 cz1,4 h0 s2 s4 h5 
+25624:7:6:h3 s3 h3 s4 h4 cz3,4 h1 h2 s2 cz1,2 s4 h4 h5 s5 cz4,5 h4 cz1,4 s1 h1 s4 h4 cz1,4 s0 h0 s1 cz0,1 h0 s0 s1 h1 cz0,1 h3 s3 h3 h4 s5 h5 
+22912:5:4:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz1,4 cz3,4 
+6154:7:6:h4 h5 cz4,5 h1 s1 s4 cz1,4 s0 h0 cz0,1 s3 h3 h4 s4 h4 cz3,4 s1 h1 cz1,4 h1 h2 s2 cz1,2 s1 h1 s2 h2 cz1,2 s2 s4 h5 
+22176:5:4:h1 h2 cz1,2 h3 s3 h3 h4 cz3,4 h1 s1 cz1,4 h4 h5 cz4,5 h1 cz1,4 h0 h3 s4 
+20621:5:4:h3 h4 s4 cz3,4 h1 s1 h4 cz1,4 h0 s0 cz0,1 h4 h5 cz4,5 h1 s4 cz1,4 s0 h0 h2 
+8928:5:5:h3 h4 cz3,4 s4 h5 cz4,5 h1 s4 h4 cz1,4 h1 s2 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h0 s1 h1 s2 h3 s3 
+8593:5:5:h4 s5 h5 cz4,5 h3 cz3,4 h1 h4 s4 cz1,4 h0 h1 cz0,1 h1 h4 s4 cz1,4 s0 h0 s1 h1 h2 h3 s3 h3 h5 
+22944:5:4:h4 h5 s5 h5 cz4,5 h1 s1 h1 h2 s2 cz1,2 cz1,4 h1 h4 cz1,4 h3 cz3,4 h0 s1 h1 h5 s5 
+20881:5:4:h4 h5 s5 cz4,5 h1 s1 h1 s4 cz1,4 h3 h4 cz3,4 s0 h0 cz0,1 h1 s1 cz1,4 s0 h1 h2 s5 
+20576:4:3:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz1,2 cz4,5 
+16425:4:3:h0 cx0,1 cx1,4 h1 h2 h3 h4 h5 cz1,2 cz4,5 
+7808:6:5:h4 h5 cz4,5 h1 cz1,4 h3 h4 cz3,4 h1 s1 h2 s2 h2 cz1,2 h1 s1 h1 h4 s4 cz1,4 h1 s1 s2 h2 cz1,2 h0 s2 h3 
+2449:6:4:h4 s4 h4 s5 h5 cz4,5 h1 h2 cz1,2 s1 s4 h4 cz1,4 h4 s4 cz4,5 h0 h1 s1 cz0,1 h1 h4 cz1,4 s0 h3 h4 s4 h5 
+5440:6:5:h1 s1 h4 cz1,4 h2 cz1,2 h3 cz3,4 s4 h5 cz4,5 h1 s1 h4 s4 cz1,4 s4 h4 cz4,5 h0 s1 h2 s2 h3 s3 h3 
+1289:6:6:h1 h2 cz1,2 s1 h4 cz1,4 s4 h5 cz4,5 h1 s1 s4 h4 cz1,4 s0 h0 cz0,1 h1 h4 s4 cz1,4 h0 s0 h0 h1 s2 h3 
+12448:4:3:h3 cx3,4 cx4,5 h0 h1 h2 h4 h5 cz1,2 cz1,4 
+8293:6:4:h1 h4 s4 h4 cz1,4 h0 s1 cz0,1 h3 s4 cz3,4 h5 cz4,5 h1 s1 s2 h2 cz1,2 h4 s4 h4 h5 cz4,5 s0 h3 s4 h5 
+31104:5:4:h1 s1 h4 s4 h4 cz1,4 h5 s5 cz4,5 h3 s3 h3 h4 cz3,4 s1 h1 h2 cz1,2 h1 h4 cz1,4 h0 h3 s4 s5 h5 
+2129:8:6:h4 s4 h5 s5 h5 cz4,5 h1 s4 h4 cz1,4 s1 s2 h2 cz1,2 h0 h1 s1 cz0,1 h3 s3 h4 s4 cz3,4 cz4,5 h1 h4 s4 cz1,4 h3 h4 cz3,4 h0 s0 h5 s5 h5 
+20128:5:4:h1 s1 h1 h4 s4 cz1,4 h3 h4 cz3,4 h4 h5 cz4,5 h1 s1 h2 cz1,2 h1 h4 s4 cz1,4 h0 h2 s2 s5 h5 
+773:8:5:s3 h3 h4 s4 h4 cz3,4 h0 s0 s1 h1 cz0,1 h1 h4 cz1,4 s1 h1 h2 cz1,2 h4 h5 s5 h5 cz4,5 h1 s1 h1 cz1,4 h4 s4 h4 s5 h5 cz4,5 h1 h2 s2 cz1,2 h0 s1 h1 h2 s2 h3 s4 h5 
+20768:4:3:h1 cx1,4 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz3,4 
+4137:4:3:h0 cx0,1 cx1,4 h1 h2 h3 h4 h5 cz1,2 cz3,4 
+17728:6:5:s1 h1 h4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h3 s4 cz3,4 h4 h5 s5 cz4,5 h1 h4 s4 cz1,4 h1 s2 cz1,2 h0 h1 s1 s2 h5 
+1097:6:6:h1 s1 h2 cz1,2 h4 cz1,4 h3 s3 h4 s4 h4 cz3,4 s1 h1 h4 cz1,4 h0 cz0,1 h1 h4 s4 cz1,4 h1 h2 s2 s3 s4 h5 
+20096:6:5:h1 h2 cz1,2 s4 h4 h5 s5 cz4,5 s1 cz1,4 h3 s3 h3 h4 s4 cz3,4 s1 h1 h4 cz1,4 h1 s1 h1 h2 cz1,2 h0 s2 h2 h5 s5 
+709:6:6:h1 s1 h4 cz1,4 h3 s3 h4 s4 cz3,4 s1 s4 h4 cz1,4 s1 h2 s2 h2 cz1,2 h0 h1 cz0,1 h1 cz1,4 s0 h0 s1 s2 s3 h3 h5 
+17414:7:6:s3 h3 h4 s4 cz3,4 s1 h1 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 h1 s1 h1 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 h5 s5 h5 cz4,5 s0 h0 h1 cz0,1 h2 s2 h2 h3 s3 s5 
+16525:5:4:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz1,4 cz4,5 
+27656:8:6:h3 s3 h3 h4 s4 cz3,4 s4 h4 h5 cz4,5 h0 h1 s1 cz0,1 cz1,4 h1 s1 h4 s4 h4 cz1,4 s4 h4 h5 s5 cz4,5 h1 h2 cz1,2 h1 s1 h2 cz1,2 h0 s0 s1 h2 s2 h2 s3 h3 
+24977:5:5:h0 s0 h1 cz0,1 s4 h4 cz1,4 s4 h5 cz4,5 s3 h3 cz3,4 h1 s1 h1 h4 cz1,4 h2 h5 
+5138:7:6:h0 s1 h1 cz0,1 h1 h4 cz1,4 h4 h5 cz4,5 h3 h4 s4 h4 cz3,4 s1 h1 h2 cz1,2 s4 cz1,4 s1 h1 h2 cz1,2 s0 h2 s2 s4 
+20880:5:4:h4 cx4,1 cx1,0 cx4,5 h0 h1 h2 h3 h4 cz1,4 cz3,4 
+20494:6:4:h1 s1 h2 cz1,2 h3 s3 h3 h4 s4 cz3,4 h1 s1 cz1,4 h4 s4 s5 h5 cz4,5 s0 h0 cz0,1 h0 h1 cz0,1 h2 s2 
+16546:4:4:h0 cx0,1 cx1,2 h0 h1 h3 h4 h5 cz1,4 cz4,5 
+6664:9:7:h1 h4 cz1,4 s3 h3 h4 cz3,4 h4 s4 s5 h5 cz4,5 s1 h1 h2 s2 h2 cz1,2 s4 h4 h5 cz4,5 h1 s4 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h0 s0 h0 s1 cz0,1 s1 h1 s4 cz1,4 s0 s2 
+18833:5:4:h1 s2 h2 cz1,2 h4 s4 cz1,4 h0 s0 s1 h1 cz0,1 s4 h4 s5 h5 cz4,5 s1 h1 h4 s4 cz1,4 s1 h3 s4 h5 
+5140:8:6:h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 h1 s1 cz0,1 s1 h1 h2 s2 h2 cz1,2 s4 h4 h5 s5 cz4,5 s0 h0 cz0,1 s3 h3 s4 h4 cz3,4 h1 h4 cz1,4 h1 s1 h1 cz1,2 h0 s1 h3 s5 
+187:5:4:h0 s1 h1 cz0,1 s1 h4 cz1,4 h1 s1 h1 h2 cz1,2 h4 s5 h5 cz4,5 h1 s1 h4 cz1,4 h0 s0 s2 h3 
+24066:6:4:h4 s4 h5 cz4,5 h0 s0 h0 s1 h1 cz0,1 h3 s4 h4 cz3,4 h1 s1 h2 cz1,2 s1 h4 cz1,4 h1 h2 cz1,2 h0 h4 s4 s5 h5 
+10545:6:4:h4 h5 cz4,5 h1 s2 h2 cz1,2 h0 h1 cz0,1 s3 h3 h4 s4 cz3,4 h1 s1 h1 cz1,4 h4 s4 h4 s5 cz4,5 h1 s1 h1 h2 s4 
+6666:8:8:h1 s1 h4 cz1,4 h3 cz3,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 s1 h1 cz1,4 s0 h0 h1 s1 cz0,1 h0 h1 s1 cz0,1 h0 s1 h2 s2 h3 s3 h3 h5 
+10321:8:7:h0 s0 h1 s1 h1 cz0,1 h1 s4 h4 cz1,4 h3 h4 s4 cz3,4 h1 s1 h2 cz1,2 h4 s4 h5 cz4,5 h1 h4 cz1,4 h3 s4 h4 cz3,4 s5 h5 cz4,5 s1 s2 h3 h5 
+5142:7:6:h0 s1 h1 cz0,1 s1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s1 h1 h2 cz1,2 s3 h3 h4 cz3,4 s1 h4 s4 cz1,4 h1 h2 cz1,2 h0 s2 h3 s4 s5 
+10352:8:7:h1 s1 h4 s4 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 s1 s2 cz1,2 h0 h1 s1 h1 cz0,1 s1 h1 h2 s2 h2 cz1,2 s1 h1 h4 s4 cz1,4 h3 h4 s4 cz3,4 h3 h4 cz3,4 s5 h5 
+20506:6:4:h0 s1 h1 cz0,1 h1 s1 s4 h4 cz1,4 h2 cz1,2 h1 s1 cz0,1 s5 h5 cz4,5 s3 h3 h4 s4 h4 cz3,4 s1 s5 
+4258:4:4:h0 cx0,1 cx1,2 h0 h1 h3 h4 h5 cz1,4 cz3,4 
+17428:8:6:h1 h4 s4 h4 cz1,4 h2 cz1,2 h3 h4 cz3,4 h4 s4 h5 s5 cz4,5 s1 h1 s4 cz1,4 h3 s3 h3 h4 s4 h4 cz3,4 h0 s0 cz0,1 s0 h0 h1 cz0,1 h0 h3 s4 h4 h5 s5 
+175:5:4:s1 h1 s4 h4 cz1,4 h3 h4 cz3,4 h0 s1 cz0,1 h1 h2 cz1,2 s1 h1 h4 cz1,4 h0 s1 s2 h5 
+18952:8:6:h3 s3 h3 h4 s4 cz3,4 h1 h2 s2 h2 cz1,2 h1 h4 cz1,4 s1 h1 cz1,2 h4 s4 h4 s5 h5 cz4,5 s1 h4 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h0 s0 s1 h1 cz0,1 h0 h2 h5 
+4805:5:4:h1 s1 h1 h4 cz1,4 s2 h2 cz1,2 h3 h4 cz3,4 h0 s0 h1 s1 cz0,1 s1 h1 h4 s4 cz1,4 h0 s1 h3 s4 h5 
+20545:4:3:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz4,5 
+17441:4:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 cz4,5 
+4424:6:5:h0 s0 h0 s1 h1 cz0,1 s4 h4 h5 cz4,5 h1 s1 h1 h4 cz1,4 h3 h4 cz3,4 h1 cz1,4 h1 h4 s4 cz1,4 h2 s4 h4 
+1320:6:5:h0 s0 h0 h1 s1 cz0,1 h4 h5 cz4,5 cz1,4 h1 s1 h1 h2 s2 cz1,2 s1 h4 cz1,4 h1 cz0,1 s0 h0 h1 s2 h3 h4 
+4252:6:4:h4 s5 h5 cz4,5 h0 s1 h1 cz0,1 h1 s1 s4 cz1,4 s1 h1 cz0,1 s3 h3 h4 cz3,4 h4 cz1,4 h0 h2 s3 h3 s4 
+2480:6:5:h0 s1 h1 cz0,1 s1 h4 cz1,4 h1 s1 h1 h2 cz1,2 h4 s5 h5 cz4,5 h1 s1 h4 cz1,4 h1 s1 s2 cz1,2 h1 s2 h3 s4 h5 
+12417:4:3:h3 cx3,4 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz1,4 
+10529:6:4:h3 h4 s4 cz3,4 h1 s2 h2 cz1,2 s1 h1 cz1,4 h0 h1 cz0,1 h5 s5 h5 cz4,5 h4 s5 h5 cz4,5 s1 
+28868:5:4:s3 h3 h4 cz3,4 s1 h1 s4 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h0 h1 s1 cz0,1 h1 h4 cz1,4 h2 s3 h3 s4 
+804:9:6:h1 s4 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h0 h1 cz0,1 s3 h3 h4 s4 h4 cz3,4 h1 s2 h2 cz1,2 cz1,4 h1 s1 h1 cz0,1 s4 cz4,5 h3 s3 h4 s4 cz3,4 h0 s1 h1 h2 s2 h2 h3 s4 s5 
+4253:5:4:h4 s4 s5 h5 cz4,5 s1 h1 cz1,4 s3 h3 h4 s4 cz3,4 h0 h1 cz0,1 h1 h4 cz1,4 h0 h2 s3 s4 
+2160:8:5:h1 h4 cz1,4 h3 s3 h3 s4 h4 cz3,4 h0 s1 cz0,1 h1 s1 s4 h4 cz1,4 h1 s1 s2 h2 cz1,2 s0 h1 cz0,1 h5 s5 h5 cz4,5 h4 s5 h5 cz4,5 s0 h0 h1 h5 
+20737:4:3:h1 cx1,4 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz3,4 
+5153:4:3:h1 cx1,2 cx1,4 h0 h1 h3 h4 h5 cz0,1 cz3,4 
+16540:6:5:h3 h4 cz3,4 h1 s1 h1 cz1,4 h0 s1 h1 cz0,1 s5 h5 cz4,5 h1 s1 h4 s4 cz1,4 h4 s4 s5 h5 cz4,5 h0 h2 s5 
+740:6:4:s1 h1 h4 s4 cz1,4 h0 cz0,1 h3 s4 cz3,4 s1 h1 s2 h2 cz1,2 h3 h4 cz3,4 s1 h1 cz1,4 s1 s2 h3 h5 
+16712:6:5:h3 s3 h4 cz3,4 s0 h0 h1 s1 cz0,1 s4 h5 cz4,5 cz1,4 h1 s1 h1 s4 h4 cz1,4 h4 s4 cz3,4 h0 h2 h3 s3 s4 
+1128:6:6:h3 s3 h3 h4 s4 h4 cz3,4 h1 s1 cz1,4 h1 s2 h2 cz1,2 h0 s0 cz0,1 h1 s1 h1 h4 cz1,4 s1 h1 cz0,1 s0 s1 h3 h5 
+3233:5:4:h1 cx1,2 cx1,4 cx4,5 h0 h1 h3 h4 h5 cz0,1 cz1,4 
+10305:7:5:h3 s3 h4 s4 cz3,4 h1 s1 s2 h2 cz1,2 h4 s4 cz1,4 h1 s1 h1 h4 s4 cz1,4 s4 s5 h5 cz4,5 h0 s0 h1 cz0,1 s4 h4 h5 s5 cz4,5 s0 s1 h2 s3 h5 
+19618:5:4:s0 h0 h1 cz0,1 s1 s4 h4 cz1,4 s1 h2 cz1,2 s4 h4 h5 cz4,5 h1 h4 cz1,4 h2 h3 s4 s5 
+866:7:5:h1 h4 s4 cz1,4 h2 s2 cz1,2 s5 h5 cz4,5 h0 s0 s1 cz0,1 h3 s3 s4 h4 cz3,4 h1 s4 cz1,4 s3 h3 h4 s4 cz3,4 h0 s0 h1 s1 h2 s2 h2 h3 s4 h5 
+185:5:4:h0 cx0,1 cx1,4 cx4,5 h1 h2 h3 h4 h5 cz1,2 cz1,4 
+8304:7:5:h3 h4 cz3,4 h0 s0 h1 cz0,1 s1 h1 s4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 h2 cz1,2 cz1,4 h4 s4 h4 s5 h5 cz4,5 h0 s0 s4 h5 
+19617:5:4:h1 h4 s4 cz1,4 h4 s4 s5 h5 cz4,5 h1 h2 cz1,2 h0 h1 cz0,1 h4 cz1,4 h3 s4 h4 s5 
+5793:5:5:h1 s1 h2 cz1,2 h4 cz1,4 h3 s3 h4 s4 h4 cz3,4 s1 h1 h4 cz1,4 h0 cz0,1 h2 h3 s4 h5 
+19586:5:5:h0 s0 h0 h1 cz0,1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h4 h5 cz4,5 h1 s1 h4 s4 cz1,4 h0 s0 s2 h2 h3 h4 s5 
+5762:5:5:h1 h2 cz1,2 h0 s0 h0 cz0,1 h1 h4 s4 cz1,4 h3 s3 h4 s4 h4 cz3,4 h1 s4 h4 cz1,4 s0 s1 h2 s2 s4 h4 h5 
+16569:5:5:h0 h1 cz0,1 h1 h4 s4 cz1,4 h4 h5 cz4,5 h1 h4 s4 cz1,4 h2 s2 cz1,2 s2 h3 s5 
+4325:5:4:h3 h4 s4 cz3,4 h0 h1 s1 cz0,1 h1 s1 cz1,4 h1 s1 h1 h4 cz1,4 h2 cz1,2 h3 h5 
+8961:7:5:h1 s1 h4 cz1,4 s4 h5 cz4,5 h3 h4 s4 cz3,4 h2 s2 h2 cz1,2 s0 h0 s1 h1 cz0,1 s4 cz1,4 h3 h4 s4 h4 cz3,4 s2 h2 s3 h3 s4 h5 s5 h5 
+1697:5:4:h1 cx1,2 cx1,4 cx4,3 h0 h1 h3 h4 h5 cz0,1 cz1,4 
+2402:7:5:h1 h4 cz1,4 h3 h4 cz3,4 s1 h1 h2 cz1,2 h4 h5 s5 h5 cz4,5 h0 s1 cz0,1 h1 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 h2 s3 s4 s5 h5 
+5794:5:4:s0 h0 s1 h1 cz0,1 h3 h4 s4 h4 cz3,4 h2 cz1,2 s1 cz1,4 h1 h4 s4 cz1,4 h2 s3 h5 
+8484:7:6:s0 h0 h1 cz0,1 h4 cz1,4 s4 h5 cz4,5 h1 s1 h4 cz1,4 h1 s1 s2 h2 cz1,2 h3 s4 cz3,4 h3 s3 h4 s4 cz3,4 h0 h3 s4 s5 h5 
+4324:5:4:h0 cx0,1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz1,2 cz1,4 
+29408:5:4:s3 h3 h4 cz3,4 h1 s1 cz1,4 h2 cz1,2 h4 h5 s5 cz4,5 h1 h4 s4 cz1,4 h0 s1 s2 h3 h5 
+21010:7:5:h0 s0 h0 s1 h1 cz0,1 h3 s3 h4 s4 h4 cz3,4 s1 cz1,4 h1 s1 h1 h2 s2 cz1,2 h4 s4 s5 h5 cz4,5 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 s2 h2 h3 s3 h3 s4 h4 s5 
+29073:5:4:h1 s1 h4 s4 cz1,4 h3 s4 cz3,4 h4 s5 h5 cz4,5 h0 s0 h1 cz0,1 s1 h1 h4 cz1,4 s1 h1 h2 
+16571:5:5:h4 s4 h5 s5 cz4,5 h1 s4 cz1,4 s2 h2 cz1,2 h0 s1 h1 cz0,1 h1 s4 h4 cz1,4 h3 s4 h4 h5 
+8753:7:6:s0 h0 h1 s1 cz0,1 s1 s4 h4 cz1,4 h3 cz3,4 h4 s4 h5 s5 h5 cz4,5 h1 s1 h2 s2 cz1,2 h1 s1 s4 cz1,4 h4 s4 s5 h5 cz4,5 h0 h1 h2 s3 s4 s5 h5 
+4271:5:4:h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 s1 s4 cz1,4 h0 h1 cz0,1 h1 h4 cz1,4 s3 s4 h4 h5 
+20640:4:4:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,4 cz1,2 
+18752:5:4:h1 h2 s2 cz1,2 h3 s3 h4 cz3,4 h1 s1 h4 s4 cz1,4 h1 h4 cz1,4 h4 s4 h5 s5 cz4,5 h0 h1 h4 h5 s5 h5 
+3744:5:4:h3 cx3,4 cx4,1 cx1,2 cx4,5 h0 h1 h3 h4 h5 cz1,4 
+21760:5:4:h4 s4 h5 s5 cz4,5 h1 h2 cz1,2 h1 s4 cz1,4 h1 s1 s4 h4 cz1,4 h3 h4 cz3,4 h0 h1 s1 h5 
+18048:5:5:h1 s1 s2 h2 cz1,2 h1 h4 cz1,4 h3 h4 s4 cz3,4 h1 s4 h4 cz1,4 s4 h4 h5 cz4,5 h0 h1 s1 s2 h2 
+1472:5:4:s4 h4 h5 cz4,5 s3 h3 cz3,4 h1 s1 h2 cz1,2 s1 h4 cz1,4 h1 s1 h4 cz1,4 h0 s1 h1 h2 h4 
+7296:5:5:s1 h1 h2 cz1,2 h4 cz1,4 h4 s4 h5 cz4,5 h1 s1 h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 h0 h2 s2 s4 
+4512:4:3:h4 cx4,1 cx1,2 cx4,5 h0 h2 h3 h4 h5 cz3,4 
+8608:4:4:h3 h4 cz3,4 s4 h5 cz4,5 h1 s4 h4 cz1,4 h1 s2 h2 cz1,2 h0 h4 h5 
+16608:4:3:h3 cx3,4 cx4,1 cx1,2 h0 h2 h3 h4 h5 cz4,5 
+17928:8:6:s1 h1 h4 cz1,4 h2 s2 cz1,2 h1 s1 s2 h2 cz1,2 h3 cz3,4 s0 h0 s1 cz0,1 h4 s5 h5 cz4,5 h1 cz1,4 s1 h1 cz0,1 s0 h2 s4 h5 s5 h5 
+25616:8:6:h1 h4 cz1,4 s4 h4 h5 s5 cz4,5 h0 h1 s1 h1 cz0,1 h3 s3 cz3,4 h1 s1 h2 s2 h2 cz1,2 h4 s4 cz1,4 h1 s1 h2 s2 cz1,2 s1 h4 s4 cz1,4 s1 h2 s2 h3 s3 s5 h5 
+7176:7:6:h0 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h5 s5 cz4,5 h1 s1 h1 h4 s4 h4 cz1,4 s3 h3 s4 h4 cz3,4 s1 s2 h2 cz1,2 h1 s1 h2 cz1,2 h0 s1 h2 s2 s4 h5 
+20490:6:4:h4 cx4,1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz0,1 cz3,4 cz4,5 
+4122:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,5 h1 h2 h3 h4 h5 cz0,1 cz3,4 
+8218:6:6:h3 h4 cz3,4 s4 h5 s5 cz4,5 s1 h1 s4 h4 cz1,4 s0 h0 h1 cz0,1 s1 h2 cz1,2 s1 h1 s4 cz1,4 h0 h2 s2 h2 h4 s5 h5 
+17420:8:6:h0 s0 h0 h1 cz0,1 h1 s1 h4 cz1,4 s0 s1 h1 cz0,1 h3 cz3,4 s1 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 h5 cz4,5 h1 h2 cz1,2 h0 s0 h2 
+16398:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 h1 h2 h3 h4 h5 cz0,1 cz4,5 
+26632:7:6:h1 s1 h1 h4 cz1,4 h1 h2 s2 cz1,2 s4 h4 h5 s5 cz4,5 s3 h3 cz3,4 h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 h1 s1 cz0,1 h1 s1 h4 cz1,4 s0 s1 s2 s5 h5 
+21520:7:5:h4 h5 cz4,5 h1 s1 h1 h2 cz1,2 s4 cz1,4 s0 h0 h1 s1 cz0,1 s1 h4 cz1,4 h0 s0 h1 cz0,1 h3 s3 h3 h4 s4 cz3,4 s0 s2 s3 h5 s5 h5 
+4121:4:3:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz3,4 
+8385:4:4:h4 s5 h5 cz4,5 h3 cz3,4 h1 h4 s4 cz1,4 h0 h1 cz0,1 h2 h3 s4 h4 
+16524:5:5:h0 h1 s1 cz0,1 h4 s4 cz1,4 s3 h3 s4 h4 cz3,4 h1 s1 h4 s4 cz1,4 h4 s4 h5 s5 h5 cz4,5 h0 h2 s5 
+89:5:4:h3 h4 s4 h4 cz3,4 h0 s0 s1 h1 cz0,1 h4 cz1,4 h1 h4 cz1,4 h4 h5 cz4,5 h1 s1 h2 h4 h5 s5 h5 
+16397:4:3:h3 cx3,4 cx4,1 cx1,0 h1 h2 h3 h4 h5 cz4,5 
+456:5:4:h0 s1 h1 cz0,1 h3 h4 cz3,4 s5 h5 cz4,5 h4 cz1,4 h1 s1 h1 h4 cz1,4 h0 s0 s1 h1 h2 h4 
+157:5:4:h3 cx3,4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz1,4 
+4248:5:4:s1 h1 h4 cz1,4 h0 cz0,1 h4 h5 cz4,5 h1 s1 s4 h4 cz1,4 h3 s4 h4 cz3,4 h0 h2 s4 
+269:5:4:s4 h4 h5 cz4,5 h0 s0 h0 h1 s1 cz0,1 s4 cz1,4 h1 h4 cz1,4 h3 h4 cz3,4 h0 s0 h1 h2 h4 h5 s5 
+12353:4:3:h1 cx1,4 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 
+16395:4:3:h4 cx4,1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz4,5 
+424:5:4:h1 s1 h4 s4 cz1,4 s4 s5 h5 cz4,5 h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 h1 s2 h2 cz1,2 h0 h3 h4 h5 
+155:5:4:h4 cx4,1 cx1,0 cx1,2 cx4,5 h1 h2 h3 h4 h5 cz1,4 
+1049:5:5:h4 s4 h4 h5 cz4,5 h1 cz1,4 h2 s2 h2 cz1,2 s1 h1 h4 cz1,4 s0 h0 h1 s1 cz0,1 h0 h1 h3 h4 s4 s5 
+432:5:4:h1 h4 cz1,4 h4 s5 h5 cz4,5 h0 cz0,1 h1 s1 h1 h4 cz1,4 h1 s2 h2 cz1,2 s1 h2 s2 h2 h3 h4 s4 h5 
+267:5:4:s4 h4 s5 h5 cz4,5 h0 s0 h0 h1 cz0,1 h1 h2 cz1,2 s1 h1 s4 h4 cz1,4 h1 h4 cz1,4 h1 s1 h3 
+2433:5:5:h4 h5 s5 h5 cz4,5 h1 s4 h4 cz1,4 h1 h2 cz1,2 h1 s1 s4 h4 cz1,4 h0 h1 cz0,1 h2 s2 h2 h3 h4 s4 h5 
+3105:4:3:h1 cx1,2 cx1,4 cx4,5 h0 h1 h3 h4 h5 cz0,1 
+16522:4:4:h0 s1 h1 cz0,1 h1 h2 s2 cz1,2 h1 h4 cz1,4 h4 s4 h5 cz4,5 h1 s2 h3 s4 
+57:4:3:h0 cx0,1 cx1,4 cx4,5 h1 h2 h3 h4 h5 cz1,2 
+368:7:5:s3 h3 h4 s4 h4 cz3,4 h0 s0 h1 s1 h1 cz0,1 s1 h1 h4 s4 cz1,4 h4 s4 s5 h5 cz4,5 h1 cz1,4 h1 s1 s2 h2 cz1,2 h4 s4 h5 cz4,5 h0 s0 h3 s4 h5 s5 h5 
+263:8:7:s1 h1 h4 cz1,4 h0 h1 s1 cz0,1 s1 h2 cz1,2 h3 s3 cz3,4 h1 s1 h4 s4 h4 cz1,4 h1 s1 h1 s4 cz1,4 h4 h5 cz4,5 h4 s4 h5 cz4,5 h0 s1 h1 h3 s3 s4 h5 
+2145:7:5:h1 h2 s2 h2 cz1,2 h3 s3 h3 h4 s4 h4 cz3,4 s1 h4 s4 h4 cz1,4 h1 h4 s4 cz1,4 s4 h4 h5 cz4,5 s4 h4 h5 s5 cz4,5 s0 h0 h1 cz0,1 h2 s2 h5 
+8289:6:4:h4 cx4,1 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz0,1 cz1,2 cz3,4 
+10497:6:4:h4 cx4,1 cx1,2 cx4,3 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz4,5 
+10498:6:6:h0 h1 cz0,1 s1 h1 h2 s2 cz1,2 h1 s4 h4 cz1,4 h4 h5 cz4,5 s3 h3 cz3,4 s1 h4 s4 h4 cz1,4 s0 h1 h2 s2 h2 s4 h5 
+356:7:5:h4 h5 s5 cz4,5 h0 s0 h0 h1 s1 h1 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 h1 s4 h4 cz1,4 h3 s3 s4 h4 cz3,4 s3 h3 h4 cz3,4 h1 h2 s2 h2 cz1,2 h0 s0 h0 s1 s2 s3 h3 s5 
+8496:6:4:h4 cx4,1 cx1,0 cx4,3 cx4,5 h0 h1 h2 h3 h4 cz1,2 cz4,5 
+83:8:7:s3 h4 cz3,4 h1 s1 h1 s4 cz1,4 s1 h2 s2 cz1,2 s4 h4 h5 s5 cz4,5 h0 s1 cz0,1 s1 h1 s4 h4 cz1,4 h3 s3 h3 h4 cz3,4 s3 h3 s4 h4 cz3,4 h0 s1 h1 s2 s5 
+801:7:5:h4 h5 s5 cz4,5 s1 h1 s4 cz1,4 s1 h2 s2 cz1,2 h3 s3 h3 h4 cz3,4 s1 h1 cz1,4 s0 h0 h1 s1 cz0,1 h3 s3 h3 h4 s4 h4 cz3,4 s2 s4 
+1569:4:3:h1 cx1,2 cx1,4 cx4,3 h0 h1 h3 h4 h5 cz0,1 
+5250:4:4:s1 h1 h2 s2 cz1,2 h0 s0 cz0,1 h1 s4 h4 cz1,4 h3 h4 cz3,4 s0 h1 s2 h2 h5 
+228:5:5:h0 s0 h0 h1 s1 cz0,1 h4 cz1,4 s3 h3 h4 cz3,4 h1 h4 s4 cz1,4 h1 s1 h1 h2 cz1,2 s0 h3 h5 
+232:5:4:s0 h0 h1 cz0,1 h3 s3 h4 s4 cz3,4 h1 s1 cz1,4 h1 s4 h4 cz1,4 h1 h2 cz1,2 s0 s3 h3 h4 h5 
+45:4:3:h0 cx0,1 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz1,2 
+75:5:4:h0 s0 h1 s1 cz0,1 s2 h2 cz1,2 s3 h3 s4 h4 cz3,4 s1 h1 cz1,4 h1 h4 cz1,4 s0 h0 h1 h3 h5 
+143:5:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 h1 h2 h3 h4 h5 cz1,4 
+705:5:5:h1 h2 s2 cz1,2 h4 cz1,4 h3 h4 cz3,4 h1 h4 s4 cz1,4 h0 h1 s1 h1 cz0,1 h2 s2 h3 h5 
+1037:5:4:h1 s1 h4 s4 h4 cz1,4 h3 cz3,4 h2 cz1,2 h1 h4 cz1,4 s0 h0 h1 cz0,1 h0 h1 s2 h3 s3 h4 s4 h5 
+4107:4:3:h4 cx4,1 cx1,0 cx1,2 h1 h2 h3 h4 h5 cz3,4 
+480:4:3:h3 cx3,4 cx4,1 cx1,2 cx4,5 h0 h2 h3 h4 h5 
+30:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 cx4,5 h1 h2 h3 h4 h5 cz0,1 
+29:4:3:h3 cx3,4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 
+27:4:3:h4 cx4,1 cx1,0 cx1,2 cx4,5 h1 h2 h3 h4 h5 
+10512:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 cx4,5 h0 h1 h2 h3 h4 cz4,5 
+15:4:3:h4 cx4,1 cx1,0 cx1,2 cx4,3 h1 h2 h3 h4 h5 
+9426:8:6:s0 h0 h1 cz0,1 s5 cz4,5 h4 h5 cz4,5 s1 h4 s4 cz1,4 h1 s1 h4 s4 cz1,4 s1 h2 cz1,2 h3 h4 s4 cz3,4 s1 h1 h4 cz1,4 s0 h1 h2 s2 h3 h4 s5 
+17106:7:6:h3 s3 h4 s4 h4 cz3,4 h1 s1 h1 h2 s2 cz1,2 h1 s1 h1 h4 cz1,4 s0 h0 h1 cz0,1 s1 h1 h4 cz1,4 h4 s4 h5 s5 cz4,5 h1 s1 s4 h4 cz1,4 h0 h2 s2 h2 h3 h4 s4 h4 h5 s5 h5 
+17226:7:6:h0 s0 h1 cz0,1 h3 s3 h4 cz3,4 h1 s1 cz1,4 h4 h5 s5 cz4,5 h1 s1 h4 s4 h4 cz1,4 h2 s2 h2 cz1,2 h1 h4 cz1,4 h0 h1 s1 h1 h2 s2 s3 h3 h4 s5 
+9873:8:7:s0 h0 h1 s1 h1 cz0,1 h2 s2 h2 cz1,2 h3 s4 h4 cz3,4 h4 s4 cz1,4 h4 s4 h5 cz4,5 h1 s4 h4 cz1,4 h1 h2 s2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h0 s0 s1 h2 s2 s3 h3 h4 s4 
+19019:8:6:h1 h4 cz1,4 h1 h2 s2 h2 cz1,2 h5 s5 h5 cz4,5 s0 h0 h1 s1 cz0,1 s3 h3 s4 h4 cz3,4 h1 s1 h1 cz1,4 h1 h4 s4 h4 cz1,4 h1 s1 h1 cz1,2 s0 h0 s1 h1 h2 s2 s3 s4 s5 h5 
+19017:7:6:h1 s1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s3 h3 h4 s4 cz3,4 h1 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 h0 s0 h1 s1 cz0,1 h1 h4 cz1,4 s0 h1 s1 s2 h3 s3 s4 h5 
+6801:7:6:h4 s4 h5 cz4,5 s1 h1 s4 h4 cz1,4 s1 s2 h2 cz1,2 h0 s0 h0 h1 s1 h1 cz0,1 h3 s3 h3 s4 h4 cz3,4 s1 s4 cz1,4 h1 h4 cz1,4 s0 h0 h3 s3 h3 s5 h5 
+21041:7:6:s0 h0 h1 cz0,1 h4 cz1,4 s3 h3 s4 h4 cz3,4 s4 h4 s5 h5 cz4,5 s1 h1 h2 s2 cz1,2 h1 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h0 s0 h1 s1 h1 h3 h4 s5 
+14467:6:4:h4 h5 s5 cz4,5 h1 s1 s2 h2 cz1,2 s1 h1 s4 cz1,4 h3 s4 h4 cz3,4 h0 h1 cz0,1 h1 s1 h1 h4 s4 cz1,4 h0 s0 s1 h3 s4 s5 h5 
+7249:7:6:h1 h4 s4 cz1,4 h1 h2 s2 cz1,2 h0 s0 s1 h1 cz0,1 h3 s4 h4 cz3,4 h1 s1 h4 s4 cz1,4 s4 h4 h5 s5 cz4,5 h1 s1 h4 s4 cz1,4 h0 s0 h1 h4 s4 s5 
+24742:6:5:s0 h0 h1 cz0,1 h4 cz1,4 s3 h3 s4 h4 cz3,4 s4 h4 s5 h5 cz4,5 s1 h1 h2 s2 cz1,2 h1 h4 cz1,4 h0 s2 h2 h3 h5 
+12466:6:4:h1 s1 h4 s4 h4 cz1,4 s0 h0 h1 cz0,1 h1 h2 s2 cz1,2 s4 h4 h5 cz4,5 s3 h3 s4 h4 cz3,4 h1 h4 cz1,4 h0 s2 h2 h3 h5 
+11337:7:6:h1 s1 h1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h3 s4 h4 cz3,4 h1 h4 s4 cz1,4 h0 cz0,1 h4 s4 h5 s5 h5 cz4,5 h1 s1 h4 cz1,4 s1 h1 s2 h2 h3 s3 h3 s5 
+25219:6:5:h3 h4 s4 cz3,4 h1 s1 s4 cz1,4 h1 h2 cz1,2 h0 s0 h0 h1 cz0,1 h4 s4 h4 s5 h5 cz4,5 h1 s4 h4 cz1,4 s0 h0 h2 s2 h3 h5 
+22565:7:6:s3 h3 h4 cz3,4 s1 h1 s4 cz1,4 h4 s4 h5 cz4,5 h0 s1 h1 cz0,1 h1 h2 cz1,2 h4 cz1,4 s0 h1 cz0,1 s0 h1 s1 h1 h2 h3 s3 h4 h5 s5 h5 
+17093:7:6:h3 h4 s4 h4 cz3,4 h1 s4 cz1,4 h1 h4 cz1,4 h2 cz1,2 s4 h5 cz4,5 h0 s1 h1 cz0,1 h1 s1 h4 cz1,4 s0 h0 h3 h5 s5 
+21189:6:5:h1 s1 h1 h4 cz1,4 s2 h2 cz1,2 h3 h4 cz3,4 h0 s0 h1 s1 cz0,1 s1 h1 h4 s4 cz1,4 h4 h5 s5 cz4,5 s0 h0 s1 h3 h5 s5 
+1373:7:6:h4 h5 cz4,5 s1 h1 s4 h4 cz1,4 h2 cz1,2 h3 s3 h3 s4 cz3,4 h1 s4 h4 cz1,4 s0 h0 s1 h1 cz0,1 s1 h1 h4 cz1,4 s0 s1 h1 h2 s3 h5 s5 
+11555:6:6:h4 h5 s5 h5 cz4,5 h3 h4 cz3,4 h1 h4 s4 h4 cz1,4 s0 h0 h1 cz0,1 h1 s1 h1 s2 h2 cz1,2 h1 s1 h4 s4 h4 cz1,4 s2 h2 s4 
+6545:7:6:h1 s1 h2 s2 cz1,2 h1 h4 s4 h4 cz1,4 h0 s1 h1 cz0,1 h5 s5 cz4,5 h1 s1 h1 h4 cz1,4 h5 s5 h5 cz4,5 s3 h3 cz3,4 s0 h5 s5 
+7331:6:4:h1 s1 h1 h4 s4 cz1,4 h1 s1 h2 cz1,2 h4 h5 s5 cz4,5 h0 s0 h0 h1 s1 h1 cz0,1 h3 s4 h4 cz3,4 h1 s1 cz1,4 h2 h5 s5 
+21070:7:6:h1 s1 h2 s2 h2 cz1,2 s1 h4 s4 h4 cz1,4 h3 cz3,4 h1 s1 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 s0 h0 s1 cz0,1 h1 s1 s2 cz1,2 h0 s0 h1 s1 h2 h3 s3 
+22086:7:5:h1 s1 h1 h4 s4 cz1,4 h3 cz3,4 s1 h1 h2 s2 h2 cz1,2 s1 h1 h4 cz1,4 h0 s0 h0 h1 s1 h1 cz0,1 s1 h1 cz1,2 h4 s5 h5 cz4,5 h0 s0 s3 h3 s4 
+10371:7:5:s1 h1 h4 s4 h4 cz1,4 s1 h2 cz1,2 h4 s4 h5 cz4,5 h3 h4 cz3,4 h0 s0 s1 h1 cz0,1 h1 s1 h4 s4 h4 cz1,4 h3 cz3,4 s0 h0 h2 s2 s3 h4 s4 h5 
+8370:7:5:h0 h1 cz0,1 h3 h4 cz3,4 s1 s4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h1 s1 h1 h2 s2 h2 cz1,2 h4 s4 h5 cz4,5 h1 s1 h4 s4 cz1,4 h0 s1 h2 s2 h2 s5 h5 
+22810:7:5:h1 s1 h4 s4 cz1,4 s4 s5 h5 cz4,5 h2 s2 h2 cz1,2 h0 s0 h0 s1 h1 cz0,1 h1 s4 h4 cz1,4 h1 s1 h1 h2 s2 cz1,2 h3 s4 cz3,4 s0 s2 
+23826:7:6:h1 s1 h2 cz1,2 h4 s4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h0 h1 cz0,1 h1 s1 h4 s4 cz1,4 h4 s4 h4 s5 cz4,5 s3 h3 h4 s4 cz3,4 h0 h1 h2 s4 h5 
+20525:5:4:h3 s3 h4 s4 cz3,4 h1 cz1,4 h0 s1 cz0,1 h4 s4 h5 cz4,5 s1 h1 s2 h2 cz1,2 h0 s0 
+20709:6:5:h0 s0 h0 h1 cz0,1 h1 s1 h1 h4 cz1,4 h1 s1 h1 h2 cz1,2 h3 s4 cz3,4 h4 cz1,4 s5 h5 cz4,5 s0 h3 
+2703:8:7:h1 s1 h2 cz1,2 h1 s1 h1 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 h0 s0 h1 s1 h1 cz0,1 h1 s1 h4 cz1,4 h3 s4 h4 cz3,4 h1 h4 s4 cz1,4 h3 h4 cz3,4 h1 s1 s2 s3 h4 h5 s5 
+14548:9:7:h1 h4 s4 cz1,4 h1 h2 cz1,2 h5 s5 cz4,5 s3 h3 h4 cz3,4 s1 h1 h4 s4 cz1,4 h4 s4 cz3,4 h0 s0 h0 cz0,1 s1 h1 s4 cz1,4 h1 s1 h1 h2 cz1,2 h0 s0 h2 h3 s3 h3 s4 s5 h5 
+1485:8:6:h3 s3 h4 s4 cz3,4 s0 h0 s1 h1 cz0,1 h1 s1 h1 cz1,2 h4 s4 cz1,4 h4 s4 h5 cz4,5 h1 h2 cz1,2 h1 s4 h4 cz1,4 h1 h4 cz1,4 h0 s0 h0 h1 s1 s3 h3 h4 
+1357:9:7:h3 cx3,4 cx4,1 cx1,0 h1 h2 h3 h4 h5 cz1,2 cz3,4 cz4,5 swap4,1 
+20541:5:4:h4 s4 h4 h5 s5 cz4,5 s0 h0 h1 s1 cz0,1 h3 h4 cz3,4 s1 h1 h4 cz1,4 h1 h2 cz1,2 s0 h4 s4 
+20668:6:6:h3 h4 s4 cz3,4 h4 s4 h4 h5 cz4,5 h1 h4 s4 cz1,4 h0 s0 h0 h1 cz0,1 h1 h2 cz1,2 s1 h4 s4 h4 cz1,4 h0 h3 h4 
+3306:7:5:s1 h1 s4 h4 cz1,4 s1 h2 cz1,2 h4 s4 h5 cz4,5 h3 h4 s4 h4 cz3,4 h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 h1 s1 h1 h4 cz1,4 s0 h0 s1 h1 h2 h4 
+18648:8:7:h4 s4 h5 s5 cz4,5 s1 h1 s4 cz1,4 h1 s1 h4 s4 cz1,4 s3 h3 s4 cz3,4 s1 s2 h2 cz1,2 s1 h1 s4 h4 cz1,4 h0 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 s0 h1 s1 h1 h3 h4 s4 h4 s5 h5 
+1962:9:7:s1 h1 h2 cz1,2 h1 s1 h4 cz1,4 h1 cz1,2 s3 h3 cz3,4 s5 h5 cz4,5 s1 s4 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 h4 s5 cz4,5 h1 h4 s4 cz1,4 h1 s1 s2 h2 h4 s4 h4 h5 
+5004:8:6:s1 h1 h4 s4 cz1,4 s3 h3 s4 cz3,4 h4 s4 h5 s5 h5 cz4,5 h1 s1 h1 h2 s2 h2 cz1,2 h0 s0 h0 h1 s1 cz0,1 h3 s4 cz3,4 cz1,4 h1 h4 s4 h4 cz1,4 h1 s1 s2 h3 s3 h3 h4 s4 h4 
+20537:5:3:h0 h1 cz0,1 s4 h4 h5 s5 cz4,5 cz1,4 h3 h4 s4 cz3,4 h1 s1 h1 h2 cz1,2 h0 s1 h5 
+20913:6:5:s0 h0 h1 cz0,1 h4 cz1,4 s4 h5 cz4,5 h1 s1 h4 cz1,4 h1 s1 s2 h2 cz1,2 h3 s4 cz3,4 s0 h0 s1 s4 
+17880:7:5:h1 s1 h1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s3 h3 h4 cz3,4 h0 s0 s1 h1 cz0,1 h1 h2 s2 h2 cz1,2 h1 h4 cz1,4 h1 h4 s4 cz1,4 h0 h1 h2 s2 s4 h4 h5 s5 h5 
+1369:9:7:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz1,2 cz3,4 cz4,5 swap4,1 
+2715:8:6:s1 h1 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 h1 s1 h2 s2 h2 cz1,2 h1 s1 s4 h4 cz1,4 h3 s3 h3 s4 cz3,4 s0 h0 cz0,1 h3 s3 h3 h4 s4 cz3,4 s1 h1 cz1,4 h0 h1 s1 h4 
+25492:9:7:s0 h0 h1 s1 cz0,1 h4 cz1,4 h0 s0 cz0,1 h3 s3 s4 h4 cz3,4 h1 h4 cz1,4 s1 h2 s2 cz1,2 s5 h5 cz4,5 h1 h4 cz1,4 s2 h2 cz1,2 h0 s1 h1 s2 h3 h4 s4 h5 
+21220:6:5:h3 s3 h3 h4 cz3,4 h1 s1 cz1,4 h4 s5 h5 cz4,5 h0 s0 s1 h1 cz0,1 h1 h2 s2 cz1,2 s1 h1 cz1,4 h0 s0 s1 s3 h3 
+17124:7:5:h1 h4 s4 h4 cz1,4 s3 h3 s4 h4 cz3,4 h0 s0 s1 h1 cz0,1 h3 s4 h4 cz3,4 s1 h1 s2 h2 cz1,2 h5 cz4,5 h1 s1 cz1,4 s0 s2 h2 h3 
+8507:6:6:h4 h5 cz4,5 h3 h4 s4 cz3,4 h1 s1 h4 cz1,4 h1 s1 h1 h2 s2 cz1,2 h0 s0 h0 s1 h1 cz0,1 h1 s1 h4 cz1,4 h2 s2 h3 s3 h3 
+3944:7:7:h4 s4 h5 cz4,5 h3 s3 cz3,4 h1 s1 h4 cz1,4 h0 s0 h0 h1 cz0,1 h1 h2 s2 cz1,2 h1 s1 h1 h4 s4 h4 cz1,4 h1 s4 h4 cz1,4 s1 s3 s4 h4 
+22960:6:5:h1 h4 s4 h4 cz1,4 s0 h0 h1 cz0,1 h5 cz4,5 s1 h1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h3 s3 s4 h4 cz3,4 s1 s2 h2 s3 s4 h5 
+6576:7:6:h4 s4 h5 s5 cz4,5 h1 h4 cz1,4 h0 s0 s1 h1 cz0,1 s1 h1 s2 h2 cz1,2 h1 h4 cz1,4 h1 s1 cz0,1 h3 h4 cz3,4 h1 s2 h2 s4 s5 h5 
+21093:5:4:h3 h4 s4 cz3,4 h0 h1 cz0,1 s2 h2 cz1,2 h1 h4 s4 h4 cz1,4 h4 h5 cz4,5 h1 s1 h2 s2 h2 
+17125:6:6:h1 s1 h1 h2 s2 cz1,2 h0 s0 h0 h1 s1 h1 cz0,1 h1 s1 h4 cz1,4 h3 h4 cz3,4 h1 s1 h4 s4 h4 cz1,4 h4 s4 h4 h5 cz4,5 s0 h1 s1 s2 h2 s3 h3 
+2792:8:6:h1 h2 s2 h2 cz1,2 s4 h4 h5 cz4,5 s1 h1 cz1,4 h1 s1 s4 h4 cz1,4 h2 cz1,2 h0 s0 s1 cz0,1 h3 s3 h3 s4 cz3,4 h1 s1 h4 s4 h4 cz1,4 s0 h0 h1 s1 h1 s2 h2 h3 s4 h4 
+3816:7:6:h1 s1 h1 s2 h2 cz1,2 h1 s4 h4 cz1,4 h0 s1 h1 cz0,1 h4 s4 h5 cz4,5 h3 s3 s4 h4 cz3,4 h1 s1 h1 h4 s4 h4 cz1,4 s1 h1 h4 cz1,4 h1 h2 s2 h2 h3 h4 s4 
+1245:8:7:s4 h4 h5 s5 h5 cz4,5 h1 s1 h1 h4 s4 cz1,4 h0 s0 h0 h1 s1 h1 cz0,1 h2 cz1,2 h3 s3 h3 h4 s4 h4 cz3,4 h1 s1 h1 s4 cz1,4 cz1,2 h1 s1 h4 s4 h4 cz1,4 h0 s0 h0 h1 s1 h1 s2 h4 s4 h4 h5 
+1237:8:7:s0 h0 h1 s1 h1 cz0,1 s1 h1 h4 cz1,4 h4 h5 cz4,5 h1 s1 h1 h4 s4 h4 cz1,4 s3 h3 cz3,4 h3 s3 h3 h4 s4 cz3,4 s1 h1 s2 h2 cz1,2 s1 h1 cz1,4 h1 s1 h2 h4 
+24707:5:3:h0 h1 cz0,1 h3 h4 s4 cz3,4 h1 h2 cz1,2 h5 cz4,5 h1 s1 h4 cz1,4 s1 h3 s3 h3 h5 
+12423:6:5:s0 h0 s1 h1 cz0,1 s1 s4 h4 cz1,4 s2 h2 cz1,2 h3 s4 cz3,4 s4 h5 cz4,5 s1 h1 s4 h4 cz1,4 h0 h3 s3 
+3246:8:6:s1 h1 s4 h4 cz1,4 s1 h2 cz1,2 h4 s4 h5 cz4,5 h3 h4 s4 h4 cz3,4 h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 h1 s1 h1 h4 cz1,4 h0 s0 h0 h1 s1 cz0,1 h0 s0 h0 h2 s3 
+7876:7:6:h1 s1 s4 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s1 h2 s2 h2 cz1,2 h0 s0 h1 s1 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h3 s3 h3 h4 s4 h4 cz3,4 h1 s1 h4 s4 cz1,4 h0 s1 h1 h2 s2 h2 s3 h3 s4 h4 s5 
+25552:8:6:h0 h1 cz0,1 h3 s3 h3 s4 h4 cz3,4 s4 h5 cz4,5 s4 h4 cz1,4 h1 h4 cz1,4 s4 s5 h5 cz4,5 h1 h2 cz1,2 s1 h1 h4 s4 cz1,4 s1 h1 s3 h3 h4 s4 h4 s5 h5 
+1691:9:8:h1 s1 h4 s4 cz1,4 h0 cz0,1 h1 s1 h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 cz1,4 h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 cz3,4 h4 s4 h4 cz3,4 h0 s0 h0 s1 h1 s2 h4 
+22833:5:4:s1 h1 s2 h2 cz1,2 s4 h4 h5 cz4,5 h0 s1 cz0,1 h1 s1 cz1,4 h3 s4 h4 cz3,4 h1 s1 h1 h5 
+6577:6:6:s0 h0 s1 h1 cz0,1 s1 s2 h2 cz1,2 h1 s1 h4 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 s3 h3 cz3,4 h1 s4 s5 h5 
+13764:8:7:h1 h4 cz1,4 h1 s1 cz0,1 h3 s3 h4 s4 cz3,4 h0 h1 s1 h1 cz0,1 h1 s1 h1 h2 cz1,2 s1 h1 s4 h4 cz1,4 s4 s5 h5 cz4,5 h1 h4 cz1,4 h1 s1 h3 s3 h3 h4 s5 
+1429:8:7:h0 h1 s1 cz0,1 h4 s4 cz1,4 h1 s1 h4 s4 h4 cz1,4 h3 s3 h3 h4 s4 cz3,4 s1 h2 s2 h2 cz1,2 h1 s1 h1 h4 cz1,4 h5 cz4,5 s1 h1 h4 s4 h4 cz1,4 s0 h1 s1 s2 h3 s3 h4 s4 h4 s5 
+2984:8:6:s1 h1 s4 h4 cz1,4 s3 h3 cz3,4 h1 s1 h1 s2 h2 cz1,2 s1 h1 h4 s4 cz1,4 s0 h0 cz0,1 h4 h5 s5 h5 cz4,5 s2 cz1,2 h1 s1 h4 s4 cz1,4 h0 h1 s1 h1 h2 s4 h4 
+13256:9:7:h1 h2 s2 cz1,2 h3 s3 h4 s4 cz3,4 h1 s1 h1 s4 cz1,4 h0 s0 s1 h1 cz0,1 h4 s4 h5 cz4,5 h3 s4 cz3,4 s1 h1 s4 cz1,4 h0 cz0,1 h1 s1 h1 h4 cz1,4 h1 s1 h1 h3 h4 s5 h5 
+22049:5:3:h1 s1 h2 cz1,2 h3 s3 h4 cz3,4 s4 cz1,4 h0 s1 h1 cz0,1 h4 s4 h4 h5 cz4,5 h2 s2 h3 
+22177:6:4:h1 s1 h4 s4 cz1,4 h1 s1 h2 s2 cz1,2 h3 cz3,4 h0 h1 s1 cz0,1 h4 h5 cz4,5 s1 cz1,4 h2 s2 h2 s3 h3 s4 
+1896:9:7:h3 cx3,4 cx4,1 cx1,2 h0 h1 h3 h4 h5 cz0,1 cz3,4 cz4,5 swap4,1 
+6088:7:5:h1 s1 h2 s2 cz1,2 h3 s3 h4 s4 cz3,4 s1 h1 s4 h4 cz1,4 h0 s0 h0 s1 h1 cz0,1 h4 s4 h4 h5 s5 cz4,5 h1 s1 h4 s4 h4 cz1,4 s1 h1 h4 s4 h4 cz1,4 s0 h1 h2 s2 h2 s3 h4 s4 h4 s5 
+15056:8:6:h1 h4 s4 h4 cz1,4 h1 s1 h2 cz1,2 s4 h4 h5 cz4,5 h1 s4 h4 cz1,4 h0 s0 s1 cz0,1 h3 s3 h3 s4 cz3,4 s0 h0 s1 h1 cz0,1 h1 s1 h1 s4 h4 cz1,4 s1 h1 s3 h3 h4 s4 s5 h5 
+1718:8:6:s1 h1 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s0 h0 cz0,1 h1 s1 h4 s4 cz1,4 h3 h4 s4 h4 cz3,4 s1 h2 s2 cz1,2 h3 h4 cz3,4 s1 h1 h4 s4 h4 cz1,4 h0 s0 h1 s1 h1 s2 h2 s3 h3 s4 s5 
+24097:5:5:h3 s4 h4 cz3,4 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 h1 h2 s2 cz1,2 h0 h1 cz0,1 s2 h2 h4 s4 
+24193:7:7:h4 s5 h5 cz4,5 h3 cz3,4 h1 s4 h4 cz1,4 h1 s1 h1 h2 s2 h2 cz1,2 h0 s0 h0 h1 cz0,1 h4 cz1,4 s1 h2 s2 cz1,2 s0 s1 h2 s4 h4 
+6020:9:8:s0 h1 cz0,1 s2 cz1,2 h4 s4 h4 cz1,4 s3 h3 s4 cz3,4 h4 s4 h4 s5 h5 cz4,5 s0 h0 h1 s1 cz0,1 h1 s1 cz1,4 h1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h1 h3 h4 s4 h5 s5 
+6084:8:6:s2 h2 cz1,2 s1 h1 h4 cz1,4 h3 s3 h4 cz3,4 h0 s1 cz0,1 h4 s4 h5 s5 h5 cz4,5 h1 h2 s2 h2 cz1,2 s1 h4 cz1,4 h1 h4 s4 cz1,4 h1 s2 s3 h3 h4 s4 h4 h5 s5 
+19664:7:6:h1 h4 s4 h4 cz1,4 h4 h5 s5 cz4,5 h0 s1 h1 cz0,1 h3 h4 cz3,4 h1 s1 h1 s4 cz1,4 h1 s1 h2 cz1,2 h1 s1 h1 h4 cz1,4 s1 h1 s2 h3 h4 s4 s5 h5 
+19920:8:6:h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 h0 h1 cz0,1 h4 s4 h5 s5 cz4,5 s5 h5 cz4,5 h3 h4 cz3,4 h1 s1 h1 h2 cz1,2 h4 s4 cz1,4 h1 s1 s4 h4 cz1,4 s0 s1 h1 s2 h4 s4 
+23585:5:3:h1 s4 h4 cz1,4 h5 s5 cz4,5 h2 cz1,2 h0 h1 cz0,1 s3 h3 h4 s4 cz3,4 h2 s2 h5 
+22945:6:4:h1 s1 h4 cz1,4 s4 h5 cz4,5 h3 h4 s4 cz3,4 h2 s2 h2 cz1,2 s0 h0 s1 h1 cz0,1 s4 cz1,4 s1 h2 h5 
+27524:8:7:s0 h0 h1 s1 cz0,1 h1 s1 h4 cz1,4 h1 h2 cz1,2 h3 h4 cz3,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 s1 s4 cz1,4 h1 s1 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h0 s0 s1 s2 h3 s4 h5 s5 h5 
+3254:9:7:h0 h1 cz0,1 s1 h1 s4 h4 cz1,4 s1 h1 h2 s2 cz1,2 h5 s5 cz4,5 s1 h4 cz1,4 h3 s3 h3 s4 h4 cz3,4 s0 cz0,1 h1 h4 s4 h4 cz1,4 s3 h3 cz3,4 s0 h1 s1 h1 s2 h2 s5 
+3432:8:7:h4 s4 h4 h5 s5 cz4,5 h1 s1 h4 cz1,4 h1 s1 h2 s2 cz1,2 h3 s3 h3 h4 s4 h4 cz3,4 h1 h4 cz1,4 h0 s1 cz0,1 h1 s1 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 s0 s2 h2 s3 h5 s5 
+19912:7:6:s4 h4 h5 s5 cz4,5 s1 h1 s4 h4 cz1,4 s2 h2 cz1,2 h0 s1 h1 cz0,1 h3 s4 h4 cz3,4 s1 h1 h4 s4 h4 cz1,4 h1 h4 s4 h4 cz1,4 h1 s1 s2 s4 h4 h5 s5 
+31105:6:5:s4 h4 h5 cz4,5 s1 h1 cz1,4 h1 s1 h2 s2 cz1,2 h3 s3 h3 h4 cz3,4 h0 s0 h0 s1 h1 cz0,1 s1 s4 h4 cz1,4 s0 s1 s2 s4 h5 s5 
+7809:7:6:h3 s3 h3 s4 h4 cz3,4 h1 s1 h1 cz1,4 s4 h4 h5 s5 h5 cz4,5 h1 h2 s2 cz1,2 h1 s1 h1 h4 cz1,4 s0 h0 h1 s1 cz0,1 h2 s2 h2 cz1,2 h2 h3 s3 h5 
+32002:6:6:h1 s1 h1 h2 s2 cz1,2 s0 h0 h1 s1 cz0,1 h1 h4 s4 cz1,4 h3 s3 h4 s4 h4 cz3,4 h4 s5 h5 cz4,5 h1 s4 h4 cz1,4 h2 s3 s4 s5 h5 
+5964:7:6:h3 s3 s4 h4 cz3,4 s1 h1 h2 s2 cz1,2 h0 s0 h0 s1 h1 cz0,1 s1 cz1,4 h4 h5 s5 cz4,5 s1 h1 h4 cz1,4 h4 h5 cz4,5 s0 h3 h4 s5 
+4284:7:6:h0 s0 s1 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 s5 h5 cz4,5 h0 s1 h1 cz0,1 h3 s3 h4 s4 cz3,4 h4 cz1,4 s2 h2 cz1,2 h0 s4 
+29104:6:5:h0 s1 h1 cz0,1 s1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s1 h1 h2 cz1,2 s3 h3 h4 cz3,4 s1 h4 s4 cz1,4 s1 s3 h3 h5 s5 h5 
+12065:7:5:h1 h4 s4 h4 cz1,4 h2 cz1,2 h3 h4 cz3,4 h4 s4 h5 s5 cz4,5 s1 h1 s4 cz1,4 h3 s3 h3 h4 s4 h4 cz3,4 h0 s0 cz0,1 s0 h2 s2 s3 h3 s4 s5 h5 
+11873:7:6:s1 h1 s2 h2 cz1,2 h4 s4 cz1,4 h5 s5 cz4,5 h3 s3 s4 cz3,4 h1 s1 h4 s4 h4 cz1,4 s4 h4 cz4,5 h0 s0 h1 s1 cz0,1 s0 s1 s3 h3 s4 h4 s5 
+24710:7:6:h3 s3 s4 h4 cz3,4 h1 s1 h4 cz1,4 h2 cz1,2 h4 s4 h5 cz4,5 s0 h0 s1 cz0,1 h1 s1 h2 cz1,2 h4 s4 cz1,4 h0 h1 s1 h2 s3 h5 s5 
+12434:7:5:s0 h0 h1 s1 cz0,1 s4 h4 cz1,4 h5 s5 h5 cz4,5 s1 h2 cz1,2 h1 s1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h1 s4 h4 cz1,4 h0 s1 h2 h3 s5 h5 
+8317:7:6:s0 h0 h1 s1 cz0,1 s4 h4 cz1,4 h5 s5 cz4,5 h1 s1 h1 s4 h4 cz1,4 s1 h2 cz1,2 s3 h3 cz3,4 h4 s4 h5 cz4,5 h0 s0 h3 s3 s4 h5 
+8509:7:6:h3 h4 s4 h4 cz3,4 s1 h1 cz1,4 h0 s0 h0 s1 h1 cz0,1 h1 h4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h2 s2 cz1,2 h4 cz3,4 s0 s2 s3 h3 s5 h5 
+20097:7:5:s1 h1 s4 h4 cz1,4 h3 s3 h4 cz3,4 s1 h1 s2 h2 cz1,2 h4 s5 h5 cz4,5 s1 h1 h2 s2 cz1,2 s1 h4 s4 h4 cz1,4 h0 s1 cz0,1 h2 s3 s5 
+29377:6:4:h1 s1 h1 h4 cz1,4 h1 s1 h1 h2 s2 h2 cz1,2 h0 h1 cz0,1 h3 s4 cz3,4 s4 h4 h5 s5 cz4,5 s1 h4 cz1,4 s1 s2 h3 s4 h5 
+19800:7:6:s1 h1 s2 h2 cz1,2 s1 s4 h4 cz1,4 h4 h5 cz4,5 s0 h0 cz0,1 s1 h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 h4 s4 cz4,5 h1 s1 h1 h5 s5 
+28750:6:6:h1 s1 h2 s2 cz1,2 h0 s0 h0 h1 s1 h1 cz0,1 h1 s1 h4 cz1,4 h4 h5 s5 h5 cz4,5 s3 h3 h4 cz3,4 h1 h4 cz1,4 s0 h0 h1 s1 h1 h2 s4 s5 
+16573:6:5:s3 h3 h4 cz3,4 h1 s1 cz1,4 h4 h5 cz4,5 h0 s1 h1 cz0,1 h1 h4 cz1,4 s1 h2 s2 h2 cz1,2 h0 s0 h2 s2 s4 s5 h5 
+16572:7:5:s1 h1 h4 s4 cz1,4 h0 h1 cz0,1 h1 s1 h2 cz1,2 h3 s4 h4 cz3,4 h4 h5 cz4,5 s4 h4 cz1,4 h0 s0 cz0,1 h0 s0 h0 s1 s4 s5 
+20521:5:3:h4 cx4,1 cx1,0 h1 h2 h3 h4 h5 cz1,2 cz3,4 cz4,5 
+17481:7:5:h1 h2 cz1,2 h3 s3 s4 h4 cz3,4 h0 h1 cz0,1 h1 s1 h1 s4 cz1,4 h1 s1 h4 cz1,4 s4 h4 h5 cz4,5 s1 h1 h2 s2 h2 cz1,2 h0 s0 h0 s1 s2 s4 
+10641:7:5:h3 h4 cz3,4 h1 s4 cz1,4 h1 s1 h2 s2 cz1,2 h0 s0 h0 s1 h1 cz0,1 s4 s5 h5 cz4,5 h4 h5 cz4,5 h1 s1 h1 s4 h4 cz1,4 s2 s4 s5 
+5385:7:5:h0 h1 cz0,1 h1 s1 h1 h4 cz1,4 s4 h5 s5 h5 cz4,5 h1 s1 h1 s2 h2 cz1,2 h1 h4 s4 cz1,4 h1 s1 cz1,2 h3 s3 cz3,4 s0 h1 h3 s3 
+901:7:5:h1 s1 h1 h2 cz1,2 h3 s3 s4 h4 cz3,4 h1 s1 s4 h4 cz1,4 h3 s3 h4 s4 cz3,4 s0 h0 s1 h1 cz0,1 s1 h1 h4 cz1,4 s4 h4 h5 s5 cz4,5 h0 s0 s2 h3 s3 h4 s5 
+1353:7:6:h1 h2 cz1,2 s1 h4 s4 cz1,4 h3 h4 s4 cz3,4 s0 h0 h1 cz0,1 s4 s5 h5 cz4,5 s1 h4 s4 h4 cz1,4 s1 h1 cz1,2 h1 h2 s4 h4 
+2257:7:5:h1 s1 h2 cz1,2 h4 s4 h4 h5 cz4,5 cz1,4 h0 s0 s1 h1 cz0,1 h1 s1 h4 cz1,4 h3 s3 h3 s4 h4 cz3,4 s1 h1 cz1,2 s0 h0 s1 h1 h2 s2 s3 h4 s5 
+4393:6:5:h4 h5 cz4,5 h1 s1 s4 cz1,4 s0 h0 cz0,1 s3 h3 h4 s4 h4 cz3,4 s1 h1 cz1,4 h1 h2 s2 cz1,2 s2 s4 h5 
+8421:7:5:s1 h1 h4 s4 h4 cz1,4 h3 s4 h4 cz3,4 h0 s0 s1 h1 cz0,1 s5 h5 cz4,5 h3 s3 h4 s4 h4 cz3,4 h1 s1 s2 h2 cz1,2 s4 cz1,4 h0 
+16489:6:4:s1 h1 h4 s4 h4 cz1,4 h3 s4 h4 cz3,4 h0 s0 h0 h1 cz0,1 h1 s1 h4 cz1,4 s1 h1 h2 cz1,2 h5 s5 cz4,5 s0 h3 s5 
+21608:6:5:h1 s1 h4 s4 h4 cz1,4 s1 h1 h2 s2 h2 cz1,2 h3 s3 s4 cz3,4 h0 s1 h1 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 s0 s1 s2 s3 
+27056:6:4:s1 h1 h4 cz1,4 h0 h1 cz0,1 s3 h3 s4 cz3,4 h1 h2 s2 h2 cz1,2 s4 h5 s5 h5 cz4,5 h1 s1 h1 s4 h4 cz1,4 s5 h5 
+21800:6:5:h1 s1 s4 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s1 h2 s2 h2 cz1,2 h0 s0 h1 s1 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h3 s3 h3 h4 s4 h4 cz3,4 h0 h2 s2 s3 s5 
+20611:5:5:h0 cx0,1 cx1,2 h1 h2 h3 h4 h5 cz1,4 cz3,4 cz4,5 
+22928:6:5:h4 cx4,1 cx1,0 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz1,4 cz3,4 
+27057:6:4:h0 s0 h0 h1 s1 cz0,1 s4 h4 h5 s5 h5 cz4,5 h1 h2 cz1,2 h3 s3 h4 cz3,4 h1 s1 cz1,4 s1 h1 h4 cz1,4 s1 s3 
+21577:6:5:s1 h1 h4 s4 h4 cz1,4 h0 s0 s1 h1 cz0,1 s3 h3 h4 cz3,4 h1 s2 h2 cz1,2 h1 s1 h4 s4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 s0 s1 h2 h3 s3 h3 s4 s5 
+16527:6:5:h4 cx4,1 cx1,0 cx1,2 cx4,3 h1 h2 h3 h4 h5 cz1,4 cz4,5 
+12997:6:5:h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 s3 h3 cz3,4 h1 s1 h1 s2 h2 cz1,2 h0 h1 s1 cz0,1 h1 h4 s4 cz1,4 s0 s1 h3 s4 h5 s5 
+21769:7:7:h4 s5 h5 cz4,5 h1 h4 s4 cz1,4 s1 cz0,1 h0 h1 s1 h1 cz0,1 s1 h1 s2 h2 cz1,2 h1 s4 h4 cz1,4 h3 s3 h3 h4 cz3,4 h2 s3 h5 
+5409:6:4:h1 h2 s2 cz1,2 h4 s4 h4 s5 h5 cz4,5 s1 h1 cz1,4 h1 s1 h1 h4 s4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h3 s4 cz3,4 s5 
+10657:7:5:s1 h1 h2 cz1,2 s4 h4 h5 cz4,5 h1 cz1,4 h3 s4 cz3,4 h3 h4 cz3,4 h0 s0 h1 s1 cz0,1 s1 cz1,4 h0 s0 h2 s2 h2 h3 h5 
+932:7:5:s1 h1 h2 s2 h2 cz1,2 s1 h4 cz1,4 h3 h4 cz3,4 h0 s1 cz0,1 h1 s1 h4 cz1,4 h1 h2 s2 cz1,2 s4 h4 s5 h5 cz4,5 h0 s0 h0 h2 s2 h2 h3 h4 
+17512:7:6:s1 h1 s4 h4 cz1,4 s0 h0 s1 cz0,1 h3 s3 h4 s4 h4 cz3,4 s1 h1 h2 s2 h2 cz1,2 h1 s1 h1 h4 cz1,4 h4 cz3,4 h4 s4 h5 s5 h5 cz4,5 s3 s4 s5 
+17505:6:5:h3 h4 s4 h4 cz3,4 s1 h1 s2 h2 cz1,2 s4 cz1,4 h4 s5 h5 cz4,5 h1 s1 cz1,4 h0 s0 s1 h1 cz0,1 s0 h3 
+1384:7:6:h4 s4 h5 s5 cz4,5 h1 h4 s4 cz1,4 h0 s0 cz0,1 h3 s4 cz3,4 h1 s1 h1 h2 cz1,2 h4 cz1,4 h1 h4 s4 cz1,4 h1 h2 s2 h2 h5 s5 h5 
+10672:7:5:h1 s1 h1 h4 cz1,4 h0 s0 cz0,1 h4 s4 h5 cz4,5 h1 h2 s2 cz1,2 h3 s3 h4 s4 h4 cz3,4 h1 s1 h1 h4 cz1,4 s3 h3 s4 cz3,4 s0 s3 s4 h5 
+2288:7:6:h4 s4 h5 s5 cz4,5 h1 s4 cz1,4 s2 h2 cz1,2 h0 s1 h1 cz0,1 h1 s4 h4 cz1,4 h0 s0 h1 s1 h1 cz0,1 h3 s3 cz3,4 h0 s0 h0 h1 h2 s2 h2 h3 s3 h4 h5 
+5416:7:5:s1 h1 h2 s2 h2 cz1,2 h4 s4 s5 h5 cz4,5 s0 h0 h1 s1 cz0,1 h1 h4 cz1,4 h1 h4 cz1,4 h3 s3 h3 h4 s4 cz3,4 h1 h2 s2 cz1,2 h2 s2 s3 
+21537:5:3:h4 cx4,1 cx1,2 h0 h1 h3 h4 h5 cz0,1 cz3,4 cz4,5 
+20577:5:3:h1 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz1,2 cz4,5 
+4456:7:6:h1 h4 s4 cz1,4 s3 h3 h4 s4 cz3,4 h4 s4 h5 s5 h5 cz4,5 h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 s0 h0 h1 cz0,1 s1 h1 h2 cz1,2 s0 h5 
+7810:7:5:h1 s1 h1 h4 s4 cz1,4 h4 s4 h5 s5 h5 cz4,5 h3 s4 h4 cz3,4 s0 h0 h1 s1 cz0,1 s1 h2 s2 cz1,2 h1 s2 h2 cz1,2 h4 cz1,4 s3 h3 s4 s5 
+5441:7:5:h1 s1 h4 s4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 h2 cz1,2 h1 s1 h4 s4 cz1,4 h3 s3 h3 s4 cz3,4 h0 s1 h1 cz0,1 h4 s5 cz4,5 s3 h4 h5 
+8432:7:6:h0 s1 h1 cz0,1 s1 h4 s4 h4 cz1,4 h3 s3 h4 s4 cz3,4 h4 h5 cz4,5 h1 s4 h4 cz1,4 h4 s4 h4 h5 cz4,5 h2 cz1,2 h0 s3 h4 s4 h4 h5 
+5448:7:5:h1 s1 h1 h4 s4 cz1,4 s4 h5 s5 cz4,5 h0 h1 s1 cz0,1 s1 h2 cz1,2 h3 s3 h3 s4 h4 cz3,4 h1 s1 cz1,4 h1 s1 h1 s4 h4 cz1,4 h3 s3 h4 s4 h5 
+6792:7:5:h1 s1 h2 cz1,2 h3 h4 cz3,4 cz1,4 h4 s4 h4 h5 s5 cz4,5 h1 h4 cz1,4 s0 h0 s1 cz0,1 h4 s4 h4 h5 s5 h5 cz4,5 h1 h2 s2 h2 h3 s3 h3 h4 s5 
+21569:6:5:h1 s1 h4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h3 h4 cz3,4 h0 s1 h1 cz0,1 s1 h4 s4 cz1,4 s4 h4 h5 cz4,5 s1 h2 
+20622:7:5:s1 h1 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 s0 h0 s1 cz0,1 h3 s3 h3 cz3,4 s1 h1 h4 cz1,4 h0 s1 cz0,1 h5 s5 cz4,5 s1 h3 h5 s5 
+20584:6:5:h1 s1 h4 s4 cz1,4 h0 cz0,1 h1 s1 h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 cz1,4 h4 s5 h5 cz4,5 s0 s1 s4 
+16745:6:5:h1 h4 s4 cz1,4 h4 s4 h4 h5 s5 cz4,5 h0 s0 h0 s1 cz0,1 h3 s3 h3 h4 cz3,4 s1 h1 h4 cz1,4 h1 h2 cz1,2 h0 s0 h2 s2 h2 h3 s5 
+16543:6:5:h3 s3 s4 h4 cz3,4 h1 s4 cz1,4 s0 h0 h1 cz0,1 h2 s2 h2 cz1,2 h4 h5 s5 h5 cz4,5 s1 h1 s4 h4 cz1,4 h0 s0 s2 s3 s4 
+17761:6:5:h1 h4 cz1,4 h1 h2 s2 h2 cz1,2 h5 cz4,5 h3 s3 h3 h4 s4 h4 cz3,4 s1 h1 h4 cz1,4 h0 h1 cz0,1 h0 s0 h0 s2 
+24737:5:3:h3 cx3,4 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz1,2 cz1,4 
+3745:6:4:h4 cx4,1 cx1,2 cx4,3 cx4,5 h0 h1 h3 h4 h5 cz0,1 cz1,4 
+24226:6:5:h1 h2 s2 cz1,2 s3 h3 h4 cz3,4 h5 s5 h5 cz4,5 h1 s1 h1 s4 h4 cz1,4 h0 s0 cz0,1 h1 h4 s4 cz1,4 s0 h2 s2 s5 
+4457:6:5:h1 s1 h1 h4 cz1,4 h3 s3 h4 s4 h4 cz3,4 h4 s4 h5 s5 h5 cz4,5 h0 h1 cz0,1 h1 s1 s4 h4 cz1,4 s1 h1 h2 s2 h2 cz1,2 s1 s2 s3 h5 
+12516:6:4:h4 cx4,1 cx1,0 cx4,3 cx4,5 h0 h1 h2 h4 h5 cz1,2 cz1,4 
+4255:6:5:h0 s0 h1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h2 cz1,2 s4 h4 s5 h5 cz4,5 h3 s3 s4 h4 cz3,4 h1 s1 h4 s4 h4 cz1,4 h0 s0 s1 
+5473:6:6:h1 s1 h1 h2 cz1,2 s4 h4 cz1,4 h3 h4 s4 cz3,4 h4 s4 h4 h5 s5 cz4,5 s1 h1 h4 s4 cz1,4 h0 s0 h1 cz0,1 h0 s0 s4 
+21761:6:4:h1 s1 h1 h4 s4 cz1,4 s4 s5 h5 cz4,5 h1 h2 s2 cz1,2 h1 s1 s4 h4 cz1,4 h3 s3 h3 h4 cz3,4 h0 h1 s1 cz0,1 h3 s3 s5 
+23682:6:6:h1 s1 h1 h2 cz1,2 s0 h0 s1 cz0,1 h1 s1 s4 h4 cz1,4 h4 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 h3 h4 s4 cz3,4 h0 s0 h0 h2 s4 s5 
+8612:7:5:s0 h0 h1 cz0,1 h3 s3 h4 cz3,4 h1 s1 h1 h4 s4 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s0 h0 h1 s1 cz0,1 h1 s4 h4 cz1,4 s1 h1 h2 s2 cz1,2 s2 h3 h4 s5 h5 
+16744:7:5:h4 s4 h5 cz4,5 h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 s1 cz0,1 h3 s4 cz3,4 h1 h4 s4 h4 cz1,4 s3 h3 h4 s4 h4 cz3,4 h2 s2 cz1,2 h0 s2 s3 h5 
+20776:6:4:h4 s4 h5 s5 h5 cz4,5 h0 s0 h0 s1 h1 cz0,1 h4 cz1,4 s1 h1 s4 h4 cz1,4 h3 h4 s4 cz3,4 s1 h2 cz1,2 s1 
+17736:7:5:s1 h1 h4 s4 h4 cz1,4 h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 s4 h5 cz4,5 h0 s1 cz0,1 h1 s1 h1 cz1,4 s1 h1 s4 h4 cz1,4 h0 s0 h0 h3 s3 h4 
+16542:7:6:h3 h4 s4 h4 cz3,4 h1 s1 s4 cz1,4 h0 h1 s1 h1 cz0,1 s2 h2 cz1,2 h1 s1 h2 s2 cz1,2 s4 h4 h5 s5 h5 cz4,5 h4 s4 cz1,4 h0 s1 h2 h5 
+19080:7:6:s3 h3 s4 h4 cz3,4 s1 h1 h4 cz1,4 h2 s2 h2 cz1,2 h1 s2 h2 cz1,2 h4 s4 h5 cz4,5 s4 h4 cz1,4 s0 h0 h1 s1 cz0,1 h1 h2 h3 s4 h5 
+17729:7:5:h4 s4 h5 cz4,5 s1 h1 s4 h4 cz1,4 h3 cz3,4 h1 s1 h1 h2 s2 cz1,2 h1 s1 h4 cz1,4 h0 s0 cz0,1 h3 s3 h3 h4 s4 cz3,4 h0 s0 h2 h5 
+20769:5:3:h1 cx1,4 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz1,2 cz3,4 
+3617:5:3:h4 cx4,1 cx1,2 cx4,3 cx4,5 h0 h1 h3 h4 h5 cz0,1 
+20618:5:5:h0 h1 cz0,1 s1 h1 h2 s2 cz1,2 h1 s4 h4 cz1,4 h4 h5 cz4,5 s3 h3 cz3,4 h0 s0 h0 h1 s2 
+484:7:5:h0 s0 h0 h1 cz0,1 h1 s1 h4 cz1,4 s0 s1 h1 cz0,1 h3 cz3,4 s1 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 h5 cz4,5 h0 s0 h0 h3 h4 
+488:6:6:h4 s4 s5 h5 cz4,5 h3 s3 s4 cz3,4 h1 h4 cz1,4 h0 s0 cz0,1 h1 s1 h1 h4 s4 cz1,4 s1 h1 s2 h2 cz1,2 h0 s0 h0 s3 s4 h4 
+496:6:5:h0 s1 h1 cz0,1 h4 s4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h1 s1 h1 h4 cz1,4 h3 s3 s4 h4 cz3,4 h1 h2 s2 h2 cz1,2 s2 h3 s3 h4 s5 h5 
+61:5:3:h4 cx4,1 cx1,0 cx4,3 cx4,5 h1 h2 h3 h4 h5 cz1,2 
+91:7:6:s0 h0 h1 s1 cz0,1 s1 h1 h2 cz1,2 s3 h3 h4 s4 h4 cz3,4 s1 h1 h4 s4 cz1,4 h1 cz1,4 s1 h4 s4 cz1,4 s4 h4 h5 s5 cz4,5 h1 s1 h4 s5 
+159:6:4:h4 cx4,1 cx1,0 cx1,2 cx4,3 cx4,5 h1 h2 h3 h4 h5 cz1,4 
+271:6:5:s4 h4 s5 h5 cz4,5 h0 s1 h1 cz0,1 s1 h1 s2 h2 cz1,2 h1 h4 s4 cz1,4 h1 s4 h4 cz1,4 h3 s3 h4 cz3,4 s0 h0 h1 h2 s2 h2 s3 h4 
+541:7:5:s3 h3 cz3,4 s1 h1 s2 h2 cz1,2 s1 h4 s4 h4 cz1,4 s4 h4 cz3,4 h1 s1 s4 h4 cz1,4 h4 s4 h4 h5 cz4,5 s0 h0 h1 cz0,1 h0 h1 h2 s2 h2 h3 h4 
+1053:6:5:h1 s1 h2 cz1,2 h3 h4 s4 cz3,4 s4 h4 h5 cz4,5 h1 s1 h1 h4 s4 h4 cz1,4 s1 h1 s4 h4 cz1,4 h0 h1 s1 cz0,1 h0 h1 h3 h4 
+2077:7:6:h4 h5 cz4,5 h1 s1 s4 cz1,4 s1 h1 s4 h4 cz1,4 h1 s1 h1 h2 s2 h2 cz1,2 h1 s1 cz1,4 s3 h3 h4 s4 cz3,4 h0 cz0,1 h0 h1 s2 h4 s5 h5 
+4123:5:3:h4 cx4,1 cx1,0 cx1,2 cx4,5 h1 h2 h3 h4 h5 cz3,4 
+8417:5:5:h3 s3 s4 h4 cz3,4 h4 h5 cz4,5 h1 s4 h4 cz1,4 h1 h2 s2 cz1,2 h0 s0 s1 cz0,1 s0 h2 s2 h4 
+16399:5:3:h4 cx4,1 cx1,0 cx1,2 cx4,3 h1 h2 h3 h4 h5 cz4,5 
+31:5:3:h4 cx4,1 cx1,0 cx1,2 cx4,3 cx4,5 h1 h2 h3 h4 h5 
+20641:5:5:h5 h4 h3 h2 h1 h0 cz4,5 cz3,4 cz1,4 cz1,2 cz0,1 
+17601:6:5:h1 h2 cz1,2 h4 s4 h4 cz1,4 h3 cz3,4 h1 s1 h4 s4 h4 cz1,4 s4 h4 h5 s5 cz4,5 h0 s1 h1 cz0,1 h2 h3 s5 
+8897:6:5:h3 s3 h3 s4 h4 cz3,4 s1 h1 h4 s4 cz1,4 h1 h2 cz1,2 s4 s5 h5 cz4,5 s1 h1 h4 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 
+5505:6:4:h4 s4 s5 h5 cz4,5 h1 h2 s2 h2 cz1,2 s1 h1 h4 s4 cz1,4 s1 h1 h4 cz1,4 h0 s0 h1 s1 cz0,1 s3 h3 h4 s4 cz3,4 s0 s2 h2 h5 
+18050:6:5:h1 s1 h1 s4 h4 cz1,4 h3 s3 h4 s4 cz3,4 h0 s0 s1 cz0,1 h2 s2 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s0 h1 s1 s2 h2 s3 s4 s5 
+1480:6:4:s1 h1 h2 cz1,2 h0 s0 s1 cz0,1 h3 s3 h4 s4 cz3,4 h5 s5 cz4,5 h1 s1 h1 h4 cz1,4 s1 h1 h4 s4 cz1,4 s0 h1 s1 s3 s4 h4 s5 
+7298:6:5:s1 h1 s2 h2 cz1,2 s1 s4 h4 cz1,4 h4 h5 cz4,5 s0 h0 cz0,1 s1 h1 h4 s4 cz1,4 s3 h3 h4 cz3,4 s1 h2 s4 h5 s5 h5 
+4520:6:4:s4 h4 h5 cz4,5 h0 s0 h0 h1 s1 cz0,1 s4 cz1,4 h1 h4 cz1,4 h3 h4 cz3,4 h1 h2 s2 cz1,2 s1 h2 s2 h3 s3 h3 h5 s5 
+8420:6:5:h1 s1 h4 s4 h4 cz1,4 s4 s5 h5 cz4,5 h0 s0 h0 h1 s1 h1 cz0,1 h3 s3 h3 s4 cz3,4 s1 h1 h4 s4 cz1,4 h1 s1 h1 s2 h2 cz1,2 s0 s3 h3 
+16616:6:4:s3 h3 h4 s4 cz3,4 h0 h1 s1 cz0,1 h1 s4 cz1,4 h1 s1 h1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s1 h1 h2 cz1,2 s0 h0 h3 s3 s5 
+17089:6:6:s1 h1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h3 h4 cz3,4 h4 s4 h5 s5 h5 cz4,5 h1 cz1,4 h0 s1 h1 cz0,1 h0 s0 h0 h2 h3 s5 
+9241:6:6:h1 s1 s2 h2 cz1,2 s1 h1 s4 h4 cz1,4 s3 h3 cz3,4 s5 h5 cz4,5 h1 s4 h4 cz1,4 h0 h1 s1 cz0,1 h0 s0 h1 h3 s3 h3 h4 h5 
+6529:6:4:h1 s1 h1 h4 s4 cz1,4 s4 h5 s5 cz4,5 h1 s1 h1 h2 s2 cz1,2 h1 h4 s4 h4 cz1,4 h3 s3 h3 s4 cz3,4 h0 s0 s1 h1 cz0,1 s0 s1 h2 s2 s3 s4 s5 h5 
+21221:6:5:h0 s0 h1 s1 cz0,1 s2 h2 cz1,2 s3 h3 s4 h4 cz3,4 s1 h1 cz1,4 h1 h4 cz1,4 s4 h4 s5 h5 cz4,5 s0 s1 h3 s3 s4 
+8327:7:7:h1 s1 h1 h2 s2 cz1,2 s0 h0 cz0,1 h4 s4 cz1,4 h4 s4 s5 h5 cz4,5 h3 cz3,4 h1 h4 s4 cz1,4 h3 s4 cz3,4 h0 s2 
+22961:6:5:h4 h5 s5 cz4,5 h1 s1 h1 h2 s2 cz1,2 h0 s1 cz0,1 h1 s4 cz1,4 h3 s3 h4 cz3,4 h1 s4 cz1,4 s1 h2 s2 s3 s4 s5 h5 
+16429:5:3:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz1,2 cz4,5 
+2205:8:6:s1 h1 h2 s2 cz1,2 s4 h4 h5 cz4,5 s4 h4 cz1,4 h1 s1 h1 h4 s4 h4 cz1,4 h1 h2 s2 h2 cz1,2 h3 s3 cz3,4 h0 s0 h0 h1 s1 h1 cz0,1 s1 h1 h4 cz1,4 s0 h0 h1 h3 s3 h4 h5 
+1293:8:6:h4 cx4,1 cx1,0 cx4,3 h1 h2 h3 h4 h5 cz1,2 cz4,5 swap4,1 
+8237:5:5:h3 h4 s4 cz3,4 h4 s4 h4 h5 cz4,5 h1 h4 s4 cz1,4 h0 s0 h0 h1 cz0,1 h1 h2 cz1,2 s0 h0 s3 s4 h4 
+18632:8:6:h1 s1 h1 h2 s2 cz1,2 h1 s1 h1 s4 h4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h0 s0 h0 h1 s1 cz0,1 h1 s1 h1 s4 h4 cz1,4 h3 s3 h4 s4 cz3,4 h1 s1 h1 s2 h2 cz1,2 h1 s1 h1 s4 h4 cz1,4 s0 h1 s1 s2 h4 h5 s5 
+5000:8:6:h1 s1 h1 h2 s2 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h4 s4 cz3,4 h4 s4 s5 h5 cz4,5 h1 s1 s4 cz1,4 s1 h1 h4 cz1,4 h1 s2 s3 h3 h4 s4 h5 s5 
+4153:5:3:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz1,2 cz3,4 
+1113:8:6:h4 cx4,1 cx1,0 cx4,5 h1 h2 h3 h4 h5 cz1,2 cz3,4 swap4,1 
+669:9:7:s3 h3 cz3,4 s1 h1 s2 h2 cz1,2 s1 h4 s4 h4 cz1,4 s4 h4 cz3,4 h1 s1 s4 h4 cz1,4 h4 s4 h4 h5 cz4,5 s0 h0 h1 cz0,1 s4 h4 cz1,4 h1 s1 h1 cz1,4 h0 s0 h1 s1 h2 s2 h2 h3 s4 
+16612:7:6:h4 cx4,1 cx1,0 cx4,3 h0 h1 h2 h4 h5 cz1,2 cz1,4 cz3,4 cz4,5 
+8297:6:6:h3 h4 cz3,4 s4 h5 cz4,5 s1 h1 cz1,4 h0 s1 h1 cz0,1 h1 s1 h4 cz1,4 s1 h1 h2 cz1,2 s0 h0 h3 h4 s4 h4 
+4528:6:5:h1 h4 s4 h4 cz1,4 h4 h5 s5 cz4,5 h0 s1 h1 cz0,1 h3 h4 cz3,4 h1 s1 h1 s4 cz1,4 h1 s1 h2 cz1,2 h5 s5 h5 
+21058:5:5:h1 s1 h2 cz1,2 h0 h1 cz0,1 h1 s1 s4 h4 cz1,4 h3 h4 s4 cz3,4 h4 h5 s5 cz4,5 h1 h2 s2 h2 h3 s5 
+2280:8:6:h1 h2 s2 cz1,2 h3 s3 h4 s4 h4 cz3,4 h4 s4 h4 cz1,4 h1 s1 h4 s4 cz1,4 h4 s4 h4 h5 cz4,5 h4 s4 cz3,4 s0 h0 s1 h1 cz0,1 h1 s4 cz1,4 h0 h1 h4 
+1233:8:6:h1 s1 h1 h4 cz1,4 h0 s0 h0 s1 h1 cz0,1 s4 h5 s5 cz4,5 h1 s1 h1 s4 h4 cz1,4 s3 h3 h4 s4 h4 cz3,4 s1 h2 s2 cz1,2 s1 h4 s4 h4 cz1,4 h1 s1 h1 h4 s4 h4 cz1,4 s0 h0 s1 h1 s2 h2 h4 s5 
+8387:6:5:h1 h2 s2 cz1,2 h3 s3 h4 s4 cz3,4 h0 h1 cz0,1 s1 h1 cz1,4 s4 h4 h5 s5 cz4,5 h4 cz3,4 h0 h2 s3 h3 s5 h5 
+2213:10:8:h1 s4 h4 cz1,4 s4 h5 cz4,5 h0 s0 h1 s1 cz0,1 h2 s2 h2 cz1,2 s1 h1 cz1,4 s1 h4 cz1,4 h3 cz3,4 h3 s3 h4 s4 cz3,4 s0 s1 cz0,1 h1 cz1,4 h0 h2 s2 h2 s3 s4 
+689:10:7:h1 h4 s4 cz1,4 h0 h1 cz0,1 h3 s3 cz3,4 s4 h5 cz4,5 h1 s1 h2 cz1,2 h1 s1 s4 h4 cz1,4 h5 cz4,5 s1 h2 s2 h2 cz1,2 h4 cz3,4 h1 h4 cz1,4 h0 h1 s1 h1 h3 s3 s4 h5 
+20754:5:5:h1 s1 s2 h2 cz1,2 h0 s0 h0 h1 cz0,1 h1 s1 s4 h4 cz1,4 h4 s5 h5 cz4,5 s3 h3 s4 h4 cz3,4 s0 h0 h1 h2 s2 h5 
+1413:8:6:s1 h1 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 s0 h0 h1 s1 cz0,1 h3 s3 h3 h4 s4 cz3,4 h1 s1 h1 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 h3 s3 h3 h4 s4 h4 cz3,4 s1 h1 h4 s4 h4 cz1,4 h1 s1 h2 s2 h4 h5 
+936:8:7:s4 h4 h5 s5 cz4,5 s1 h1 s4 h4 cz1,4 s2 h2 cz1,2 h0 s1 h1 cz0,1 h3 s4 h4 cz3,4 s1 h1 h4 s4 h4 cz1,4 h1 h4 s4 h4 cz1,4 h2 s2 cz1,2 h0 s0 h0 h1 h2 s2 s3 s4 h4 h5 
+21057:5:3:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz4,5 
+4936:8:6:h4 cx4,1 cx1,2 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz4,5 swap4,1 
+4820:7:6:h0 s1 h1 cz0,1 h4 s4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h1 s1 h1 h4 cz1,4 h3 s3 s4 h4 cz3,4 h1 h2 s2 h2 cz1,2 h1 s4 h4 cz1,4 h0 s0 h1 s2 s3 h3 h4 h5 s5 
+11297:5:5:s3 h3 h4 cz3,4 s4 h5 cz4,5 h1 h4 s4 cz1,4 h1 s1 h2 s2 h2 cz1,2 h0 h1 cz0,1 s2 h2 h3 s3 h3 h4 h5 
+5508:8:7:h3 s3 h3 s4 h4 cz3,4 h1 s1 cz1,4 s1 h1 s4 h4 cz1,4 h0 s0 s1 cz0,1 h4 s4 h4 s5 h5 cz4,5 h1 s1 h1 s2 h2 cz1,2 s1 h1 h4 s4 h4 cz1,4 h1 s1 s4 h4 cz1,4 h0 s0 h1 s1 h1 s3 h3 h4 
+17616:9:9:h0 s0 s1 h1 cz0,1 s1 h4 s4 h4 cz1,4 s5 h5 cz4,5 h4 s4 h4 cz1,4 s1 h1 s2 h2 cz1,2 s1 h1 cz1,4 h3 cz3,4 h5 s5 h5 cz4,5 h1 s4 h4 cz1,4 h0 s0 h1 h3 s3 h4 s4 s5 h5 
+22785:5:3:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz3,4 
+18836:8:7:h0 s0 h0 h1 cz0,1 h1 s1 h4 cz1,4 h3 h4 s4 h4 cz3,4 h1 s1 h1 h4 cz1,4 h3 s3 s4 cz3,4 h2 s2 cz1,2 h4 s4 h4 h5 s5 cz4,5 s1 h1 h4 s4 cz1,4 s0 s2 h3 s3 s4 h5 s5 h5 
+18760:8:6:h4 cx4,1 cx1,2 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz3,4 swap4,1 
+7297:6:4:s1 h1 h4 s4 cz1,4 s1 h1 s2 h2 cz1,2 h4 h5 cz4,5 h1 s1 s4 h4 cz1,4 h0 s0 h0 h1 s1 h1 cz0,1 h3 s3 s4 h4 cz3,4 s0 h2 s2 s3 
+4422:6:6:h0 s0 h1 s1 cz0,1 s1 h1 h2 s2 cz1,2 s1 h4 s4 cz1,4 h4 h5 cz4,5 h1 h4 cz1,4 h3 h4 s4 cz3,4 h1 h2 s2 h3 s3 h4 h5 s5 
+4280:6:5:s4 h4 h5 s5 cz4,5 h1 h4 s4 h4 cz1,4 s0 h0 h1 s1 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 h2 s2 h2 cz1,2 h3 h4 cz3,4 h0 s2 s4 
+24225:6:5:h4 s4 h5 cz4,5 h3 s3 h3 h4 s4 cz3,4 h1 s2 h2 cz1,2 h1 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 s1 h4 s4 cz1,4 h2 s3 h4 s5 
+8390:7:5:h0 s0 h1 cz0,1 h3 s3 s4 h4 cz3,4 h5 cz4,5 s1 h2 s2 h2 cz1,2 s1 cz1,4 s0 h0 h1 s1 cz0,1 h1 h4 s4 cz1,4 s1 h1 s2 s3 h3 s4 h4 
+20669:6:6:h4 s4 h5 cz4,5 h3 h4 cz3,4 h1 h4 s4 cz1,4 h0 s0 h0 s1 h1 cz0,1 h1 h4 cz1,4 s1 h1 h2 s2 cz1,2 s0 h2 s2 s4 h4 h5 s5 
+18049:6:4:s1 h1 h4 s4 h4 cz1,4 h3 s3 h4 cz3,4 h1 s1 h1 s2 h2 cz1,2 h1 h4 s4 cz1,4 h0 cz0,1 h4 s4 h5 cz4,5 s1 h2 h3 s3 
+16586:6:5:h1 h2 s2 cz1,2 h3 h4 cz3,4 cz1,4 h0 s1 cz0,1 h1 s1 s4 h4 cz1,4 h4 s5 h5 cz4,5 h0 h1 s1 h1 h2 s2 s3 
+16556:7:6:h1 cx1,0 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz0,1 cz1,2 cz1,4 cz4,5 
+21185:6:5:h1 cx1,2 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz1,4 cz4,5 
+11553:6:5:h4 s4 s5 h5 cz4,5 h3 h4 s4 h4 cz3,4 h1 s1 h2 cz1,2 h1 s1 s4 cz1,4 h1 s4 h4 cz1,4 h0 s1 h1 cz0,1 
+22913:6:5:h1 cx1,2 cx1,4 cx4,5 h0 h1 h2 h3 h4 cz0,1 cz1,4 cz3,4 
+22082:6:5:h0 h1 s1 h1 cz0,1 h1 h2 cz1,2 h3 s3 h3 h4 cz3,4 s1 s4 cz1,4 h1 h4 s4 h4 cz1,4 h4 h5 s5 cz4,5 s0 h2 s2 s5 
+8391:7:5:h3 s3 h3 h4 cz3,4 h1 s1 h2 cz1,2 s1 h1 h4 s4 cz1,4 h5 s5 h5 cz4,5 h0 cz0,1 h1 s1 h4 cz1,4 s4 h4 cz3,4 h0 s1 h2 h4 s4 h5 s5 
+20762:6:5:s0 h0 h1 cz0,1 s1 h4 cz1,4 h5 cz4,5 s2 h2 cz1,2 s1 h1 h4 cz1,4 h3 s3 s4 h4 cz3,4 h0 s0 h1 s1 h1 s3 
+16557:6:5:h0 cx0,1 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz1,2 cz1,4 cz4,5 
+2215:9:8:h0 h1 s1 cz0,1 h4 s4 h4 s5 h5 cz4,5 s1 h4 cz1,4 s1 h1 h2 s2 h2 cz1,2 s1 h4 cz1,4 h4 h5 s5 cz4,5 h3 h4 s4 h4 cz3,4 h1 s1 h4 cz1,4 h1 s1 cz0,1 s0 h1 s1 h1 s2 h2 h5 s5 h5 
+1421:9:8:h0 cx0,1 cx1,4 cx4,3 h1 h2 h3 h4 h5 cz1,2 cz1,4 cz4,5 swap4,1 
+8301:6:6:s4 h4 h5 cz4,5 h3 h4 cz3,4 h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 h0 s1 cz0,1 h1 h2 s2 cz1,2 h4 cz1,4 h2 s2 h3 s3 h5 
+3304:8:7:h1 h2 cz1,2 s4 cz1,4 h1 s1 h1 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 h4 s4 h5 s5 cz4,5 h3 s3 h3 h4 cz3,4 h1 s1 h1 h4 cz1,4 h1 s1 h1 h4 s4 cz1,4 s1 h1 s2 h2 s3 s4 h4 s5 
+5064:9:8:h1 cx1,2 cx1,4 cx4,3 h0 h1 h2 h4 h5 cz0,1 cz1,4 cz4,5 swap4,1 
+4281:6:5:h0 cx0,1 cx1,4 cx4,5 h1 h2 h3 h4 h5 cz1,2 cz1,4 cz3,4 
+1241:8:6:h0 s0 h0 h1 cz0,1 h3 s3 h3 h4 s4 h4 cz3,4 h4 s4 s5 h5 cz4,5 h1 s4 h4 cz1,4 h1 s2 h2 cz1,2 h4 s4 cz4,5 s1 h1 s4 cz1,4 h1 s1 h4 s4 cz1,4 s0 s1 h1 h2 s2 h2 h3 s3 s4 h4 
+691:9:8:h1 s1 h4 s4 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 h1 s1 s2 cz1,2 h0 h1 s1 h1 cz0,1 s1 h1 h2 s2 h2 cz1,2 s1 h1 h4 s4 cz1,4 h3 h4 s4 cz3,4 h3 h4 cz3,4 h1 s1 h1 s4 cz1,4 h0 h2 s2 h4 s4 h5 s5 
+29409:6:5:h1 s1 h2 cz1,2 h3 h4 cz3,4 cz1,4 h4 s4 h4 h5 s5 cz4,5 h1 h4 cz1,4 s0 h0 s1 cz0,1 s2 h3 s3 s4 
+25697:6:5:h1 s1 s4 h4 cz1,4 h4 h5 s5 cz4,5 s3 h3 h4 s4 cz3,4 h1 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 h0 s0 h1 s1 cz0,1 s0 s2 s3 s5 
+31137:6:5:h1 s1 h1 s2 h2 cz1,2 h4 h5 cz4,5 s1 h4 cz1,4 h3 s3 h4 s4 h4 cz3,4 s1 h1 h4 s4 cz1,4 s0 h0 cz0,1 s1 s2 s5 
+29413:6:5:h3 h4 s4 cz3,4 h0 h1 cz0,1 s1 h1 s2 h2 cz1,2 h1 s1 h1 s4 h4 cz1,4 h4 s5 h5 cz4,5 h1 s1 h1 h4 cz1,4 h0 s0 s4 s5 h5 
+24711:6:5:h0 h1 s1 h1 cz0,1 h1 s1 h1 h4 s4 h4 cz1,4 h2 cz1,2 s3 h3 h4 cz3,4 s4 h4 h5 cz4,5 h1 h4 s4 cz1,4 h3 s4 h5 
+31153:6:5:s0 h0 h1 cz0,1 h4 h5 cz4,5 h1 s2 h2 cz1,2 s1 h1 h4 s4 cz1,4 h3 s3 h4 cz3,4 h1 h4 s4 cz1,4 h0 s1 h3 s5 
+29412:6:5:h0 s0 h1 s1 h1 cz0,1 h1 s4 h4 cz1,4 h3 h4 s4 cz3,4 h1 s1 h2 cz1,2 h4 s4 h5 cz4,5 h1 h4 cz1,4 s1 s2 h3 s4 s5 
+3262:7:5:s1 h1 h4 s4 h4 cz1,4 h1 s1 h2 cz1,2 h3 s3 s4 h4 cz3,4 h1 s1 h4 cz1,4 h0 s0 h0 s1 h1 cz0,1 s4 h4 h5 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 s0 h0 h3 h4 s4 h4 s5 
+14276:7:6:h3 s3 h3 h4 s4 cz3,4 s1 h1 h4 s4 h4 cz1,4 h0 h1 cz0,1 h1 h2 cz1,2 h4 s4 h4 h5 s5 h5 cz4,5 s1 h1 s4 cz1,4 h1 s1 h1 s4 h4 cz1,4 h0 s0 h0 h1 s1 h1 s2 h2 h4 
+8319:7:6:h1 s1 h2 s2 h2 cz1,2 h4 s4 h4 cz1,4 s0 h0 s1 h1 cz0,1 h3 cz3,4 h4 s4 h4 h5 cz4,5 h1 h4 s4 cz1,4 h4 s4 cz3,4 s0 s2 s3 h3 h5 s5 
+28104:7:6:h1 s1 h1 h4 s4 cz1,4 h0 h1 s1 h1 cz0,1 h1 s1 h1 h2 cz1,2 h4 h5 cz4,5 h1 h4 s4 h4 cz1,4 h3 h4 s4 cz3,4 s1 h1 h4 s4 h4 cz1,4 s0 h1 s1 s3 s4 h4 h5 
+14280:7:5:h1 h4 cz1,4 h3 h4 s4 h4 cz3,4 h4 s5 h5 cz4,5 h2 s2 h2 cz1,2 s0 h0 h1 s1 h1 cz0,1 s1 h1 s4 cz1,4 h1 s4 h4 cz1,4 h1 s1 h2 h3 h4 s4 s5 h5 
+31152:6:4:h1 s1 h1 h4 cz1,4 h0 s0 cz0,1 h4 s4 h5 cz4,5 h1 h2 s2 cz1,2 h3 s3 h4 s4 h4 cz3,4 h1 s1 h1 h4 cz1,4 h0 s0 s4 h5 
+28112:8:7:h1 s1 h4 s4 cz1,4 h0 cz0,1 h1 s1 h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 cz1,4 h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 cz3,4 h0 s0 s1 h1 s2 h4 s4 h5 
+1695:7:6:h1 s1 h4 s4 cz1,4 h0 cz0,1 h1 s1 h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 h4 cz1,4 h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 h0 s0 h0 h1 h2 s2 h4 s4 
+28901:6:5:s3 h3 h4 cz3,4 s1 h1 s4 cz1,4 h4 s4 h5 cz4,5 h0 s1 h1 cz0,1 h1 h2 cz1,2 h4 cz1,4 s0 s1 h3 s4 s5 
+24681:6:5:s4 h4 h5 s5 cz4,5 s0 h0 s1 h1 cz0,1 cz1,4 h3 s4 h4 cz3,4 h1 h4 cz1,4 h1 s1 s2 h2 cz1,2 h0 s0 h0 s3 s5 
+29105:6:5:s1 h1 s4 h4 cz1,4 h5 s5 cz4,5 s0 h0 cz0,1 h3 s3 h3 h4 cz3,4 h1 s4 h4 cz1,4 s1 s2 h2 cz1,2 s0 h0 s4 s5 h5 
+29262:7:6:h1 h4 s4 cz1,4 h0 s0 h0 h1 s1 cz0,1 h4 s4 h4 h5 s5 h5 cz4,5 s3 h3 h4 s4 cz3,4 h1 s1 h1 h4 s4 cz1,4 h1 s1 h2 s2 cz1,2 h0 s0 s1 h1 cz0,1 s0 s2 s3 h3 h5 s5 
+3562:7:6:h4 s4 h4 h5 s5 cz4,5 h1 s1 h4 cz1,4 h1 s1 h2 s2 cz1,2 h3 s3 h3 h4 s4 h4 cz3,4 h1 h4 cz1,4 h0 s1 cz0,1 h1 s1 h4 cz1,4 s0 s1 h1 s2 h2 s3 h4 s4 s5 
+1499:7:6:h4 s4 h4 h5 cz4,5 h1 s1 h1 h4 s4 cz1,4 h0 s0 h0 h1 s1 cz0,1 h3 s3 h3 h4 cz3,4 h1 s1 h2 s2 h2 cz1,2 h4 cz1,4 h1 h4 s4 cz1,4 s0 h0 h1 h3 s3 h4 s4 h4 
+10435:7:6:s3 h3 h4 cz3,4 h1 s1 h1 h2 s2 cz1,2 s1 h1 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 s1 h1 h4 s4 cz1,4 s0 h0 h1 s1 cz0,1 h1 s1 s2 cz1,2 s1 h1 s3 h4 
+10405:8:7:s1 h1 h4 s4 cz1,4 h1 s1 h1 s2 h2 cz1,2 s0 h0 h1 s1 h1 cz0,1 s4 h5 cz4,5 h1 h4 cz1,4 h3 s3 h3 h4 s4 cz3,4 s3 h3 h4 cz3,4 h1 s1 s4 cz1,4 h0 s0 h0 h2 h3 s3 h3 h4 s4 s5 
+8881:8:7:h3 s3 h4 s4 cz3,4 h1 s1 h2 s2 h2 cz1,2 h1 s1 h4 s4 h4 cz1,4 h0 s0 h0 h1 s1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s4 h4 h5 s5 h5 cz4,5 h1 s1 s4 cz1,4 s0 h2 s2 h3 s3 h4 s4 s5 h5 
+31002:7:6:h1 s1 s4 h4 cz1,4 s4 h4 s5 h5 cz4,5 s1 s2 h2 cz1,2 s3 h3 h4 s4 cz3,4 h1 h4 cz1,4 h0 s0 cz0,1 s1 h1 s2 h2 cz1,2 s0 h0 h1 s1 h1 h2 s3 s4 h5 
+1487:8:7:h0 s0 h0 h1 cz0,1 h4 cz1,4 h1 s1 h2 cz1,2 h3 cz3,4 s5 cz4,5 s4 h4 s5 h5 cz4,5 h1 s1 s4 h4 cz1,4 h1 h4 s4 cz1,4 s0 h0 h1 s2 h2 s3 s4 h4 
+2026:7:6:h4 s4 h5 s5 cz4,5 s1 h1 h4 s4 h4 cz1,4 h3 s3 h3 h4 cz3,4 h1 s1 h1 s2 h2 cz1,2 h1 s1 h1 h4 cz1,4 h0 s0 h0 h1 s1 cz0,1 s1 h1 h4 s4 h4 cz1,4 h1 h2 h3 s3 h4 s4 h4 h5 s5 
+20131:6:4:h1 h4 cz1,4 s1 h2 cz1,2 h3 h4 cz3,4 h0 s0 h0 h1 s1 h1 cz0,1 h4 h5 s5 cz4,5 s1 h1 s4 h4 cz1,4 h0 s1 h2 s4 
+13260:7:6:h1 s1 h1 h4 cz1,4 s3 h3 h4 cz3,4 h4 s5 h5 cz4,5 s1 h2 cz1,2 h1 s1 h4 s4 h4 cz1,4 h0 s0 h0 cz0,1 h1 s1 h4 s4 cz1,4 s1 h1 h3 h4 s4 h4 s5 h5 
+4018:8:7:h1 s1 h2 cz1,2 s1 s4 h4 cz1,4 s5 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 s3 h3 s4 cz3,4 h0 s0 h0 cz0,1 s4 h4 cz3,4 s1 h1 h4 s4 cz1,4 h0 s0 h3 s3 h5 
+11875:7:5:h1 s1 s4 h4 cz1,4 h1 s2 h2 cz1,2 h0 s1 cz0,1 s4 h5 s5 h5 cz4,5 h3 s3 h3 h4 cz3,4 h1 h4 s4 h4 cz1,4 h1 s2 cz1,2 s2 h2 h3 s3 s4 h4 s5 
+13772:8:7:s0 h0 s1 h1 cz0,1 h1 s1 h1 h4 cz1,4 h1 s2 h2 cz1,2 h3 s3 cz3,4 s5 cz4,5 h4 s4 h5 s5 h5 cz4,5 h1 cz1,4 h1 h4 cz1,4 h0 h1 s1 s3 h3 h4 s4 
+26072:8:6:h1 s4 h4 cz1,4 s4 h4 h5 s5 h5 cz4,5 h0 s0 s1 cz0,1 s1 h4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h3 h4 s4 cz3,4 h1 s1 s4 cz1,4 s1 h1 h4 cz1,4 h1 s1 s3 h4 s5 
+7843:6:5:h4 h5 cz4,5 h1 s1 cz1,4 h1 s1 h1 h2 cz1,2 h0 h1 s1 cz0,1 h3 h4 s4 cz3,4 h1 s1 h4 cz1,4 s0 h2 s2 s3 s4 
+3758:8:6:s4 h4 h5 cz4,5 s1 h1 cz1,4 h4 s4 h5 s5 h5 cz4,5 s2 h2 cz1,2 h1 cz1,4 s3 h3 s4 cz3,4 h0 h1 cz0,1 h1 s1 h1 h4 cz1,4 h0 s0 h2 h4 s4 h4 h5 s5 
+3818:7:6:h1 s1 h2 cz1,2 h1 s1 h1 s4 h4 cz1,4 h4 h5 s5 h5 cz4,5 h0 s0 h1 s1 h1 cz0,1 h1 s1 h4 cz1,4 h3 s4 h4 cz3,4 h1 h4 s4 cz1,4 h0 s0 h1 s1 s3 s4 h4 s5 
+23715:6:5:s1 h1 h4 cz1,4 h4 h5 cz4,5 h1 s1 h1 h2 cz1,2 h0 s1 h1 cz0,1 s1 h1 s4 h4 cz1,4 h3 s3 s4 cz3,4 s0 s1 h2 s3 s5 h5 
+21763:6:5:s0 h0 s1 h1 cz0,1 s4 h4 cz1,4 h1 s1 h1 h2 cz1,2 h5 cz4,5 s1 h1 s4 h4 cz1,4 h3 h4 s4 cz3,4 s2 
+20667:6:5:h1 s1 h1 h4 cz1,4 s1 h2 cz1,2 h0 s0 s1 h1 cz0,1 s4 h5 s5 cz4,5 h1 h4 cz1,4 h3 s3 h3 s4 h4 cz3,4 s0 s3 h5 
+24227:6:5:h4 h5 cz4,5 h3 s3 h3 h4 s4 cz3,4 h1 s2 h2 cz1,2 h1 s4 h4 cz1,4 h0 s0 h0 h1 cz0,1 h1 s1 h4 cz1,4 h0 s3 s4 s5 h5 
+26755:6:4:h1 h4 s4 h4 cz1,4 s2 h2 cz1,2 h3 h4 cz3,4 s0 h0 s1 h1 cz0,1 h5 s5 h5 cz4,5 h1 s1 h1 h4 cz1,4 h0 s0 s1 h2 h5 s5 h5 
+20671:6:6:h4 s4 h5 cz4,5 h3 s3 cz3,4 h1 s1 h4 cz1,4 h0 s0 h0 h1 cz0,1 h1 h2 s2 cz1,2 h1 s1 h1 h4 s4 h4 cz1,4 h0 s0 h0 s3 
+22179:6:4:s1 h1 h4 s4 cz1,4 s3 h3 h4 s4 cz3,4 h1 h2 cz1,2 h4 s4 h5 cz4,5 h0 h1 s1 cz0,1 h1 s1 cz1,4 s0 h2 s2 s3 
+20586:6:5:h1 h4 s4 cz1,4 h1 s1 h1 h2 cz1,2 h3 s4 h4 cz3,4 s0 h0 h1 cz0,1 h1 h4 s4 cz1,4 s4 h4 h5 s5 cz4,5 s0 h5 s5 
+20655:6:5:h1 h2 cz1,2 s3 h3 h4 s4 cz3,4 s1 s4 cz1,4 h0 h1 cz0,1 h1 h4 cz1,4 h4 s4 h4 h5 s5 h5 cz4,5 s3 h5 s5 
+21601:6:4:h1 s1 h1 h4 cz1,4 s3 h3 h4 cz3,4 s2 h2 cz1,2 h1 s1 h4 cz1,4 h0 cz0,1 h4 s5 h5 cz4,5 s4 
+13025:6:5:h3 s4 h4 cz3,4 h1 s1 h1 h4 cz1,4 h5 cz4,5 h2 s2 h2 cz1,2 s0 h0 h1 s1 cz0,1 h4 cz1,4 s3 
+21793:6:4:h1 h4 s4 h4 cz1,4 h2 cz1,2 h4 s4 h4 h5 cz4,5 h1 s1 h1 s4 h4 cz1,4 s0 h0 s1 cz0,1 h3 s3 h3 h4 s4 cz3,4 h0 s0 h0 s3 
+22178:6:4:h1 h4 cz1,4 h3 h4 cz3,4 s1 h1 h2 cz1,2 h4 h5 s5 h5 cz4,5 h0 s1 cz0,1 h1 cz1,4 h2 s3 s4 s5 
+8933:7:7:h1 h2 s2 h2 cz1,2 h0 cz0,1 s1 h1 h4 s4 cz1,4 h3 h4 cz3,4 h4 s4 h5 cz4,5 s4 h4 h5 s5 cz4,5 h1 s1 h1 cz1,4 s2 h3 s5 
+23714:6:4:s1 h1 h4 s4 cz1,4 s4 h5 cz4,5 h3 h4 s4 cz3,4 h0 s1 h1 cz0,1 h2 s2 cz1,2 s1 h1 cz1,4 h0 s0 h0 s2 h2 s5 
+20585:6:4:h1 s1 s4 h4 cz1,4 s0 h0 h1 s1 h1 cz0,1 s3 h3 s4 cz3,4 h1 h4 cz1,4 s1 h2 cz1,2 h4 h5 cz4,5 h3 s3 h3 s4 
+9124:7:6:h4 s4 h4 h5 s5 h5 cz4,5 h1 s1 h4 s4 h4 cz1,4 s1 h1 h2 s2 cz1,2 h3 h4 cz3,4 h0 s0 h0 h1 s1 cz0,1 h1 h4 cz1,4 h3 s4 h4 cz3,4 s2 h3 s3 h3 h4 s4 h5 
+5449:7:6:h3 s3 h3 h4 s4 h4 cz3,4 h1 s1 h4 cz1,4 h0 h1 s1 h1 cz0,1 h1 s1 h1 h2 s2 h2 cz1,2 h5 cz4,5 s1 h1 h4 s4 cz1,4 s4 h4 s5 h5 cz4,5 s2 h2 s5 
+12517:6:5:h4 s4 h5 s5 cz4,5 h1 h4 s4 cz1,4 h0 s0 cz0,1 h3 s4 cz3,4 h1 s1 h1 h2 cz1,2 h4 cz1,4 h3 
+17768:7:7:h1 s1 h2 s2 cz1,2 h0 s0 s1 cz0,1 h4 s4 h4 cz1,4 h4 s4 h4 s5 h5 cz4,5 h3 s3 h3 s4 h4 cz3,4 h1 h4 s4 cz1,4 h0 h1 cz0,1 h0 s0 s1 s2 h3 h5 s5 h5 
+5480:7:6:h1 s1 h2 s2 h2 cz1,2 h1 s1 h4 cz1,4 h3 h4 cz3,4 h4 h5 s5 h5 cz4,5 h0 s0 h1 s1 h1 cz0,1 h1 h4 s4 h4 cz1,4 h4 s4 h4 cz4,5 h4 s5 
+20777:6:4:s1 h1 h4 cz1,4 h4 s4 h5 s5 h5 cz4,5 s0 h0 cz0,1 h1 s1 h4 s4 cz1,4 h3 h4 s4 h4 cz3,4 s1 h2 s2 cz1,2 h2 s2 s5 
+17737:7:6:h0 s1 h1 cz0,1 h1 h4 s4 h4 cz1,4 h1 s1 h2 s2 h2 cz1,2 h4 s4 h4 h5 s5 cz4,5 s3 h3 h4 s4 h4 cz3,4 s1 h1 h4 cz1,4 h1 h2 cz1,2 h0 s1 h1 s2 s3 h5 s5 
+5270:7:5:s1 h1 s4 h4 cz1,4 h3 s3 h3 s4 h4 cz3,4 s1 h1 h2 cz1,2 s0 h0 h1 cz0,1 h4 s4 h4 h5 s5 h5 cz4,5 h1 s1 h1 h4 cz1,4 h0 h1 s1 cz0,1 h0 h1 s1 h1 s3 h5 s5 h5 
+29811:9:7:h3 s3 h3 h4 cz3,4 s0 h0 h1 cz0,1 s2 cz1,2 h5 s5 cz4,5 h1 h4 s4 h4 cz1,4 h1 s1 h1 s2 h2 cz1,2 h1 h4 s4 cz1,4 h4 s4 h4 s5 cz4,5 s1 h1 h4 cz1,4 h0 h2 s3 h4 s4 h5 

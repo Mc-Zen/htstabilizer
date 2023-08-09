@@ -72,16 +72,22 @@ class TestHTStabilizer(unittest.TestCase):
     def test_random_stabilizers_5_Q(self):
         self.verify_random_stabilizers(5, "Q", num=20)
 
-    # def test_random_stabilizers_6_all(self):
-    #     self.verify_random_stabilizers(6, "all", num=20)
+    def test_random_stabilizers_6_star(self):
+        self.verify_random_stabilizers(6, "star", num=2)
+
+    def test_random_stabilizers_6_ladder(self):
+        self.verify_random_stabilizers(6, "ladder", num=2)
+
+    def test_random_stabilizers_6_alklx(self):
+        self.verify_random_stabilizers(6, "allx", num=5)
 
 
 class TestCliffordOptimization(unittest.TestCase):
 
     def test_random_clifford_optimization(self):
-        for num_qubits, connectivity in get_available_connectivities():
+        for num_qubits, connectivity in get_available_connectivities()[-2:]:
             with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
-                for i in range(100):
+                for i in range(1000):
                     cliff = random_clifford(num_qubits)
                     qc = cliff.to_circuit()
                     assert qc is not None

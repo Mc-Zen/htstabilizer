@@ -114,10 +114,16 @@ class LCClassBase(metaclass=abc.ABCMeta):
         return cls._start_indices[-1]  # type: ignore
 
     def __repr__(self) -> str:
-        return f"Repr{self.id:self.data}"
+        return self.__str__()
 
     def __str__(self) -> str:
-        return f"LCClass{self.num_qubits()}({self.data})"
+        id = self.id()
+        type = str(self.type)
+        data = ", ".join(map(str, [item.data for sublist in self.data.groups for item in sublist]))
+        return f"LCClass{self.num_qubits()}{{{type[type.index('.') + 1:]} / {id} / {data}}})"
+
+    def __eq__(self, other) -> bool:
+        return self.num_qubits() == other.num_qubits() and self.id() == other.id()
 
 
 class LCClass2(LCClassBase):

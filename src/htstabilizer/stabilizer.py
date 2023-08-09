@@ -71,6 +71,9 @@ class Stabilizer:
             if self.S.dtype != np.int8:
                 self.S = self.S.astype(np.int8)
         elif isinstance(data, list):
+            for pauli in data:
+                if not all(char in "IXYZ+-" for char in pauli):
+                    raise ValueError(f"Invalid Pauli string encountered \"{pauli}\"")
             self.num_qubits = len(data[0].lstrip("+-"))
             self.R = np.zeros((self.num_qubits, self.num_qubits), dtype=np.int8)
             self.S = np.zeros((self.num_qubits, self.num_qubits), dtype=np.int8)

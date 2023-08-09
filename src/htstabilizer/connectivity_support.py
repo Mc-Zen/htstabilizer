@@ -26,9 +26,13 @@ def get_available_connectivities() -> List[Tuple[int, str]]:
         (5, "cycle"),
         (5, "T"),
         (5, "Q"),
-        (6, "all"),
+        # (6, "all"),
+        # (6, "allx"),
+        (6, "linear"),
         (6, "star"),
         (6, "ladder"),
+        (6, "E"),
+        (6, "H"),
     ]
 
 
@@ -51,14 +55,14 @@ def assert_connectivity_is_supported(num_qubits: int, connectivity: SupportedCon
         (num_qubits == 3 and connectivity in ["all", "linear"]) or \
         (num_qubits == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
         (num_qubits == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"]) or \
-        (num_qubits == 6 and connectivity in ["all", "star", "allx", "ladder"])
+        (num_qubits == 6 and connectivity in ["all", "linear", "star", "allx", "ladder", "E", "H"])
     if not is_supported:
         raise AssertionError(f"The connectivity '{connectivity}' is not supported for {num_qubits} qubits.")
 
 
 def get_connectivity_graph(
         num_qubits: int,
-        connectivity: Literal["all", "linear", "star", "cycle", "T", "Q"]
+        connectivity: Literal["all", "linear", "star", "cycle", "T", "Q", "ladder", "E", "H"]
 ) -> Graph:
     """
     Get a graph object for a given connectivity type. When drawn, the zeroth
@@ -78,7 +82,7 @@ def get_connectivity_graph(
     """
     assert_connectivity_is_supported(num_qubits, connectivity)
 
-    if connectivity == "all":
+    if connectivity == "all" or connectivity == "allx":
         return Graph.fully_connected(num_qubits)
     if connectivity == "linear":
         return Graph.linear(num_qubits)
@@ -98,6 +102,19 @@ def get_connectivity_graph(
     if connectivity == "ladder":
         assert num_qubits in [6], "Ladder connectivity is available for 6 qubits"
         graph = Graph.cycle(num_qubits)
+        graph.add_edge(1, 4)
+        return graph
+    if connectivity == "E":
+        assert num_qubits in [6], "E connectivity is available for 6 qubits"
+        graph = Graph(num_qubits)
+        graph.add_path([3, 0, 1, 2, 5])
+        graph.add_edge(1, 4)
+        return graph
+    if connectivity == "H":
+        assert num_qubits in [6], "E connectivity is available for 6 qubits"
+        graph = Graph(num_qubits)
+        graph.add_path([0, 1, 2])
+        graph.add_path([3, 4, 5])
         graph.add_edge(1, 4)
         return graph
     

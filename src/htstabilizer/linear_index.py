@@ -64,7 +64,7 @@ class Repr:
 
     def flatten(self) -> List[int]:
         result = []
-        for groups in self.groups.values():
+        for groups in self.groups:
             for group in groups:
                 result += group
         return result

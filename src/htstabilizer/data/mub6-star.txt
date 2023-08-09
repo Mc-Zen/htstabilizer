@@ -1,0 +1,66 @@
+338:6:6
++YIYYZZ,+IIIIIZ,+IIIIZI,+ZYIXII,+XIXYZZ,+YXYIZZ:s0 h1 s1 s2 h2 cz0,2 h0 h2 h3 s3 h3 cx0,3 cx0,1 h0 
++XYIYII,+YZYIZZ,+XIZYZZ,+ZYIZII,+XIYYYZ,+XIYYZY:h0 s0 h0 h1 sdg3 cz0,3 sdg0 h0 cz0,1 h0 sdg0 cz0,2 h1 sdg1 h1 h2 h3 sdg3 h3 cz0,4 sdg0 h4 sdg4 h5 s5 h5 sdg5 cz0,5 sdg0 h0 sdg5 h5 
++ZYYIZZ,+YZYIZI,+XIZYIZ,+IIIYII,+IIZIXI,+ZXIYIX:h0 s0 h0 h1 s1 s2 s3 h3 h4 s4 s5 cz0,5 h0 cx0,4 cx0,2 cx0,1 h0 h5 
++XYIYIZ,+YZYIIZ,+YYZZZZ,+YYXXZZ,+ZXIYXI,+ZIIIIY:s0 s2 h2 h3 s3 h3 h4 s5 cz0,5 cz0,1 h0 cx0,4 cx0,3 cx0,2 h0 h1 h5 
++XYIYZI,+XXYXZZ,+IIYIII,+XZYZZZ,+ZIIIXZ,+XIYYIX:h0 h1 s1 h1 sdg1 h1 s2 h2 s3 sdg3 h3 s4 h4 sdg4 cz0,4 h0 sdg0 h0 h4 sdg4 h4 h5 s5 h5 sdg5 cz0,5 h0 sdg0 cz0,1 sdg0 cz0,3 h0 sdg0 h0 h1 sdg1 h3 sdg3 h3 h5 
++YIIZII,+ZZZYII,+ZXXYII,+XYYXZI,+XIYYXI,+YYYZIY:h0 s0 h0 h1 s1 h1 sdg1 h1 s2 h2 s3 h3 sdg3 h3 cz0,3 h0 sdg3 h3 h4 s4 cz0,4 h0 sdg0 h0 cz0,1 h0 sdg0 cz0,2 sdg0 h0 h1 h2 sdg2 h2 h4 sdg4 h4 s5 h5 
++IYXIZZ,+IYIIII,+ZIXIIZ,+ZYIZZZ,+YYYZXZ,+ZYZXIX:s0 s1 h1 h2 sdg3 h3 s4 h4 sdg4 cz0,4 h0 sdg0 h0 cz0,2 h0 sdg0 h0 sdg2 h2 sdg4 h4 h5 cz0,5 cz0,3 sdg0 h0 h3 sdg3 h5 
++ZZYYZZ,+IZIYIZ,+XIZYII,+IIIYZI,+ZYZXXI,+YXXIZY:h0 s0 h0 h1 s1 sdg1 h1 sdg2 cz0,2 h0 sdg0 sdg2 h2 h3 s3 s4 h4 sdg4 cz0,4 sdg0 cz0,3 h0 sdg0 cz0,1 h1 sdg1 h1 h3 sdg3 sdg4 h4 h5 s5 h5 sdg5 cz0,5 h0 sdg0 h5 sdg5 h5 
++ZYYIZI,+YZYIII,+YYZZIZ,+XIXIZZ,+YXXIYZ,+XXYIZX:h0 s0 h0 s1 h1 h2 s2 sdg2 h2 h4 s4 sdg4 h4 cz0,4 h0 cz0,1 sdg0 h0 sdg1 h1 sdg4 h4 h5 s5 h5 cz0,5 cz0,2 h0 h2 sdg2 h2 h5 sdg5 
++XYIYZZ,+XXYXIZ,+ZYYXII,+IZZXII,+XXYIYI,+ZIIIZX:s0 h0 sdg1 h1 h2 h3 s3 s4 h4 h5 cz0,5 h0 cz0,4 h0 sdg0 cz0,2 h0 sdg0 h0 cz0,3 sdg0 h0 cz0,1 sdg0 h1 h2 sdg2 h3 h4 sdg4 h5 sdg5 h5 cz0,5 h0 sdg0 h0 h5 sdg5 
++YIIZZI,+IXZZII,+YXIIZZ,+ZZIXIZ,+ZIIIYI,+YYYZZX:h1 s1 h1 sdg1 h1 h2 s3 h3 h4 s4 cz0,4 h0 sdg0 cz0,3 h0 sdg0 h0 cz0,1 h0 sdg0 cz0,2 h0 sdg0 h1 h2 h3 h4 sdg4 s5 cz0,5 h0 sdg0 h0 h5 sdg5 h5 
++ZIXXZZ,+XYXYZZ,+XXZIZI,+XYYXIZ,+YYYZYI,+IIZIZX:s0 s1 h1 sdg1 cz0,1 h0 h1 sdg1 h1 h2 s2 sdg3 h3 cz0,3 h3 sdg3 h4 s4 h5 s5 h5 cz0,5 h0 sdg0 h0 cz0,2 h0 sdg0 cz0,4 h0 h2 sdg2 h4 sdg4 h4 h5 sdg5 
++YZZIII,+YYYYZI,+ZIXIZI,+IIIYIZ,+IIZIYI,+IZIZIX:s0 h0 sdg0 h0 cz0,1 h0 sdg0 h1 sdg1 s2 h2 h3 s3 h4 s4 cz0,4 sdg0 cz0,2 sdg0 h0 cz0,1 sdg0 h0 cz0,3 h0 sdg0 sdg1 h1 h2 sdg2 h3 sdg3 h4 sdg4 s5 h5 sdg5 h5 cz0,5 h0 sdg0 h5 
++XZIIIZ,+IZIYZI,+YYZZZI,+YYXXIZ,+IZIZXI,+YIXYZX:h0 sdg0 h1 sdg1 h2 s2 cz0,2 sdg0 h0 h2 h3 s3 h3 sdg3 h3 s4 h4 sdg4 h4 s5 sdg5 h5 cz0,5 sdg0 h0 cz0,1 h0 cz0,4 sdg0 h0 cz0,3 h0 sdg0 h0 sdg1 h1 h3 sdg3 h4 sdg5 h5 
++ZYYIIZ,+XXYXZI,+IIYIZI,+YXYYZZ,+YIXYYI,+ZXIYZY:s1 sdg1 h1 s2 s3 h3 sdg3 h3 s4 h4 sdg4 h4 h5 sdg5 cz0,5 h0 cz0,2 cz0,4 sdg0 h0 cz0,1 h0 sdg0 h0 h1 sdg1 h2 h4 sdg4 h4 h5 sdg5 cz0,5 h0 cz0,3 h0 sdg0 h0 h3 sdg3 h5 sdg5 
++YIIZIZ,+ZZZYZI,+IZXZII,+IYZZIZ,+ZXIYYZ,+IYIXZY:h0 s0 h0 sdg0 sdg1 h1 h2 s2 sdg2 cz0,2 sdg0 h0 sdg2 h2 s3 h3 sdg3 s5 h5 sdg5 h5 cz0,5 sdg0 h0 cz0,3 sdg0 cz0,4 h0 sdg0 cz0,2 h0 sdg0 h0 cz0,1 sdg0 h0 h1 sdg1 h1 h2 sdg2 h2 h3 sdg3 h3 h4 sdg4 h5 sdg5 
++IYXIIZ,+ZIIXII,+YIIYZI,+XZYZII,+IYIXYZ,+ZYZXZY:s1 h1 sdg1 h2 s2 h2 sdg2 h2 cz0,3 h0 h3 s4 h4 sdg4 h4 cz0,4 sdg0 h0 cz0,2 h0 sdg0 h0 cz0,1 sdg0 h0 h1 sdg1 h1 h2 sdg2 h2 h4 sdg4 h4 sdg5 h5 cz0,5 h0 sdg0 h0 h5 sdg5 
++IXYZZZ,+XZXIZI,+ZXXYZZ,+YIYIII,+ZYZXYZ,+XZXXIY:h0 s0 h0 h1 sdg1 h2 s2 cz0,2 h0 sdg0 h2 sdg2 h3 s3 h3 sdg3 cz0,3 h0 sdg0 h0 sdg3 h3 s4 sdg4 h4 cz0,4 h0 cz0,1 h0 sdg0 h0 h1 sdg1 h1 sdg4 h4 h5 s5 sdg5 cz0,5 h0 h5 
++YYZYIZ,+IYIIZZ,+IYXXZZ,+XIXIII,+XZXXXZ,+ZZZZIY:h0 s0 h1 s1 h1 sdg1 h1 sdg3 h3 cz0,3 cz0,2 h0 sdg0 h2 sdg3 h3 h4 s4 cz0,4 h0 h4 sdg4 h4 h5 s5 h5 cz0,5 h0 sdg0 h0 cz0,1 h0 h1 h5 
++ZZYYII,+ZXIZZZ,+ZYYXZZ,+ZXZIZI,+ZZZZXZ,+IXZYZX:h0 s1 h1 s2 sdg2 h2 h3 s3 h3 sdg3 cz0,3 h0 h3 sdg3 h3 h4 s4 h4 sdg4 h4 h5 s5 h5 cz0,5 cz0,3 h0 cz0,2 sdg0 h0 cz0,4 sdg0 cz0,1 h0 sdg0 h1 h2 sdg3 h3 h4 sdg4 h4 h5 
++IIYXII,+IXZZZZ,+XZIXIZ,+XXXYZI,+IXZYYI,+YZYXZY:h0 h1 s2 h3 sdg3 h3 h4 h5 cz0,5 sdg0 h0 cz0,4 h0 cz0,2 cz0,3 sdg0 h0 cz0,1 h0 sdg0 h0 sdg1 h1 h2 h3 h4 sdg4 h4 h5 sdg5 
++ZIXXII,+YIXZIZ,+ZZYZIZ,+YZXZIZ,+YZYXYZ,+YIXYZY:h0 sdg0 s2 h2 cz0,2 h0 h2 s3 cz0,3 sdg0 h0 sdg3 h3 h4 s4 h4 sdg4 h5 cz0,5 sdg0 h0 cz0,4 h0 sdg4 h4 h5 
++XXZXZI,+IIZXIZ,+IXYYZI,+IXIIII,+YIXYYZ,+ZXIYIY:h0 s0 h0 h1 s1 h2 s2 h2 sdg2 h2 cz0,2 sdg0 h0 h2 s3 sdg3 s4 cz0,4 h0 sdg0 h0 cz0,3 sdg0 h0 h3 sdg3 h4 sdg4 cz0,5 h0 sdg0 h0 cz0,2 h0 sdg0 h0 h2 sdg2 h2 h5 
++ZXXZZI,+ZYZIZI,+YZZXZZ,+IYZZII,+ZXIYXZ,+ZIIIZY:h0 s0 sdg0 h1 s1 h1 sdg3 h3 h4 s4 cz0,4 h0 sdg0 h0 cz0,3 sdg0 h3 h4 s5 cz0,5 sdg0 h0 cz0,1 h0 sdg0 h0 cz0,2 h0 sdg0 h1 sdg1 sdg2 h2 h5 sdg5 
++IZXYIZ,+XIYZZZ,+YIIYZZ,+XZYZZI,+ZIIIYZ,+YYYZIX:h0 sdg0 s1 h1 sdg1 h1 sdg2 s3 h3 sdg3 h4 s4 h4 cz0,4 sdg0 h0 cz0,1 sdg0 sdg1 h1 h4 sdg4 h4 sdg5 h5 cz0,5 h0 sdg0 h0 cz0,4 sdg0 cz0,2 h0 cz0,3 h0 sdg0 sdg2 h2 h3 h4 sdg4 h5 
++YXIXII,+XZXIZZ,+ZXXYIZ,+XYYXII,+YYYZXI,+ZYZXZX:s1 h2 s2 sdg2 s4 h4 cz0,4 h0 sdg0 cz0,1 sdg0 h0 h1 sdg4 s5 h5 sdg5 h5 cz0,5 sdg0 cz0,2 h0 sdg0 h0 cz0,3 h0 sdg0 h0 cz0,4 h0 sdg2 h2 sdg3 h3 sdg4 h4 h5 sdg5 
++YYZYII,+IYIIIZ,+ZIXIZZ,+IIIYZZ,+ZYZXYI,+XZXXZY:h0 s0 sdg0 h0 s1 h1 s2 h2 sdg2 h3 s3 sdg4 h4 cz0,4 h0 cz0,3 sdg0 h0 cz0,2 sdg0 h0 h2 h3 sdg3 h3 sdg4 cz0,4 sdg0 h0 h4 sdg4 h5 sdg5 cz0,5 h0 sdg0 h0 cz0,1 sdg0 h0 h1 h5 sdg5 h5 
++ZZYYZI,+IZIYZZ,+YYZZII,+XIXIIZ,+XZXXYZ,+IXZYIY:s0 h0 s1 h1 sdg1 h1 s2 h2 sdg2 h2 cz0,2 h0 sdg0 h0 h2 sdg2 h2 h4 s4 s5 h5 sdg5 h5 cz0,5 h0 sdg0 cz0,4 h0 sdg0 h0 cz0,1 sdg0 h0 cz0,3 h0 sdg0 h1 sdg1 sdg3 h3 h4 sdg5 h5 
++ZYYIII,+XXYXII,+ZYYXZI,+ZXZIII,+IXZYXZ,+XXYIIY:h0 s0 h0 sdg0 s1 sdg1 cz0,2 h0 sdg0 cz0,1 sdg0 h0 h1 sdg1 sdg3 sdg4 h4 cz0,4 sdg0 cz0,2 cz0,3 h0 h2 h3 sdg3 h3 h4 s5 h5 cz0,5 h0 sdg0 h5 sdg5 h5 
++YIIZZZ,+IXZZZI,+XZIXZZ,+YZXZZI,+XXYIXZ,+IYIXIX:s0 sdg0 s1 sdg1 h1 h2 s2 h2 cz0,2 sdg0 h0 cz0,1 sdg0 h0 sdg1 h1 h3 s3 cz0,3 h0 sdg0 h3 sdg3 h4 s4 cz0,5 sdg0 h0 cz0,2 h0 sdg0 h0 cz0,4 sdg0 h0 h2 h4 sdg4 h4 h5 
++ZIXXIZ,+YIXZZZ,+IXYYIZ,+ZZIXZI,+IYIXXI,+IIZIIY:h0 h1 s1 h1 h2 sdg2 h3 h4 s4 h4 cz0,4 h0 sdg0 cz0,1 sdg0 h0 h1 sdg4 s5 h5 sdg5 h5 cz0,5 sdg0 cz0,2 h0 sdg0 h0 cz0,3 h0 sdg0 h0 cz0,4 h0 sdg2 h2 sdg3 h3 sdg4 h4 h5 sdg5 
++XXZXII,+ZYZIIZ,+XXZIIZ,+YIYIZZ,+IIZIXZ,+ZXIYZX:s0 h0 s1 h1 sdg1 h1 cz0,1 h0 sdg0 h0 sdg1 h1 sdg3 h3 h4 s4 h4 sdg4 h4 cz0,4 h0 cz0,2 h0 cz0,3 h0 h2 sdg2 sdg3 h3 h4 sdg4 h4 s5 cz0,5 h0 sdg5 h5 
++IZXYZI,+YYYYIZ,+IYXXII,+YYXXZI,+ZXIYYI,+IYIXIY:h0 s0 h0 h1 s1 sdg1 h1 h2 s2 h2 s4 h4 cz0,4 h0 sdg0 cz0,3 h0 sdg0 h0 cz0,1 h0 sdg0 cz0,2 h0 sdg0 h1 h2 h3 h4 sdg4 h5 s5 h5 cz0,5 h0 sdg0 h0 h5 sdg5 h5 
++XZIIZI,+ZXIZII,+IIYIIZ,+XZYZIZ,+IYIXXZ,+IIZIZY:s0 h0 sdg0 h1 s1 sdg1 cz0,1 h0 sdg0 h0 h1 sdg1 h1 h2 s2 s3 h3 sdg3 h3 s4 h4 sdg4 cz0,4 sdg0 cz0,3 sdg0 h0 cz0,2 sdg0 h0 h2 sdg3 h3 h4 sdg4 h4 cz0,5 h0 sdg0 sdg5 h5 
++IIYXZZ,+ZZZYIZ,+ZXXYZI,+YIYIZI,+IIZIYZ,+IZIZZX:h0 s0 h0 sdg0 s1 sdg1 sdg3 h4 s4 h4 sdg4 s5 h5 sdg5 cz0,5 h0 sdg0 h0 cz0,4 h0 cz0,2 sdg0 h0 cz0,3 cz0,5 h0 cz0,1 h0 sdg0 h0 h1 h2 sdg2 h2 h3 sdg3 h3 h4 sdg4 h4 h5 sdg5 h5 
++IYXIZI,+IYIIZI,+IYXXIZ,+YYXXII,+IZIZYI,+XYXZZX:s0 h0 h1 s1 sdg1 h2 s2 h3 s3 h3 sdg3 s4 h5 cz0,5 h0 sdg0 h0 cz0,3 h0 cz0,1 h0 cz0,4 h0 h1 sdg1 h1 h3 sdg3 h4 sdg4 h4 h5 sdg5 
++ZZYYIZ,+ZXIZIZ,+IIYIZZ,+YXYYIZ,+XYXZYI,+YXXIIX:h0 h1 s1 sdg1 h1 cz0,1 h0 sdg0 h0 sdg1 h1 s2 h3 s3 sdg3 cz0,3 sdg0 h0 cz0,2 h0 h2 sdg3 h4 s4 h4 sdg4 h4 cz0,4 h0 cz0,3 sdg0 h0 sdg3 h3 h4 sdg4 h4 h5 s5 h5 sdg5 h5 cz0,5 h0 sdg0 h5 
++IIYXZI,+ZZZYZZ,+IZXZZI,+ZIZYIZ,+YXXIXI,+YZYXIX:h0 s0 h0 sdg0 s1 h1 sdg1 h1 h2 sdg2 s3 h3 s4 sdg4 h4 h5 s5 h5 cz0,5 sdg0 h0 cz0,4 cz0,1 h0 cz0,3 h0 sdg0 cz0,2 h0 sdg0 h0 h1 sdg1 h1 h2 sdg2 h2 h3 h4 sdg4 h5 
++IYXIII,+ZIIXZI,+XYIZZI,+IZZXZZ,+YZYXXI,+XYXZIY:h0 s0 h0 h1 s1 sdg1 sdg2 s3 sdg3 h3 s4 sdg4 s5 h5 sdg5 cz0,5 h0 cz0,3 sdg0 h0 cz0,1 cz0,2 h0 sdg0 h0 cz0,4 h0 sdg0 h0 sdg1 h1 h2 sdg2 h2 h3 h4 h5 sdg5 h5 cz0,5 h0 sdg0 sdg5 h5 
++IXYZIZ,+YXXXZI,+YXIIII,+IXIIZZ,+XYXZXZ,+XZXXZX:h0 s0 h0 cz0,1 h0 sdg0 h1 sdg1 s2 sdg2 h2 s3 h3 h4 h5 sdg5 h5 cz0,5 h0 sdg0 cz0,4 sdg0 h0 cz0,2 h0 sdg0 cz0,3 sdg0 h0 h2 sdg2 h3 sdg3 h3 h4 sdg4 h5 sdg5 
++XIZZIZ,+XYXYII,+YZZXII,+ZIZYZI,+XZXXYI,+IXZYZY:h0 sdg0 h1 s1 sdg1 h1 h2 s2 s3 sdg3 h3 h4 s4 h4 sdg4 h5 s5 h5 sdg5 cz0,5 h0 sdg0 h0 cz0,1 h0 sdg0 cz0,4 sdg0 h0 cz0,3 h0 sdg0 h0 h1 h3 sdg3 h4 sdg4 h4 h5 cz0,5 h0 sdg0 cz0,2 sdg0 h0 h2 sdg2 sdg5 h5 
++YZZIZZ,+XIYZII,+XYIZIZ,+ZXZIIZ,+IXZYYZ,+YZYXIY:sdg0 s1 sdg1 h1 h2 s2 h2 cz0,2 h0 sdg0 h0 h2 sdg2 s3 h3 sdg3 cz0,3 h0 sdg0 h0 sdg3 h3 s4 sdg4 cz0,4 h0 sdg0 h0 sdg4 h4 s5 h5 sdg5 cz0,5 sdg0 h0 cz0,1 sdg0 h0 cz0,2 h0 h1 sdg2 h2 h5 sdg5 h5 
++YXIXZZ,+YXXXIZ,+XZIXZI,+YZXZII,+YZYXXZ,+XYXZZY:s1 h2 sdg2 h2 h3 s3 sdg3 cz0,3 h0 sdg3 h3 h4 sdg5 cz0,5 h0 sdg0 cz0,1 sdg0 h0 cz0,2 h0 cz0,4 h0 sdg0 h0 h1 h2 sdg2 sdg4 h4 sdg5 h5 
++XIZZZI,+YIXZZI,+IXYYZZ,+IXIIZI,+XYXZYZ,+YXXIZX:s0 h1 s1 h2 s2 sdg2 h2 cz0,2 h0 sdg0 h0 h2 sdg2 h2 s3 sdg3 h3 h4 sdg5 cz0,5 sdg0 h0 cz0,3 sdg0 h0 cz0,4 h0 sdg0 cz0,1 sdg0 h0 h1 sdg1 h3 sdg3 h3 h4 sdg4 sdg5 h5 
++XXZXIZ,+ZYZIZZ,+YZZXIZ,+ZIZYII,+YXXIYI,+XXYIIX:s0 h1 s1 sdg1 h1 cz0,1 h0 sdg0 h0 sdg1 h1 h2 h3 s3 h3 sdg3 cz0,3 sdg0 h0 cz0,2 h0 h2 sdg3 h4 s4 sdg4 h4 cz0,4 h0 cz0,3 sdg0 h0 sdg3 h3 h4 sdg4 h4 h5 s5 h5 sdg5 h5 cz0,5 h0 sdg0 h5 
++IZXYII,+XIYZIZ,+XYIZZZ,+IZZXIZ,+XXYIXI,+IYIXZX:h0 s0 h0 s1 h1 h2 s2 h2 sdg2 h2 s3 h3 sdg3 cz0,3 h0 h3 sdg3 h3 s4 sdg4 h4 s5 cz0,5 cz0,3 h0 cz0,2 sdg0 h0 cz0,4 sdg0 cz0,1 h0 sdg0 h1 h2 sdg3 h3 h4 sdg4 h4 h5 
++YXIXZI,+YXXXZZ,+YXIIZI,+ZZIXZZ,+IYIXYI,+ZYZXIY:h0 s1 sdg1 cz0,1 h0 sdg0 h0 h2 s2 h2 sdg2 h3 s3 s4 cz0,4 h0 cz0,2 cz0,1 sdg0 h0 h1 sdg1 h1 sdg2 h2 h4 sdg4 h4 sdg5 h5 cz0,5 h0 sdg0 h0 h5 sdg5 h5 
++XIZZII,+XYXYZI,+XXZIII,+YIYIIZ,+ZYZXXZ,+YXXIIY:h0 s0 sdg0 h1 s1 h3 sdg3 h4 s4 h5 s5 h5 cz0,5 h0 cz0,2 h0 cz0,3 cz0,4 h0 sdg0 h0 cz0,1 sdg0 h0 h1 sdg1 h2 sdg2 h2 h3 sdg3 h3 h4 h5 
++YZZIIZ,+YYYYII,+IYXXZI,+XIXIZI,+YXXIXZ,+YZYXZX:h0 s0 s1 s2 sdg2 h3 s3 h3 cz0,3 h0 sdg0 h4 s4 h4 sdg4 h4 cz0,4 sdg0 h0 cz0,2 sdg0 h0 h2 sdg2 h4 sdg4 h4 s5 sdg5 cz0,5 sdg0 cz0,3 sdg0 h0 cz0,1 h0 sdg0 h0 sdg1 h1 h3 sdg5 h5 
++XZIIZZ,+ZXIZZI,+ZYYXIZ,+IZZXZI,+YZYXYI,+YIXYIY:s0 sdg0 h0 h1 s1 sdg1 h1 h2 sdg2 h2 s3 h4 sdg4 cz0,4 sdg0 h0 cz0,2 h0 sdg0 cz0,3 h0 sdg0 h0 h2 h3 sdg4 s5 h5 sdg5 h5 cz0,5 h0 cz0,1 sdg0 h0 cz0,4 h0 sdg0 sdg1 h1 h4 sdg4 h4 h5 sdg5 h5 
++IIYXIZ,+IXZZIZ,+YXIIIZ,+IXIIIZ,+YIXYXZ,+IZIZIY:s0 sdg2 s3 h3 sdg3 h4 s4 s5 sdg5 cz0,5 h0 sdg0 sdg5 h5 cz0,5 cz0,1 sdg0 h0 cz0,3 h0 sdg0 h0 cz0,2 sdg0 h0 h1 h2 sdg2 h3 sdg3 h3 h5 sdg5 
++ZIXXZI,+XYXYIZ,+YZZXZI,+IYZZZI,+IZIZXZ,+YIXYIX:s0 h0 sdg0 h0 h1 s1 sdg1 h1 h2 s2 s3 h3 sdg3 cz0,3 h0 sdg0 cz0,1 h0 sdg0 h0 cz0,2 sdg0 h0 h1 h2 sdg2 h3 sdg3 h3 h4 s4 h5 s5 sdg5 h5 cz0,5 sdg0 h0 cz0,3 cz0,4 h0 sdg0 h0 h3 sdg3 h3 h4 sdg4 h5 sdg5 
++YZZIZI,+XIYZZI,+YIIYIZ,+YXYYZI,+YIXYXI,+IZIZZY:s0 sdg0 h1 s1 sdg1 h1 h3 s3 h3 sdg3 cz0,3 sdg0 h0 sdg3 h4 s4 h4 sdg4 h4 h5 cz0,5 h0 cz0,4 h0 sdg0 h0 cz0,2 h0 sdg0 h0 cz0,3 sdg0 cz0,1 sdg0 h0 h1 sdg1 h2 h3 h4 sdg4 h5 sdg5 
++YXIXIZ,+XZXIIZ,+IZXZIZ,+IYZZZZ,+IZIZYZ,+XYXZIX:h0 s0 h1 s1 h1 h2 s2 sdg2 h2 s3 h3 sdg3 cz0,3 h0 sdg3 h3 s4 h5 s5 h5 sdg5 cz0,5 h0 sdg0 cz0,1 sdg0 h0 cz0,2 h0 cz0,4 h0 sdg0 h0 h1 h2 sdg2 sdg4 h4 sdg5 h5 
++YYZYZI,+ZIIXIZ,+YIIYII,+YXYYII,+XYXZXI,+XZXXIX:s0 h0 h1 s1 h1 sdg1 h1 s2 h3 s3 sdg3 h3 cz0,3 h0 sdg0 h0 sdg3 h3 s4 h4 sdg4 s5 h5 sdg5 cz0,5 h0 sdg0 h0 cz0,4 h0 sdg0 h0 cz0,2 cz0,1 h0 h1 sdg1 h1 h2 sdg2 sdg4 h4 sdg5 h5 
++IXYZZI,+XZXIII,+IZXZZZ,+ZIZYZZ,+XZXXXI,+ZZZZZY:s0 h0 s1 sdg1 s2 h2 cz0,2 h0 sdg2 h3 s3 sdg3 h3 sdg5 h5 cz0,5 h0 sdg0 cz0,1 sdg0 h0 cz0,4 sdg0 cz0,2 sdg0 cz0,3 h0 h1 sdg2 h2 h3 h4 h5 sdg5 h5 
++YYZYZZ,+ZIIXZZ,+XYIZII,+ZXZIZZ,+ZZZZYZ,+ZZZZZX:h0 h1 h3 s3 s5 cz0,5 cz0,4 h0 cx0,3 cx0,1 h0 h4 h5 
++IXYZII,+YXXXII,+XZIXII,+XXXYII,+ZZZZYI,+ZZZZIX:s1 h3 cz0,3 h0 cx0,2 cx0,1 h0 h3 s4 h4 h5 s5 
++XIZZZZ,+YIXZII,+ZZYZZZ,+XXXYIZ,+ZZZZXI,+IXZYIX:h0 s0 h0 sdg0 h0 cz0,1 h0 h1 h2 s2 h2 sdg2 cz0,2 sdg0 h0 sdg2 h2 s3 h3 h4 s4 h4 cz0,4 h0 h4 sdg4 s5 h5 sdg5 cz0,5 h0 cz0,1 h0 sdg0 cz0,3 h0 h1 sdg1 h3 sdg3 h3 h5 sdg5 h5 
++XXZXZZ,+IIZXZZ,+ZZYZZI,+XXXYZZ,+IXZYXI,+XXYIZY:h0 sdg0 cz0,1 h0 sdg0 h0 h1 sdg1 h2 s2 h2 h3 sdg3 h4 sdg4 h4 cz0,4 h0 sdg0 sdg4 h4 h5 s5 h5 sdg5 h5 cz0,5 h0 cz0,3 h0 sdg0 h0 cz0,2 h0 sdg0 h0 h2 sdg2 h2 sdg3 h3 h5 sdg5 h5 
++ZXXZII,+IIZXZI,+ZZYZII,+YZXZZZ,+XXYIYZ,+ZIIIIX:s0 h1 s1 h1 h2 sdg2 h2 sdg3 h4 sdg4 h4 h5 s5 h5 sdg5 cz0,5 h0 cz0,3 h0 cz0,4 sdg0 h0 cz0,2 sdg0 h0 cz0,1 h0 sdg0 h1 h2 sdg2 h2 sdg3 h3 h4 sdg4 h5 sdg5 h5 
++ZXXZIZ,+IIZXII,+IXYYII,+ZZIXII,+ZIIIXI,+XIYYZX:s0 s1 sdg1 s2 h2 sdg3 h3 sdg4 cz0,4 sdg4 h4 h5 sdg5 h5 cz0,5 h0 sdg0 cz0,1 sdg0 h0 cz0,2 sdg0 cz0,3 sdg0 h0 h1 sdg1 h2 sdg2 h3 sdg3 h3 h5 sdg5 h5 
++ZXXZZZ,+ZYZIII,+XXZIZZ,+XYYXZZ,+XIYYYI,+XIYYIY:s0 sdg0 h0 h1 sdg1 h1 h2 s2 h2 sdg2 h2 sdg3 h3 s4 sdg4 h4 s5 h5 cz0,5 h0 cz0,3 h0 sdg0 cz0,1 h0 cz0,2 sdg0 h0 h1 sdg2 h2 sdg3 h3 h5 sdg5 h5 cz0,5 h0 sdg0 cz0,4 h0 sdg0 h4 sdg4 sdg5 h5 
++IZXYZZ,+YYYYZZ,+ZIXIII,+ZYIZIZ,+XIYYXZ,+YYYZZY:s0 h1 s1 h1 sdg1 h1 sdg2 h2 cz0,2 h0 sdg0 h0 cz0,1 h0 sdg0 sdg1 h1 h2 sdg2 h2 h3 sdg3 s4 h4 sdg4 h4 cz0,4 h0 sdg0 h4 sdg5 h5 cz0,5 h0 sdg0 h0 cz0,3 h0 sdg0 h0 h3 sdg3 sdg5 h5 
++XZIIII,+IZIYII,+XIZYZI,+ZYIZZI,+YYYZYZ,+IIZIIX:h0 s0 s1 h1 s2 h3 s3 cz0,3 cz0,1 h0 h1 h3 s4 h5 s5 cx0,5 cx0,4 cx0,2 h0 

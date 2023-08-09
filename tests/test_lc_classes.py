@@ -414,3 +414,7 @@ class TestLCClasses(unittest.TestCase):
     def test_get_type(self):
         self.assertEqual(LCClass2.get_entanglement_structure(0), LCClass2.EntanglementStructure.Separable)
         self.assertEqual(LCClass2.get_entanglement_structure(1), LCClass2.EntanglementStructure.Entangled)
+
+    def test_str(self):
+        print(str(LCClass4(5)))
+        self.assertEqual(LCClass4(5), LCClass4(5))

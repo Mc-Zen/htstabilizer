@@ -26,8 +26,7 @@ def get_available_connectivities() -> List[Tuple[int, str]]:
         (5, "cycle"),
         (5, "T"),
         (5, "Q"),
-        # (6, "all"),
-        # (6, "allx"),
+        (6, "all"),
         (6, "linear"),
         (6, "star"),
         (6, "ladder"),
@@ -55,7 +54,7 @@ def assert_connectivity_is_supported(num_qubits: int, connectivity: SupportedCon
         (num_qubits == 3 and connectivity in ["all", "linear"]) or \
         (num_qubits == 4 and connectivity in ["all", "linear", "star", "cycle"]) or \
         (num_qubits == 5 and connectivity in ["all", "linear", "star", "cycle", "T",  "Q"]) or \
-        (num_qubits == 6 and connectivity in ["all", "linear", "star", "allx", "ladder", "E", "H"])
+        (num_qubits == 6 and connectivity in ["all", "linear", "star", "ladder", "E", "H"])
     if not is_supported:
         raise AssertionError(f"The connectivity '{connectivity}' is not supported for {num_qubits} qubits.")
 
@@ -82,7 +81,7 @@ def get_connectivity_graph(
     """
     assert_connectivity_is_supported(num_qubits, connectivity)
 
-    if connectivity == "all" or connectivity == "allx":
+    if connectivity == "all":
         return Graph.fully_connected(num_qubits)
     if connectivity == "linear":
         return Graph.linear(num_qubits)

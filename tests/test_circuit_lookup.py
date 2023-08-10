@@ -124,7 +124,6 @@ class TestStabilizerCircuitLookup_2_all(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_3_all(TestStabilizerCircuitLookupBase):
-
     def test_verify_state_3_all(self):
         self.verify_state_for_all(3, "all")
 
@@ -227,9 +226,6 @@ class TestStabilizerCircuitLookup_5_linear(TestStabilizerCircuitLookupBase):
     def test_verify_state_5_linear(self):
         self.verify_state_for_all(5, "linear")
 
-    def ttest_verify_state_5_linear(self):
-        self.verify_state_for_all(5, "linear")
-
     def test_verify_stabilizer_5_linear(self):
         self.verify_stabilizer_for_all(5, "linear")
 
@@ -256,6 +252,9 @@ class TestStabilizerCircuitLookup_5_star(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_5_cycle(TestStabilizerCircuitLookupBase):
+    def test_verify_state_5_linear(self):
+        self.verify_state_for_all(5, "cycle")
+
     def test_verify_stabilizer_5_cycle(self):
         self.verify_stabilizer_for_all(5, "cycle")
 
@@ -282,6 +281,9 @@ class TestStabilizerCircuitLookup_5_T(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_5_Q(TestStabilizerCircuitLookupBase):
+    def test_verify_state_5_Q(self):
+        self.verify_state_for_all(5, "Q")
+
     def test_verify_stabilizer_5_Q(self):
         self.verify_stabilizer_for_all(5, "Q")
 
@@ -293,28 +295,17 @@ class TestStabilizerCircuitLookup_5_Q(TestStabilizerCircuitLookupBase):
 
 
 class TestStabilizerCircuitLookup_6_all(TestStabilizerCircuitLookupBase):
+    def test_verify_state_6_all(self):
+        self.verify_state_for_all(6, "all")
+
     def test_verify_stabilizer_6_all(self):
         self.verify_stabilizer_for_all(6, "all")
 
-    # def test_verify_lc_class_6_all(self):
-    #     self.verify_lc_class_for_all(6, "all")
+    def test_verify_lc_class_6_all(self):
+        self.verify_lc_class_for_all(6, "all")
 
     def test_verify_connectivity_6_all(self):
         self.verify_connectivity_for_all(6, "all")
-
-
-class TestStabilizerCircuitLookup_6_allx(TestStabilizerCircuitLookupBase):
-    def test_verify_stabilizer_6_allx(self):
-        self.verify_stabilizer_for_all(6, "allx")
-
-    def test_verify_lc_class_6_allx(self):
-        self.verify_lc_class_for_all(6, "allx")
-
-    def test_verify_state_6_allx(self):
-        self.verify_state_for_all(6, "allx")
-
-    def test_verify_connectivity_6_allx(self):
-        self.verify_connectivity_for_all(6, "allx")
 
 
 class TestStabilizerCircuitLookup_6_linear(TestStabilizerCircuitLookupBase):
@@ -449,7 +440,6 @@ class TestVerifyCostAndDepthInfo(TestStabilizerCircuitLookupBase):
             self.verify_cost_and_depth_for_all(num_qubits, connectivity)
 
 
-
 class TestStabilizerCircuitInfo(unittest.TestCase):
 
     def test_circuit_info(self):
@@ -480,8 +470,6 @@ class TestMubLookupBase(unittest.TestCase):
             for i in range(1, 2**num_qubits):
                 col = np.concatenate([R[:, i], S[:, i]])
                 paulis.add(str(col))
-            # for op in mub:
-                # self.assertEqual(len(op), num_qubits)
         self.assertEqual(len(paulis), 4**num_qubits - 1)
 
     def verify_circuit_correctness(self, mub_info):
@@ -496,26 +484,17 @@ class TestMubLookupBase(unittest.TestCase):
 
 class TestAllMubs(TestMubLookupBase):
 
-    def test_mubs(self):
-        connectivities = get_available_connectivities()
-        # connectivities = [
-        #     (2, "all"),
-        #     (3, "all"),
-        #     (3, "linear"),
-        #     (4, "all"),
-        #     (4, "linear"),
-        #     (4, "star"),
-        #     (4, "cycle"),
-        #     (5, "all"),
-        #     (5, "linear"),
-        #     (5, "star"),
-        #     (5, "cycle"),
-        #     (5, "T"),
-        #     (5, "Q"),
-        #     (6, "all"),
-        # ]
+    def test_connectivity(self):
+        for num_qubits, connectivity in get_available_connectivities():
+            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
+                self.verify_connectivity(num_qubits, connectivity)
 
-        for num_qubits, connectivity in connectivities:
-            self.verify_connectivity(num_qubits, connectivity)
-            self.verify_pauli_group_completeness(mub_circuit_lookup(num_qubits, connectivity))
-            self.verify_circuit_correctness(mub_circuit_lookup(num_qubits, connectivity))
+    def test_pauli_group_completeness(self):
+        for num_qubits, connectivity in get_available_connectivities():
+            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
+                self.verify_pauli_group_completeness(mub_circuit_lookup(num_qubits, connectivity))
+
+    def test_circuit_correctness(self):
+        for num_qubits, connectivity in get_available_connectivities():
+            with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
+                self.verify_circuit_correctness(mub_circuit_lookup(num_qubits, connectivity))

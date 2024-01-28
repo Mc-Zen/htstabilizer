@@ -257,3 +257,10 @@ class Graph:
                     graph.add_edge(i, j)
                 index += 1
         return graph
+
+    def to_circuit(self):
+        from qiskit import QuantumCircuit
+        qc = QuantumCircuit(self.num_vertices)
+        qc.h(range(self.num_vertices))
+        qc.cz(*zip(*self.get_edges()))
+        return qc

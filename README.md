@@ -9,15 +9,16 @@ Hereby, two-qubit gate count is minimized. All delivered circuits are designed t
 
 ## Installation
 
-The library can be easily installed from [PyPi][pypi-page]:
+<!-- The library can be easily installed from [PyPi][pypi-page]:
 ```
 pip install htstabilizer
 ```
-Alternatively, you can clone the [repository][repository] and include it in your project. 
+Alternatively, y -->
+You can clone the [repository][repository] and include it in your project. Soon, it will be available on [PyPi][pypi-page] and via `pip install`. 
 
 ## Tailored to your hardware connectivity
 
-A total of 13 connectivities are currently supported, ranging from 2 to 5 qubits. For each supported number of qubits, circuits for full connectivity and line connectivity are available. Additionally, other connectivities that occur in current quantum chips or which are subgraphs of existing hardware are supported. 
+A total of 19 connectivities are currently supported, ranging from 2 to 6 qubits. For each supported number of qubits, circuits for full connectivity and line connectivity are available. Additionally, other connectivities that occur in current quantum chips or which are subgraphs of existing hardware are supported. 
 
 The following graphics show all currently available connectivities. 
 
@@ -32,6 +33,9 @@ The following graphics show all currently available connectivities.
 
 ### 5 qubits
 ![][5-qubit-con]
+
+### 6 qubits
+![][6-qubit-con]
 
 ## Usage
 
@@ -64,10 +68,11 @@ View examples for exploring the functionality:
 [repository]: https://github.com/Mc-Zen/htstabilizer
 [license]: https://github.com/Mc-Zen/htstabilizer/blob/master/LICENSE.txt
 
-[2-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/2-qubit%20connectivities.png
-[3-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/3-qubit%20connectivities.png
-[4-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/4-qubit%20connectivities.png
-[5-qubit-con]: https://github.com/Mc-Zen/htstabilizer/blob/master/docs/images/5-qubit%20connectivities.png
+[2-qubit-con]: docs/images/2-qubit%20connectivities.png
+[3-qubit-con]: docs/images/3-qubit%20connectivities.png
+[4-qubit-con]: docs/images/4-qubit%20connectivities.png
+[5-qubit-con]: docs/images/5-qubit%20connectivities.png
+[6-qubit-con]: docs/images/6-qubit%20connectivities.png
 
 [example-compress]: https://github.com/Mc-Zen/htstabilizer/blob/master/examples/compress_preparation_circuit.py
 [example-readout]: https://github.com/Mc-Zen/htstabilizer/blob/master/examples/readout_circuit.py

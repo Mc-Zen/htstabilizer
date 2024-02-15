@@ -757,4 +757,4 @@
 252:5:4:h1 h2 s2 cz1,2 h0 h3 s3 cz0,3 h4 cz0,4 h0 h2 s2 cz0,2 h0 h5 s5 cz0,5 h1 s1 h1 s2 h2 s3 s5 
 250:5:3:s0 h0 h4 s4 cz0,4 s1 h1 cz0,1 h0 s0 h0 s5 h5 cz0,5 h2 s2 cz2,4 h1 s1 h1 s3 h3 cz1,3 s0 s2 s4 h4 
 246:5:3:h0 s0 h2 s2 h2 cz0,2 h1 h4 cz1,4 h2 s2 cz2,4 s0 h5 cz0,5 h2 h3 s3 h3 cz2,3 s0 h1 h2 s3 h4 
-23161:7:3:h1 h5 s5 h5 cz1,5 h2 h5 s5 cz2,5 h3 h4 s4 h4 cz3,4 h0 s0 h0 h3 s3 h3 cz0,3 cz0,2 h4 s4 h4 h5 s5 cz4,5 h1 h3 s3 cz1,3 h1 s1 h2 s3 s4 s5 
+23161:7:3:h0 h2 h4 cx0,1 cx2,3 cx4,5 s1 s4 h3 cx2,1 cx3,4 cx1,5 cx4,0 s0 h0 h1 s1 h1 s2 s3 h3 h4 s4 h4 s5

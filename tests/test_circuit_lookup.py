@@ -433,6 +433,20 @@ class TestStabilizerCircuitLookup_6_H(TestStabilizerCircuitLookupBase):
         self.verify_connectivity_for_all(6, "H")
 
 
+class TestStabilizerCircuitLookup_6_Q(TestStabilizerCircuitLookupBase):
+    def test_verify_stabilizer_6_Q(self):
+        self.verify_stabilizer_for_all(6, "Q")
+
+    def test_verify_lc_class_6_Q(self):
+        self.verify_lc_class_for_all(6, "Q")
+
+    def test_verify_state_6_Q(self):
+        self.verify_state_for_all(6, "Q")
+
+    def test_verify_connectivity_6_Q(self):
+        self.verify_connectivity_for_all(6, "Q")
+
+
 class TestVerifyCostAndDepthInfo(TestStabilizerCircuitLookupBase):
 
     def test_verify_cost_and_depth(self):

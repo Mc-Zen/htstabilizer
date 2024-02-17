@@ -20,9 +20,11 @@ You can clone the [repository][repository] and include it in your project. Soon,
 
 A total of 19 connectivities are currently supported, ranging from 2 to 6 qubits. For each supported number of qubits, circuits for full connectivity and line connectivity are available. Additionally, other connectivities that occur in current quantum chips or which are subgraphs of existing hardware are supported. 
 
-The following graphics show all currently available connectivities. 
+All currently available connectivities are shown below. 
 
-### 2 qubits
+![][hardware-connectivities]
+
+<!-- ### 2 qubits
 ![][2-qubit-con]
 
 ### 3 qubits
@@ -35,11 +37,11 @@ The following graphics show all currently available connectivities.
 ![][5-qubit-con]
 
 ### 6 qubits
-![][6-qubit-con]
+![][6-qubit-con] -->
 
 ## Usage
 
-```
+```py
 from htstabilizer.stabilizer_circuits import *
 
 pqc = get_preparation_circuit(Stabilizer(["XZZ", "ZXI", "ZIX"]), "linear")
@@ -73,6 +75,7 @@ View examples for exploring the functionality:
 [4-qubit-con]: docs/images/4-qubit%20connectivities.png
 [5-qubit-con]: docs/images/5-qubit%20connectivities.png
 [6-qubit-con]: docs/images/6-qubit%20connectivities.png
+[hardware-connectivities]: docs/images/Hardware_Connectivities.svg
 
 [example-compress]: https://github.com/Mc-Zen/htstabilizer/blob/master/examples/compress_preparation_circuit.py
 [example-readout]: https://github.com/Mc-Zen/htstabilizer/blob/master/examples/readout_circuit.py

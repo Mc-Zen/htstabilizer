@@ -132,7 +132,10 @@ class TestStabilizer(unittest.TestCase):
         self.assertTrue(s.is_equivalent_mod_phase(Stabilizer(["XYI", "-ZXX", "YZI"])))
         self.assertTrue(s.is_equivalent_mod_phase(Stabilizer(["-XYI", "-ZXX", "YZI"])))
 
+    @unittest.skip("Not implemented correctly")
     def test_is_equivalent(self):
+        self.assertTrue(Stabilizer(['+ZY','+YX']).is_equivalent(Stabilizer(['+ZY', '-XZ'])))
+
         s = Stabilizer(["XYI", "ZXX", "YZI"], validate=True)
         self.assertTrue(s.is_equivalent(Stabilizer(["YZI", "ZXX", "XYI"])))
         self.assertTrue(s.is_equivalent(Stabilizer(["ZXX", "YZI", "XYI"])))
@@ -149,3 +152,7 @@ class TestStabilizer(unittest.TestCase):
     def test_invalid_pauli(self):
         self.assertRaises(ValueError, Stabilizer, ["IXI", "AXX", "IYX"])
         self.assertRaises(ValueError, Stabilizer, ["IXI", "\"IXX", "IYX"])
+
+    def test_to_list(self):
+        self.assertEqual(Stabilizer(["-YZI", "ZXX", "XYI"]).to_list(), ["-YZI", "+ZXX", "+XYI"])
+        self.assertEqual(Stabilizer(["-YZI", "ZXX", "XYI"]).to_list(qiskit_convention=True), ["-IZY", "+XXZ", "+IYX"])

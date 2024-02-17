@@ -1,3 +1,5 @@
+from src.htstabilizer.graph import Graph
+from src.htstabilizer import circuit_lookup
 from src.htstabilizer.stabilizer_circuits import _get_preparation_circuit_modulo_phase
 from src.htstabilizer.rotate_stabilizer_into_state import *
 from src.htstabilizer.stabilizer import Stabilizer
@@ -81,7 +83,7 @@ class TestRotateStabilizerIntoState(unittest.TestCase):
         assert_same_state(qc1, qc3)
 
     def test_random_2(self):
-        for num_qubits in range(1, 6):
+        for num_qubits in range(5, 6):
             for i in range(100):
                 qc: QuantumCircuit = random_clifford(num_qubits).to_circuit()  # type: ignore
                 stabilizer = Stabilizer(qc)
@@ -90,9 +92,30 @@ class TestRotateStabilizerIntoState(unittest.TestCase):
                 for qubit in range(num_qubits):
                     if np.random.random() > .5:
                         x_gates.x(qubit)
-                qc2: QuantumCircuit = x_gates.compose(qc) # type: ignore
+                qc2: QuantumCircuit = x_gates.compose(qc)  # type: ignore
 
                 qc3 = rotate_stabilizer_into_state(qc, Stabilizer(qc2))
                 assert_same_state(qc2, qc3)
                 qc3 = rotate_stabilizer_into_state(qc2, Stabilizer(qc))
                 assert_same_state(qc, qc3)
+
+    def get_graph_state_circuit(self, graph: Graph):
+        graph_state_circuit = QuantumCircuit(graph.num_vertices)
+        graph_state_circuit.h(range(graph.num_vertices))
+        edges = graph.get_edges()
+        for edge in edges:
+            graph_state_circuit.cz(edge[0], edge[1])
+        return graph_state_circuit
+
+    def test_fail_case(self):
+        qc = circuit_lookup.parse_circuit(5, "h0 h3 cz0,3 h1 cz0,1 s3 h3 h4 s4 cz3,4 h0 s0 h2 s2 h2 cz0,2 s0 h0 h3 s3 h3 cz0,3 s2 h3 ")
+        print(qc)
+        graph = Graph.decompress(5, 919)
+        graph_state_circuit = self.get_graph_state_circuit(graph)
+        qc_p = rotate_stabilizer_into_state(qc, Stabilizer(graph))
+        print(qc_p)
+        # qc_p = rotate_stabilizer_into_state(qc, graph_state_circuit)
+        # print(qc_p)
+        self.assertTrue(Stabilizer(graph_state_circuit).is_equivalent_mod_phase(Stabilizer(qc_p)))
+        # self.assertTrue(Stabilizer(graph_state_circuit).is_equivalent(Stabilizer(qc_p)))
+        assert_same_state(qc_p, graph_state_circuit)

@@ -4,7 +4,7 @@ from typing import List, Literal, Tuple
 from .graph import Graph
 
 
-SupportedConnectivity = Literal["all", "linear", "star", "cycle", "T", "Q"]
+SupportedConnectivity = Literal["all", "linear", "star", "cycle", "T", "Q", "E", "H", "ladder"]
 
 
 def get_available_connectivities() -> List[Tuple[int, str]]:

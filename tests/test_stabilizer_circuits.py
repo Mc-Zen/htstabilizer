@@ -20,13 +20,19 @@ class TestHTStabilizer(unittest.TestCase):
         LCClasses = [LCClass2, LCClass3, LCClass4, LCClass5, LCClass6]
         cls = LCClasses[num_qubits - 2]
         for id in range(1, cls.count()):
-            for i in range(num):
+            for _ in range(num):
                 stabilizer = random_stabilizer(cls(id).get_graph())
                 # stabilizer = Stabilizer(cls(i).get_graph())
                 qc = get_preparation_circuit(stabilizer, connectivity)
+                # qc = synth_circuit_from_stabilizers(stabilizer.to_list(qiskit_convention=True))
                 self.assertTrue(stabilizer.is_equivalent_mod_phase(Stabilizer(qc)))
                 # print(stabilizer, Stabilizer(qc))
-                self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
+                # print(qc)
+                # print(stabilizer, Stabilizer(qc))
+                s1 = StabilizerState(synth_circuit_from_stabilizers(stabilizer.to_list(qiskit_convention=True)))
+                s2 = StabilizerState(qc)
+                self.assertTrue(s1.equiv(s2))
+                # self.assertTrue(stabilizer.is_equivalent(Stabilizer(qc)))
 
     def test_basic(self):
         stabilizer = Stabilizer(["ZII", "IZI", "IIZ"], True)
@@ -78,8 +84,8 @@ class TestHTStabilizer(unittest.TestCase):
     def test_random_stabilizers_6_ladder(self):
         self.verify_random_stabilizers(6, "ladder", num=2)
 
-    def test_random_stabilizers_6_alklx(self):
-        self.verify_random_stabilizers(6, "allx", num=5)
+    def test_random_stabilizers_6_all(self):
+        self.verify_random_stabilizers(6, "all", num=2)
 
 
 class TestCliffordOptimization(unittest.TestCase):

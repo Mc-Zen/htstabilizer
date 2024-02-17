@@ -205,6 +205,7 @@ class Stabilizer:
                          [I,    zero]])
         return not np.any(f2.mat_mul(f2.mat_mul(RS.T, symp), RS_other))
 
+    
     def is_equivalent(self, other) -> bool:
         """Check whether both stabilizers span the same stabilizer group. 
         Note, that this is different to `__eq__(self, other)` because the
@@ -225,19 +226,35 @@ class Stabilizer:
         bool
             True, if the same group is spanned by both stabilizers
         """
-        n = self.num_qubits
-        if n != other.num_qubits:
+        raise NotImplementedError("This function does not work correctly yet. ")
+        if not self.is_equivalent_mod_phase(other):
             return False
+        
+        m = np.block([[self.R.T,  self.S.T],
+                      [other.R.T, other.S.T]])
+        return f2.rank(m) == self.num_qubits
+        
+        # if n != other.num_qubits:
+        #     return False
         m = np.block([[self.R.T,  self.S.T, self.phases.reshape((n, 1))],
                       [other.R.T, other.S.T, other.phases.reshape((n, 1))]])
+        print("\n", m, "\n", f2.rref(m), "\n", len(list(filter(lambda x: x != 4, f2.rref(m)[1]))))
+        return len(list(filter(lambda x: x != 4, f2.rref(m)[1]))) == n
         return f2.rank(m) == n
 
-    def to_list(self) -> List[str]:
-        """Get a list of Pauli strings, e.g. ["+XY", "-ZZ"]
+    def to_list(self, qiskit_convention=False) -> List[str]:
+        """Get a list of Pauli strings, e.g. ["+XY", "-ZZ"]. If `qiskit_convention` is set to 
+        to `True`, the string will be reversed. 
         """
         chs = ["I", "X", "Z", "Y"]
         phs = ["+", "-"]
-        return [phs[self.phases[j]] + "".join(chs[2*self.S[i][j] + self.R[i][j]] for i in range(self.num_qubits)) for j in range(self.num_qubits)]
+        qubit_range = range(self.num_qubits)
+        if qiskit_convention:
+            qubit_range = list(reversed(qubit_range))
+        return [phs[self.phases[j]] + "".join(chs[2*self.S[i][j] + self.R[i][j]] for i in qubit_range) for j in range(self.num_qubits)]
+    def expectation_value(self, pauli: str) -> complex:
+
+        pass
 
     def __repr__(self) -> str:
         content = "','".join(self.to_list())

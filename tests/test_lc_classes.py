@@ -414,7 +414,7 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(LCClass2.get_entanglement_structure(1), LCClass2.EntanglementStructure.Entangled)
 
     def test_str(self):
-        print(str(LCClass4(5)))
+        self.assertEqual(str(LCClass4(5)), "LCClass4{Pair / 5 / [0], [2], [1, 3]})")
 
     def test_eq(self):
         self.assertEqual(LCClass4(5), LCClass4(5))

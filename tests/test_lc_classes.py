@@ -36,7 +36,6 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Separable)
         self.assertEqual(lc_class.id(), 0)
         self.assertEqual(lc_class, LCClass3(lc_class.id()))
-        lc_class.get_graph().draw()
 
         lc_class = determine_lc_class3(Stabilizer(["YII", "IYX", "IXY"]))
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Pair)
@@ -48,7 +47,6 @@ class TestLCClasses(unittest.TestCase):
         self.assertEqual(lc_class.type, LCClass3.EntanglementStructure.Triple)
         self.assertEqual(lc_class.id(), 4)
         self.assertEqual(lc_class, LCClass3(lc_class.id()))
-        lc_class.get_graph().draw()
 
     def test_determine_lc_class4(self):
         lc_class = determine_lc_class4(Stabilizer(["XYIY", "XIZY", "IYZI", "IYII"]))
@@ -407,7 +405,7 @@ class TestLCClasses(unittest.TestCase):
         for i in range(LCClass6.count()):
             self.assertEqual(i, LCClass6(i).id())
             if i != determine_lc_class(Stabilizer(LCClass6(i).get_graph())).id():
-                LCClass6(i).get_graph().draw(show=True)
+                # LCClass6(i).get_graph().draw(show=True)
                 print(LCClass6.get_LC_type(i))
             self.assertEqual(i, determine_lc_class(Stabilizer(LCClass6(i).get_graph())).id())
 
@@ -417,4 +415,6 @@ class TestLCClasses(unittest.TestCase):
 
     def test_str(self):
         print(str(LCClass4(5)))
+
+    def test_eq(self):
         self.assertEqual(LCClass4(5), LCClass4(5))

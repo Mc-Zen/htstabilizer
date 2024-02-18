@@ -7,7 +7,7 @@ name = "htstabilizer"
 version = "1.0.0"
 description = "Hardware-tailored quantum Clifford circuits for stabilizer state preparation or readout as well as mutually unbiased bases in order to perform efficient full-state tomography on small qubit systems."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 authors = [{ name = "Mc-Zen"}]
 license = { file = "LICENSE.txt" }
 classifiers = [

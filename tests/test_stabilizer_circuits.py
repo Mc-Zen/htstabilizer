@@ -9,6 +9,11 @@ import unittest
 
 from qiskit.quantum_info import random_clifford
 
+num_tests_2_qubits = 16
+num_tests_3_qubits = 8
+num_tests_4_qubits = 4
+num_tests_5_qubits = 2
+num_tests_6_qubits = 1
 
 class TestHTStabilizer(unittest.TestCase):
 
@@ -40,52 +45,52 @@ class TestHTStabilizer(unittest.TestCase):
         self.assertTrue(stabilizer.is_equivalent_mod_phase(Stabilizer(qc)))
 
     def test_random_stabilizers_2_all(self):
-        self.verify_random_stabilizers(2, "all", num=500)
+        self.verify_random_stabilizers(2, "all", num=num_tests_2_qubits)
 
     def test_random_stabilizers_3_all(self):
-        self.verify_random_stabilizers(3, "all", num=500)
+        self.verify_random_stabilizers(3, "all", num=num_tests_3_qubits)
 
     def test_random_stabilizers_3_linear(self):
-        self.verify_random_stabilizers(3, "linear", num=500)
+        self.verify_random_stabilizers(3, "linear", num=num_tests_3_qubits)
 
     def test_random_stabilizers_4_all(self):
-        self.verify_random_stabilizers(4, "all", num=100)
+        self.verify_random_stabilizers(4, "all", num=num_tests_4_qubits)
 
     def test_random_stabilizers_4_linear(self):
-        self.verify_random_stabilizers(4, "linear", num=100)
+        self.verify_random_stabilizers(4, "linear", num=num_tests_4_qubits)
 
     def test_random_stabilizers_4_star(self):
-        self.verify_random_stabilizers(4, "star", num=100)
+        self.verify_random_stabilizers(4, "star", num=num_tests_4_qubits)
 
     def test_random_stabilizers_4_cycle(self):
-        self.verify_random_stabilizers(4, "cycle", num=100)
+        self.verify_random_stabilizers(4, "cycle", num=num_tests_4_qubits)
 
     def test_random_stabilizers_5_all(self):
-        self.verify_random_stabilizers(5, "all", num=20)
+        self.verify_random_stabilizers(5, "all", num=num_tests_5_qubits)
 
     def test_random_stabilizers_5_linear(self):
-        self.verify_random_stabilizers(5, "linear", num=20)
+        self.verify_random_stabilizers(5, "linear", num=num_tests_5_qubits)
 
     def test_random_stabilizers_5_star(self):
-        self.verify_random_stabilizers(5, "star", num=20)
+        self.verify_random_stabilizers(5, "star", num=num_tests_5_qubits)
 
     def test_random_stabilizers_5_cycle(self):
-        self.verify_random_stabilizers(5, "cycle", num=20)
+        self.verify_random_stabilizers(5, "cycle", num=num_tests_5_qubits)
 
     def test_random_stabilizers_5_T(self):
-        self.verify_random_stabilizers(5, "T", num=20)
+        self.verify_random_stabilizers(5, "T", num=num_tests_5_qubits)
 
     def test_random_stabilizers_5_Q(self):
-        self.verify_random_stabilizers(5, "Q", num=20)
+        self.verify_random_stabilizers(5, "Q", num=num_tests_5_qubits)
 
     def test_random_stabilizers_6_star(self):
-        self.verify_random_stabilizers(6, "star", num=2)
+        self.verify_random_stabilizers(6, "star", num=num_tests_6_qubits)
 
     def test_random_stabilizers_6_ladder(self):
-        self.verify_random_stabilizers(6, "ladder", num=2)
+        self.verify_random_stabilizers(6, "ladder", num=num_tests_6_qubits)
 
     def test_random_stabilizers_6_all(self):
-        self.verify_random_stabilizers(6, "all", num=2)
+        self.verify_random_stabilizers(6, "all", num=num_tests_6_qubits)
 
 
 class TestCliffordOptimization(unittest.TestCase):

@@ -1,16 +1,8 @@
 # Hardware-Tailored Stabilizer Circuits Python library
 
-<p align="center">
-  <a href="https://pypi.org/project/htstabilizer/">
-    <img alt="PyPI Package" src="https://img.shields.io/pypi/v/htstabilizer"/>
-  </a>
-  <a href="https://github.com/Mc-Zen/quill/blob/main/LICENSE">
-    <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue"/>
-  </a>
-  <a href="https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml">
-    <img alt="Tests" src="https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml/badge.svg"/>
-  </a>
-</p>
+[![PyPI Package](https://img.shields.io/pypi/v/htstabilizer)](https://pypi.org/project/htstabilizer/)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Mc-Zen/htstabilizer/blob/master/LICENSE.txt)
+[![Tests](https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml/badge.svg)](https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml)
 
 
 

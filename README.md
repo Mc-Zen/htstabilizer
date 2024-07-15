@@ -2,13 +2,13 @@
 
 <p align="center">
   <a href="https://pypi.org/project/htstabilizer/">
-    <img alt="MIT License" src="https://img.shields.io/pypi/v/htstabilizer"/>
+    <img alt="PyPI Package" src="https://img.shields.io/pypi/v/htstabilizer"/>
   </a>
   <a href="https://github.com/Mc-Zen/quill/blob/main/LICENSE">
     <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue"/>
   </a>
   <a href="https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml">
-    <img alt="MIT License" src="https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml/badge.svg"/>
+    <img alt="Tests" src="https://github.com/Mc-Zen/htstabilizer/actions/workflows/run-tests.yml/badge.svg"/>
   </a>
 </p>
 
@@ -77,7 +77,7 @@ View examples for exploring the functionality:
 
 
 ## License
-[MIT License][license]
+This package is distributed under the [MIT License][license]. 
 
 [pypi-page]: https://pypi.org/project/htstabilizer/
 [repository]: https://github.com/Mc-Zen/htstabilizer

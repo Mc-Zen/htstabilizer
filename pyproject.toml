@@ -24,3 +24,6 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/Mc-Zen/htstabilizer"
 "Bug Tracker" = "https://github.com/Mc-Zen/htstabilizer/issues"
+
+[tool.setuptools]
+py-modules = []

@@ -507,8 +507,10 @@ class TestAllMubs(TestMubLookupBase):
         for num_qubits, connectivity in get_available_connectivities():
             with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
                 self.verify_pauli_group_completeness(mub_circuit_lookup(num_qubits, connectivity))
+        self.verify_pauli_group_completeness(mub_circuit_lookup(6, "E", enforce_z=True))
 
     def test_circuit_correctness(self):
         for num_qubits, connectivity in get_available_connectivities():
             with self.subTest(num_qubits=num_qubits, connectivity=connectivity):
                 self.verify_circuit_correctness(mub_circuit_lookup(num_qubits, connectivity))
+        self.verify_circuit_correctness(mub_circuit_lookup(6, "E", enforce_z=True))

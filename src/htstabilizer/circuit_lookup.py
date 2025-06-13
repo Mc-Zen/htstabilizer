@@ -189,11 +189,13 @@ def stabilizer_circuit_lookup(num_qubits: int, connectivity: str, lc_class_id: i
 mub_file_cache = {}
 
 
-def mub_circuit_lookup(num_qubits: int, connectivity: str) -> MUBInfo:
+def mub_circuit_lookup(num_qubits: int, connectivity: str, enforce_z=False) -> MUBInfo:
     """
     Obtain MUB circuit info for given number of qubits
     and connectivity.
     """
+    if enforce_z:
+        connectivity += "z"
     filename = f"mub{num_qubits}-{connectivity}.txt"
 
     try:

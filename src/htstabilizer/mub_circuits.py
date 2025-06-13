@@ -8,7 +8,8 @@ from typing import List, Literal
 
 def get_mub_circuits(
         num_qubits: int,
-        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"],
+        enforce_z: bool=False
 ) -> List[QuantumCircuit]:
     """
     Get an optimal, hardware-tailored preparation collection of quantum circuits
@@ -57,12 +58,13 @@ def get_mub_circuits(
     """
 
     assert_connectivity_is_supported(num_qubits, connectivity)
-    return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity).circuits
+    return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity, enforce_z=enforce_z).circuits
 
 
 def get_mubs(
         num_qubits: int,
-        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"]
+        connectivity: Literal["all", "linear", "star", "cycle", "T",  "Q"],
+        enforce_z: bool=False
 ) -> List[List[str]]:
     """
     Get a collection of mutually unbiased bases in form of 2^n+1 sets
@@ -92,7 +94,7 @@ def get_mubs(
     """
 
     assert_connectivity_is_supported(num_qubits, connectivity)
-    return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity).mubs
+    return circuit_lookup.mub_circuit_lookup(num_qubits, connectivity, enforce_z=enforce_z).mubs
 
 
 def get_mub_info(
